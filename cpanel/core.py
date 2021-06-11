@@ -1,2 +1,4 @@
+import cpanel
+
 def version() -> str:
-	return "cPanel 2 CLI client version 0.1.0"
+	return "{} client version {}".format(cpanel.__description__, cpanel.__version__)

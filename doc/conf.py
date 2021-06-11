@@ -1,16 +1,18 @@
-project = 'cPanel 2 CLI'
-copyright = '2021, Marco Bravo Mejías'
-author = 'Marco Bravo Mejías'
-release = '0.1.0'
+import cpanel
+
+project = cpanel.__description__
+copyright = cpanel.__copyright__
+author = cpanel.__author__
+release = cpanel.__version__
 extensions = []
 templates_path = []
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
 html_static_path = []
-html_title = 'cPanel 2 CLI'
+html_title = cpanel.__description__
 html_theme = 'sphinx_material'
 html_theme_options = {
 	# Set the name of the project to appear in the navigation.
-	'nav_title': 'CPanel 2 CLI',
+	'nav_title': cpanel.__description__,
 
 	# Set you GA account ID to enable tracking.
 	# 'google_analytics_account': 'UA-XXXXX',
@@ -23,8 +25,8 @@ html_theme_options = {
 	'color_accent': 'teal',
 
 	# Set the repo location to get a badge with stats
-	'repo_url': 'https://github.com/layfellow/cpanel-cli/',
-	'repo_name': 'CPanel 2 CLI',
+	'repo_url': cpanel.__url__,
+	'repo_name': cpanel.__description__,
 
 	# Visible levels of the global TOC; -1 means unlimited
 	'globaltoc_depth': 3,
