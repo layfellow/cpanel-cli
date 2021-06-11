@@ -5,8 +5,8 @@ with open('README.rst', 'r', encoding = 'utf-8') as stream:
 	long_description = stream.read()
 
 setup(
-	name = 'cpanel-cli-test',
-	version = '0.1.2',
+	name = 'cpanel-cli',
+	version = cpanel.__version__,
 	author = cpanel.__author__,
 	author_email = cpanel.__email__,
 	description = cpanel.__description__,
