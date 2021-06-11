@@ -8,3 +8,4 @@ venv
 /doc/build
 /.tox
 *.html
+/HACK

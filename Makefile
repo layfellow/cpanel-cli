@@ -17,9 +17,6 @@ package: venv
 publish: venv
 	$(BIN)/twine upload dist/*
 
-publish.test: venv
-	$(BIN)/twine upload --repository testpypi dist/*
-
 venv:
 	python3 -m venv venv
 	$(BIN)/pip3 install -r requirements-dev.txt
