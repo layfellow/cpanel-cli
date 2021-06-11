@@ -1,0 +1,10 @@
+__pycache__
+.py[co]
+/dist
+*.egg-info
+.venv
+venv
+/build
+/doc/build
+/.tox
+*.html
