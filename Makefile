@@ -1,7 +1,7 @@
 BIN = ./venv/bin
 
 local: venv
-	$(BIN)/pip3 install --use-feature=in-tree-build .
+	$(BIN)/pip3 install .
 
 doc: venv
 	$(BIN)/sphinx-build -b html doc doc/build
