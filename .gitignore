@@ -9,3 +9,5 @@ venv
 /.tox
 *.html
 /HACK
+test/cpanelrc.test
+test/tmp-*.json

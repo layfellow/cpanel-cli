@@ -1,21 +1,29 @@
 BIN = ./venv/bin
 
+DOCBUILDER = sphinx-build
+TYPECHECKER = pyright
+UNITTESTER = tox
+PUBLISHER = twine
+
 local: venv
 	$(BIN)/pip3 install .
 
 doc: venv
-	$(BIN)/sphinx-build -b html doc doc/build
+	$(BIN)/$(DOCBUILDER) -b html doc doc/build
+
+typecheck: venv
+	. $(BIN)/activate && $(TYPECHECKER) cpanel/*.py test/*.py
 
 test: venv
 	$(BIN)/cpanel version
-	$(BIN)/tox
+	$(BIN)/$(UNITTESTER)
 
 package: venv
 	rm -f dist/*
 	$(BIN)/python3 -m build
 
 publish: venv
-	$(BIN)/twine upload dist/*
+	$(BIN)/$(PUBLISHER) upload dist/*
 
 venv:
 	python3 -m venv venv
@@ -24,4 +32,4 @@ venv:
 clean:
 	rm -rf venv build doc/build *.egg-info .tox dist
 
-.PHONY: local doc test package publish publish.test clean
+.PHONY: local doc typecheck test package publish clean

@@ -3,19 +3,33 @@ How to contribute
 =================
 
 Development environment
------------------------
+=======================
 
-On macOS:
+``cpanel-cli`` was developed on Ubuntu Linux 21.07 “Hirsute Hippo”. There are no
+special requirements, so a standard install on any Linux distro or macOS version
+supporting at least Python 3.9 should work.
+
+To prepare the development environment, follow the instructions below depending
+on your OS:
+
+macOS “Catalina” or higher
+--------------------------
 
 .. code:: sh
     
-    $ brew install python@{3.7,3.8,3.9}
+    $ brew install python@3.9
 
 Then add the following paths to your ``PATH``:
 
 .. code:: sh
 
     PATH="$PATH:/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
-    PATH="$PATH:/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/bin"
-    PATH="$PATH:/usr/local/opt/python@3.7/Frameworks/Python.framework/Versions/3.7/bin"
     export $PATH
+
+
+Ubuntu Linux 21.04 or higher
+----------------------------
+
+.. code:: sh
+
+    $ sudo apt install python3.9 python3-pip python3.9-venv
