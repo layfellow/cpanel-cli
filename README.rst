@@ -6,7 +6,7 @@ cPanel 2 Command Line Interface
 
 `LÉAME en español`_
 
-A general CLI utility to run common tasks on a cPanel-controlled web site.
+A general CLI utility to run common tasks on a cPanel2-controlled web site.
 
 Requirements
 ============
@@ -41,7 +41,7 @@ Interfaz de línea de comandos para cPanel 2
 `README in English`_
 
 Un utilitario general para ejecutar diversas tareas en un sitio web controlado
-por cPanel.
+por cPanel2.
 
 Requisitos
 ==========
