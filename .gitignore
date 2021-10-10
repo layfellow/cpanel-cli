@@ -8,6 +8,7 @@ venv
 /doc/build
 /.tox
 *.html
+*.mo
 /HACK
 test/cpanelrc.test
 test/tmp-*.json

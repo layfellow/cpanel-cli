@@ -1,15 +1,21 @@
 BIN = ./venv/bin
 
+LOCALIZER = sphinx-intl
 DOCBUILDER = sphinx-build
 TYPECHECKER = pyright
 UNITTESTER = tox
 PUBLISHER = twine
 
-local: venv
+install: venv
 	$(BIN)/pip3 install .
 
+localize: venv install
+	$(BIN)/$(DOCBUILDER) -b gettext doc doc/build/gettext
+	$(BIN)/$(LOCALIZER) -c doc/conf.py update -p doc/build/gettext -l es
+
 doc: venv
-	$(BIN)/$(DOCBUILDER) -b html doc doc/build
+	$(BIN)/$(DOCBUILDER) -b html doc doc/build/html/en
+	$(BIN)/$(DOCBUILDER) -b html -D language=es doc doc/build/html/es
 
 typecheck: venv
 	. $(BIN)/activate && $(TYPECHECKER) cpanel/*.py test/*.py
@@ -30,6 +36,6 @@ venv:
 	$(BIN)/pip3 install -r requirements-dev.txt
 
 clean:
-	rm -rf venv build doc/build *.egg-info .tox dist
+	rm -rf venv build doc/build $$( find doc/locale/ -name *.mo ) *.egg-info .tox dist
 
-.PHONY: local doc typecheck test package publish clean
+.PHONY: install localize doc typecheck test package publish clean

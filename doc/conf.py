@@ -9,6 +9,8 @@ templates_path = []
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
 html_static_path = []
 html_title = cpanel.__description__
+locale_dirs = ['locale/']
+gettext_compact = False
 html_theme = 'sphinx_material'
 html_theme_options = {
 	# Set the name of the project to appear in the navigation.
