@@ -127,9 +127,9 @@ def usage(cmd: NullableStr = None) -> str:
 		help = """\
 		Usage: cpanel list features
 
-		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/
-
 		List a cPanel account’s features. Output is JSON-formatted.
+
+		For a full User’s Guide go to: https://cpanelcli.readthedocs.io/en/latest/
 		"""
 	elif cmd == "mail":
 		help = """\
@@ -140,7 +140,7 @@ def usage(cmd: NullableStr = None) -> str:
 		    cpanel set mail filter ACCOUNT FILE
 		    cpanel delete mail filter ACCOUNT FILTERNAME
 
-		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/
+		For a full User’s Guide go to: https://cpanelcli.readthedocs.io/en/latest/
 
 		COMMANDS
 
@@ -190,8 +190,9 @@ def usage(cmd: NullableStr = None) -> str:
 		help = """\
 		Usage: cpanel [OPTIONS] COMMAND...
 
-		A general CLI utility to run common tasks on a cPanel2-controlled web site.
-		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/
+		A general CLI utility to run common tasks on a website controlled with cPanel.
+
+		For a full User’s Guide go to: https://cpanelcli.readthedocs.io/en/latest/
 
 		OPTIONS
 		    -h, --help                  print this help and exit

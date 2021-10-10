@@ -20,7 +20,7 @@ logging.getLogger('cpanel_api').setLevel(log.getEffectiveLevel())
 
 
 def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
-	"""Make a cPanel 2 API call corresponding to the args.
+	"""Make a cPanel API call corresponding to the args.
 
 	host       reference to API endpoint
 	args       list of arguments passed to the command line, minus options

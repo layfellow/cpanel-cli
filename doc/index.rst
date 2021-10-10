@@ -1,5 +1,5 @@
-cPanel 2 CLI
-============
+cPanel CLI
+==========
 
 .. toctree::
    :maxdepth: 2
