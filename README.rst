@@ -53,7 +53,7 @@ The output is generally JSON, so it’s easily parsable using, e.g., `jq`_
 
 .. _jq: https://stedolan.github.io/jq/
 
-For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 Requirements
 ============

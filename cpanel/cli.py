@@ -122,14 +122,38 @@ def version() -> str:
 
 def usage(cmd: NullableStr = None) -> str:
 	help: str
+	if cmd: cmd = cmd.lower()
 
-	if cmd == "features":
+	if cmd == "module" or cmd == "modules":
+		help = """\
+		Usage: cpanel help MODULE
+
+		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+		MODULES
+		The currently implemented modules and functions are:
+
+		features
+		    cpanel list features
+
+		mail
+		    cpanel list mail accounts
+		    cpanel list mail filters ACCOUNT
+		    cpanel get mail filter ACCOUNT FILTERNAME
+		    cpanel set mail filter ACCOUNT FILE
+		    cpanel delete mail filter ACCOUNT FILTERNAME
+
+		Use ‘cpanel help MODULE’ to learn more about the functions implemented
+		for MODULE; for example, ‘cpanel help mail’ to print detailed help on all
+		the functions implemented for the ‘mail’ module.
+		"""
+	elif cmd == "feature" or cmd == "features":
 		help = """\
 		Usage: cpanel list features
 
 		List a cPanel account’s features. Output is JSON-formatted.
 
-		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 		"""
 	elif cmd == "mail":
 		help = """\
@@ -140,7 +164,7 @@ def usage(cmd: NullableStr = None) -> str:
 		    cpanel set mail filter ACCOUNT FILE
 		    cpanel delete mail filter ACCOUNT FILTERNAME
 
-		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 		COMMANDS
 
@@ -192,7 +216,7 @@ def usage(cmd: NullableStr = None) -> str:
 
 		CLI utility to run tasks on a website controlled with cPanel.
 
-		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 		OPTIONS
 		    -h, --help                  print this help and exit
@@ -216,22 +240,16 @@ def usage(cmd: NullableStr = None) -> str:
 		    cpanel list mail accounts
 		    cpanel get mail filter scott@example.com spamkiller
 
-		Notice the way the keywords are arranged form a natural English sentence, i.e.,
-		‘list features’, ‘get mail filter’, etc. This is done on purpose so the keyword
-		order is easy to remember.
+		Notice the keywords follow the natural English sentence order, i.e.,
+		‘list features’, ‘get mail filter’, etc.
 
 		MODULES
 		The currently implemented modules are:
 
-		‘features‘ (use ‘cpanel help features’ for more information):
-		    cpanel list features
+		    features
+		    mail
 
-		‘mail’ (use ‘cpanel help mail’ for more information):
-		    cpanel list mail accounts
-		    cpanel list mail filters ACCOUNT
-		    cpanel get mail filter ACCOUNT FILTERNAME
-		    cpanel set mail filter ACCOUNT FILE
-		    cpanel delete mail filter ACCOUNT FILTERNAME
+		Use ‘cpanel help modules’ for more information about them.
 
 		DEVELOPMENT
 		    Visit the project page at: https://github.com/layfellow/cpanel-cli/
