@@ -129,7 +129,7 @@ def usage(cmd: NullableStr = None) -> str:
 
 		List a cPanel account’s features. Output is JSON-formatted.
 
-		For a full User’s Guide go to: https://cpanelcli.readthedocs.io/en/latest/
+		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 		"""
 	elif cmd == "mail":
 		help = """\
@@ -140,7 +140,7 @@ def usage(cmd: NullableStr = None) -> str:
 		    cpanel set mail filter ACCOUNT FILE
 		    cpanel delete mail filter ACCOUNT FILTERNAME
 
-		For a full User’s Guide go to: https://cpanelcli.readthedocs.io/en/latest/
+		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 		COMMANDS
 
@@ -167,12 +167,12 @@ def usage(cmd: NullableStr = None) -> str:
 		        cpanel get mail filter scott@example.com spamkiller
 
 		set mail filter ACCOUNT FILE
-		    Create or update an email filter associated to email ACCOUNT.
-		    If the filter already exists, it’s updated, otherwise a new filter is created.
-		    The filter rules are described using a JSON FILE. This FILE has the same
-		    textual format as the output from ‘cpanel get mail filter’, so the
-		    easiest way to create a new filter is to dump an existing filter into a
-		    filter.json file, edit it and then upload it with ‘cpanel set mail filter’.
+		    Create or update an email filter associated with email ACCOUNT.
+		    If the filter already exists, it updates it; otherwise, it creates a new filter.
+		    Use a JSON FILE to describe the filter rules. This JSON FILE has the same
+		    textual format as the output from ‘cpanel get mail filter’, so the easiest way
+		    to create a new filter is to dump an existing filter into a filter.json file,
+		    edit it and then upload it with ‘cpanel set mail filter’.
 		    See the EXAMPLE below.
 
 		    EXAMPLE
@@ -190,9 +190,9 @@ def usage(cmd: NullableStr = None) -> str:
 		help = """\
 		Usage: cpanel [OPTIONS] COMMAND...
 
-		A general CLI utility to run common tasks on a website controlled with cPanel.
+		CLI utility to run tasks on a website controlled with cPanel.
 
-		For a full User’s Guide go to: https://cpanelcli.readthedocs.io/en/latest/
+		For a full User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 		OPTIONS
 		    -h, --help                  print this help and exit
@@ -203,9 +203,8 @@ def usage(cmd: NullableStr = None) -> str:
 
 		AUTHENTICATION
 		You can pass the HOST, USER and UTOKEN credentials directly as options, as
-		shown above, or, for your convenience, write a .cpanelrc file on your $HOME
-		directory. See the User’s Guide at https://cpanel-api.readthedocs.io/ for
-		more information.
+		shown above, or, better yet, write a .cpanelrc file on your $HOME
+		directory. See the User’s Guide at: https://cpanel-cli.readthedocs.io/en/latest/
 
 		COMMAND is a sequence of two or more keywords describing a task; the general
 		form of the command keyword list is:
