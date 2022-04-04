@@ -326,8 +326,8 @@ To add a new translation:
 
        $ make doc
 
-  The above command will create a new static HTML tree in ``doc/build/html/<language code>``.
-  For example, for French, it will create a new tree in ``doc/build/html/fr``.
+   The above command will create a new static HTML tree in ``doc/build/html/<language code>``.
+   For example, for French, it will create a new tree in ``doc/build/html/fr``.
 
 For further information see the `Internationalization Guide`_
 
@@ -666,8 +666,8 @@ Para añadir una nueva traducción:
 
        $ make doc
 
-  El comando anterior crea un nuevo árbol HTML estático en ``doc/build/html/<código de idioma>``.
-  Por ejemplo, para el francés, crearía un nuevo árbol en ``doc/build/html/fr``.
+   El comando anterior crea un nuevo árbol HTML estático en ``doc/build/html/<código de idioma>``.
+   Por ejemplo, para el francés, crearía un nuevo árbol en ``doc/build/html/fr``.
 
 Para más información consulte la `Guía de internacionalización`_.
 
