@@ -80,7 +80,7 @@ Test the installation using:
 
     $ cpanel --version
 
-Tested on Ubuntu 21.04 “Hirsute Hippo”, but it has no specific Ubuntu requirements, so any
+Tested on Ubuntu 21.10 “Impish Indri”, but it has no specific Ubuntu requirements, so any
 Linux distro with Python 3.8 or later should work.
 
 Installation on macOS
@@ -201,7 +201,7 @@ Pruebe la instalación con:
 
     $ cpanel --version
 
-Probado en Ubuntu 21.04 “Hirsute Hippo”, pero no tiene requisitos específicos de Ubuntu,
+Probado en Ubuntu 21.10 “Impish Indri”, pero no tiene requisitos específicos de Ubuntu,
 por lo que cualquier distro de Linux con Python 3.8 o posterior debería funcionar.
 
 Instalación en macOS
