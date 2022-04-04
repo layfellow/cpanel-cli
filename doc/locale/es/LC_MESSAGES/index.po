@@ -1,7 +1,7 @@
 # cPanel CLI
-# Copyright (C) Copyright 2021, Marco Bravo Mejías
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
 # This file is distributed under the same license as the cPanel CLI package.
-# Marco Bravo Mejías <marco@parroquiano.net>, 2021.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
 #
 msgid ""
 msgstr ""
