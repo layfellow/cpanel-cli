@@ -71,16 +71,10 @@ def main() -> None:
 
 	try:
 		args: List[str] = sys.argv[1:]
-		args, hostname, username, utoken = configuration(args, os.environ, RCFILE)
 
 		# Parse options (I don’t like argparse, manual parsing is much simpler and readable.)
 		args, _help = eatflag(args, '-h', '--help')
 		args, _version = eatflag(args, '-V', '--version')
-
-		if hostname is None: die("missing cPanel hostname")
-		if username is None: die("missing cPanel username")
-		if utoken is None: die("missing cPanel UAPI token")
-		log.debug("hostname: {}, username: {}, utoken: {}".format(hostname, username, utoken))
 
 		if _version:
 			print(version())
@@ -96,6 +90,12 @@ def main() -> None:
 			else:
 				print(usage(args[1]))
 		else:
+			args, hostname, username, utoken = configuration(args, os.environ, RCFILE)
+			if hostname is None: die("missing cPanel hostname, use cpanel --help")
+			if username is None: die("missing cPanel username, use cpanel --help")
+			if utoken is None: die("missing cPanel UAPI token, use cpanel --help")
+			log.debug("hostname: {}, username: {}, utoken: {}".format(hostname, username, utoken))
+
 			print(dispatch(endpoint(hostname, username, utoken), args))
 
 	except Exception as e:
