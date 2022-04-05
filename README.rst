@@ -145,7 +145,7 @@ Algunos ejemplos
 
       $ cpanel help
 
-- Imprima la ayuda de los módulos implementados:
+- Imprime la ayuda de los módulos implementados:
 
   .. code:: sh
 
@@ -180,14 +180,14 @@ Requisitos
 ==========
 
 - Linux o macOS; tal vez podría funcionar `en Windows`_
-- Python 3.8 o posterior
+- Python 3.8 o superior
 
 .. _`en Windows`: #se-puede-instalar-en-windows
 
 Instalación en Linux
 ====================
 
-Instale Python 3.8 o posterior usando el gestor de paquetes de su distro.
+Instale Python 3.8 o superior usando el gestor de paquetes de su distribución.
 
 Luego ejecute:
 
@@ -202,7 +202,7 @@ Pruebe la instalación con:
     $ cpanel --version
 
 Probado en Ubuntu 21.10 “Impish Indri”, pero no tiene requisitos específicos de Ubuntu,
-por lo que cualquier distro de Linux con Python 3.8 o posterior debería funcionar.
+por lo que cualquier distribución de Linux con Python 3.8 o posterior debería funcionar.
 
 Instalación en macOS
 ====================
@@ -221,7 +221,7 @@ Pruebe la instalación con:
 
     $ cpanel --version
 
-Probado en macOS 10.15.7 “Catalina”"; también debería funcionar en “Big Sur” o posterior.
+Probado en macOS 10.15.7 “Catalina”; también debería funcionar en “Big Sur” o posterior.
 
 ¿Se puede instalar en Windows?
 ==============================
@@ -231,9 +231,9 @@ Sospecho que esto debería funcionar en Windows 10/11 usando `WSL 2`_ (Windows S
 .. _`WSL 2`_: https://docs.microsoft.com/en-us/windows/wsl/about
 
 Desafortunadamente, no tengo acceso a un sistema Windows, así que no puedo confirmarlo.
-Los *pull requests* son muy bienvenidos en caso de que alguien quiera probarlo y contribuir.
+Los pull requests son muy bienvenidos en caso de que alguien quiera probarlo y contribuir.
 
 Cómo contribuir
 ===============
 
-Véase `CONTRIBUTING.rst <CONTRIBUTING.rst>`_
+Véase `CONTRIBUTING.rst <CONTRIBUTING.rst#cómo-contribuir>`_
