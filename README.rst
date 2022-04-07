@@ -231,7 +231,7 @@ Sospecho que esto debería funcionar en Windows 10/11 usando `WSL 2`_ (Windows S
 .. _`WSL 2`_: https://docs.microsoft.com/en-us/windows/wsl/about
 
 Desafortunadamente, no tengo acceso a un sistema Windows, así que no puedo confirmarlo.
-Los pull requests son muy bienvenidos en caso de que alguien quiera probarlo y contribuir.
+Los pull requests son bienvenidos en caso de que alguien quiera probarlo y contribuir.
 
 Cómo contribuir
 ===============
