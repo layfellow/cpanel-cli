@@ -1,2 +1,2 @@
-Sphinx==4.0.2
-sphinx-material==0.0.32
+Sphinx==4.5.0
+sphinx-material==0.0.35
