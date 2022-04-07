@@ -7,36 +7,75 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 15:09-0300\n"
+"POT-Creation-Date: 2022-04-05 04:47-0400\n"
 "PO-Revision-Date: 2021-10-10 16:14-0300\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
-"Language-Team:\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../index.rst:4
-msgid "Contents:"
-msgstr "Contenido:"
+#: ../../index.rst:3
+msgid "cPanel Command Line Interface"
+msgstr "Interfaz de línea de comandos para cPanel"
 
-#: ../../index.rst:2
-msgid "cPanel CLI"
-msgstr "CLI de cPanel"
-
-#: ../../index.rst:9
-msgid "Indices and tables"
-msgstr "Índices y tablas"
-
-#: ../../index.rst:11
-msgid ":ref:`genindex`"
+#: ../../index.rst:5
+msgid ""
+"**cpanel-cli** is a CLI utility for running tasks on a cPanel-controlled "
+"website."
 msgstr ""
+"**cpanel-cli** es un utilitario de línea de comandos para ejecutar tareas"
+" en un sitio web controlado por cPanel."
 
-#: ../../index.rst:12
-msgid ":ref:`modindex`"
+#: ../../index.rst:7
+msgid ""
+"Quickly execute commands in a terminal to manage a website instead of "
+"logging into `cPanel`_ and clicking your way around the web interface. "
+"You can also use this utility in scripting jobs."
 msgstr ""
+"Ejecute rápidamente comandos en un terminal en lugar de iniciar sesión en"
+" la interfaz web de `cPanel`_. También puede usar este utilitario para "
+"trabajos de *scripting*."
 
-#: ../../index.rst:13
-msgid ":ref:`search`"
+#: ../../index.rst:14
+msgid "Some examples"
+msgstr "Algunos ejemplos"
+
+#: ../../index.rst:16
+msgid "Print help:"
+msgstr "Imprime la ayuda:"
+
+#: ../../index.rst:22
+msgid "Print help on implemented modules:"
+msgstr "Imprime la ayuda de los módulos implementados:"
+
+#: ../../index.rst:28
+msgid "Print help on module ``mail``:"
+msgstr "Imprime la ayuda del módulo ``mail``:"
+
+#: ../../index.rst:34
+msgid "List cPanel email accounts:"
+msgstr "Lista las cuentas de correo de cPanel:"
+
+#: ../../index.rst:40
+msgid ""
+"Get a description of email filter ``spamkiller`` associated to email "
+"account ``scott@example.com``:"
 msgstr ""
+"Obtiene la description del filtro de correo ``spamkiller`` asociado a la "
+"cuenta de de correo ``scott@example.com``:"
 
+#: ../../index.rst:47
+msgid "The output is generally JSON, so it’s easily parsable using, e.g., `jq`_"
+msgstr ""
+"La salida es generalmente JSON, por lo que es fácilmente analizable "
+"utilizando, por ejemplo, `jq`_"
+
+#: ../../index.rst:52
+msgid "User’s Guide"
+msgstr "Guía del usuario"
+
+#: ../../index.rst:61
+msgid "For developers"
+msgstr "Para desarrolladores"

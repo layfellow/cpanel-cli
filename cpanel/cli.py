@@ -205,7 +205,8 @@ def usage(cmd: NullableStr = None) -> str:
 		        cpanel set mail filter scott@example.com filter.json
 
 		delete mail filter ACCOUNT FILTERNAME
-		    Delete email filter FILTERNAME associated to ACCOUNT.
+		    Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
+		    filter names, use ‘cpanel list mail filters ACCOUNT’
 
 		    EXAMPLE
 		         cpanel delete mail filter scott@example.com spamkiller
@@ -228,7 +229,8 @@ def usage(cmd: NullableStr = None) -> str:
 		AUTHENTICATION
 		You can pass the HOST, USER and UTOKEN credentials directly as options, as
 		shown above, or, better yet, write a .cpanelrc file on your $HOME
-		directory. See the User’s Guide at: https://cpanel-cli.readthedocs.io/en/latest/
+		directory. See the Authentication section in the User’s Guide at:
+		https://cpanel-cli.readthedocs.io/en/latest/installation.html#authentication
 
 		COMMAND is a sequence of two or more keywords describing a task; the general
 		form of the command keyword list is:
