@@ -1,11 +1,11 @@
-.. image:: https://img.shields.io/pypi/v/cpanel-api
+.. image:: https://img.shields.io/pypi/v/cpanel-cli
    :alt: PyPI
 
 =============================
 cPanel Command Line Interface
 =============================
 
-`LÉAME en español <#interfaz-de-línea-de-comandos-para-cpanel>`_
+`LÉAME en español <#interfaz-de-linea-de-comandos-para-cpanel>`_
 
 **cpanel-cli** is a CLI utility for running tasks on a cPanel-controlled website.
 
@@ -52,6 +52,9 @@ Some examples
 The output is generally JSON, so it’s easily parsable using, e.g., `jq`_
 
 .. _jq: https://stedolan.github.io/jq/
+
+User’s Guide
+============
 
 For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
@@ -117,11 +120,11 @@ Pull requests are very much welcome in case anyone wants to try out it and contr
 Contributing
 ============
 
-See `CONTRIBUTING.rst <CONTRIBUTING.rst>`_
+See `CONTRIBUTING <https://github.com/layfellow/cpanel-cli/blob/main/CONTRIBUTING.rst>`_
 
 ----
 
-.. image:: https://img.shields.io/pypi/v/cpanel-api
+.. image:: https://img.shields.io/pypi/v/cpanel-cli
    :alt: PyPI
 
 =========================================
@@ -171,6 +174,9 @@ Algunos ejemplos
       $ cpanel get mail filter scott@example.com spamkiller
 
 La salida es generalmente JSON, por lo que es fácilmente analizable utilizando, por ejemplo, `jq`_
+
+Guía del usuario
+================
 
 La guía del usuario completa se encuentra en: https://cpanel-cli.readthedocs.io/es/latest/
 
@@ -232,4 +238,4 @@ Los pull requests son bienvenidos en caso de que alguien quiera probarlo y contr
 Cómo contribuir
 ===============
 
-Véase `CONTRIBUTING.rst en español <CONTRIBUTING.rst#cómo-contribuir>`_
+Véase `CONTRIBUTING en español <https://github.com/layfellow/cpanel-cli/blob/main/CONTRIBUTING.rst#como-contribuir>`_
