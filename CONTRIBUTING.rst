@@ -225,7 +225,7 @@ The above command will hit the `cPanel UAPI REST interface`_ with all the functi
 in ``cpanel-cli``. An immediate DELETE call follows any POST/PUT call, so that
 the remote state of cPanel is left unchanged, i.e., the tests are strictly non-destructive.
 
-.. _`cPanel UAPI REST interface`: https://documentation.cpanel.net/display/DD/Use+WHM+API+to+Call+cPanel+API+and+UAPI
+.. _`cPanel UAPI REST interface`: https://api.docs.cpanel.net/cpanel/introduction/
 
 Packaging
 =========
@@ -555,7 +555,7 @@ El comando anterior invoca la `interfaz REST UAPI de cPanel`_ con todas las func
 en ``cpanel-cli``. Una llamada DELETE inmediata sigue a continuación de cualquier llamada POST/PUT, de modo que
 el estado remoto de cPanel se deja sin cambios, es decir, las pruebas son estrictamente no destructivas.
 
-.. _`interfaz REST UAPI de cPanel`: https://documentation.cpanel.net/display/DD/Use+WHM+API+to+Call+cPanel+API+and+UAPI
+.. _`interfaz REST UAPI de cPanel`: https://api.docs.cpanel.net/cpanel/introduction/
 
 Empaquetado
 ===========
