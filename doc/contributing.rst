@@ -192,8 +192,6 @@ I’m using the `tox automation framework`_ for a series of unit API tests.
 The main code driving the tests is in ``test/test_core.py``; the main tox configuration file is
 ``tox.ini``.
 
-.. _`tox automation framework`: https://tox.wiki/en/latest/index.html
-
 These are *not* simple unit tests, but unit API tests running against a *live* cPanel instance.
 To run the tests, you need access to a cPanel instance running on another host reachable from
 the host you’re running the tests on.

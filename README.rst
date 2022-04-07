@@ -86,7 +86,9 @@ Linux distro with Python 3.8 or later should work.
 Installation on macOS
 =====================
 
-Install Python 3.8 or later using `Homebrew <https://brew.sh/>`_.
+Install Python 3.8 or later using Homebrew_.
+
+.. _Homebrew: https://brew.sh/
 
 Then run:
 
@@ -134,8 +136,6 @@ web controlado por cPanel.
 Ejecute rápidamente comandos en un terminal en lugar de iniciar sesión en la interfaz
 web de `cPanel`_. También puede usar este utilitario para trabajos de *scripting*.
 
-.. _cPanel: https://en.wikipedia.org/wiki/CPanel
-
 Algunos ejemplos
 ================
 
@@ -172,8 +172,6 @@ Algunos ejemplos
 
 La salida es generalmente JSON, por lo que es fácilmente analizable utilizando, por ejemplo, `jq`_
 
-.. _jq: https://stedolan.github.io/jq/
-
 La guía del usuario completa se encuentra en: https://cpanel-cli.readthedocs.io/es/latest/
 
 Requisitos
@@ -207,7 +205,7 @@ por lo que cualquier distribución de Linux con Python 3.8 o posterior debería 
 Instalación en macOS
 ====================
 
-Instale Python 3.8 o posterior usando `Homebrew <https://brew.sh/>`_.
+Instale Python 3.8 o posterior usando Homebrew_.
 
 Luego ejecute:
 
@@ -228,12 +226,10 @@ Probado en macOS 10.15.7 “Catalina”; también debería funcionar en “Big S
 
 Sospecho que esto debería funcionar en Windows 10/11 usando `WSL 2`_ (Windows Subsystem for Linux).
 
-.. _`WSL 2`: https://docs.microsoft.com/en-us/windows/wsl/about
-
 Desafortunadamente, no tengo acceso a un sistema Windows, así que no puedo confirmarlo.
 Los pull requests son bienvenidos en caso de que alguien quiera probarlo y contribuir.
 
 Cómo contribuir
 ===============
 
-Véase `CONTRIBUTING.rst <CONTRIBUTING.rst#cómo-contribuir>`_
+Véase `CONTRIBUTING.rst en español <CONTRIBUTING.rst#cómo-contribuir>`_

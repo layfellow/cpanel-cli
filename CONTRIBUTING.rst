@@ -185,7 +185,7 @@ Then run it using:
 
     $ make typecheck
 
-.. _`Pyright`: https://github.com/Microsoft/pyright
+.. _Pyright: https://github.com/Microsoft/pyright
 
 Running tests
 =============
@@ -193,8 +193,6 @@ Running tests
 I’m using the `tox automation framework`_ for a series of unit API tests.
 The main code driving the tests is in ``test/test_core.py``; the main tox configuration file is
 ``tox.ini``.
-
-.. _`tox automation framework`: https://tox.wiki/en/latest/index.html
 
 These are *not* simple unit tests, but unit API tests running against a *live* cPanel instance.
 To run the tests, you need access to a cPanel instance running on another host reachable from
@@ -275,9 +273,10 @@ the start page is a conventional ``index.html`` file.
 This GitHub repository is currently connected to my `Read the Docs`_ account, so that
 any committed (or merged) change that updates the documentation sources will automatically
 trigger a remote Sphinx rebuild. The resulting updated HTML documentation will always be available at
-`<https://cpanel-cli.readthedocs.io/en/latest/>`_
+`https://cpanel-cli.readthedocs.io/en/latest/`_
 
 .. _`Read the Docs`: https://readthedocs.org/
+.. _`https://cpanel-cli.readthedocs.io/en/latest/`: https://cpanel-cli.readthedocs.io/en/latest/
 
 The main configuration file for Sphinx is ``doc/conf.py``. The Sphinx version and theme used
 to build the documentation are in ``doc/requirements.txt``.
@@ -346,8 +345,6 @@ Cómo contribuir
 
 Para contribuir, simplemente haga un fork de este repositorio, inicie una nueva rama y abra un `pull request`_.
 
-.. _`pull request`: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
-
 ``cpanel-cli`` está escrito en Python 3.9. He organizado el código en un árbol estándar::
 
     cpanel-cli
@@ -387,8 +384,6 @@ La versión de Sphinx y el tema utilizado para construir la documentación está
 de construcción de Sphinx utiliza este archivo.
 
 .. _`archivo de configuración para Read the Docs`: https://docs.readthedocs.io/en/stable/config-file/index.html
-.. _`reStructuredText`: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
-.. _Sphinx: https://www.sphinx-doc.org/
 
 La traducción al español de la documentación se genera usando cadenas de un archivo de catálogo
 ``locale/es/LC_MESSAGES/index.po``.
@@ -405,8 +400,6 @@ Sé que actualmente se desaconseja el uso de ``setup.py``, así que probablement
 de empaquetado más moderno como `Poetry`_, pero por ahora sigo usando ``setup.py``.
 (Aunque sigo la `recomendación`_ de llamarlo indirectamente usando ``python -m build``.)
 
-.. _setuptools: https://setuptools.pypa.io/en/latest/userguide/quickstart.html
-.. _Poetry: https://python-poetry.org/
 .. _recomendación: https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html
 
 ``test`` contiene un conjunto de pruebas unitarias de la API. Están escritas usando el `framework de automatización tox`_.
@@ -524,16 +517,12 @@ Luego ejecútelo usando:
 
     $ make typecheck
 
-.. _`Pyright`: https://github.com/Microsoft/pyright
-
 Ejecución de pruebas
 ====================
 
 Uso el `framework de automatización tox`_ para una serie de pruebas unitarias de la API.
 El código principal de las pruebas está en ``test/test_core.py``; el archivo de configuración
 principal de tox es ``tox.ini``.
-
-.. _`framework de automatización tox`: https://tox.wiki/en/latest/index.html
 
 Éstas *no* son pruebas unitarias simples, sino pruebas unitarias de API que se ejecutan contra
 una instancia *activa* de cPanel. Para ejecutar las pruebas necesita conectarse a una instancia de
@@ -594,8 +583,6 @@ donde ``<versión>` es el número de versión establecido en ``cpanel/__init__.p
 El tarball es el archivo de fuentes; el archivo wheel es el archivo de distribución. Estos archivos
 generados se pueden subir al `Python Package Index`_.
 
-.. _`Python Package Index`: https://pypi.org/
-
 Construcción de la documentación
 ================================
 
@@ -615,9 +602,9 @@ la página de inicio es un archivo convencional ``index.html``.
 Este repositorio de GitHub está actualmente conectado a mi cuenta de `Read the Docs`_, de modo que
 cualquier cambio en un ``commit`` (o ``merge``) que actualice las fuentes de documentación
 dispara automáticamente una reconstrucción remota de Sphinx. La documentación HTML resultante está siempre disponible en
-`<https://cpanel-cli.readthedocs.io/en/latest/>`_
+`https://cpanel-cli.readthedocs.io/es/latest/`_
 
-.. _`Read the Docs`: https://readthedocs.org/
+.. _`https://cpanel-cli.readthedocs.io/es/latest/`: https://cpanel-cli.readthedocs.io/es/latest/
 
 El archivo de configuración principal para Sphinx es ``doc/conf.py``. La versión de Sphinx y el tema
 usado para construir la documentación están en ``doc/requirements.txt``.
