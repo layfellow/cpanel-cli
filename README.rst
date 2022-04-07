@@ -1,6 +1,10 @@
 .. image:: https://img.shields.io/pypi/v/cpanel-cli
    :alt: PyPI
 
+.. image:: https://readthedocs.org/projects/cpanel-cli/badge/?version=latest
+   :target: https://cpanel-cli.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
 =============================
 cPanel Command Line Interface
 =============================
@@ -126,6 +130,10 @@ See `CONTRIBUTING <https://github.com/layfellow/cpanel-cli/blob/main/CONTRIBUTIN
 
 .. image:: https://img.shields.io/pypi/v/cpanel-cli
    :alt: PyPI
+
+.. image:: https://readthedocs.org/projects/cpanel-cli/badge/?version=latest
+   :target: https://cpanel-cli.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
 =========================================
 Interfaz de línea de comandos para cPanel
