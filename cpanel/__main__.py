@@ -31,24 +31,39 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 	cmd: str = " ".join(args[0:3])  # Ignore everything beyond the 3rd arg.
 	uapi: Api = host.client.uapi
 
+	def cmd_is(cmd: str, *args: str) -> bool:
+		for arg in args:
+			if cmd[0:len(arg)] == arg:
+				return True
+		return False
+
 	r: str = ""
 	try:
-		if cmd == "list features":
+		if cmd_is(cmd, "list features"):
 			r = host.dump(lambda: uapi.Features.list_features())
 
-		elif cmd == "list mail accounts":
+		elif cmd_is(cmd, "get quota"):
+			r = host.dump(lambda: uapi.Quota.get_quota_info())
+
+		elif cmd_is(cmd, "get usage"):
+			r = host.dump(lambda: uapi.ResourceUsage.get_usages())
+
+		elif cmd_is(cmd, "get stats"):
+			r = host.dump(lambda: uapi.StatsBar.get_stats(display = "|".join(args[2:])))
+
+		elif cmd_is(cmd, "list mail accounts"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
 
-		elif cmd == "list mail filters":
+		elif cmd_is(cmd, "list mail filters"):
 			r = host.dump_extracted('filtername', lambda: uapi.Email.list_filters(account = args[3]))
 
-		elif cmd == "get mail filter":
+		elif cmd_is(cmd, "get mail filter"):
 			r = host.dump(lambda: uapi.Email.get_filter(account = args[3], filtername = args[4]))
 
-		elif cmd == "set mail filter":
+		elif cmd_is(cmd, "set mail filter"):
 			r = host.set_mail_filter(args[3], args[4])
 
-		elif cmd in ("delete mail filter", "rm mail filter" , "remove mail filter"):
+		elif cmd_is(cmd, "delete mail filter", "rm mail filter", "remove mail filter"):
 			r = host.check(lambda: uapi.Email.delete_filter(account = args[3], filtername = args[4]))
 
 		else:

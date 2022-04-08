@@ -47,6 +47,37 @@ class TestCore(unittest.TestCase):
 			self.assertTrue(value in (0, 1))
 
 
+	def test_get_quota(self) -> None:
+		quota: JSONType = json.loads(dispatch(self.host, ["get", "quota"]))
+		print(quota)
+
+		self.assertTrue(quota['inodes_used'] >= 0)
+		self.assertTrue(quota['megabytes_used'] >= 0)
+
+
+	def test_get_usage(self) -> None:
+		usage: List[JSONType] = json.loads(dispatch(self.host, ["get", "usage"]))
+		print(usage)
+
+		self.assertTrue(len(usage) > 0)
+		item: JSONType
+		for item in usage:
+			self.assertTrue(len(item['id']) > 0)
+			self.assertTrue(int(item['usage']) >= 0)
+
+
+	def test_get_stats(self) -> None:
+		display: List[str] = ["hostname", "machinetype", "cpanelversion"]
+		stats: List[JSONType] = json.loads(dispatch(self.host, ["get", "stats"] + display))
+		print(stats)
+
+		self.assertTrue(len(stats) > 0)
+		stat: JSONType
+		for stat in stats:
+			self.assertTrue(stat['id'] in display)
+			self.assertTrue(len(stat['value']) > 0)
+
+
 	def test_list_mail_accounts(self) -> None:
 		emails: List[JSONType] = self.list_mail_accounts()
 		print(emails)

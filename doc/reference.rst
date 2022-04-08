@@ -14,6 +14,51 @@ Module: ``features``
 
         $ cpanel list features
 
+Module: ``quota``
+====================
+
+**get quota**
+    Get the cPanel account’s total disk quota information in megabytes.
+    Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel get quota
+
+Module: ``usage``
+====================
+
+**get usage**
+    Show resource usage and some statistics, like bandwidth, number of subdomains,
+    disk usage, number of mail filters, etc.
+    Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel get usage
+
+Module: ``stats``
+====================
+
+**get stats STAT...**
+    Show detailed data and statistics, like hostname, file usage, database usage,
+    dedicated IPs, etc. Output is JSON-formatted.
+
+    STAT is the name of the statistic you want, you can provide a list of STATs to
+    be displayed. For a complete list of STAT names, see ‘display parameters’ at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
+
+    *Examples*
+
+    .. code:: sh
+
+        $ cpanel get stats hostname
+        $ cpanel get stats machinetype cpanelversion
+
 Module: ``mail``
 ================
 
