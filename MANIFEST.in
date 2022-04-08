@@ -1,0 +1,11 @@
+include Makefile
+include requirements.txt
+include requirements-dev.txt
+
+include CONTRIBUTING.rst
+
+recursive-include test *.py cpanelrc.test.example
+recursive-include doc *.rst conf.py requirements.txt *.po
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
