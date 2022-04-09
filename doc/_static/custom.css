@@ -1,0 +1,33 @@
+button[data-md-color-primary=salmon] {
+    background-color: #cc6600
+}
+
+[data-md-color-primary=salmon] .md-typeset a {
+    color: #cc6600
+}
+
+[data-md-color-primary=salmon] .md-header,
+[data-md-color-primary=salmon] .md-hero {
+    background-color: #cc6600
+}
+
+[data-md-color-primary=salmon] .md-nav__link--active,
+[data-md-color-primary=salmon] .md-nav__link:active {
+    color: #cc6600
+}
+
+[data-md-color-primary=salmon] .md-tabs {
+	background-color: #cc6600
+}
+
+@media only screen and (max-width:76.1875em) {
+    html [data-md-color-primary=salmon] .md-nav--primary .md-nav__title--site {
+        background-color: #cc6600
+    }
+}
+
+@media only screen and (max-width:59.9375em) {
+    [data-md-color-primary=salmon] .md-nav__source {
+        background-color: #cc6600
+    }
+}
