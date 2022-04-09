@@ -2,6 +2,8 @@
 Installation
 ============
 
+`Leer en español <../es/installation.html>`_
+
 Requirements
 ============
 

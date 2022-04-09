@@ -2,6 +2,8 @@
 How to contribute
 =================
 
+`Leer en español <../es/contributing.html>`_
+
 To contribute, just fork this repository, start a new branch and open a `pull request`_.
 
 .. _`pull request`: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
@@ -281,8 +283,21 @@ to build the documentation are in ``doc/requirements.txt``.
 Translations
 ============
 
-I maintain a Spanish translation of the documentation, generated using strings from a
-catalog file ``locale/es/LC_MESSAGES/index.po``.
+The English language ``*.rst`` files in ``doc`` are the source documentation files. Any
+translation is based on these documents. Translation is done on a string-by-string basis,
+using the original English string as a key (``msgid``), and the corresponding translated
+string as a value (``msgstr``). For example, for Spanish:
+
+.. code::
+
+    msgid "To be, or not to be, that is the question"
+    msgstr "Ser o no ser, he ahí el dilema"
+
+These ``msgid`` and ``msgstr`` pairs are kept in a *catalog* file (``*.po``), which is a
+simple text file. These catalog files are stored in the ``doc/locale`` subdirectory.
+
+I personally maintain a Spanish translation of the documentation in catalog files 
+``doc/locale/es/LC_MESSAGES/*.po``.
 
 Catalog ``.po`` files are compiled into ``.mo`` files using the Sphinx internationalization
 utility. These compiled ``.mo`` files are later used to compose translated versions when
@@ -311,7 +326,7 @@ To add a new translation:
 2. Edit the ``.po`` file created in step 1 and insert the translated strings as
    ``msgstr`` fields. For example:
 
-   .. code:: sh
+   .. code::
 
        msgid "Indices and tables"
        msgstr "Indices et tableaux"
@@ -325,7 +340,35 @@ To add a new translation:
    The above command will create a new static HTML tree in ``doc/build/html/<language code>``.
    For example, for French, it will create a new tree in ``doc/build/html/fr``.
 
-For further information see the `Internationalization Guide`_
+Correcting and expanding an existing translation
+------------------------------------------------
+
+If you correct an existing translation, or if you expand the original ``doc/*.rst`` source
+documentation files, you need to update the translations as well:
+
+1. Run the catalog updater:
+
+   .. code:: sh
+
+       $ make locale iso=<language code>
+
+   where ``<language code>`` is the `ISO 639-1 code`_. You need to run it for every
+   translated language.
+
+2. The previous step will emit a report telling you which ``.po`` files need to be updated,
+   for example:
+
+   .. code::
+
+       Update: doc/locale/es/LC_MESSAGES/reference.po +5, -2
+       Update: doc/locale/es/LC_MESSAGES/contributing.po +9, -0
+
+   Open the mentioned ``.po`` files and edit or add new ``msgstr`` strings. Be advised that some
+   entries might get annotated as ``#, fuzzy``, which essentially means the internationalization
+   engine is not sure if there already exists a translation for the entry because of similarities
+   with another entry. Just edit the ``msgstr`` text and delete the ``fuzzy`` line.
+
+For further information, see the `Internationalization Guide`_
 
 .. _`ISO 639-1 code`: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 .. _`Internationalization Guide`: https://www.sphinx-doc.org/en/master/usage/advanced/intl.html

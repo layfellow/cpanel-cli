@@ -2,6 +2,8 @@
 cPanel Command Line Interface
 =============================
 
+`Leer en español <../es/index.html>`_
+
 **cpanel-cli** is a CLI utility for running tasks on a cPanel-controlled website.
 
 Quickly execute commands in a terminal to manage a website instead of logging

@@ -2,7 +2,7 @@
 How to contribute
 =================
 
-`LÉAME en español <#cómo-contribuir>`_
+`LÉAME en español <#como-contribuir>`_
 
 To contribute, just fork this repository, start a new branch and open a `pull request`_.
 
@@ -284,8 +284,21 @@ to build the documentation are in ``doc/requirements.txt``.
 Translations
 ============
 
-I maintain a Spanish translation of the documentation, generated using strings from a
-catalog file ``locale/es/LC_MESSAGES/index.po``.
+The English language ``*.rst`` files in ``doc`` are the source documentation files. Any
+translation is based on these documents. Translation is done on a string-by-string basis,
+using the original English string as a key (``msgid``), and the corresponding translated
+string as a value (``msgstr``). For example, for Spanish:
+
+.. code::
+
+    msgid "To be, or not to be, that is the question"
+    msgstr "Ser o no ser, he ahí el dilema"
+
+These ``msgid`` and ``msgstr`` pairs are kept in a *catalog* file (``*.po``), which is a
+simple text file. These catalog files are stored in the ``doc/locale`` subdirectory.
+
+I personally maintain a Spanish translation of the documentation in catalog files 
+``doc/locale/es/LC_MESSAGES/*.po``.
 
 Catalog ``.po`` files are compiled into ``.mo`` files using the Sphinx internationalization
 utility. These compiled ``.mo`` files are later used to compose translated versions when
@@ -328,7 +341,35 @@ To add a new translation:
    The above command will create a new static HTML tree in ``doc/build/html/<language code>``.
    For example, for French, it will create a new tree in ``doc/build/html/fr``.
 
-For further information see the `Internationalization Guide`_
+Correcting and expanding an existing translation
+------------------------------------------------
+
+If you correct an existing translation, or if you expand the original ``doc/*.rst`` source
+documentation files, you need to update the translations as well:
+
+1. Run the catalog updater:
+
+   .. code:: sh
+
+       $ make locale iso=<language code>
+
+   where ``<language code>`` is the `ISO 639-1 code`_. You need to run it for every
+   translated language.
+
+2. The previous step will emit a report telling you which ``.po`` files need to be updated,
+   for example:
+
+   .. code::
+
+       Update: doc/locale/es/LC_MESSAGES/reference.po +5, -2
+       Update: doc/locale/es/LC_MESSAGES/contributing.po +9, -0
+
+   Open the mentioned ``.po`` files and edit or add new ``msgstr`` strings. Be advised that some
+   entries might get annotated as ``#, fuzzy``, which essentially means the internationalization
+   engine is not sure if there already exists a translation for the entry because of similarities
+   with another entry. Just edit the ``msgstr`` text and delete the ``fuzzy`` line.
+
+For further information, see the `Internationalization Guide`_
 
 .. _`ISO 639-1 code`: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 .. _`Internationalization Guide`: https://www.sphinx-doc.org/en/master/usage/advanced/intl.html
@@ -612,12 +653,25 @@ usado para construir la documentación están en ``doc/requirements.txt``.
 Traducciones
 ============
 
-La traducción al español de la documentación se genera a partir de cadenas de un
-archivo de catálogo ``locale/es/LC_MESSAGES/index.po``.
+Los archivos ``.*rst`` en ``doc`` son las fuentes de los archivos de documentación. Todas las
+traducciones se basan en estos documentos. La traducción se realiza cadena por cadena, utilizando
+la cadena original en inglés como clave (``.msgid``), y la correspondiente cadena traducida como
+valor (``msgstr``). Por ejemplo, para español:
+
+.. code::
+
+    msgid "To be, or not to be, that is the question"
+    msgstr "Ser o no ser, he ahí el dilema"
+
+Estos pares ``msgid`` y ``msgstr`` se guardan en un archivo de catálogo (``.*po``), que es un
+archivo de texto simple. Estos archivos de catálogo se almacenan en el subdirectorio ``doc/locale``.
+
+Personalmente mantengo una traducción al español de la documentación en los archivos de
+catálogo ``.doc/locale/es/LC_MESSAGES/*.po``.
 
 Los archivos ``.po`` de catálogo se compilan en archivos ``.mo`` con el utilitario de
-internacionalización de Sphinx. Estos archivos ``.mo`` compilados se utilizan luego para
-componer las versiones traducidas durante la `Construcción de la documentación`_.
+internacionalización de Sphinx. Estos archivos ``.mo`` compilados se utilizan luego para componer
+las versiones traducidas durante la `Construcción de la documentación`_.
 
 Cómo añadir una traducción
 --------------------------
@@ -655,6 +709,35 @@ Para añadir una nueva traducción:
 
    El comando anterior crea un nuevo árbol HTML estático en ``doc/build/html/<código de idioma>``.
    Por ejemplo, para el francés, crearía un nuevo árbol en ``doc/build/html/fr``.
+
+Cómo corregir y ampliar una traducción existente
+------------------------------------------------
+
+Si se corrige una traducción existente, o si se expande el texto de los archivos de
+documentación originales ``doc/*.rst``, también hay que actualizar las traducciones:
+
+1. Ejecute el actualizador de catálogos:
+
+   .. code:: sh
+
+       $ make locale iso=<language code>
+
+   donde ``<language code>`` es el `código ISO 639-1`_. Tiene que ejecutarlo para cada lenguaje
+   traducido.
+
+2. El paso anterior emite un informe con los archivos ``.po`` que necesitan ser actualizados,
+   por ejemplo:
+
+   .. code::
+
+       Update: doc/locale/es/LC_MESSAGES/reference.po +5, -2
+       Update: doc/locale/es/LC_MESSAGES/contributing.po +9, -0
+
+   Abra los archivos ``.po`` mencionados y edite o agregue nuevas cadenas ``msgstr``.
+   Tenga en cuenta que algunas entradas pueden ser anotadas como ``#, fuzzy``, lo que significa
+   básicamente que el motor de internacionalización no está seguro si ya existe una traducción
+   para esa entrada debido a similitudes con otra entrada. Sólo se necesita editar el texto de
+   ``msgstr`` y eliminar la línea ``fuzzy``.
 
 Para más información consulte la `Guía de internacionalización`_.
 

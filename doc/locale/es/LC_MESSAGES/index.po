@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 04:47-0400\n"
+"POT-Creation-Date: 2022-04-08 19:43-0400\n"
 "PO-Revision-Date: 2021-10-10 16:14-0300\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -21,6 +21,10 @@ msgid "cPanel Command Line Interface"
 msgstr "Interfaz de línea de comandos para cPanel"
 
 #: ../../index.rst:5
+msgid "`Leer en español <../es/index.html>`_"
+msgstr "`Read in English <../en/index.html>`_"
+
+#: ../../index.rst:7
 msgid ""
 "**cpanel-cli** is a CLI utility for running tasks on a cPanel-controlled "
 "website."
@@ -28,7 +32,7 @@ msgstr ""
 "**cpanel-cli** es un utilitario de línea de comandos para ejecutar tareas"
 " en un sitio web controlado por cPanel."
 
-#: ../../index.rst:7
+#: ../../index.rst:9
 msgid ""
 "Quickly execute commands in a terminal to manage a website instead of "
 "logging into `cPanel`_ and clicking your way around the web interface. "
@@ -38,27 +42,27 @@ msgstr ""
 " la interfaz web de `cPanel`_. También puede usar este utilitario para "
 "trabajos de *scripting*."
 
-#: ../../index.rst:14
+#: ../../index.rst:16
 msgid "Some examples"
 msgstr "Algunos ejemplos"
 
-#: ../../index.rst:16
+#: ../../index.rst:18
 msgid "Print help:"
 msgstr "Imprime la ayuda:"
 
-#: ../../index.rst:22
+#: ../../index.rst:24
 msgid "Print help on implemented modules:"
 msgstr "Imprime la ayuda de los módulos implementados:"
 
-#: ../../index.rst:28
+#: ../../index.rst:30
 msgid "Print help on module ``mail``:"
 msgstr "Imprime la ayuda del módulo ``mail``:"
 
-#: ../../index.rst:34
+#: ../../index.rst:36
 msgid "List cPanel email accounts:"
 msgstr "Lista las cuentas de correo de cPanel:"
 
-#: ../../index.rst:40
+#: ../../index.rst:42
 msgid ""
 "Get a description of email filter ``spamkiller`` associated to email "
 "account ``scott@example.com``:"
@@ -66,16 +70,17 @@ msgstr ""
 "Obtiene la description del filtro de correo ``spamkiller`` asociado a la "
 "cuenta de de correo ``scott@example.com``:"
 
-#: ../../index.rst:47
+#: ../../index.rst:49
 msgid "The output is generally JSON, so it’s easily parsable using, e.g., `jq`_"
 msgstr ""
 "La salida es generalmente JSON, por lo que es fácilmente analizable "
 "utilizando, por ejemplo, `jq`_"
 
-#: ../../index.rst:52
+#: ../../index.rst:54
 msgid "User’s Guide"
 msgstr "Guía del usuario"
 
-#: ../../index.rst:61
+#: ../../index.rst:63
 msgid "For developers"
 msgstr "Para desarrolladores"
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-07 00:17-0400\n"
+"POT-Creation-Date: 2022-04-08 19:54-0400\n"
 "PO-Revision-Date: 2022-04-06 23:40-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -20,37 +20,41 @@ msgstr ""
 msgid "Installation"
 msgstr "Instalación"
 
-#: ../../installation.rst:6
+#: ../../installation.rst:5
+msgid "`Leer en español <../es/installation.html>`_"
+msgstr "`Read in English <../en/installation.html>`_"
+
+#: ../../installation.rst:8
 msgid "Requirements"
 msgstr "Requisitos"
 
-#: ../../installation.rst:8
+#: ../../installation.rst:10
 msgid "Linux or macOS; it might work `on Windows`_"
 msgstr "Linux o macOS; tal vez podría funcionar `en Windows`_"
 
-#: ../../installation.rst:9
+#: ../../installation.rst:11
 msgid "Python 3.8 or later"
 msgstr "Python 3.8 o superior"
 
-#: ../../installation.rst:14
+#: ../../installation.rst:16
 msgid "Installation on Linux"
 msgstr "Instalación en Linux"
 
-#: ../../installation.rst:16
+#: ../../installation.rst:18
 msgid "Install Python 3.8 or later using your distro’s package manager."
 msgstr ""
 "Instale Python 3.8 o superior usando el gestor de paquetes de su "
 "distribución."
 
-#: ../../installation.rst:18 ../../installation.rst:38
+#: ../../installation.rst:20 ../../installation.rst:40
 msgid "Then run:"
 msgstr "Luego ejecute:"
 
-#: ../../installation.rst:24 ../../installation.rst:44
+#: ../../installation.rst:26 ../../installation.rst:46
 msgid "Test the installation using:"
 msgstr "Pruebe la instalación con:"
 
-#: ../../installation.rst:30
+#: ../../installation.rst:32
 msgid ""
 "Tested on Ubuntu 21.10 “Impish Indri”, but it has no specific Ubuntu "
 "requirements, so any Linux distro with Python 3.8 or later should work."
@@ -59,15 +63,15 @@ msgstr ""
 "específicos de Ubuntu, por lo que cualquier distribución de Linux con "
 "Python 3.8 o superior debería funcionar."
 
-#: ../../installation.rst:34
+#: ../../installation.rst:36
 msgid "Installation on macOS"
 msgstr "Instalación en macOS"
 
-#: ../../installation.rst:36
+#: ../../installation.rst:38
 msgid "Install Python 3.8 or later using `Homebrew <https://brew.sh/>`_."
 msgstr "Instale Python 3.8 o superior usando `Homebrew <https://brew.sh/>`_."
 
-#: ../../installation.rst:50
+#: ../../installation.rst:52
 msgid ""
 "Tested on macOS 10.15.7 “Catalina”; should also work on “Big Sur” or "
 "later."
@@ -75,11 +79,11 @@ msgstr ""
 "Probado en macOS 10.15.7 “Catalina”; también debería funcionar en “Big "
 "Sur” o superior."
 
-#: ../../installation.rst:53
+#: ../../installation.rst:55
 msgid "What about installing on Windows?"
 msgstr "¿Se puede instalar en Windows?"
 
-#: ../../installation.rst:55
+#: ../../installation.rst:57
 msgid ""
 "I suspect this should work on Windows 10/11 using `WSL 2`_ (Windows "
 "Subsystem for Linux)."
@@ -87,7 +91,7 @@ msgstr ""
 "Sospecho que esto debería funcionar en Windows 10/11 usando `WSL 2`_ "
 "(Windows Subsystem for Linux)."
 
-#: ../../installation.rst:59
+#: ../../installation.rst:61
 msgid ""
 "Unfortunately, I don’t have access to a Windows system, so I can’t "
 "confirm this. Pull requests are very much welcome in case anyone wants to"
@@ -97,11 +101,11 @@ msgstr ""
 "puedo confirmarlo. Los pull requests son muy bienvenidos en caso de que "
 "alguien quiera probarlo y contribuir."
 
-#: ../../installation.rst:63
+#: ../../installation.rst:65
 msgid "Authentication"
 msgstr "Autenticación"
 
-#: ../../installation.rst:65
+#: ../../installation.rst:67
 msgid ""
 "To authenticate against your cPanel instance, the recommended way is to "
 "create a ``.cpanelrc`` file in your ``$HOME`` directory with the "
@@ -111,15 +115,15 @@ msgstr ""
 "crear un archivo ``.cpanelrc`` en su directorio ``$HOME`` con el "
 "siguiente contenido:"
 
-#: ../../installation.rst:74
+#: ../../installation.rst:76
 msgid "``hostname`` is the hostname of your cPanel instance"
 msgstr "``hostname`` es el nombre de host de la instancia de cPanel"
 
-#: ../../installation.rst:75
+#: ../../installation.rst:77
 msgid "``username`` is your user name on your instance"
 msgstr "``username`` es el nombre de usuario en la instancia"
 
-#: ../../installation.rst:76
+#: ../../installation.rst:78
 msgid ""
 "``utoken`` is an API token associated with ``username``. See `How to use "
 "cPanel API tokens`_ for further information on how to create tokens."
@@ -127,43 +131,44 @@ msgstr ""
 "``utoken`` es un token de API asociado con ``username``. Véase `How to "
 "use cPanel API tokens`_ para más información de cómo crear tokens."
 
-#: ../../installation.rst:81
+#: ../../installation.rst:83
 msgid ""
 "Alternatively, you can set the following environmental variables in your "
 "shell:"
-msgstr "Como alternativa, se pueden establecer las siguientes variables de "
+msgstr ""
+"Como alternativa, se pueden establecer las siguientes variables de "
 "ambiente en el shell:"
 
-#: ../../installation.rst:83
+#: ../../installation.rst:85
 msgid "``CPANEL_HOSTNAME``"
 msgstr "``CPANEL_HOSTNAME``"
 
-#: ../../installation.rst:84
+#: ../../installation.rst:86
 msgid "``CPANEL_USERNAME``"
 msgstr "``CPANEL_USERNAME``"
 
-#: ../../installation.rst:85
+#: ../../installation.rst:87
 msgid "``CPANEL_UTOKEN``"
 msgstr "``CPANEL_UTOKEN``"
 
-#: ../../installation.rst:87
+#: ../../installation.rst:89
 msgid "For example:"
 msgstr "Por ejemplo:"
 
-#: ../../installation.rst:96
+#: ../../installation.rst:98
 msgid ""
 "Or you can pass the credentials directly on the command line using the "
 "``-H``, ``-U`` and ``-T`` options. For example:"
 msgstr ""
-"También se pueden pasar las credenciales directamente en la línea de comandos con "
-"las opciones ``-H``, ``-U`` and ``-T``. Por ejemplo:"
+"También se pueden pasar las credenciales directamente en la línea de "
+"comandos con las opciones ``-H``, ``-U`` and ``-T``. Por ejemplo:"
 
-#: ../../installation.rst:103
+#: ../../installation.rst:105
 msgid ""
 "Options passed on the command line override environmental variables, "
 "which in turn override ``.cpanelrc`` values."
 msgstr ""
-"Las opciones pasadas en la línea de comandos tienen precedencia sobre las "
-"variables de ambiente, las cuales a su vez tienen precedencia sobre los "
+"Las opciones pasadas en la línea de comandos tienen precedencia sobre las"
+" variables de ambiente, las cuales a su vez tienen precedencia sobre los "
 "valores de ``.cpanelrc``."
 
