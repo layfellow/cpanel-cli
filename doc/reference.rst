@@ -1,6 +1,8 @@
-==========================
-Complete Command Reference
-==========================
+=================
+Command Reference
+=================
+
+`Leer en español <../es/reference.html>`_
 
 Module: ``features``
 ====================
@@ -15,7 +17,7 @@ Module: ``features``
         $ cpanel list features
 
 Module: ``quota``
-====================
+=================
 
 **get quota**
     Get the cPanel account’s total disk quota information in megabytes.
@@ -28,7 +30,7 @@ Module: ``quota``
         $ cpanel get quota
 
 Module: ``usage``
-====================
+=================
 
 **get usage**
     Show resource usage and some statistics, like bandwidth, number of subdomains,
@@ -42,7 +44,7 @@ Module: ``usage``
         $ cpanel get usage
 
 Module: ``stats``
-====================
+=================
 
 **get stats STAT...**
     Show detailed data and statistics, like hostname, file usage, database usage,
@@ -58,6 +60,79 @@ Module: ``stats``
 
         $ cpanel get stats hostname
         $ cpanel get stats machinetype cpanelversion
+
+Module: ``subaccounts``
+=======================
+
+**list subaccounts**
+    List the sub-accounts of the main cPanel account, along with detailed information
+    of each sub-account. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel list subaccounts
+
+**get subaccount GUID**
+    Show detailed information of a sub-account, identified by its GUID. To get
+    this GUID, use ``cpanel list subaccounts``. Note that only sub-accounts with a
+    ``sub_account_exists`` flag set to 1 can be queried. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
+
+Module: ``backups``
+===================
+
+All ``create backup`` commands create a backup tarball (a ``.tar.gz`` file) of the user’s home
+directory along with other account data, such as the crontab, API tokens, log files and DB data.
+The backup tarball’s name is ``backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz``.
+
+If you pass an optional EMAIL argument, the backup engine will send a confirmation email
+after it completes the backup.
+
+**cpanel create backup home [EMAIL]**
+    Create a backup tarball and store it in the user’s home directory itself.
+
+**cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
+    Create a backup tarball and store it on a remote FTP server.
+
+    HOST is the hostname of the remote FTP server.
+
+    USERNAME and PASSWORD are the credentials to log in to it.
+
+    Optional DIRECTORY is the destination directory on the remote server; by default use the
+    remote user’s login directory. Note that DIRECTORY is not an absolute path, but a path
+    relative to the login directory, i.e., ``/public`` corresponds to
+    ``<remote login directory>/public``.
+
+**cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
+    Create a backup tarball and store it on a remote SCP server.
+
+    USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ``create backup ftp``.
+
+    *Examples*
+
+    .. code:: sh
+
+        $ cpanel backup home
+        $ cpanel backup home scott@example.com
+        $ cpanel backup ftp scott tiger ftp.example.com
+        $ cpanel backup ftp scott tiger ftp.example.com /backup
+        $ cpanel backup scp scott tiger ssh.example.com /backup scott@example.com
+
+**cpanel list backups**
+    List the account’s backup files. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel list backups
 
 Module: ``mail``
 ================

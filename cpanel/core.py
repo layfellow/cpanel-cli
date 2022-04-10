@@ -88,6 +88,45 @@ class CPanelEndpoint:
 		return self.safely(r, lambda: self.extract(r, key))
 
 
+	def create_backup(self, *args: str) -> str:
+		"""Create a backup tarball and store it on a remote server.
+
+		args      variable argument list with username, password, host,
+		          optional directory and optional confirmation email
+
+		Returns "OK" or prints error
+		"""
+		# kwargs for CPanelAPi call to Backup.fullbackup_to_*().
+		parameters: Mapping[str, NullableStr] = {}
+
+		try:
+			if args[0] == 'ftp' or args[0] == 'scp':
+				parameters['username'] = args[1]
+				parameters['password'] = args[2]
+				parameters['host'] = args[3]
+				if len(args) > 4:
+					parameters['directory'] = args[4]
+				if len(args) > 5:
+					parameters['email'] = args[5]
+			elif args[0] == 'home':
+				if len(args) > 1:
+					parameters['email'] = args[1]
+			else:
+				raise CPanelError("create backup target must be ftp, home or scp")
+
+			log.debug(str(args))
+
+			if args[0] == 'ftp':
+				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_ftp(**parameters))
+			elif args[0] == 'scp':
+				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_scp_with_password(**parameters))
+			elif args[0] == 'home':
+				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters))
+
+		except IndexError:
+			raise CPanelError("missing arguments for create backup")
+
+
 	def set_mail_filter(self, account: str, filterfile: str) -> str:
 		"""Set filter for email account.
 

@@ -78,6 +78,16 @@ class TestCore(unittest.TestCase):
 			self.assertTrue(len(stat['value']) > 0)
 
 
+	def test_list_subaccounts(self) -> None:
+		subaccounts: List[JSONType] = json.loads(dispatch(self.host, ["list", "subaccounts"]))
+		print(subaccounts)
+
+		self.assertTrue(len(subaccounts) > 0)
+		subaccount: JSONType
+		for subaccount in subaccounts:
+			self.assertTrue(len(subaccount['guid']) > 0)
+
+
 	def test_list_mail_accounts(self) -> None:
 		emails: List[JSONType] = self.list_mail_accounts()
 		print(emails)

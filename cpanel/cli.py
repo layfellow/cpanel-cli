@@ -122,9 +122,11 @@ def version() -> str:
 
 def usage(cmd: NullableStr = None) -> str:
 	help: str
-	if cmd: cmd = cmd.lower()
 
-	if cmd == "module" or cmd == "modules":
+	def cmd_starts_with(cmd: str, text: str) -> bool:
+		return cmd and cmd[0:len(text)].lower() == text
+
+	if cmd_starts_with(cmd, "mod"):
 		help = """\
 		Usage: cpanel help MODULE
 
@@ -145,6 +147,16 @@ def usage(cmd: NullableStr = None) -> str:
 		stats
 		    cpanel get stats STAT...
 
+		subaccounts
+		    cpanel list subaccounts
+		    cpanel get subaccount GUID
+
+		backups
+		    cpanel create backup home [EMAIL]
+		    cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+		    cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+		    cpanel list backups
+
 		mail
 		    cpanel list mail accounts
 		    cpanel list mail filters ACCOUNT
@@ -156,7 +168,7 @@ def usage(cmd: NullableStr = None) -> str:
 		for MODULE; for example, ‘cpanel help mail’ to print detailed help on all
 		the functions implemented for the ‘mail’ module.
 		"""
-	elif cmd == "feature" or cmd == "features":
+	elif cmd_starts_with(cmd, "feat"):
 		help = """\
 		Usage: cpanel list features
 
@@ -164,7 +176,7 @@ def usage(cmd: NullableStr = None) -> str:
 
 		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 		"""
-	elif cmd == "quota":
+	elif cmd_starts_with(cmd, "quo"):
 		help = """\
 		Usage: cpanel get quota
 
@@ -173,7 +185,7 @@ def usage(cmd: NullableStr = None) -> str:
 
 		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 		"""
-	elif cmd == "usage":
+	elif cmd_starts_with(cmd, "usage"):
 		help = """\
 		Usage: cpanel get usage
 
@@ -183,7 +195,7 @@ def usage(cmd: NullableStr = None) -> str:
 
 		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 		"""
-	elif cmd == "stats":
+	elif cmd_starts_with(cmd, "stat"):
 		help = """\
 		Usage: cpanel get stats STAT...
 
@@ -200,7 +212,83 @@ def usage(cmd: NullableStr = None) -> str:
 
 		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 		"""
-	elif cmd == "mail":
+	elif cmd_starts_with(cmd, "subacc"):
+		help = """\
+		Usage:
+		    cpanel list subaccounts
+		    cpanel get subaccount GUID
+
+		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+		COMMANDS
+
+		list subaccounts
+		    List the sub-accounts of the main cPanel account, along with detailed information
+		    of each sub-account. Output is JSON-formatted.
+
+		    EXAMPLE
+		        cpanel list subaccounts
+
+		get subaccount GUID
+		    Show detailed information of a sub-account, identified by its GUID. To get
+		    this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts with a
+		    sub_account_exists flag set to 1 can be queried. Output is JSON-formatted.
+
+		    EXAMPLE
+		        cpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
+		"""
+	elif cmd_starts_with(cmd, "back"):
+		help = """\
+		Usage:
+		    cpanel create backup home [EMAIL]
+		    cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+		    cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+		    cpanel list backups
+
+		For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+		COMMANDS
+
+		All ‘create backup’ commands create a backup tarball (a .tar.gz file) of
+		the user’s home directory along with other account data, such as the crontab,
+		API tokens, log files and DB data. The backup tarball’s name is
+		backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz.
+
+		If you pass an optional EMAIL argument, the backup engine will send a
+		confirmation email after it completes the backup.
+
+		create backup home [EMAIL]
+		    Create a backup tarball and store it in the user’s home directory itself.
+
+		create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+		    Create a backup tarball and store it on a remote FTP server.
+
+		    HOST is the hostname of the remote FTP server.
+		    USERNAME and PASSWORD are the credentials to log in to it.
+		    Optional DIRECTORY is the destination directory on the remote server;
+		    by default use the remote user’s login directory. Note that DIRECTORY
+		    is not an absolute path, but a path relative to the login directory, i.e.,
+		    /public corresponds to <remote login directory>/public.
+
+		create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+		    Create a backup tarball and store it on a remote SCP server.
+
+		    USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ‘create backup ftp’.
+
+		    EXAMPLES
+		        cpanel backup home
+		        cpanel backup home scott@example.com
+		        cpanel backup ftp scott tiger ftp.example.com
+		        cpanel backup ftp scott tiger ftp.example.com /backup
+		        cpanel backup scp scott tiger ssh.example.com /backup scott@example.com
+
+		list backups
+		    List the account’s backup files. Output is JSON-formatted.
+
+		    EXAMPLE
+		        cpanel list backups
+		"""
+	elif cmd_starts_with(cmd, "mail"):
 		help = """\
 		Usage:
 		    cpanel list mail accounts
@@ -297,6 +385,8 @@ def usage(cmd: NullableStr = None) -> str:
 		    quota
 		    usage
 		    stats
+		    subaccounts
+		    backups
 		    mail
 
 		Use ‘cpanel help modules’ for more information about them.

@@ -51,6 +51,18 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "get stats"):
 			r = host.dump(lambda: uapi.StatsBar.get_stats(display = "|".join(args[2:])))
 
+		elif cmd_is(cmd, "list subaccounts"):
+			r = host.dump(lambda: uapi.UserManager.list_users())
+
+		elif cmd_is(cmd, "get subaccount"):
+			r = host.dump(lambda: uapi.UserManager.lookup_user(guid = args[2]))
+
+		elif cmd_is(cmd, "create backup"):
+			r = host.create_backup(*args[2:])
+
+		elif cmd_is(cmd, "list backups"):
+			r = host.dump(lambda: uapi.Backup.list_backups())
+
 		elif cmd_is(cmd, "list mail accounts"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
 
