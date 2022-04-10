@@ -21,8 +21,8 @@ msgid "How to contribute"
 msgstr "Cómo contribuir"
 
 #: ../../contributing.rst:5
-msgid "`Leer en español <../es/contributing.html>`_"
-msgstr "`Read in English <../en/contributing.html>`_"
+msgid "`Leer en español </es/latest/contributing.html>`_"
+msgstr "`Read in English </en/latest/contributing.html>`_"
 
 #: ../../contributing.rst:7
 msgid ""

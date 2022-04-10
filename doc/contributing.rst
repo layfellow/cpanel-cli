@@ -2,7 +2,7 @@
 How to contribute
 =================
 
-`Leer en español <../es/contributing.html>`_
+`Leer en español </es/latest/contributing.html>`_
 
 To contribute, just fork this repository, start a new branch and open a `pull request`_.
 

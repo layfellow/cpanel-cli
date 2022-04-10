@@ -14,11 +14,11 @@ extensions = []
 templates_path = []
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
 html_static_path = ['_static/']
-# html_title = ""
+html_title = cpanel.__description__ + " " + cpanel.__version__
 locale_dirs = ['locale/']
 gettext_compact = False
 html_sidebars = {
-    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+    "**": ['logo-text.html', 'globaltoc.html', 'localtoc.html', 'searchbox.html']
 }
 html_theme = 'sphinx_material'
 html_theme_options = {

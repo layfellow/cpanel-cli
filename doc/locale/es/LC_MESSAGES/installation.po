@@ -21,8 +21,8 @@ msgid "Installation"
 msgstr "Instalación"
 
 #: ../../installation.rst:5
-msgid "`Leer en español <../es/installation.html>`_"
-msgstr "`Read in English <../en/installation.html>`_"
+msgid "`Leer en español </es/latest/installation.html>`_"
+msgstr "`Read in English </en/latest/installation.html>`_"
 
 #: ../../installation.rst:8
 msgid "Requirements"

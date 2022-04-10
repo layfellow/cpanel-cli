@@ -2,7 +2,7 @@
 Command Reference
 =================
 
-`Leer en español <../es/reference.html>`_
+`Leer en español </es/latest/reference.html>`_
 
 Module: ``features``
 ====================

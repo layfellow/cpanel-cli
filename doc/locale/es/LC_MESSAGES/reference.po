@@ -21,8 +21,8 @@ msgid "Command Reference"
 msgstr "Referencia de comandos"
 
 #: ../../reference.rst:5
-msgid "`Leer en español <../es/reference.html>`_"
-msgstr "`Read in English <../en/reference.html>`_"
+msgid "`Leer en español </es/latest/reference.html>`_"
+msgstr "`Read in English </en/latest/reference.html>`_"
 
 #: ../../reference.rst:8
 msgid "Module: ``features``"

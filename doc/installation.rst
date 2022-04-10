@@ -2,7 +2,7 @@
 Installation
 ============
 
-`Leer en español <../es/installation.html>`_
+`Leer en español </es/latest/installation.html>`_
 
 Requirements
 ============
