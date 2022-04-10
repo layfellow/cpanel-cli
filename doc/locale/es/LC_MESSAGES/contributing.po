@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 07:34-0400\n"
+"POT-Creation-Date: 2022-04-10 00:05-0400\n"
 "PO-Revision-Date: 2022-04-08 19:50-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -520,15 +520,19 @@ msgstr ""
 "utilizaría:"
 
 #: ../../contributing.rst:324
-msgid "This would add a new ``locale/fr/LC_MESSAGES/index.po``."
-msgstr "Esto añadiría un nuevo ``locale/fr/LC_MESSAGES/index.po``."
+msgid ""
+"This would add a new ``locale/fr/LC_MESSAGES`` directory with several "
+"``.po`` files in it."
+msgstr ""
+"Este añadiría un nuevo directorio ``locale/fr/LC_MESSAGES`` con varios "
+"archivos ``.po``."
 
 #: ../../contributing.rst:326
 msgid ""
-"Edit the ``.po`` file created in step 1 and insert the translated strings"
-" as ``msgstr`` fields. For example:"
+"Edit the ``.po`` files created in step 1 and insert the translated "
+"strings as ``msgstr`` fields. For example:"
 msgstr ""
-"Edite el archivo ``.po`` creado en el paso 1 e inserte las cadenas "
+"Edite los archivos ``.po`` creado en el paso 1 e inserte las cadenas "
 "traducidas como campos ``msgstr``. Por ejemplo:"
 
 #: ../../contributing.rst:334

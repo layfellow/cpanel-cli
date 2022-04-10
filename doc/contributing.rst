@@ -321,9 +321,9 @@ To add a new translation:
 
        $ make locale iso=fr
 
-   This would add a new ``locale/fr/LC_MESSAGES/index.po``.
+   This would add a new ``locale/fr/LC_MESSAGES`` directory with several ``.po`` files in it.
 
-2. Edit the ``.po`` file created in step 1 and insert the translated strings as
+2. Edit the ``.po`` files created in step 1 and insert the translated strings as
    ``msgstr`` fields. For example:
 
    .. code::

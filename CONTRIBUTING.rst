@@ -322,9 +322,10 @@ To add a new translation:
 
        $ make locale iso=fr
 
-   This would add a new ``locale/fr/LC_MESSAGES/index.po``.
+   This would add a new ``locale/fr/LC_MESSAGES/index.po`` directory with several ``.po``
+   files in it.
 
-2. Edit the ``.po`` file created in step 1 and insert the translated strings as
+2. Edit the ``.po`` files created in step 1 and insert the translated strings as
    ``msgstr`` fields. For example:
 
    .. code:: sh
@@ -691,9 +692,9 @@ Para añadir una nueva traducción:
 
        $ make locale iso=fr
 
-   Esto añadiría un nuevo ``locale/fr/LC_MESSAGES/index.po``.
+   Esto añadiría un nuevo directorio ``locale/fr/LC_MESSAGES`` con varios archivos ``.po``.
 
-2. Edite el archivo ``.po`` creado en el paso 1 e inserte las cadenas traducidas
+2. Edite los archivo ``.po`` creados en el paso 1 e inserte las cadenas traducidas
    como campos ``msgstr``. Por ejemplo:
 
    .. code:: sh
