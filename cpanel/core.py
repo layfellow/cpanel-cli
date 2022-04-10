@@ -120,8 +120,8 @@ class CPanelEndpoint:
 				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_ftp(**parameters))
 			elif args[0] == 'scp':
 				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_scp_with_password(**parameters))
-			elif args[0] == 'home':
-				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters))
+
+			return self.check(lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters))
 
 		except IndexError:
 			raise CPanelError("missing arguments for create backup")

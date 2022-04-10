@@ -123,8 +123,8 @@ def version() -> str:
 def usage(cmd: NullableStr = None) -> str:
 	help: str
 
-	def cmd_starts_with(cmd: str, text: str) -> bool:
-		return cmd and cmd[0:len(text)].lower() == text
+	def cmd_starts_with(cmd: NullableStr, text: str) -> bool:
+		return cmd is not None and cmd[0:len(text)].lower() == text
 
 	if cmd_starts_with(cmd, "mod"):
 		help = """\
