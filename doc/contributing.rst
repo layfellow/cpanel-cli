@@ -343,10 +343,10 @@ To add a new translation:
 Correcting and expanding an existing translation
 ------------------------------------------------
 
-If you correct an existing translation, or if you expand the original ``doc/*.rst`` source
-documentation files, you need to update the translations as well:
+If you edit the original ``doc/*.rst`` source documentation files, you need to update the
+translations as well:
 
-1. Run the catalog updater:
+1. Run the following to update the catalog files:
 
    .. code:: sh
 
@@ -364,7 +364,7 @@ documentation files, you need to update the translations as well:
        Update: doc/locale/es/LC_MESSAGES/contributing.po +9, -0
 
    Open the mentioned ``.po`` files and edit or add new ``msgstr`` strings. Be advised that some
-   entries might get annotated as ``#, fuzzy``, which essentially means the internationalization
+   entries might get annotated as ``#, fuzzy``, which means the internationalization
    engine is not sure if there already exists a translation for the entry because of similarities
    with another entry. Just edit the ``msgstr`` text and delete the ``fuzzy`` line.
 

@@ -345,10 +345,10 @@ To add a new translation:
 Correcting and expanding an existing translation
 ------------------------------------------------
 
-If you correct an existing translation, or if you expand the original ``doc/*.rst`` source
-documentation files, you need to update the translations as well:
+if you edit the original ``doc/*.rst`` source documentation files, you need to update the
+translations as well:
 
-1. Run the catalog updater:
+1. Run the following to update the catalog files:
 
    .. code:: sh
 
@@ -366,7 +366,7 @@ documentation files, you need to update the translations as well:
        Update: doc/locale/es/LC_MESSAGES/contributing.po +9, -0
 
    Open the mentioned ``.po`` files and edit or add new ``msgstr`` strings. Be advised that some
-   entries might get annotated as ``#, fuzzy``, which essentially means the internationalization
+   entries might get annotated as ``#, fuzzy``, which means the internationalization
    engine is not sure if there already exists a translation for the entry because of similarities
    with another entry. Just edit the ``msgstr`` text and delete the ``fuzzy`` line.
 
@@ -714,10 +714,10 @@ Para añadir una nueva traducción:
 Cómo corregir y ampliar una traducción existente
 ------------------------------------------------
 
-Si se corrige una traducción existente, o si se expande el texto de los archivos de
-documentación originales ``doc/*.rst``, también hay que actualizar las traducciones:
+Si se edita el texto de los archivos de documentación originales ``doc/*.rst``, también hay
+que actualizar las traducciones:
 
-1. Ejecute el actualizador de catálogos:
+1. Ejecute lo siguiente para actualizar los catálogos:
 
    .. code:: sh
 
@@ -736,7 +736,7 @@ documentación originales ``doc/*.rst``, también hay que actualizar las traducc
 
    Abra los archivos ``.po`` mencionados y edite o agregue nuevas cadenas ``msgstr``.
    Tenga en cuenta que algunas entradas pueden ser anotadas como ``#, fuzzy``, lo que significa
-   básicamente que el motor de internacionalización no está seguro si ya existe una traducción
+   que el motor de internacionalización no está seguro si ya existe una traducción
    para esa entrada debido a similitudes con otra entrada. Sólo se necesita editar el texto de
    ``msgstr`` y eliminar la línea ``fuzzy``.
 
