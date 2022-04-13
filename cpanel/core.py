@@ -9,6 +9,7 @@ from cpanel_api import CPanelApi, Result, ClientError
 from typing import cast, Any, Union, Dict, List, Mapping, Callable
 
 NullableStr = Union[str, None]
+NullableBytes = Union[bytes, None]
 JSONType = Dict[str, Any]
 
 log: Logger = logging.getLogger(__name__)

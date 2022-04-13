@@ -3,6 +3,7 @@ include requirements.txt
 include requirements-dev.txt
 
 include CONTRIBUTING.rst
+include cpanel/USAGE
 
 recursive-include test *.py cpanelrc.test.example
 recursive-include doc *.rst conf.py requirements.txt *.po
