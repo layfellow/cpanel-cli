@@ -17,15 +17,39 @@ usage
 stats
     cpanel get stats STAT...
 
+accounts
+    cpanel list accounts
+    cpanel get account
+
 subaccounts
     cpanel list subaccounts
     cpanel get subaccount GUID
 
-backups
+backup
     cpanel create backup home [EMAIL]
     cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
     cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
     cpanel list backups
+
+cache
+    cpanel read cache
+    cpanel update cache
+
+locale
+    cpanel list locales
+    cpanel get locale
+    cpanel set locale LOCALE
+
+styles
+    cpanel list styles
+    cpanel get style
+    cpanel set style NAME
+    cpanel default style NAME
+
+themes
+    cpanel list themes
+    cpanel get theme
+    cpanel set theme NAME
 
 mail
     cpanel list mail accounts
@@ -81,6 +105,28 @@ EXAMPLES
     cpanel get stats machinetype cpanelversion
 
 For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+---
+
+Usage:
+    cpanel list accounts
+    cpanel get account
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+COMMANDS
+
+list accounts
+    List basic information of the main cPanel account. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel list accounts
+
+get account
+    Show detailed information of the main account. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel get account
 
 ---
 
@@ -157,6 +203,139 @@ list backups
 
     EXAMPLE
         cpanel list backups
+
+---
+
+Usage:
+    cpanel update cache
+    cpanel read cache
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+COMMANDS
+
+update cache
+    Create web browser cached file override ID. Output is JSON-formatted.
+    See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
+    for further information on cache IDs.
+
+    EXAMPLE
+        cpanel update cache
+
+read cache
+    Return web browser cached file override ID. Output is JSON-formatted.
+    See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
+    for further information on cache IDs.
+
+    EXAMPLE
+        cpanel read cache
+
+---
+
+Usage:
+    cpanel list locales
+    cpanel get locale
+    cpanel set locale LOCALE
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+COMMANDS
+
+list locales
+    List all the available locales (language and conventions) for the cPanel user
+    interface. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel list locales
+
+get locale
+    Return the current locale (language and conventions) used for the cPanel user
+    interface. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel get locale
+
+set locale LOCALE
+    Set the cPanel user interface locale (language and conventions) to LOCALE.
+    Use ‘cpanel list locales’ for a list of available locales.
+    In general terms, a LOCALE corresponds to a ISO 639-1 two-letter language code.
+
+    EXAMPLE
+        cpanel set locale bg  # Set UI to Bulgarian
+
+---
+
+Usage:
+    cpanel list styles
+    cpanel get style
+    cpanel set style NAME
+    cpanel default style NAME
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+COMMANDS
+
+A style is a variation of a user interface theme for cPanel. For example, the
+‘paper lantern’ theme has four styles: ‘basic’, ‘dark’, ‘light’ and ‘glass’.
+
+list styles
+    Return all the available user interface styles. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel list styles
+
+get style
+    Return the current user interface style. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel get style
+
+set style NAME
+    Set the current user interface style to NAME.
+    NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
+
+    EXAMPLE
+        cpanel set style dark
+
+default style NAME
+    Set the default user interface style to NAME.
+    NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
+
+    EXAMPLE
+        cpanel default style basic
+
+---
+
+Usage:
+    cpanel list themes
+    cpanel get theme
+    cpanel set theme NAME
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+A theme is a customized look and feel for the cPanel user interface. The default
+cPanel theme is ‘jupiter’; another popular theme is ‘paper lantern’.
+
+COMMANDS
+
+list themes
+    Return all the available themes. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel list themes
+
+get theme
+    Return the current theme. Output is JSON-formatted.
+
+    EXAMPLE
+        cpanel get theme
+
+set theme NAME
+    Set the current theme to NAME.
+    NAME must be one the available themes reported by ‘cpanel list themes’.
+
+    EXAMPLE
+        cpanel set theme paper_lantern
 
 ---
 
@@ -255,8 +434,13 @@ The currently implemented modules are:
     quota
     usage
     stats
+    accounts
     subaccounts
-    backups
+    backup
+    cache
+    locale
+    styles
+    themes
     mail
 
 Use ‘cpanel help modules’ for more information about them.

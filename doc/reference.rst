@@ -61,6 +61,27 @@ Module: ``stats``
         $ cpanel get stats hostname
         $ cpanel get stats machinetype cpanelversion
 
+Module: ``accounts``
+====================
+
+**list accounts**
+    List basic information of the main cPanel account. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel list accounts
+
+**get account**
+    Show detailed information of the main account. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel get account
+
 Module: ``subaccounts``
 =======================
 
@@ -83,9 +104,9 @@ Module: ``subaccounts``
 
     .. code:: sh
 
-        $ get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
+        $ cpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
 
-Module: ``backups``
+Module: ``backup``
 ===================
 
 All ``create backup`` commands create a backup tarball (a ``.tar.gz`` file) of the user’s home
@@ -133,6 +154,143 @@ after it completes the backup.
     .. code:: sh
 
         $ cpanel list backups
+
+Module: ``cache``
+=================
+
+**update cache**
+    Create web browser cached file override ID. Output is JSON-formatted.
+    See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
+    for further information on cache IDs.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel update cache
+
+**read cache**
+    Return web browser cached file override ID. Output is JSON-formatted.
+    See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
+    for further information on cache IDs.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel read cache
+
+Module: ``locale``
+==================
+
+**list locales**
+    List all the available locales (language and conventions) for the cPanel user
+    interface. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel list locales
+
+**get locale**
+    Return the current locale (language and conventions) used for the cPanel user
+    interface. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel get locale
+
+**set locale LOCALE**
+    Set the cPanel user interface locale (language and conventions) to LOCALE.
+    Use ``cpanel list locales`` for a list of available locales.
+    In general terms, a LOCALE corresponds to a ISO 639-1 two-letter language code.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel set locale bg  # Set UI to Bulgarian
+
+Module: ``styles``
+==================
+
+A style is a variation of a user interface theme for cPanel. For example, the
+Paper Lantern theme has four styles: ``basic``, ``dark``, ``light`` and ``glass``.
+
+**list styles**
+    Return all the available user interface styles. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel list styles
+
+**get style**
+    Return the current user interface style. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel get style
+
+**set style NAME**
+    Set the current user interface style to NAME.
+    NAME must be one of ``basic``, ``dark``, ``light`` or ``glass``.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel set style dark
+
+**default style NAME**
+    Set the default user interface style to NAME.
+    NAME must be one of ``basic``, ``dark``, ``light`` or ``glass``.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel default style basic
+
+Module: ``themes``
+==================
+
+A theme is a customized look and feel for the cPanel user interface. The default
+cPanel theme is Jupiter; another popular theme is Paper Lantern.
+
+**list themes**
+    Return all the available themes. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel list themes
+
+**get theme**
+    Return the current theme. Output is JSON-formatted.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel get theme
+
+**set theme NAME**
+    Set the current theme to NAME.
+    NAME must be one the available themes reported by ``cpanel list themes``.
+
+    *Example*
+
+    .. code:: sh
+
+        $ cpanel set theme paper_lantern
 
 Module: ``mail``
 ================

@@ -39,7 +39,7 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 
 	r: str = ""
 	try:
-		if cmd_is(cmd, "list features"):
+		if cmd_is(cmd, "list feature"):
 			r = host.dump(lambda: uapi.Features.list_features())
 
 		elif cmd_is(cmd, "get quota"):
@@ -48,10 +48,16 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "get usage"):
 			r = host.dump(lambda: uapi.ResourceUsage.get_usages())
 
-		elif cmd_is(cmd, "get stats"):
+		elif cmd_is(cmd, "get stat"):
 			r = host.dump(lambda: uapi.StatsBar.get_stats(display = "|".join(args[2:])))
 
-		elif cmd_is(cmd, "list subaccounts"):
+		elif cmd_is(cmd, "list account"):
+			r = host.dump(lambda: uapi.Resellers.list_accounts())
+
+		elif cmd_is(cmd, "get account"):
+			r = host.dump(lambda: uapi.Variables.get_user_information())
+
+		elif cmd_is(cmd, "list subaccount"):
 			r = host.dump(lambda: uapi.UserManager.list_users())
 
 		elif cmd_is(cmd, "get subaccount"):
@@ -60,13 +66,49 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "create backup"):
 			r = host.create_backup(*args[2:])
 
-		elif cmd_is(cmd, "list backups"):
+		elif cmd_is(cmd, "list backup"):
 			r = host.dump(lambda: uapi.Backup.list_backups())
 
-		elif cmd_is(cmd, "list mail accounts"):
+		elif cmd_is(cmd, "update cache"):
+			r = host.dump(lambda: uapi.CacheBuster.update())
+
+		elif cmd_is(cmd, "read cache"):
+			r = host.dump(lambda: uapi.CacheBuster.read())
+
+		elif cmd_is(cmd, "list locale"):
+			r = host.dump(lambda: uapi.Locale.list_locales())
+
+		elif cmd_is(cmd, "get locale"):
+			r = host.dump(lambda: uapi.Locale.get_attributes())
+
+		elif cmd_is(cmd, "set locale"):
+			r = host.check(lambda: uapi.Locale.set_locale(locale = args[2]))
+
+		elif cmd_is(cmd, "list style"):
+			r = host.dump(lambda: uapi.Styles.list())
+
+		elif cmd_is(cmd, "get style"):
+			r = host.dump(lambda: uapi.Styles.current())
+
+		elif cmd_is(cmd, "set style"):
+			r = host.check(lambda: uapi.Styles.update(name = args[2], type = 'default'))
+
+		elif cmd_is(cmd, "default style"):
+			r = host.check(lambda: uapi.Styles.set_default(name = args[2], type = 'default'))
+
+		elif cmd_is(cmd, "list theme"):
+			r = host.dump(lambda: uapi.Themes.list(show_mail_themes = 1))
+
+		elif cmd_is(cmd, "get theme"):
+			r = host.dump(lambda: uapi.Themes.get_theme_base())
+
+		elif cmd_is(cmd, "set theme"):
+			r = host.check(lambda: uapi.Themes.update(theme = args[2]))
+
+		elif cmd_is(cmd, "list mail account"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
 
-		elif cmd_is(cmd, "list mail filters"):
+		elif cmd_is(cmd, "list mail filter"):
 			r = host.dump_extracted('filtername', lambda: uapi.Email.list_filters(account = args[3]))
 
 		elif cmd_is(cmd, "get mail filter"):

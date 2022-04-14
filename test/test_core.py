@@ -78,6 +78,20 @@ class TestCore(unittest.TestCase):
 			self.assertTrue(len(stat['value']) > 0)
 
 
+	def test_list_accounts(self) -> None:
+		accounts: List[JSONType] = json.loads(dispatch(self.host, ["list", "accounts"]))
+		print(accounts)
+
+		self.assertTrue(len(accounts[0]['user']) > 0)
+
+
+	def test_get_account(self) -> None:
+		account: JSONType = json.loads(dispatch(self.host, ["get", "account"]))
+		print(account)
+
+		self.assertTrue(len(account['user']) > 0)
+
+
 	def test_list_subaccounts(self) -> None:
 		subaccounts: List[JSONType] = json.loads(dispatch(self.host, ["list", "subaccounts"]))
 		print(subaccounts)
@@ -86,6 +100,55 @@ class TestCore(unittest.TestCase):
 		subaccount: JSONType
 		for subaccount in subaccounts:
 			self.assertTrue(len(subaccount['guid']) > 0)
+
+
+	def test_cache(self) -> None:
+		update: JSONType = json.loads(dispatch(self.host, ["update", "cache"]))
+		print(update)
+		self.assertTrue(update['cache_id'] > 0)
+
+		read: JSONType = json.loads(dispatch(self.host, ["read", "cache"]))
+		print(read)
+		self.assertTrue(read['cache_id'] > 0)
+		self.assertEqual(read['cache_id'], update['cache_id'])
+
+
+	def test_locales(self) -> None:
+		original: JSONType = json.loads(dispatch(self.host, ["get", "locale"]))
+		print(original)
+		self.assertTrue(len(original['locale']) > 0)
+
+		locales: List[JSONType] = json.loads(dispatch(self.host, ["list", "locales"]))
+		locale: JSONType = locales[0]
+		print(locale)
+		self.assertTrue(len(locale['locale']) > 0)
+
+		r: str = dispatch(self.host, ["set", "locale", locale['locale']])
+		self.assertEqual(r, "OK")
+
+		temporary: JSONType = json.loads(dispatch(self.host, ["get", "locale"]))
+		print(temporary)
+		self.assertEqual(temporary['locale'], locale['locale'])
+
+		r: str = dispatch(self.host, ["set", "locale", original['locale']])
+		self.assertEqual(r, "OK")
+
+
+	def test_get_style(self) -> None:
+		style: JSONType = json.loads(dispatch(self.host, ["get", "style"]))
+		print(style)
+
+		self.assertTrue(style['name'] in ("basic",  "dark", "light", "glass"))
+
+
+	def test_get_theme(self) -> None:
+		themes: List[JSONType] = json.loads(dispatch(self.host, ["list", "themes"]))
+		print(themes)
+
+		theme: JSONType = json.loads(dispatch(self.host, ["get", "theme"]))
+		print(theme)
+
+		self.assertTrue(theme in themes)
 
 
 	def test_list_mail_accounts(self) -> None:

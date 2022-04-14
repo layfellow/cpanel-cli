@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-09 23:39-0400\n"
+"POT-Creation-Date: 2022-04-14 02:14-0400\n"
 "PO-Revision-Date: 2022-04-10 22:10-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -39,9 +39,14 @@ msgstr ""
 "formato JSON."
 
 #: ../../reference.rst:13 ../../reference.rst:26 ../../reference.rst:40
-#: ../../reference.rst:71 ../../reference.rst:82 ../../reference.rst:131
-#: ../../reference.rst:143 ../../reference.rst:155 ../../reference.rst:166
-#: ../../reference.rst:181 ../../reference.rst:194
+#: ../../reference.rst:70 ../../reference.rst:79 ../../reference.rst:92
+#: ../../reference.rst:103 ../../reference.rst:152 ../../reference.rst:166
+#: ../../reference.rst:177 ../../reference.rst:190 ../../reference.rst:200
+#: ../../reference.rst:211 ../../reference.rst:226 ../../reference.rst:235
+#: ../../reference.rst:245 ../../reference.rst:255 ../../reference.rst:270
+#: ../../reference.rst:279 ../../reference.rst:289 ../../reference.rst:301
+#: ../../reference.rst:313 ../../reference.rst:324 ../../reference.rst:339
+#: ../../reference.rst:352
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
@@ -108,19 +113,45 @@ msgstr ""
 "‘display parameters’ en "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats"
 
-#: ../../reference.rst:57 ../../reference.rst:118
+#: ../../reference.rst:57 ../../reference.rst:139
 msgid "*Examples*"
 msgstr "*Ejemplos*"
 
 #: ../../reference.rst:65
+msgid "Module: ``accounts``"
+msgstr "Módulo: ``accounts``"
+
+#: ../../reference.rst:74
+msgid "**list accounts**"
+msgstr "**list accounts**"
+
+#: ../../reference.rst:68
+msgid ""
+"List basic information of the main cPanel account. Output is JSON-"
+"formatted."
+msgstr ""
+"Lista información básica de la cuenta principal de cPanel. La salida está"
+" en formato JSON."
+
+#: ../../reference.rst:83
+msgid "**get account**"
+msgstr "**get account**"
+
+#: ../../reference.rst:77
+msgid "Show detailed information of the main account. Output is JSON-formatted."
+msgstr ""
+"Muestra información detallada de la cuenta principal. La salida está en "
+"formato JSON."
+
+#: ../../reference.rst:86
 msgid "Module: ``subaccounts``"
 msgstr "Módulo: ``subaccounts``"
 
-#: ../../reference.rst:75
+#: ../../reference.rst:96
 msgid "**list subaccounts**"
 msgstr "**list subaccounts**"
 
-#: ../../reference.rst:68
+#: ../../reference.rst:89
 msgid ""
 "List the sub-accounts of the main cPanel account, along with detailed "
 "information of each sub-account. Output is JSON-formatted."
@@ -128,11 +159,11 @@ msgstr ""
 "Lista las sub-cuentas de la cuenta principal de cPanel, junto con "
 "información detallada de cada sub-cuenta. La salida está en formato JSON."
 
-#: ../../reference.rst:86
+#: ../../reference.rst:107
 msgid "**get subaccount GUID**"
 msgstr "**get subaccount GUID**"
 
-#: ../../reference.rst:78
+#: ../../reference.rst:99
 msgid ""
 "Show detailed information of a sub-account, identified by its GUID. To "
 "get this GUID, use ``cpanel list subaccounts``. Note that only sub-"
@@ -144,117 +175,294 @@ msgstr ""
 "cuenta que sólo sub-cuentas con un flag ``sub_account_exists`` "
 "establecido a 1 devuelven información. La salida está en formato JSON."
 
-#: ../../reference.rst:89
-msgid "Module: ``backups``"
-msgstr "Módulo: ``backups``"
+#: ../../reference.rst:110
+msgid "Module: ``backup``"
+msgstr "Módulo: ``backup``"
 
-#: ../../reference.rst:91
+#: ../../reference.rst:112
 msgid ""
 "All ``create backup`` commands create a backup tarball (a ``.tar.gz`` "
 "file) of the user’s home directory along with other account data, such as"
 " the crontab, API tokens, log files and DB data. The backup tarball’s "
 "name is ``backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz``."
 msgstr ""
-"Todos los comandos ``create backup`` crean un tarball de respaldo (un"
-" archivo ``tar.gz``) del directorio home del usuario junto con otros"
-" datos de la cuenta, como el crontab, tokens de API, archivos de log"
-" y bases de datos. El nombre del tarball de respaldo es"
-" ``backup-MM.DD.YYY_HH-MM-SS_USERNAME.tar.gz``."
+"Todos los comandos ``create backup`` crean un tarball de respaldo (un "
+"archivo ``tar.gz``) del directorio home del usuario junto con otros datos"
+" de la cuenta, como el crontab, tokens de API, archivos de log y bases de"
+" datos. El nombre del tarball de respaldo es ``backup-MM.DD.YYY_HH-MM-"
+"SS_USERNAME.tar.gz``."
 
-#: ../../reference.rst:95
+#: ../../reference.rst:116
 msgid ""
 "If you pass an optional EMAIL argument, the backup engine will send a "
 "confirmation email after it completes the backup."
 msgstr ""
-"Si se pasa el argumento opcional EMAIL, el motor de respaldo envia "
-"un correo electrónico de confirmación después de que complete el "
-"respaldo."
+"Si se pasa el argumento opcional EMAIL, el motor de respaldo envia un "
+"correo electrónico de confirmación después de que complete el respaldo."
 
-#: ../../reference.rst:99
+#: ../../reference.rst:120
 msgid "**cpanel create backup home [EMAIL]**"
 msgstr "**cpanel create backup home [EMAIL]**"
 
-#: ../../reference.rst:99
+#: ../../reference.rst:120
 msgid "Create a backup tarball and store it in the user’s home directory itself."
 msgstr ""
-"Crea un tarball de respaldo y lo almacena en el mismo directorio home "
-"del usuario."
+"Crea un tarball de respaldo y lo almacena en el mismo directorio home del"
+" usuario."
 
-#: ../../reference.rst:111
+#: ../../reference.rst:132
 msgid "**cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 msgstr "**cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 
-#: ../../reference.rst:102
+#: ../../reference.rst:123
 msgid "Create a backup tarball and store it on a remote FTP server."
 msgstr "Crea un tarball de respaldo y lo almacena en un servidor FTP remoto."
 
-#: ../../reference.rst:104
+#: ../../reference.rst:125
 msgid "HOST is the hostname of the remote FTP server."
 msgstr "HOST es el nombre de host del servidor FTP remoto."
 
-#: ../../reference.rst:106
+#: ../../reference.rst:127
 msgid "USERNAME and PASSWORD are the credentials to log in to it."
 msgstr "USERNAME y PASSWORD son las credenciales para acceder a éste."
 
-#: ../../reference.rst:108
+#: ../../reference.rst:129
 msgid ""
 "Optional DIRECTORY is the destination directory on the remote server; by "
 "default use the remote user’s login directory. Note that DIRECTORY is not"
 " an absolute path, but a path relative to the login directory, i.e., "
 "``/public`` corresponds to ``<remote login directory>/public``."
 msgstr ""
-"Opcionalmente, DIRECTORY es el directorio de destino en el servidor"
-" remoto; por defecto se utiliza el directorio de inicio de sesión"
-" del usuario remoto. Tenga en cuenta que DIRECTORY no es una"
-" ruta absoluta, sino una ruta relativa al directorio de inicio"
-" de sesión, es decir, ``/public`` corresponde a" 
-" ``<directorio de inicio de sesión remoto>/public``."
+"Opcionalmente, DIRECTORY es el directorio de destino en el servidor "
+"remoto; por defecto se utiliza el directorio de inicio de sesión del "
+"usuario remoto. Tenga en cuenta que DIRECTORY no es una ruta absoluta, "
+"sino una ruta relativa al directorio de inicio de sesión, es decir, "
+"``/public`` corresponde a ``<directorio de inicio de sesión "
+"remoto>/public``."
 
-#: ../../reference.rst:126
+#: ../../reference.rst:147
 msgid "**cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 msgstr "**cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 
-#: ../../reference.rst:114
+#: ../../reference.rst:135
 msgid "Create a backup tarball and store it on a remote SCP server."
 msgstr "Crea un tarball de respaldo y lo almacena en un servidor SCP remoto."
 
-#: ../../reference.rst:116
+#: ../../reference.rst:137
 msgid ""
 "USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ``create "
 "backup ftp``."
 msgstr ""
-"USERNAME, PASSWORD, HOST y DIRECTORY son los mismos que para"
-" ``create backup ftp``."
+"USERNAME, PASSWORD, HOST y DIRECTORY son los mismos que para ``create "
+"backup ftp``."
 
-#: ../../reference.rst:135
+#: ../../reference.rst:156
 msgid "**cpanel list backups**"
 msgstr "**cpanel list backups**"
 
-#: ../../reference.rst:129
+#: ../../reference.rst:150
 msgid "List the account’s backup files. Output is JSON-formatted."
 msgstr ""
-"Lista los archivos de respaldo de la cuenta. La salida"
-" está en formato JSON."
+"Lista los archivos de respaldo de la cuenta. La salida está en formato "
+"JSON."
 
-#: ../../reference.rst:138
+#: ../../reference.rst:159
+msgid "Module: ``cache``"
+msgstr "Módulo: ``cache``"
+
+#: ../../reference.rst:170
+msgid "**update cache**"
+msgstr "**update cache**"
+
+#: ../../reference.rst:162
+msgid ""
+"Create web browser cached file override ID. Output is JSON-formatted. See"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
+"for further information on cache IDs."
+msgstr ""
+"Crea un ID de anulación de archivos en caché del navegador web. La salida"
+" está en formato JSON. Consulte "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
+"para obtener más información sobre los IDs de caché."
+
+#: ../../reference.rst:181
+msgid "**read cache**"
+msgstr "**read cache**"
+
+#: ../../reference.rst:173
+msgid ""
+"Return web browser cached file override ID. Output is JSON-formatted. See"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
+"for further information on cache IDs."
+msgstr ""
+"Devuelve el ID de anulación de archivos en caché del navegador web. La "
+"salida está en formato JSON. Consulte "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
+"para obtener más información sobre los IDs de caché."
+
+#: ../../reference.rst:184
+msgid "Module: ``locale``"
+msgstr "Módulo: ``locale``"
+
+#: ../../reference.rst:194
+msgid "**list locales**"
+msgstr "**list locales**"
+
+#: ../../reference.rst:187
+msgid ""
+"List all the available locales (language and conventions) for the cPanel "
+"user interface. Output is JSON-formatted."
+msgstr ""
+"Lista todas las configuraciones regionales (idioma y convenciones) "
+"disponibles para la interfaz de usuario de cPanel. La salida está en "
+"formato JSON."
+
+#: ../../reference.rst:204
+msgid "**get locale**"
+msgstr "**get locale**"
+
+#: ../../reference.rst:197
+msgid ""
+"Return the current locale (language and conventions) used for the cPanel "
+"user interface. Output is JSON-formatted."
+msgstr ""
+"Devuelve la configuración regional (idioma y convenciones) actual de la "
+"interfaz de usuario de cPanel. La salida está en formato JSON."
+
+#: ../../reference.rst:215
+msgid "**set locale LOCALE**"
+msgstr "**set locale LOCALE**"
+
+#: ../../reference.rst:207
+msgid ""
+"Set the cPanel user interface locale (language and conventions) to "
+"LOCALE. Use ``cpanel list locales`` for a list of available locales. In "
+"general terms, a LOCALE corresponds to a ISO 639-1 two-letter language "
+"code."
+msgstr ""
+"Establece la configuración regional (idioma y convenciones) de la "
+"interfaz de usuario de cPanel a LOCALE. Utilice ``cpanel list locales`` "
+"para obtener una lista de los idiomas disponibles. En términos generales,"
+" un LOCALE corresponde a un código de idioma de dos letras ISO 639-1."
+
+#: ../../reference.rst:218
+msgid "Module: ``styles``"
+msgstr "Módulo: ``styles``"
+
+#: ../../reference.rst:220
+msgid ""
+"A style is a variation of a user interface theme for cPanel. For example,"
+" the Paper Lantern theme has four styles: ``basic``, ``dark``, ``light`` "
+"and ``glass``."
+msgstr ""
+"Un estilo es una variación de un tema de interfaz de usuario para cPanel."
+" Por ejemplo, el tema Paper Lantern tiene cuatro estilos: ``basic``, "
+"``dark``, ``light`` y ``glass``."
+
+#: ../../reference.rst:230
+msgid "**list styles**"
+msgstr "**list styles**"
+
+#: ../../reference.rst:224
+msgid "Return all the available user interface styles. Output is JSON-formatted."
+msgstr ""
+"Devuelve todos los estilos de interfaz de usuario disponibles. La salida "
+"está en formato JSON."
+
+#: ../../reference.rst:239
+msgid "**get style**"
+msgstr "**get style**"
+
+#: ../../reference.rst:233
+msgid "Return the current user interface style. Output is JSON-formatted."
+msgstr ""
+"Devuelve el estilo de interfaz de usuario actual. La salida está en "
+"formato JSON."
+
+#: ../../reference.rst:249
+msgid "**set style NAME**"
+msgstr "**get style NAME**"
+
+#: ../../reference.rst:242
+msgid ""
+"Set the current user interface style to NAME. NAME must be one of "
+"``basic``, ``dark``, ``light`` or ``glass``."
+msgstr ""
+"Establece el estilo actual de la interfaz de usuario a NAME. NAME debe "
+"ser uno de los siguientes: ``basic``, ``dark``, ``light`` o ``glass``."
+
+#: ../../reference.rst:259
+msgid "**default style NAME**"
+msgstr "**default style NAME**"
+
+#: ../../reference.rst:252
+msgid ""
+"Set the default user interface style to NAME. NAME must be one of "
+"``basic``, ``dark``, ``light`` or ``glass``."
+msgstr ""
+"Establece el estilo por defecto de la interfaz de usuario a NAME. NAME "
+"debe ser uno de los siguientes: ``basic``, ``dark``, ``light`` o "
+"``glass``."
+
+#: ../../reference.rst:262
+msgid "Module: ``themes``"
+msgstr "Módulo: ``themes``"
+
+#: ../../reference.rst:264
+msgid ""
+"A theme is a customized look and feel for the cPanel user interface. The "
+"default cPanel theme is Jupiter; another popular theme is Paper Lantern."
+msgstr ""
+"Un tema es una apariencia personalizada para la interfaz de usuario de cPanel. "
+"El tema por defecto de cPanel es Jupiter; otro tema popular es Paper Lantern."
+
+#: ../../reference.rst:274
+msgid "**list themes**"
+msgstr "**list themes**"
+
+#: ../../reference.rst:268
+msgid "Return all the available themes. Output is JSON-formatted."
+msgstr "Devuelve todos los temas disponibles. La salida está en formato JSON."
+
+#: ../../reference.rst:283
+msgid "**get theme**"
+msgstr "**get theme**"
+
+#: ../../reference.rst:277
+msgid "Return the current theme. Output is JSON-formatted."
+msgstr "Devuelve el tema actual. La salida está en formato JSON."
+
+#: ../../reference.rst:293
+msgid "**set theme NAME**"
+msgstr "**set theme NAME**"
+
+#: ../../reference.rst:286
+msgid ""
+"Set the current theme to NAME. NAME must be one the available themes "
+"reported by ``cpanel list themes``."
+msgstr ""
+"Establece el tema actual a NAME. NAME debe ser uno de los temas "
+"disponibles según lo reporta ``cpanel list themes``."
+
+#: ../../reference.rst:296
 msgid "Module: ``mail``"
 msgstr "Módulo: ``mail``"
 
-#: ../../reference.rst:147
+#: ../../reference.rst:305
 msgid "**list mail accounts**"
 msgstr "**list mail accounts**"
 
-#: ../../reference.rst:141
+#: ../../reference.rst:299
 msgid "Lists cPanel email accounts. Output is JSON-formatted."
 msgstr ""
 "Lista las cuentas de correo electrónico de cPanel. La salida está en "
 "formato JSON."
 
-#: ../../reference.rst:159
+#: ../../reference.rst:317
 msgid "**list mail filters ACCOUNT**"
 msgstr "**list mail filters ACCOUNT**"
 
-#: ../../reference.rst:150
+#: ../../reference.rst:308
 msgid ""
 "Lists mail filters associated to ACCOUNT. Output is a JSON-formatted "
 "array of filter names."
@@ -262,17 +470,17 @@ msgstr ""
 "Lista los filtros de correo asociados a ACCOUNT. La salida es una serie "
 "de nombres de filtros en formato JSON."
 
-#: ../../reference.rst:153
+#: ../../reference.rst:311
 msgid "ACCOUNT is the name of a cPanel email account, usually user@domain"
 msgstr ""
 "ACCOUNT es el nombre de una cuenta de correo electrónico de cPanel, por "
 "lo general usuario@dominio"
 
-#: ../../reference.rst:170
+#: ../../reference.rst:328
 msgid "**get mail filter ACCOUNT FILTERNAME**"
 msgstr "**get mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:162
+#: ../../reference.rst:320
 msgid ""
 "Return a JSON-formatted description of email filter FILTERNAME associated"
 " to email ACCOUNT. To get a list of current filter names, use ``cpanel "
@@ -282,11 +490,11 @@ msgstr ""
 " FILTERNAME asociado al correo ACCOUNT. Para obtener una lista de nombres"
 " de filtros actuales, use ``cpanel list mail filters ACCOUNT``"
 
-#: ../../reference.rst:188
+#: ../../reference.rst:346
 msgid "**set mail filter ACCOUNT FILE**"
 msgstr "**set mail filter ACCOUNT FILE**"
 
-#: ../../reference.rst:173
+#: ../../reference.rst:331
 msgid ""
 "Create or update an email filter associated with email ACCOUNT. If the "
 "filter already exists, it updates it; otherwise, it creates a new filter."
@@ -305,11 +513,11 @@ msgstr ""
 "y luego cargarlo con ``cpanel set mail filter``. Vea el ejemplo a "
 "continuación."
 
-#: ../../reference.rst:197
+#: ../../reference.rst:355
 msgid "**delete mail filter ACCOUNT FILTERNAME**"
 msgstr "**delete mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:191
+#: ../../reference.rst:349
 msgid ""
 "Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
 "current filter names, use ``cpanel list mail filters ACCOUNT``"
