@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 02:14-0400\n"
+"POT-Creation-Date: 2022-04-15 00:23-0400\n"
 "PO-Revision-Date: 2022-04-10 22:10-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -40,13 +40,16 @@ msgstr ""
 
 #: ../../reference.rst:13 ../../reference.rst:26 ../../reference.rst:40
 #: ../../reference.rst:70 ../../reference.rst:79 ../../reference.rst:92
-#: ../../reference.rst:103 ../../reference.rst:152 ../../reference.rst:166
-#: ../../reference.rst:177 ../../reference.rst:190 ../../reference.rst:200
-#: ../../reference.rst:211 ../../reference.rst:226 ../../reference.rst:235
-#: ../../reference.rst:245 ../../reference.rst:255 ../../reference.rst:270
-#: ../../reference.rst:279 ../../reference.rst:289 ../../reference.rst:301
-#: ../../reference.rst:313 ../../reference.rst:324 ../../reference.rst:339
-#: ../../reference.rst:352
+#: ../../reference.rst:103 ../../reference.rst:152 ../../reference.rst:167
+#: ../../reference.rst:176 ../../reference.rst:189 ../../reference.rst:199
+#: ../../reference.rst:210 ../../reference.rst:225 ../../reference.rst:234
+#: ../../reference.rst:244 ../../reference.rst:254 ../../reference.rst:269
+#: ../../reference.rst:278 ../../reference.rst:288 ../../reference.rst:330
+#: ../../reference.rst:339 ../../reference.rst:349 ../../reference.rst:373
+#: ../../reference.rst:384 ../../reference.rst:394 ../../reference.rst:403
+#: ../../reference.rst:427 ../../reference.rst:436 ../../reference.rst:445
+#: ../../reference.rst:464 ../../reference.rst:476 ../../reference.rst:488
+#: ../../reference.rst:499 ../../reference.rst:514 ../../reference.rst:527
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
@@ -270,45 +273,41 @@ msgstr ""
 msgid "Module: ``cache``"
 msgstr "Módulo: ``cache``"
 
-#: ../../reference.rst:170
+#: ../../reference.rst:161
+msgid ""
+"See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-"
+"read/ for information on cache IDs."
+msgstr ""
+"Consulte https://api.docs.cpanel.net/openapi/cpanel/operation"
+"/CacheBuster-read/ para obtener más información sobre los IDs de caché."
+
+#: ../../reference.rst:171
 msgid "**update cache**"
 msgstr "**update cache**"
 
-#: ../../reference.rst:162
-msgid ""
-"Create web browser cached file override ID. Output is JSON-formatted. See"
-" https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
-"for further information on cache IDs."
+#: ../../reference.rst:165
+msgid "Create web browser cached file override ID. Output is JSON-formatted."
 msgstr ""
-"Crea un ID de anulación de archivos en caché del navegador web. La salida"
-" está en formato JSON. Consulte "
-"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
-"para obtener más información sobre los IDs de caché."
+"Crea un  ID de anulación de caché del navegador web. La salida está en "
+"formato JSON."
 
-#: ../../reference.rst:181
+#: ../../reference.rst:180
 msgid "**read cache**"
 msgstr "**read cache**"
 
-#: ../../reference.rst:173
-msgid ""
-"Return web browser cached file override ID. Output is JSON-formatted. See"
-" https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
-"for further information on cache IDs."
-msgstr ""
-"Devuelve el ID de anulación de archivos en caché del navegador web. La "
-"salida está en formato JSON. Consulte "
-"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/ "
-"para obtener más información sobre los IDs de caché."
+#: ../../reference.rst:174
+msgid "Return web browser cached file override ID. Output is JSON-formatted."
+msgstr "Devuelve el ID de anulación de caché del navegador web."
 
-#: ../../reference.rst:184
+#: ../../reference.rst:183
 msgid "Module: ``locale``"
 msgstr "Módulo: ``locale``"
 
-#: ../../reference.rst:194
+#: ../../reference.rst:193
 msgid "**list locales**"
 msgstr "**list locales**"
 
-#: ../../reference.rst:187
+#: ../../reference.rst:186
 msgid ""
 "List all the available locales (language and conventions) for the cPanel "
 "user interface. Output is JSON-formatted."
@@ -317,11 +316,11 @@ msgstr ""
 "disponibles para la interfaz de usuario de cPanel. La salida está en "
 "formato JSON."
 
-#: ../../reference.rst:204
+#: ../../reference.rst:203
 msgid "**get locale**"
 msgstr "**get locale**"
 
-#: ../../reference.rst:197
+#: ../../reference.rst:196
 msgid ""
 "Return the current locale (language and conventions) used for the cPanel "
 "user interface. Output is JSON-formatted."
@@ -329,11 +328,11 @@ msgstr ""
 "Devuelve la configuración regional (idioma y convenciones) actual de la "
 "interfaz de usuario de cPanel. La salida está en formato JSON."
 
-#: ../../reference.rst:215
+#: ../../reference.rst:214
 msgid "**set locale LOCALE**"
 msgstr "**set locale LOCALE**"
 
-#: ../../reference.rst:207
+#: ../../reference.rst:206
 msgid ""
 "Set the cPanel user interface locale (language and conventions) to "
 "LOCALE. Use ``cpanel list locales`` for a list of available locales. In "
@@ -345,11 +344,11 @@ msgstr ""
 "para obtener una lista de los idiomas disponibles. En términos generales,"
 " un LOCALE corresponde a un código de idioma de dos letras ISO 639-1."
 
-#: ../../reference.rst:218
+#: ../../reference.rst:217
 msgid "Module: ``styles``"
 msgstr "Módulo: ``styles``"
 
-#: ../../reference.rst:220
+#: ../../reference.rst:219
 msgid ""
 "A style is a variation of a user interface theme for cPanel. For example,"
 " the Paper Lantern theme has four styles: ``basic``, ``dark``, ``light`` "
@@ -359,31 +358,31 @@ msgstr ""
 " Por ejemplo, el tema Paper Lantern tiene cuatro estilos: ``basic``, "
 "``dark``, ``light`` y ``glass``."
 
-#: ../../reference.rst:230
+#: ../../reference.rst:229
 msgid "**list styles**"
 msgstr "**list styles**"
 
-#: ../../reference.rst:224
+#: ../../reference.rst:223
 msgid "Return all the available user interface styles. Output is JSON-formatted."
 msgstr ""
 "Devuelve todos los estilos de interfaz de usuario disponibles. La salida "
 "está en formato JSON."
 
-#: ../../reference.rst:239
+#: ../../reference.rst:238
 msgid "**get style**"
 msgstr "**get style**"
 
-#: ../../reference.rst:233
+#: ../../reference.rst:232
 msgid "Return the current user interface style. Output is JSON-formatted."
 msgstr ""
 "Devuelve el estilo de interfaz de usuario actual. La salida está en "
 "formato JSON."
 
-#: ../../reference.rst:249
+#: ../../reference.rst:248
 msgid "**set style NAME**"
 msgstr "**get style NAME**"
 
-#: ../../reference.rst:242
+#: ../../reference.rst:241
 msgid ""
 "Set the current user interface style to NAME. NAME must be one of "
 "``basic``, ``dark``, ``light`` or ``glass``."
@@ -391,11 +390,11 @@ msgstr ""
 "Establece el estilo actual de la interfaz de usuario a NAME. NAME debe "
 "ser uno de los siguientes: ``basic``, ``dark``, ``light`` o ``glass``."
 
-#: ../../reference.rst:259
+#: ../../reference.rst:258
 msgid "**default style NAME**"
 msgstr "**default style NAME**"
 
-#: ../../reference.rst:252
+#: ../../reference.rst:251
 msgid ""
 "Set the default user interface style to NAME. NAME must be one of "
 "``basic``, ``dark``, ``light`` or ``glass``."
@@ -404,31 +403,32 @@ msgstr ""
 "debe ser uno de los siguientes: ``basic``, ``dark``, ``light`` o "
 "``glass``."
 
-#: ../../reference.rst:262
+#: ../../reference.rst:261
 msgid "Module: ``themes``"
 msgstr "Módulo: ``themes``"
 
-#: ../../reference.rst:264
+#: ../../reference.rst:263
 msgid ""
 "A theme is a customized look and feel for the cPanel user interface. The "
 "default cPanel theme is Jupiter; another popular theme is Paper Lantern."
 msgstr ""
-"Un tema es una apariencia personalizada para la interfaz de usuario de cPanel. "
-"El tema por defecto de cPanel es Jupiter; otro tema popular es Paper Lantern."
+"Un tema es una apariencia personalizada para la interfaz de usuario de "
+"cPanel. El tema por defecto de cPanel es Jupiter; otro tema popular es "
+"Paper Lantern."
 
-#: ../../reference.rst:274
+#: ../../reference.rst:273
 msgid "**list themes**"
 msgstr "**list themes**"
 
-#: ../../reference.rst:268
+#: ../../reference.rst:267
 msgid "Return all the available themes. Output is JSON-formatted."
 msgstr "Devuelve todos los temas disponibles. La salida está en formato JSON."
 
-#: ../../reference.rst:283
+#: ../../reference.rst:282
 msgid "**get theme**"
 msgstr "**get theme**"
 
-#: ../../reference.rst:277
+#: ../../reference.rst:276
 msgid "Return the current theme. Output is JSON-formatted."
 msgstr "Devuelve el tema actual. La salida está en formato JSON."
 
@@ -436,7 +436,7 @@ msgstr "Devuelve el tema actual. La salida está en formato JSON."
 msgid "**set theme NAME**"
 msgstr "**set theme NAME**"
 
-#: ../../reference.rst:286
+#: ../../reference.rst:285
 msgid ""
 "Set the current theme to NAME. NAME must be one the available themes "
 "reported by ``cpanel list themes``."
@@ -445,42 +445,304 @@ msgstr ""
 "disponibles según lo reporta ``cpanel list themes``."
 
 #: ../../reference.rst:296
+msgid "Module: ``directory``"
+msgstr "Módulo: ``directory``"
+
+#: ../../reference.rst:299
+msgid "Indexing commands"
+msgstr "Comandos de indexación"
+
+#: ../../reference.rst:301
+msgid ""
+"The *indexing* of a remote directory controls how to present that "
+"directory to a web browser if no default HTML index page is found."
+msgstr ""
+"La *indexación* de un directorio remoto controla cómo se presenta "
+"ese directorio a un navegador web si no se encuentra una página de "
+"índice HTML por defecto."
+
+#: ../../reference.rst:304
+msgid "There are four possible index settings:"
+msgstr "Hay cuatro posibles configuraciones de indexación:"
+
+#: ../../reference.rst:306
+msgid "``inherit``: Use the parent directory’s setting."
+msgstr "``inherit``: Utiliza la configuración del directorio padre."
+
+#: ../../reference.rst:307
+msgid "``disabled``: a.k.a. *No Indexing*, do not list the directory contents."
+msgstr "``disabled``: también conocida como *No Indexing* (*Sin indexación*), no lista el contenido del directorio."
+
+#: ../../reference.rst:308
+msgid ""
+"``standard``: a.k.a. *Show Filename Only*, list only the directory’s file"
+" names."
+msgstr ""
+"``standard``: también conocida como *Show Filename Only* "
+"(*Sólo mostrar nombre de archivo*), lista sólo los nombres de los archivos del directorio."
+
+#: ../../reference.rst:309
+msgid ""
+"``fancy``: a.k.a. *Show Filename and Description*, list the directory’s "
+"file names, sizes and types."
+msgstr ""
+"``fancy``: también conocida como *Show Filename and Description* "
+"(*Mostrar nombre de archivo y descripción*), lista los nombres, tamaños "
+"y tipos de archivos del directorio."
+
+#: ../../reference.rst:312
+msgid ""
+"cPanel uses a ``.htaccess`` directive in the remote directory to control "
+"the index settings. For instance, for ``fancy``, it adds the following to"
+" ``.htaccess``:"
+msgstr ""
+"cPanel utiliza una directiva ``.htaccess`` en el directorio remoto para "
+"controlar la configuración de los índices. Por ejemplo, para ``fancy``, "
+"añade lo siguiente a ``.htaccess``:"
+
+#: ../../reference.rst:320
+msgid ""
+"See https://docs.cpanel.net/cpanel/advanced/indexes/ for further "
+"information."
+msgstr ""
+"Para más información, consulte "
+"https://docs.cpanel.net/cpanel/advanced/indexes/"
+
+#: ../../reference.rst:322 ../../reference.rst:365 ../../reference.rst:419
+msgid ""
+"Note that the PATH in all commands below is not absolute, but relative to"
+" the remote login directory, i.e., ``/public_html`` corresponds to "
+"``<remote login directory>/public_html``."
+msgstr ""
+"Tenga en cuenta que el PATH en todos los comandos siguientes no es absoluto, "
+"sino relativo al directorio de inicio de sesión, es decir, ``/public_html`` "
+"corresponde a ``<directorio de inicio de sesión>/public_html``."
+
+#: ../../reference.rst:333
+msgid "**list dir indexing PATH**"
+msgstr "**list dir indexing PATH**"
+
+#: ../../reference.rst:327
+msgid ""
+"List the index settings for remote PATH and its subdirectories "
+"(children). Output is JSON-formatted."
+msgstr ""
+"Listar la configuración de los índices del PATH remoto y sus "
+"subdirectorios (hijos). La salida está en formato JSON."
+
+#: ../../reference.rst:343
+msgid "**get dir indexing PATH**"
+msgstr "**get dir indexing PATH**"
+
+#: ../../reference.rst:337
+msgid "Get the index setting for remote PATH only. Output is JSON-formatted."
+msgstr "Obtiene la configuración de índice sólo para el PATH remoto. La salida está en formato JSON."
+
+#: ../../reference.rst:353
+msgid "**set dir indexing PATH TYPE**"
+msgstr "**set dir indexing PATH TYPE**"
+
+#: ../../reference.rst:346
+msgid ""
+"Set the index setting for remote PATH. Possible values for TYPE are "
+"``inherit``, ``disabled``, ``standard`` or ``fancy``."
+msgstr ""
+"Establece la configuración de índice del PATH remoto. "
+"Los valores posibles para TYPE son ``inherit``, ``disabled``, ``standard`` o ``fancy``."
+
+#: ../../reference.rst:356
+msgid "Privacy commands"
+msgstr "Comandos de privacidad"
+
+#: ../../reference.rst:358
+msgid ""
+"cPanel can password-protect remote directories for privacy. Any attempt "
+"to access a private directory using a web browser will prompt for a "
+"username and password."
+msgstr ""
+"cPanel puede proteger con contraseña los directorios remotos para su "
+"privacidad. Cualquier intento de acceder a un directorio privado utilizando "
+"un navegador web solicitará un nombre de usuario y una contraseña."
+
+#: ../../reference.rst:362
+msgid ""
+"The actual underlying authentication method is Basic HTTP authentication;"
+" these users and passwords are local to the directory, they are *not* cPanel users."
+msgstr ""
+"El método de autenticación subyacente es la autenticación básica HTTP; "
+"estos usuarios y contraseñas son locales para el directorio, *no* son "
+"usuarios de cPanel."
+
+#: ../../reference.rst:377
+msgid "**list dir privacy PATH**"
+msgstr "**list dir privacy PATH**"
+
+#: ../../reference.rst:370
+msgid ""
+"List the privacy settings for remote PATH and its subdirectories "
+"(children). Output is JSON-formatted."
+msgstr ""
+"Lista la configuración de privacidad de PATH remoto y sus "
+"subdirectorios (hijos). La salida está enformato JSON."
+
+#: ../../reference.rst:388
+msgid "**get dir privacy PATH**"
+msgstr "**get dir privacy PATH**"
+
+#: ../../reference.rst:380
+msgid ""
+"Get the privacy settings for remote PATH only. Output is JSON-formatted. "
+"You can enable or disable password protection using ``cpanel enable dir "
+"privacy`` or ``cpanel disable dir privacy`` (see below)."
+msgstr ""
+"Obtiene la configuración de privacidad sólo para el PATH remoto. La salida "
+"está en formato JSON. Puede habilitar o deshabilitar la protección con "
+"contraseña usando ``cpanel enable dir privacy`` o "
+"``cpanel disable dir privacy`` (vea más abajo)."
+
+#: ../../reference.rst:398
+msgid "**enable dir privacy PATH**"
+msgstr "**enable dir privacy PATH**"
+
+#: ../../reference.rst:391
+msgid ""
+"Enable password protection for PATH. Note that you need to add users "
+"using ``cpanel add dir user`` (see below) to grant access to PATH."
+msgstr ""
+"Habilita la protección con contraseña para PATH. Tenga en cuenta que "
+"necesita agregar usuarios usando ``cpanel add dir user`` (vea más abajo) "
+"para otorgar acceso al PATH."
+
+#: ../../reference.rst:407
+msgid "**disable dir privacy PATH**"
+msgstr "**disable dir privacy PATH**"
+
+#: ../../reference.rst:401
+msgid "Disable password protection for PATH."
+msgstr "Desactiva la protección con contraseña para PATH."
+
+#: ../../reference.rst:410
+msgid "User management commands"
+msgstr "Comandos de gestión de usuarios"
+
+#: ../../reference.rst:412
+msgid ""
+"cPanel grants access to remote password-protected directories using ad "
+"hoc users and passwords specific to every directory. Use the commands "
+"below to manage these users."
+msgstr ""
+"cPanel permite el acceso a directorios remotos protegidos por contraseña "
+"utilizando usuarios y contraseñas específicas para cada directorio. "
+"Utilice los comandos siguientes para gestionar estos usuarios."
+
+#: ../../reference.rst:416
+msgid ""
+"cPanel stores the credentials in a ``.htpasswd`` file. See "
+"https://en.wikipedia.org/wiki/.htpasswd for further information."
+msgstr ""
+"cPanel almacena las credenciales en un archivo ``.htpasswd``. "
+"Consulte https://en.wikipedia.org/wiki/.htpasswd para más información. "
+
+#: ../../reference.rst:431
+msgid "**add dir user PATH USER PASSWORD**"
+msgstr "**add dir user PATH USER PASSWORD**"
+
+#: ../../reference.rst:424
+msgid ""
+"Add USER with corresponding PASSWORD to the list of allowed users for "
+"PATH."
+msgstr ""
+"Añade el usuario USER con su correspondiente contraseña PASSWORD a la lista "
+"de usuarios permitidos para PATH."
+
+#: ../../reference.rst:440
+msgid "**delete dir user PATH USER**"
+msgstr "**delete dir user PATH USER**"
+
+#: ../../reference.rst:434
+msgid "Remove USER from the list of allowed users for PATH."
+msgstr "Elimina  USER de la lista de usuarios permitidos para PATH."
+
+#: ../../reference.rst:449
+msgid "**list dir users PATH**"
+msgstr "**list dir users PATH**"
+
+#: ../../reference.rst:443
+msgid "List allowed users for PATH. Output is JSON-formatted."
+msgstr "Lista los usuarios permitidos para PATH. La salida está en formato JSON."
+
+#: ../../reference.rst:452
+msgid "Leech protection commands"
+msgstr "Comandos de protección contra abusos"
+
+#: ../../reference.rst:454
+msgid ""
+"*Leech protection* adds some basic measures against the abuse of "
+"password-protected directories. The system allows a maximum number of "
+"logins per hour for a leech-protected directory."
+msgstr ""
+"La protección contra abusos (*leech*) añade algunas medidas básicas "
+"contra el uso excesivo de directorios protegidos por contraseña. El sistema "
+"sólo permite un número máximo de inicios de sesión por hora para "
+"un directorio protegido contra abusos (*leech*)."
+
+#: ../../reference.rst:458
+msgid ""
+"See https://docs.cpanel.net/cpanel/security/leech-protection/ for further"
+" information."
+msgstr ""
+"Consulte https://docs.cpanel.net/cpanel/security/leech-protection/ para"
+" obtener más información."
+
+#: ../../reference.rst:468
+msgid "**list dir protection PATH**"
+msgstr "**list dir protection PATH**"
+
+#: ../../reference.rst:461
+msgid ""
+"List leech protection status for PATH and its subdirectories (children). "
+"Output is JSON-formatted."
+msgstr ""
+"Lista el estado de la protección contra abusos para PATH y sus subdirectorios "
+"(hijos). La salida está en formato JSON."
+
+#: ../../reference.rst:471
 msgid "Module: ``mail``"
 msgstr "Módulo: ``mail``"
 
-#: ../../reference.rst:305
+#: ../../reference.rst:480
 msgid "**list mail accounts**"
 msgstr "**list mail accounts**"
 
-#: ../../reference.rst:299
-msgid "Lists cPanel email accounts. Output is JSON-formatted."
+#: ../../reference.rst:474
+msgid "List cPanel email accounts. Output is JSON-formatted."
 msgstr ""
 "Lista las cuentas de correo electrónico de cPanel. La salida está en "
 "formato JSON."
 
-#: ../../reference.rst:317
+#: ../../reference.rst:492
 msgid "**list mail filters ACCOUNT**"
 msgstr "**list mail filters ACCOUNT**"
 
-#: ../../reference.rst:308
+#: ../../reference.rst:483
 msgid ""
-"Lists mail filters associated to ACCOUNT. Output is a JSON-formatted "
-"array of filter names."
+"List mail filters associated to ACCOUNT. Output is a JSON-formatted array"
+" of filter names."
 msgstr ""
 "Lista los filtros de correo asociados a ACCOUNT. La salida es una serie "
 "de nombres de filtros en formato JSON."
 
-#: ../../reference.rst:311
+#: ../../reference.rst:486
 msgid "ACCOUNT is the name of a cPanel email account, usually user@domain"
 msgstr ""
 "ACCOUNT es el nombre de una cuenta de correo electrónico de cPanel, por "
 "lo general usuario@dominio"
 
-#: ../../reference.rst:328
+#: ../../reference.rst:503
 msgid "**get mail filter ACCOUNT FILTERNAME**"
 msgstr "**get mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:320
+#: ../../reference.rst:495
 msgid ""
 "Return a JSON-formatted description of email filter FILTERNAME associated"
 " to email ACCOUNT. To get a list of current filter names, use ``cpanel "
@@ -490,11 +752,11 @@ msgstr ""
 " FILTERNAME asociado al correo ACCOUNT. Para obtener una lista de nombres"
 " de filtros actuales, use ``cpanel list mail filters ACCOUNT``"
 
-#: ../../reference.rst:346
+#: ../../reference.rst:521
 msgid "**set mail filter ACCOUNT FILE**"
 msgstr "**set mail filter ACCOUNT FILE**"
 
-#: ../../reference.rst:331
+#: ../../reference.rst:506
 msgid ""
 "Create or update an email filter associated with email ACCOUNT. If the "
 "filter already exists, it updates it; otherwise, it creates a new filter."
@@ -513,11 +775,11 @@ msgstr ""
 "y luego cargarlo con ``cpanel set mail filter``. Vea el ejemplo a "
 "continuación."
 
-#: ../../reference.rst:355
+#: ../../reference.rst:530
 msgid "**delete mail filter ACCOUNT FILTERNAME**"
 msgstr "**delete mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:349
+#: ../../reference.rst:524
 msgid ""
 "Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
 "current filter names, use ``cpanel list mail filters ACCOUNT``"

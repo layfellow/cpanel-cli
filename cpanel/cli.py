@@ -130,7 +130,10 @@ def usage(help: NullableStr = None) -> str:
 	"""
 	# Read USAGE data file.
 	stream: NullableBytes = pkgutil.get_data(__name__, 'USAGE')
-	usage: NullableStr = stream.decode('UTF-8') if stream else None
+
+	# HACK  Allow ANSI color codes using a tortuous decoding/encoding chain.
+	# See https://stackoverflow.com/questions/14820429/how-do-i-decodestring-escape-in-python-3
+	usage: NullableStr = stream.decode('unicode-escape').encode('latin-1').decode('utf-8') if stream else None
 
 	if usage:
 		match: Match[str] | None

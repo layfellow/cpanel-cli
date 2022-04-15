@@ -1,66 +1,80 @@
 Usage: cpanel help MODULE
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+\033[1mMODULES\033[0m
 
-MODULES
 The currently implemented modules and functions are:
 
 features
-    cpanel list features
+    list features
 
 quota
-    cpanel get quota
+    get quota
 
 usage
-    cpanel get usage
+    get usage
 
 stats
-    cpanel get stats STAT...
+    get stats
 
 accounts
-    cpanel list accounts
-    cpanel get account
+    list accounts
+    get account
 
 subaccounts
-    cpanel list subaccounts
-    cpanel get subaccount GUID
+    list subaccounts
+    get subaccount
 
 backup
-    cpanel create backup home [EMAIL]
-    cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
-    cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
-    cpanel list backups
+    create backup home
+    create backup ftp
+    create backup scp
+    list backups
 
 cache
-    cpanel read cache
-    cpanel update cache
+    read cache
+    update cache
 
 locale
-    cpanel list locales
-    cpanel get locale
-    cpanel set locale LOCALE
+    list locales
+    get locale
+    set locale
 
 styles
-    cpanel list styles
-    cpanel get style
-    cpanel set style NAME
-    cpanel default style NAME
+    list styles
+    get style
+    set style
+    default style
 
 themes
-    cpanel list themes
-    cpanel get theme
-    cpanel set theme NAME
+    list themes
+    get theme
+    set theme
+
+directory
+    list dir indexing
+    get dir indexing
+    set dir indexing
+    list dir privacy
+    get dir privacy
+    enable dir privacy
+    disable dir privacy
+    add dir user
+    delete dir user
+    list dir users
+    list dir protection
 
 mail
-    cpanel list mail accounts
-    cpanel list mail filters ACCOUNT
-    cpanel get mail filter ACCOUNT FILTERNAME
-    cpanel set mail filter ACCOUNT FILE
-    cpanel delete mail filter ACCOUNT FILTERNAME
+    list mail accounts
+    list mail filters
+    get mail filter
+    set mail filter
+    delete mail filter
 
 Use ‘cpanel help MODULE’ to learn more about the functions implemented
 for MODULE; for example, ‘cpanel help mail’ to print detailed help on all
 the functions implemented for the ‘mail’ module.
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -68,7 +82,10 @@ Usage: cpanel list features
 
 List a cPanel account’s features. Output is JSON-formatted.
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+EXAMPLE
+    \033[1;34mcpanel list features\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -77,7 +94,10 @@ Usage: cpanel get quota
 Get the cPanel account’s total disk quota information in megabytes.
 Output is JSON-formatted.
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+EXAMPLE
+    \033[1;34mcpanel get quota\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -87,7 +107,10 @@ Show resource usage and some statistics, like bandwidth, number of subdomains,
 disk usage, number of mail filters, etc.
 Output is JSON-formatted.
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+EXAMPLE
+    \033[1;34mcpanel get usage\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -98,13 +121,13 @@ dedicated IPs, etc. Output is JSON-formatted.
 
 STAT is the name of the statistic you want, you can provide a list of STATs to
 be displayed. For a complete list ot STAT names, see ‘display parameters’ at:
-https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
+\033[0;34mhttps://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/\033[00m
 
 EXAMPLES
-    cpanel get stats hostname
-    cpanel get stats machinetype cpanelversion
+    \033[1;34mcpanel get stats hostname\033[00m
+    \033[1;34mcpanel get stats machinetype cpanelversion\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -112,21 +135,21 @@ Usage:
     cpanel list accounts
     cpanel get account
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+\033[1mCOMMANDS\033[0m
 
-COMMANDS
-
-list accounts
+\033[1mlist accounts\033[0m
     List basic information of the main cPanel account. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list accounts
+        \033[1;34mcpanel list accounts\033[00m
 
-get account
+\033[1mget account\033[0m
     Show detailed information of the main account. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel get account
+        \033[1;34mcpanel get account\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -134,24 +157,24 @@ Usage:
     cpanel list subaccounts
     cpanel get subaccount GUID
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+\033[1mCOMMANDS\033[0m
 
-COMMANDS
-
-list subaccounts
+\033[1mlist subaccounts\033[0m
     List the sub-accounts of the main cPanel account, along with detailed information
     of each sub-account. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list subaccounts
+        \033[1;34mcpanel list subaccounts\033[00m
 
-get subaccount GUID
+\033[1mget subaccount GUID\033[0m
     Show detailed information of a sub-account, identified by its GUID. To get
     this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts with a
     sub_account_exists flag set to 1 can be queried. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
+        \033[1;34mcpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -161,9 +184,7 @@ Usage:
     cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
     cpanel list backups
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
-
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
 All ‘create backup’ commands create a backup tarball (a .tar.gz file) of
 the user’s home directory along with other account data, such as the crontab,
@@ -173,10 +194,10 @@ backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz.
 If you pass an optional EMAIL argument, the backup engine will send a
 confirmation email after it completes the backup.
 
-create backup home [EMAIL]
+\033[1mcreate backup home [EMAIL]\033[0m
     Create a backup tarball and store it in the user’s home directory itself.
 
-create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+\033[1mcreate backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]\033[0m
     Create a backup tarball and store it on a remote FTP server.
 
     HOST is the hostname of the remote FTP server.
@@ -186,23 +207,25 @@ create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
     is not an absolute path, but a path relative to the login directory, i.e.,
     /public corresponds to <remote login directory>/public.
 
-create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
+\033[1mcreate backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]\033[0m
     Create a backup tarball and store it on a remote SCP server.
 
     USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ‘create backup ftp’.
 
     EXAMPLES
-        cpanel backup home
-        cpanel backup home scott@example.com
-        cpanel backup ftp scott tiger ftp.example.com
-        cpanel backup ftp scott tiger ftp.example.com /backup
-        cpanel backup scp scott tiger ssh.example.com /backup scott@example.com
+        \033[1;34mcpanel backup home\033[00m
+        \033[1;34mcpanel backup home scott@example.com\033[00m
+        \033[1;34mcpanel backup ftp scott tiger ftp.example.com\033[00m
+        \033[1;34mcpanel backup ftp scott tiger ftp.example.com /backup\033[00m
+        \033[1;34mcpanel backup scp scott tiger ssh.example.com /backup scott@example.com\033[00m
 
-list backups
+\033[1mlist backups\033[0m
     List the account’s backup files. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list backups
+        \033[1;34mcpanel list backups\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -210,25 +233,24 @@ Usage:
     cpanel update cache
     cpanel read cache
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+See \033[0;34mhttps://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/\033[00m
+for information on cache IDs.
 
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
-update cache
+\033[1mupdate cache\033[0m
     Create web browser cached file override ID. Output is JSON-formatted.
-    See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
-    for further information on cache IDs.
 
     EXAMPLE
-        cpanel update cache
+        \033[1;34mcpanel update cache\033[00m
 
-read cache
+\033[1mread cache\033[0m
     Return web browser cached file override ID. Output is JSON-formatted.
-    See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
-    for further information on cache IDs.
 
     EXAMPLE
-        cpanel read cache
+        \033[1;34mcpanel read cache\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -237,31 +259,31 @@ Usage:
     cpanel get locale
     cpanel set locale LOCALE
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+\033[1mCOMMANDS\033[0m
 
-COMMANDS
-
-list locales
+\033[1mlist locales\033[0m
     List all the available locales (language and conventions) for the cPanel user
     interface. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list locales
+        \033[1;34mcpanel list locales\033[00m
 
-get locale
+\033[1mget locale\033[0m
     Return the current locale (language and conventions) used for the cPanel user
     interface. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel get locale
+        \033[1;34mcpanel get locale\033[00m
 
-set locale LOCALE
+\033[1mset locale LOCALE\033[0m
     Set the cPanel user interface locale (language and conventions) to LOCALE.
     Use ‘cpanel list locales’ for a list of available locales.
     In general terms, a LOCALE corresponds to a ISO 639-1 two-letter language code.
 
     EXAMPLE
-        cpanel set locale bg  # Set UI to Bulgarian
+        \033[1;34mcpanel set locale bg\033[00m  # Set UI to Bulgarian
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -271,38 +293,38 @@ Usage:
     cpanel set style NAME
     cpanel default style NAME
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
-
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
 A style is a variation of a user interface theme for cPanel. For example, the
 ‘paper lantern’ theme has four styles: ‘basic’, ‘dark’, ‘light’ and ‘glass’.
 
-list styles
+\033[1mlist styles\033[0m
     Return all the available user interface styles. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list styles
+        \033[1;34mcpanel list styles\033[00m
 
-get style
+\033[1mget style\033[0m
     Return the current user interface style. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel get style
+        \033[1;34mcpanel get style\033[00m
 
-set style NAME
+\033[1mset style NAME\033[0m
     Set the current user interface style to NAME.
     NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
 
     EXAMPLE
-        cpanel set style dark
+        \033[1;34mcpanel set style dark\033[00m
 
-default style NAME
+\033[1mdefault style NAME\033[0m
     Set the default user interface style to NAME.
     NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
 
     EXAMPLE
-        cpanel default style basic
+        \033[1;34mcpanel default style basic\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -311,31 +333,181 @@ Usage:
     cpanel get theme
     cpanel set theme NAME
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
-
 A theme is a customized look and feel for the cPanel user interface. The default
 cPanel theme is ‘jupiter’; another popular theme is ‘paper lantern’.
 
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
-list themes
+\033[1mlist themes\033[0m
     Return all the available themes. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list themes
+        \033[1;34mcpanel list themes\033[00m
 
-get theme
+\033[1mget theme\033[0m
     Return the current theme. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel get theme
+        \033[1;34mcpanel get theme\033[00m
 
-set theme NAME
+\033[1mset theme NAME\033[0m
     Set the current theme to NAME.
     NAME must be one the available themes reported by ‘cpanel list themes’.
 
     EXAMPLE
-        cpanel set theme paper_lantern
+        \033[1;34mcpanel set theme paper_lantern\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
+
+---
+
+Usage:
+    cpanel list dir indexing PATH
+    cpanel get dir indexing PATH
+    cpanel set dir indexing PATH TYPE
+    cpanel list dir privacy PATH
+    cpanel get dir privacy PATH
+    cpanel enable dir privacy PATH
+    cpanel disable dir privacy PATH
+    cpanel add dir user PATH USER PASSWORD
+    cpanel delete dir user PATH USER
+    cpanel list dir users PATH
+    cpanel list dir protection PATH
+
+\033[1mINDEXING COMMANDS\033[0m
+
+The indexing of a remote directory controls how to present that directory
+to a web browser if no default HTML index page is found.
+
+There are four possible index settings:
+
+- ‘inherit’: Use the parent directory’s setting.
+- ‘disabled’: a.k.a. No Indexing, do not list the directory contents.
+- ‘standard’: a.k.a. Show Filename Only, list only the directory’s file names.
+- ‘fancy’: a.k.a. Show Filename and Description,
+   list the directory’s file names, sizes and types.
+
+cPanel uses a .htaccess directive in the remote directory to control the
+index settings. For instance, for ‘fancy’, it adds the following to htaccess:
+
+    Options +Indexes
+    IndexOptions +HTMLTable +FancyIndexing
+
+See \033[0;34mhttps://docs.cpanel.net/cpanel/advanced/indexes/\033[00m for further information.
+
+Note that the PATH in all commands below is not absolute, but relative to the
+remote login directory, i.e., /public_html corresponds to
+<remote login directory>/public_html.
+
+\033[1mlist dir indexing PATH\033[0m
+    List the index settings for remote PATH and its subdirectories (children).
+    Output is JSON-formatted.
+
+    EXAMPLE
+        \033[1;34mcpanel list dir indexing /public_html\033[00m
+
+\033[1mget dir indexing PATH\033[0m
+    Get the index setting for remote PATH only. Output is JSON-formatted.
+
+    EXAMPLE
+        \033[1;34mcpanel get dir indexing /public_html\033[00m
+
+\033[1mset dir indexing PATH TYPE\033[0m
+    Set the index setting for remote PATH. Possible values for TYPE are
+    ‘inherit’, ‘disabled’, ‘standard’ or ‘fancy’.
+
+    EXAMPLE
+        \033[1;34mcpanel set dir indexing /public_html fancy\033[00m
+
+\033[1mPRIVACY COMMANDS\033[0m
+
+cPanel can password-protect remote directories for privacy. Any attempt to
+access a private directory using a web browser will prompt for a
+username and password.
+
+The actual underlying authentication method is Basic HTTP authentication;
+these users and passwords are local to the directory, they are not cPanel users.
+
+Note that the PATH in all commands below is not absolute, but relative to the
+remote login directory, i.e., /public_html corresponds to
+<remote login directory>/public_html.
+
+\033[1mlist dir privacy PATH\033[0m
+    List the privacy settings for remote PATH and its subdirectories (children).
+    Output is JSON-formatted.
+
+    EXAMPLE
+        \033[1;34mcpanel list dir privacy /public_html\033[00m
+
+\033[1mget dir privacy PATH\033[0m
+    Get the privacy settings for remote PATH only. Output is JSON-formatted.
+    You can enable or disable password protection using
+    ‘cpanel enable dir privacy’ or ‘cpanel disable dir privacy’ (see below).
+
+    EXAMPLE
+        \033[1;34mcpanel get dir privacy /public_html\033[00m
+
+\033[1menable dir privacy PATH\033[0m
+    Enable password protection for PATH. Note that you need to add users
+    using ‘cpanel add dir user’ (see below) to grant access to PATH.
+
+    EXAMPLE
+        \033[1;34mcpanel enable dir privacy /public_html\033[00m
+
+\033[1mdisable dir privacy PATH\033[0m
+    Disable password protection for PATH.
+
+    EXAMPLE
+        \033[1;34mcpanel disable dir privacy /public_html\033[00m
+
+\033[1mUSER MANAGEMENT COMMANDS\033[0m
+
+cPanel grants access to remote password-protected directories using
+ad hoc users and passwords specific to every directory. Use the
+commands below to manage these users.
+
+cPanel stores the credentials in a .htpasswd file.
+See \033[0;34mhttps://en.wikipedia.org/wiki/.htpasswd\033[00m for further information.
+
+Note that the PATH in all commands below is not absolute, but relative to the
+remote login directory, i.e., /public_html corresponds to
+<remote login directory>/public_html.
+
+\033[1madd dir user PATH USER PASSWORD\033[0m
+    Add USER with corresponding PASSWORD to the list of allowed users
+    for PATH.
+
+    EXAMPLE
+        \033[1;34mcpanel add dir user /public_html scott tiger\033[00m
+
+\033[1mdelete dir user PATH USER\033[0m
+    Remove USER from the list of allowed users for PATH.
+
+    EXAMPLE
+        \033[1;34mcpanel delete dir user /public_html scott\033[00m
+
+\033[1mlist dir users PATH\033[0m
+    List allowed users for PATH. Output is JSON-formatted.
+
+    EXAMPLE
+        \033[1;34mcpanel list users /public_html\033[00m
+
+\033[1mLEECH PROTECTION COMMANDS\033[0m
+
+Leech protection adds some basic measures against the abuse of
+password-protected directories. The system allows a maximum number of
+logins per hour for a leech-protected directory.
+
+See \033[0;34mhttps://docs.cpanel.net/cpanel/security/leech-protection/\033[00m for further information.
+
+\033[1mlist dir protection PATH\033[00m
+    List leech protection status for PATH and its subdirectories (children).
+    Output is JSON-formatted.
+
+    EXAMPLE
+        \033[1;34mcpanel list dir protection /public_html\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
@@ -346,33 +518,31 @@ Usage:
     cpanel set mail filter ACCOUNT FILE
     cpanel delete mail filter ACCOUNT FILTERNAME
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
-
 COMMANDS
 
-list mail accounts
-    Lists cPanel email accounts. Output is JSON-formatted.
+\033[1mlist mail accounts\033[0m
+    List cPanel email accounts. Output is JSON-formatted.
 
     EXAMPLE
-        cpanel list mail accounts
+        \033[1;34mcpanel list mail accounts\033[00m
 
-list mail filters ACCOUNT
-    Lists mail filters associated to ACCOUNT. Output is a JSON-formatted
+\033[1mlist mail filters ACCOUNT\033[0m
+    List mail filters associated to ACCOUNT. Output is a JSON-formatted
     array of filter names.
     ACCOUNT is the name of a cPanel email account, usually user@domain
 
     EXAMPLE
-        cpanel list mail filters scott@example.com
+        \033[1;34mcpanel list mail filters scott@example.com\033[00m
 
-get mail filter ACCOUNT FILTERNAME
+\033[1mget mail filter ACCOUNT FILTERNAME\033[0m
     Return a JSON-formatted description of email filter FILTERNAME associated
     to email ACCOUNT. To get a list of current filter names, use
     ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
-        cpanel get mail filter scott@example.com spamkiller
+        \033[1;34mcpanel get mail filter scott@example.com spamkiller\033[00m
 
-set mail filter ACCOUNT FILE
+\033[1mset mail filter ACCOUNT FILE\033[0m
     Create or update an email filter associated with email ACCOUNT.
     If the filter already exists, it updates it; otherwise, it creates a new filter.
     Use a JSON FILE to describe the filter rules. This JSON FILE has the same
@@ -382,24 +552,24 @@ set mail filter ACCOUNT FILE
     See the EXAMPLE below.
 
     EXAMPLE
-        cpanel get mail filter scott@example.com spamkiller > filter.json
+        \033[1;34mcpanel get mail filter scott@example.com spamkiller > filter.json\033[00m
         # Edit filter.json, and then run:
-        cpanel set mail filter scott@example.com filter.json
+        \033[1;34mcpanel set mail filter scott@example.com filter.json\033[00m
 
-delete mail filter ACCOUNT FILTERNAME
+\033[1mdelete mail filter ACCOUNT FILTERNAME\033[0m
     Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
     filter names, use ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
-         cpanel delete mail filter scott@example.com spamkiller
+         \033[1;34mcpanel delete mail filter scott@example.com spamkiller\033[00m
+
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
 
 ---
 
 Usage: cpanel [OPTIONS] COMMAND...
 
 CLI utility to run tasks on a website controlled with cPanel.
-
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 OPTIONS
     -h, --help                  print this help and exit
@@ -412,17 +582,17 @@ AUTHENTICATION
 You can pass the HOST, USER and UTOKEN credentials directly as options, as
 shown above, or, better yet, write a .cpanelrc file on your $HOME
 directory. See the Authentication section in the User’s Guide at:
-https://cpanel-cli.readthedocs.io/en/latest/installation.html#authentication
+\033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/installation.html#authentication\033[00m
 
 COMMAND is a sequence of two or more keywords describing a task; the general
 form of the command keyword list is:
 
-    cpanel VERB MODULE TARGET [ARGUMENTS...]
+    \033[1mcpanel VERB MODULE TARGET [ARGUMENTS...]\033[0m
 
 EXAMPLES
-    cpanel list features
-    cpanel list mail accounts
-    cpanel get mail filter scott@example.com spamkiller
+    \033[1;34mcpanel list features\033[00m
+    \033[1;34mcpanel list mail accounts\033[00m
+    \033[1;34mcpanel get mail filter scott@example.com spamkiller\033[00m
 
 Notice the keywords follow the natural English sentence order, i.e.,
 ‘list features’, ‘get mail filter’, etc.
@@ -441,11 +611,14 @@ The currently implemented modules are:
     locale
     styles
     themes
+    directory
     mail
 
 Use ‘cpanel help modules’ for more information about them.
 
+For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io/en/latest/\033[00m
+
 DEVELOPMENT
-    Visit the project page at: https://github.com/layfellow/cpanel-cli/
+    Visit the project page at: \033[0;34mhttps://github.com/layfellow/cpanel-cli/\033[00m
 
 ---

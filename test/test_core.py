@@ -151,6 +151,84 @@ class TestCore(unittest.TestCase):
 		self.assertTrue(theme in themes)
 
 
+	def test_list_dir_indexing(self) -> None:
+		indexing: JSONType = json.loads(dispatch(self.host, ["list", "dir", "indexing", "/.cpanel"]))
+		print(indexing)
+
+		self.assertTrue(indexing['current']['state']['index_type'] in ("inherit",  "disabled", "standard", "fancy"))
+
+
+	def test_set_dir_indexing(self) -> None:
+		original: JSONType = json.loads(dispatch(self.host, ["get", "dir", "indexing", "/.cpanel"]))
+		print(original)
+
+		self.assertTrue(original in ("inherit",  "disabled", "standard", "fancy"))
+
+		r: str = dispatch(self.host, ["set", "dir", "indexing", "/.cpanel", str(original)])
+		self.assertEqual(r, "OK")
+
+
+	def test_list_dir_privacy(self) -> None:
+		privacy: JSONType = json.loads(dispatch(self.host, ["list", "dir", "privacy", "/.cpanel"]))
+		print(privacy)
+
+		self.assertTrue(privacy['current']['state']['protected'] in (0, 1))
+
+
+	def test_enable_disable_dir_privacy(self) -> None:
+		original: JSONType = json.loads(dispatch(self.host, ["get", "dir", "privacy", "/.cpanel"]))
+		print(original)
+
+		self.assertTrue(original['protected'] in (0, 1))
+
+		r: str = dispatch(self.host, ["enable", "dir", "privacy", "/.cpanel"])
+		self.assertEqual(r, "OK")
+
+		r = dispatch(self.host, ["disable", "dir", "privacy", "/.cpanel"])
+		self.assertEqual(r, "OK")
+
+		if original['protected'] == 0:
+			r = dispatch(self.host, ["disable", "dir", "privacy", "/.cpanel"])
+			self.assertEqual(r, "OK")
+		else:
+			r = dispatch(self.host, ["enable", "dir", "privacy", "/.cpanel"])
+			self.assertEqual(r, "OK")
+
+
+	def test_add_list_delete_dir_user(self) -> None:
+		user: str = 'tmp-{}'.format(hex(random.randrange(0, 2 ** 32))[2:])
+		print(user)
+
+		r: str = dispatch(self.host, ["add", "dir", "user", "/.cpanel", user, "tiger"])
+		self.assertEqual(r, "OK")
+
+		users: List[JSONType] = json.loads(dispatch(self.host, ["list", "dir", "users", "/.cpanel"]))
+		print(users)
+
+		created: bool = False
+		for u in users:
+			created = created or u == user
+		self.assertTrue(created)
+
+		r = dispatch(self.host, ["delete", "dir", "user", "/.cpanel", user])
+		self.assertEqual(r, "OK")
+
+		users = json.loads(dispatch(self.host, ["list", "dir", "users", "/.cpanel"]))
+		print(users)
+
+		deleted: bool = True
+		for u in users:
+			deleted = deleted and u != user
+		self.assertTrue(deleted)
+
+
+	def test_list_dir_protection(self) -> None:
+		protection: JSONType = json.loads(dispatch(self.host, ["list", "dir", "protection", "/.cpanel"]))
+		print(protection)
+
+		self.assertTrue(protection['current']['state']['has_leech_protection'] in (0, 1))
+
+
 	def test_list_mail_accounts(self) -> None:
 		emails: List[JSONType] = self.list_mail_accounts()
 		print(emails)
@@ -218,7 +296,7 @@ class TestCore(unittest.TestCase):
 		r: str = dispatch(self.host, ["set", "mail", "filter", emails[0]['email'], filterfile])
 		self.assertEqual(r, "OK")
 
-		r: str = dispatch(self.host, ["delete", "mail", "filter", emails[0]['email'], name])
+		r = dispatch(self.host, ["delete", "mail", "filter", emails[0]['email'], name])
 		self.assertEqual(r, "OK")
 
 		os.remove(filterfile)
