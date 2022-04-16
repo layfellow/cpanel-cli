@@ -208,7 +208,7 @@ and name it ``cpanelrc.test`` (keep in the ``test`` directory):
 Then edit ``cpanelrc.test`` and set:
 
 - The hostname of your cPanel instance
-- A username with administrator role (this is necessary for some tests)
+- The username of your cPanel account
 - An `API token`_ associated to that username
 
 **Token-based authentication is the only supported authentication method.**
@@ -221,9 +221,9 @@ To run the tests, use:
 
     $ make test
 
-The above command will hit the `cPanel UAPI REST interface`_ with all the functions implemented
-in ``cpanel-cli``. An immediate DELETE call follows any POST/PUT call, so that
-the remote state of cPanel is left unchanged, i.e., the tests are strictly non-destructive.
+The above command will hit the `cPanel UAPI REST interface`_ with most of the functions
+implemented in ``cpanel-cli``. The remote state of cPanel is left unchanged, i.e.,
+the tests are strictly non-destructive.
 
 .. _`cPanel UAPI REST interface`: https://documentation.cpanel.net/display/DD/Use+WHM+API+to+Call+cPanel+API+and+UAPI
 

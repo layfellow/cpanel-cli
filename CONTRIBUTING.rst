@@ -208,7 +208,7 @@ and name it ``cpanelrc.test`` (keep in the ``test`` directory):
 Then edit ``cpanelrc.test`` and set:
 
 - The hostname of your cPanel instance
-- A username with administrator role (this is necessary for some tests)
+- The username of your cPanel account
 - An `API token`_ associated to that username
 
 **Token-based authentication is the only supported authentication method.**
@@ -221,9 +221,9 @@ To run the tests, use:
 
     $ make test
 
-The above command will hit the `cPanel UAPI REST interface`_ with all the functions implemented
-in ``cpanel-cli``. An immediate DELETE call follows any POST/PUT call, so that
-the remote state of cPanel is left unchanged, i.e., the tests are strictly non-destructive.
+The above command will hit the `cPanel UAPI REST interface`_ with most of the functions
+implemented in ``cpanel-cli``. The remote state of cPanel is left unchanged, i.e.,
+the tests are strictly non-destructive.
 
 .. _`cPanel UAPI REST interface`: https://api.docs.cpanel.net/cpanel/introduction/
 
@@ -580,7 +580,7 @@ Para establecer las credenciales del host remoto, haga una copia del archivo
 Luego edite ``cpanelrc.test`` y establezca:
 
 - El nombre de host de su instancia de cPanel
-- Un nombre de usuario con rol de administrador (esto es necesario para algunas pruebas)
+- El nombre de usuario de su cuenta de cPanel
 - Un `token de API`_ asociado a ese nombre de usuario.
 
 **La autenticación basada en tokens es el único método de autenticación soportado.**
@@ -593,9 +593,9 @@ Para ejecutar las pruebas utilice:
 
     $ make test
 
-El comando anterior invoca la `interfaz REST UAPI de cPanel`_ con todas las funciones implementadas
-en ``cpanel-cli``. Una llamada DELETE inmediata sigue a continuación de cualquier llamada POST/PUT, de modo que
-el estado remoto de cPanel se deja sin cambios, es decir, las pruebas son estrictamente no destructivas.
+El comando anterior acceda a la `interfaz REST UAPI de cPanel`_ con la mayoría de las funciones
+implementadas en ``cpanel-cli``. El estado remoto de cPanel se deja sin cambios, es decir,
+las pruebas son estrictamente no destructivas.
 
 .. _`interfaz REST UAPI de cPanel`: https://api.docs.cpanel.net/cpanel/introduction/
 
