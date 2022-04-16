@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 01:29-0400\n"
+"POT-Creation-Date: 2022-04-16 02:34-0400\n"
 "PO-Revision-Date: 2022-04-08 19:50-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -595,8 +595,4 @@ msgstr ""
 #: ../../contributing.rst:371
 msgid "For further information, see the `Internationalization Guide`_"
 msgstr "Para más información consulte la `Guía de internacionalización`_."
-
-#: ../../contributing.rst:373
-msgid "cPanel CLI"
-msgstr "CLI para cPanel"
 

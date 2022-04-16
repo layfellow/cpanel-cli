@@ -569,7 +569,7 @@ For a complete User’s Guide go to: \033[0;34mhttps://cpanel-cli.readthedocs.io
 
 Usage: cpanel [OPTIONS] COMMAND...
 
-CLI utility to run tasks on a website controlled with cPanel.
+A command line interface for the cPanel Unrestricted API.
 
 OPTIONS
     -h, --help                  print this help and exit

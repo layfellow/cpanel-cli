@@ -17,7 +17,7 @@ cPanel Command Line Interface
 
 `LÉAME en español <#interfaz-de-linea-de-comandos-para-cpanel>`_
 
-**cpanel-cli** is a CLI utility for running tasks on a cPanel-controlled website.
+A command line interface for the cPanel Unrestricted API.
 
 Quickly execute commands in a terminal to manage a website instead of logging
 into `cPanel`_ and clicking your way around the web interface. You can also use
@@ -152,8 +152,7 @@ Interfaz de línea de comandos para cPanel
 
 `README in English <#cpanel-command-line-interface>`_
 
-**cpanel-cli** es un utilitario de línea de comandos para ejecutar tareas en un sitio
-web controlado por cPanel.
+Una interfaz de línea de comandos para la Unrestricted API de cPanel.
 
 Ejecute rápidamente comandos en un terminal en lugar de iniciar sesión en la interfaz
 web de `cPanel`_. También puede usar este utilitario para trabajos de *scripting*.

@@ -1,7 +1,7 @@
 import cpanel
 from sphinx.locale import get_translation
 
-_ = get_translation('contributing')
+_ = get_translation('index')
 
 def setup(app):
 	app.add_css_file('custom.css')
@@ -14,7 +14,7 @@ extensions = []
 templates_path = []
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
 html_static_path = ['_static/']
-html_title = cpanel.__description__ + " " + cpanel.__version__
+html_title = cpanel.__description__ + " (v" + cpanel.__version__ + ")"
 locale_dirs = ['locale/']
 gettext_compact = False
 html_sidebars = {
@@ -39,7 +39,6 @@ html_theme_options = {
 
 	# Set the repo location to get a badge with stats
 	'repo_url': cpanel.__url__,
-	# 'repo_name': cpanel.__description__,
 	'repo_name': "cpanel-cli",
 
 	# Visible levels of the global TOC; -1 means unlimited
