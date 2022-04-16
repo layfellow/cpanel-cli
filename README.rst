@@ -10,10 +10,9 @@
     :alt: Documentation Status
     :target: https://cpanel-cli.readthedocs.io/en/latest/?badge=latest
 
-
-=============================
-cPanel Command Line Interface
-=============================
+===============================================
+|cpanel_cli_icon| cPanel Command Line Interface
+===============================================
 
 `LÉAME en español <#interfaz-de-linea-de-comandos-para-cpanel>`_
 
@@ -24,6 +23,10 @@ into `cPanel`_ and clicking your way around the web interface. You can also use
 this utility in scripting jobs.
 
 .. _cPanel: https://en.wikipedia.org/wiki/CPanel
+
+.. |cpanel_cli_icon| image:: https://raw.githubusercontent.com/layfellow/cpanel-cli/master/doc/_static/cpanel-cli-salmon.svg
+   :width: 100
+   :align: bottom
 
 Some examples
 =============
@@ -146,9 +149,9 @@ See `CONTRIBUTING <https://github.com/layfellow/cpanel-cli/blob/main/CONTRIBUTIN
     :alt: Status de la documentación
     :target: https://cpanel-cli.readthedocs.io/es/latest/?badge=latest
 
-=========================================
-Interfaz de línea de comandos para cPanel
-=========================================
+============================================================
+|cpanel_cli_icon|  Interfaz de línea de comandos para cPanel
+============================================================
 
 `README in English <#cpanel-command-line-interface>`_
 

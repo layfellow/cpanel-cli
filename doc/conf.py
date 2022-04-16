@@ -21,9 +21,8 @@ html_sidebars = {
     "**": ['logo-text.html', 'globaltoc.html', 'localtoc.html', 'searchbox.html']
 }
 html_theme = 'sphinx_material'
+html_logo = '_static/cpanel-cli-white.svg'
 html_theme_options = {
-	'logo_icon': "&#x276F;&#x2581;",
-
 	# Set the name of the project to appear in the navigation.
 	'nav_title': _("cPanel CLI"),
 
