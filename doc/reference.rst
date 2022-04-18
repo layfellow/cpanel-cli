@@ -5,527 +5,700 @@ Command Reference
 `Leer en español </es/latest/reference.html>`_
 
 Module: ``features``
-====================
+==================================================
 
 **list features**
-    List a cPanel account’s features. Output is JSON-formatted.
 
-    *Example*
 
-    .. code:: sh
+List a cPanel account’s features.
 
-        $ cpanel list features
+*Example*
+
+.. code:: sh
+
+    $ cpanel list features
+
+
 
 Module: ``quota``
-=================
+==================================================
 
 **get quota**
-    Get the cPanel account’s total disk quota information in megabytes.
-    Output is JSON-formatted.
 
-    *Example*
 
-    .. code:: sh
+Get the cPanel account’s total disk quota information in megabytes.
 
-        $ cpanel get quota
+*Example*
+
+.. code:: sh
+
+    $ cpanel get quota
+
+
 
 Module: ``usage``
-=================
+==================================================
 
 **get usage**
-    Show resource usage and some statistics, like bandwidth, number of subdomains,
-    disk usage, number of mail filters, etc.
-    Output is JSON-formatted.
 
-    *Example*
 
-    .. code:: sh
+Show resource usage and some statistics, like bandwidth, number of subdomains,
+disk usage, number of mail filters, etc.
 
-        $ cpanel get usage
+*Example*
+
+.. code:: sh
+
+    $ cpanel get usage
+
+
 
 Module: ``stats``
-=================
+==================================================
 
 **get stats STAT...**
-    Show detailed data and statistics, like hostname, file usage, database usage,
-    dedicated IPs, etc. Output is JSON-formatted.
 
-    STAT is the name of the statistic you want, you can provide a list of STATs to
-    be displayed. For a complete list of STAT names, see ‘display parameters’ at:
-    https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
 
-    *Examples*
+Show detailed data and statistics, like hostname, file usage, database usage,
+dedicated IPs, etc.
 
-    .. code:: sh
+STAT is the name of the statistic you want, you can provide a list of STATs to
+be displayed. For a complete list ot STAT names, see ‘display parameters’ at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
 
-        $ cpanel get stats hostname
-        $ cpanel get stats machinetype cpanelversion
+*Examples*
+
+.. code:: sh
+
+    $ cpanel get stats hostname
+    $ cpanel get stats machinetype cpanelversion
+
+
 
 Module: ``accounts``
-====================
+==================================================
 
 **list accounts**
-    List basic information of the main cPanel account. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list accounts
 
 **get account**
-    Show detailed information of the main account. Output is JSON-formatted.
 
-    *Example*
 
-    .. code:: sh
 
-        $ cpanel get account
+**list accounts**
+
+List basic information of the main cPanel account.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list accounts
+
+**get account**
+
+Show detailed information of the main account.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get account
+
+
 
 Module: ``subaccounts``
-=======================
+==================================================
 
 **list subaccounts**
-    List the sub-accounts of the main cPanel account, along with detailed information
-    of each sub-account. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list subaccounts
 
 **get subaccount GUID**
-    Show detailed information of a sub-account, identified by its GUID. To get
-    this GUID, use ``cpanel list subaccounts``. Note that only sub-accounts with a
-    ``sub_account_exists`` flag set to 1 can be queried. Output is JSON-formatted.
 
-    *Example*
 
-    .. code:: sh
 
-        $ cpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
+**list subaccounts**
+
+List the sub-accounts of the main cPanel account, along with detailed information
+of each sub-account.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list subaccounts
+
+**get subaccount GUID**
+
+Show detailed information of a sub-account, identified by its GUID. To get
+this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts with a
+sub_account_exists flag set to 1 can be queried.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37
+
+
 
 Module: ``backup``
-==================
+==================================================
 
-All ``create backup`` commands create a backup tarball (a ``.tar.gz`` file) of the user’s home
-directory along with other account data, such as the crontab, API tokens, log files and DB data.
-The backup tarball’s name is ``backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz``.
+**create backup home [EMAIL]**
 
-If you pass an optional EMAIL argument, the backup engine will send a confirmation email
-after it completes the backup.
+**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
 
-**cpanel create backup home [EMAIL]**
-    Create a backup tarball and store it in the user’s home directory itself.
+**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
 
-**cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
-    Create a backup tarball and store it on a remote FTP server.
+**list backups**
 
-    HOST is the hostname of the remote FTP server.
 
-    USERNAME and PASSWORD are the credentials to log in to it.
 
-    Optional DIRECTORY is the destination directory on the remote server; by default use the
-    remote user’s login directory. Note that DIRECTORY is not an absolute path, but a path
-    relative to the login directory, i.e., ``/public`` corresponds to
-    ``<remote login directory>/public``.
+All ‘create backup’ commands create a backup tarball (a .tar.gz file) of
+the user’s home directory along with other account data, such as the crontab,
+API tokens, log files and DB data. The backup tarball’s name is
+backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz.
 
-**cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
-    Create a backup tarball and store it on a remote SCP server.
+If you pass an optional EMAIL argument, the backup engine will send a
+confirmation email after it completes the backup.
 
-    USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ``create backup ftp``.
+**create backup home [EMAIL]**
 
-    *Examples*
+Create a backup tarball and store it in the user’s home directory itself.
 
-    .. code:: sh
+**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
 
-        $ cpanel backup home
-        $ cpanel backup home scott@example.com
-        $ cpanel backup ftp scott tiger ftp.example.com
-        $ cpanel backup ftp scott tiger ftp.example.com /backup
-        $ cpanel backup scp scott tiger ssh.example.com /backup scott@example.com
+Create a backup tarball and store it on a remote FTP server.
 
-**cpanel list backups**
-    List the account’s backup files. Output is JSON-formatted.
+HOST is the hostname of the remote FTP server.
+USERNAME and PASSWORD are the credentials to log in to it.
+Optional DIRECTORY is the destination directory on the remote server;
+by default use the remote user’s login directory. Note that DIRECTORY
+is not an absolute path, but a path relative to the login directory, i.e.,
+/public corresponds to <remote login directory>/public.
 
-    *Example*
+**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
 
-    .. code:: sh
+Create a backup tarball and store it on a remote SCP server.
 
-        $ cpanel list backups
+USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ‘create backup ftp’.
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel backup home
+    $ cpanel backup home scott@example.com
+    $ cpanel backup ftp scott tiger ftp.example.com
+    $ cpanel backup ftp scott tiger ftp.example.com /backup
+    $ cpanel backup scp scott tiger ssh.example.com /backup scott@example.com
+
+**list backups**
+
+List the account’s backup files.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list backups
+
+
 
 Module: ``cache``
-=================
+==================================================
+
+**update cache**
+
+**read cache**
+
 
 See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
 for information on cache IDs.
 
+
 **update cache**
-    Create web browser cached file override ID. Output is JSON-formatted.
 
-    *Example*
+Create web browser cached file override ID.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel update cache
+.. code:: sh
+
+    $ cpanel update cache
 
 **read cache**
-    Return web browser cached file override ID. Output is JSON-formatted.
 
-    *Example*
+Return web browser cached file override ID.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel read cache
+.. code:: sh
 
-Module: ``locale``
-==================
+    $ cpanel read cache
+
+
+
+Module: ``locales``
+==================================================
 
 **list locales**
-    List all the available locales (language and conventions) for the cPanel user
-    interface. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list locales
 
 **get locale**
-    Return the current locale (language and conventions) used for the cPanel user
-    interface. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel get locale
 
 **set locale LOCALE**
-    Set the cPanel user interface locale (language and conventions) to LOCALE.
-    Use ``cpanel list locales`` for a list of available locales.
-    In general terms, a LOCALE corresponds to a ISO 639-1 two-letter language code.
 
-    *Example*
 
-    .. code:: sh
 
-        $ cpanel set locale bg  # Set UI to Bulgarian
+**list locales**
+
+List all the available locales (language and conventions) for the cPanel user
+interface.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list locales
+
+**get locale**
+
+Return the current locale (language and conventions) used for the cPanel user
+interface.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get locale
+
+**set locale LOCALE**
+
+Set the cPanel user interface locale (language and conventions) to LOCALE.
+Use ‘cpanel list locales’ for a list of available locales.
+In general terms, a LOCALE corresponds to a ISO 639-1 two-letter language code.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel set locale bg
+
+
 
 Module: ``styles``
-==================
-
-A style is a variation of a user interface theme for cPanel. For example, the
-Paper Lantern theme has four styles: ``basic``, ``dark``, ``light`` and ``glass``.
+==================================================
 
 **list styles**
-    Return all the available user interface styles. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list styles
 
 **get style**
-    Return the current user interface style. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel get style
 
 **set style NAME**
-    Set the current user interface style to NAME.
-    NAME must be one of ``basic``, ``dark``, ``light`` or ``glass``.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel set style dark
 
 **default style NAME**
-    Set the default user interface style to NAME.
-    NAME must be one of ``basic``, ``dark``, ``light`` or ``glass``.
 
-    *Example*
 
-    .. code:: sh
 
-        $ cpanel default style basic
+A style is a variation of a user interface theme for cPanel. For example, the
+‘paper lantern’ theme has four styles: ‘basic’, ‘dark’, ‘light’ and ‘glass’.
+
+**list styles**
+
+Return all the available user interface styles.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list styles
+
+**get style**
+
+Return the current user interface style.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get style
+
+**set style NAME**
+
+Set the current user interface style to NAME.
+NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel set style dark
+
+**default style NAME**
+
+Set the default user interface style to NAME.
+NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel default style basic
+
+
 
 Module: ``themes``
-==================
-
-A theme is a customized look and feel for the cPanel user interface. The default
-cPanel theme is Jupiter; another popular theme is Paper Lantern.
+==================================================
 
 **list themes**
-    Return all the available themes. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list themes
 
 **get theme**
-    Return the current theme. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel get theme
 
 **set theme NAME**
-    Set the current theme to NAME.
-    NAME must be one the available themes reported by ``cpanel list themes``.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel set theme paper_lantern
 
 
-Module: ``directory``
-=====================
+A theme is a customized look and feel for the cPanel user interface. The default
+cPanel theme is ‘jupiter’; another popular theme is ‘paper lantern’.
 
-Indexing commands
------------------
 
-The *indexing* of a remote directory controls how to present that directory
+**list themes**
+
+Return all the available themes.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list themes
+
+**get theme**
+
+Return the current theme.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get theme
+
+**set theme NAME**
+
+Set the current theme to NAME.
+NAME must be one the available themes reported by ‘cpanel list themes’.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel set theme paper_lantern
+
+
+
+Module: ``dir``
+==================================================
+
+**list dir indexing PATH**
+
+**get dir indexing PATH**
+
+**set dir indexing PATH TYPE**
+
+**list dir privacy PATH**
+
+**get dir privacy PATH**
+
+**enable dir privacy PATH**
+
+**disable dir privacy PATH**
+
+**add dir user PATH USER PASSWORD**
+
+**delete dir user PATH USER**
+
+**list dir users PATH**
+
+**list dir protection PATH**
+
+
+**INDEXING COMMANDS**
+
+
+The indexing of a remote directory controls how to present that directory
 to a web browser if no default HTML index page is found.
 
 There are four possible index settings:
 
-- ``inherit``: Use the parent directory’s setting.
-- ``disabled``: a.k.a. *No Indexing*, do not list the directory contents.
-- ``standard``: a.k.a. *Show Filename Only*, list only the directory’s file names.
-- ``fancy``: a.k.a. *Show Filename and Description*, list the directory’s file names,
-  sizes and types.
+- ‘inherit’: Use the parent directory’s setting.
+- ‘disabled’ (No Indexing): do not list the directory contents.
+- ‘standard’ (Show Filename Only): list only the directory’s file names.
+- ‘fancy’: (Show Filename and Description) list the directory’s file names, sizes and types.
 
-cPanel uses a ``.htaccess`` directive in the remote directory to control the
-index settings. For instance, for ``fancy``, it adds the following to ``.htaccess``:
+cPanel uses a .htaccess directive in the remote directory to control the
+index settings. For instance, for ‘fancy’, it adds the following to htaccess:
 
-.. code:: sh
-
-    Options +Indexes
-    IndexOptions +HTMLTable +FancyIndexing
+Options +Indexes
+IndexOptions +HTMLTable +FancyIndexing
 
 See https://docs.cpanel.net/cpanel/advanced/indexes/ for further information.
 
 Note that the PATH in all commands below is not absolute, but relative to the
-remote login directory, i.e., ``/public_html`` corresponds to
-``<remote login directory>/public_html``.
+remote login directory, i.e., /public_html corresponds to
+<remote login directory>/public_html.
 
 **list dir indexing PATH**
-    List the index settings for remote PATH and its subdirectories (children).
-    Output is JSON-formatted.
 
-    *Example*
+List the index settings for remote PATH and its subdirectories (children).
 
-    .. code:: sh
+*Example*
 
-        $ cpanel list dir indexing /public_html
+.. code:: sh
+
+    $ cpanel list dir indexing /public_html
 
 **get dir indexing PATH**
-    Get the index setting for remote PATH only. Output is JSON-formatted.
 
-    *Example*
+Get the index setting for remote PATH only.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel get dir indexing /public_html
+.. code:: sh
+
+    $ cpanel get dir indexing /public_html
 
 **set dir indexing PATH TYPE**
-    Set the index setting for remote PATH. Possible values for TYPE are
-    ``inherit``, ``disabled``, ``standard`` or ``fancy``.
 
-    *Example*
+Set the index setting for remote PATH. Possible values for TYPE are
+‘inherit’, ‘disabled’, ‘standard’ or ‘fancy’.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel set dir indexing /public_html fancy
+.. code:: sh
 
-Privacy commands
-----------------
+    $ cpanel set dir indexing /public_html fancy
+
+**PRIVACY COMMANDS**
+
 
 cPanel can password-protect remote directories for privacy. Any attempt to
 access a private directory using a web browser will prompt for a
 username and password.
 
 The actual underlying authentication method is Basic HTTP authentication;
-these users and passwords are local to the directory, they are *not* cPanel users.
+these users and passwords are local to the directory, they are not cPanel users.
 
 Note that the PATH in all commands below is not absolute, but relative to the
-remote login directory, i.e., ``/public_html`` corresponds to
-``<remote login directory>/public_html``.
+remote login directory, i.e., /public_html corresponds to
+<remote login directory>/public_html.
 
 **list dir privacy PATH**
-    List the privacy settings for remote PATH and its subdirectories (children).
-    Output is JSON-formatted.
 
-    *Example*
+List the privacy settings for remote PATH and its subdirectories (children).
 
-    .. code:: sh
+*Example*
 
-        $ cpanel list dir privacy /public_html
+.. code:: sh
+
+    $ cpanel list dir privacy /public_html
 
 **get dir privacy PATH**
-    Get the privacy settings for remote PATH only. Output is JSON-formatted.
-    You can enable or disable password protection using
-    ``cpanel enable dir privacy`` or ``cpanel disable dir privacy`` (see below).
 
-    *Example*
+Get the privacy settings for remote PATH only.
+You can enable or disable password protection using
+‘cpanel enable dir privacy’ or ‘cpanel disable dir privacy’ (see below).
 
-    .. code:: sh
+*Example*
 
-        $ cpanel get dir privacy /public_html
+.. code:: sh
+
+    $ cpanel get dir privacy /public_html
 
 **enable dir privacy PATH**
-    Enable password protection for PATH. Note that you need to add users
-    using ``cpanel add dir user`` (see below) to grant access to PATH.
 
-    *Example*
+Enable password protection for PATH. Note that you need to add users
+using ‘cpanel add dir user’ (see below) to grant access to PATH.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel enable dir privacy /public_html
+.. code:: sh
+
+    $ cpanel enable dir privacy /public_html
 
 **disable dir privacy PATH**
-    Disable password protection for PATH.
 
-    *Example*
+Disable password protection for PATH.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel disable dir privacy /public_html
+.. code:: sh
 
-User management commands
-------------------------
+    $ cpanel disable dir privacy /public_html
+
+**USER MANAGEMENT COMMANDS**
+
 
 cPanel grants access to remote password-protected directories using
 ad hoc users and passwords specific to every directory. Use the
 commands below to manage these users.
 
-cPanel stores the credentials in a ``.htpasswd`` file.
+cPanel stores the credentials in a .htpasswd file.
 See https://en.wikipedia.org/wiki/.htpasswd for further information.
 
 Note that the PATH in all commands below is not absolute, but relative to the
-remote login directory, i.e., ``/public_html`` corresponds to
-``<remote login directory>/public_html``.
+remote login directory, i.e., /public_html corresponds to
+<remote login directory>/public_html.
 
 **add dir user PATH USER PASSWORD**
-    Add USER with corresponding PASSWORD to the list of allowed users
-    for PATH.
 
-    *Example*
+Add USER with corresponding PASSWORD to the list of allowed users
+for PATH.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel add dir user /public_html scott tiger
+.. code:: sh
+
+    $ cpanel add dir user /public_html scott tiger
 
 **delete dir user PATH USER**
-    Remove USER from the list of allowed users for PATH.
 
-    *Example*
+Remove USER from the list of allowed users for PATH.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel delete dir user /public_html scott
+.. code:: sh
+
+    $ cpanel delete dir user /public_html scott
 
 **list dir users PATH**
-    List allowed users for PATH. Output is JSON-formatted.
 
-    *Example*
+List allowed users for PATH.
 
-    .. code:: sh
+*Example*
 
-        $ cpanel list users /public_html
+.. code:: sh
 
-Leech protection commands
--------------------------
+    $ cpanel list users /public_html
 
-*Leech protection* adds some basic measures against the abuse of
+**LEECH PROTECTION COMMANDS**
+
+
+Leech protection adds some basic measures against the abuse of
 password-protected directories. The system allows a maximum number of
 logins per hour for a leech-protected directory.
 
 See https://docs.cpanel.net/cpanel/security/leech-protection/ for further information.
 
-**list dir protection PATH**
-    List leech protection status for PATH and its subdirectories (children).
-    Output is JSON-formatted.
+033[1mlist dir protection PATH033[00m
+List leech protection status for PATH and its subdirectories (children).
 
-    *Example*
+*Example*
 
-    .. code:: sh
+.. code:: sh
 
-        $ cpanel list dir protection /public_html
+    $ cpanel list dir protection /public_html
+
+
 
 Module: ``mail``
-================
+==================================================
 
 **list mail accounts**
-    List cPanel email accounts. Output is JSON-formatted.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list mail accounts
 
 **list mail filters ACCOUNT**
-    List mail filters associated to ACCOUNT. Output is a JSON-formatted
-    array of filter names.
-
-    ACCOUNT is the name of a cPanel email account, usually user@domain
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel list mail filters scott@example.com
 
 **get mail filter ACCOUNT FILTERNAME**
-    Return a JSON-formatted description of email filter FILTERNAME associated
-    to email ACCOUNT. To get a list of current filter names, use
-    ``cpanel list mail filters ACCOUNT``
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel get mail filter scott@example.com spamkiller
 
 **set mail filter ACCOUNT FILE**
-    Create or update an email filter associated with email ACCOUNT.
-    If the filter already exists, it updates it; otherwise, it creates a new filter.
-    Use a JSON FILE to describe the filter rules. This JSON FILE has the same
-    textual format as the output from ``cpanel get mail filter``, so the easiest way
-    to create a new filter is to dump an existing filter into a ``filter.json`` file,
-    edit it and then upload it with ``cpanel set mail filter``.
-    See the example below.
-
-    *Example*
-
-    .. code:: sh
-
-        $ cpanel get mail filter scott@example.com spamkiller > filter.json
-
-        # Edit filter.json, and then run:
-        $ cpanel set mail filter scott@example.com filter.json
 
 **delete mail filter ACCOUNT FILTERNAME**
-    Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
-    filter names, use ``cpanel list mail filters ACCOUNT``
 
-    *Example*
 
-    .. code:: sh
+COMMANDS
 
-        $ cpanel delete mail filter scott@example.com spamkiller
+**list mail accounts**
+
+List cPanel email accounts.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list mail accounts
+
+**list mail filters ACCOUNT**
+
+List mail filters associated to ACCOUNT. Output is a JSON-formatted
+array of filter names.
+ACCOUNT is the name of a cPanel email account, usually user@domain
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list mail filters scott@example.com
+
+**get mail filter ACCOUNT FILTERNAME**
+
+Return a JSON-formatted description of email filter FILTERNAME associated
+to email ACCOUNT. To get a list of current filter names, use
+‘cpanel list mail filters ACCOUNT’
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get mail filter scott@example.com spamkiller
+
+**set mail filter ACCOUNT FILE**
+
+Create or update an email filter associated with email ACCOUNT.
+If the filter already exists, it updates it; otherwise, it creates a new filter.
+Use a JSON FILE to describe the filter rules. This JSON FILE has the same
+textual format as the output from ‘cpanel get mail filter’, so the easiest way
+to create a new filter is to dump an existing filter into a filter.json file,
+edit it and then upload it with ‘cpanel set mail filter’.
+See the EXAMPLE below.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get mail filter scott@example.com spamkiller > filter.json
+    $ cpanel set mail filter scott@example.com filter.json
+
+**delete mail filter ACCOUNT FILTERNAME**
+
+Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
+filter names, use ‘cpanel list mail filters ACCOUNT’
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel delete mail filter scott@example.com spamkiller
+
+
+
+Module: ``dns``
+==================================================
+
+**check dns**
+
+**authoritative dns**
+
+**lookup dns**
+
+**list dynamic dns**
+
+**create dynamic dns**
+
+
+COMMANDS
+
+**check dns**
+
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel check dns
+
+

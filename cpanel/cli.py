@@ -128,29 +128,31 @@ def usage(help: NullableStr = None) -> str:
 
 	Return multiline string with usage description
 	"""
-	# Read USAGE data file.
-	stream: NullableBytes = pkgutil.get_data(__name__, 'USAGE')
+	filename: str = 'USAGE' if help is None or help.lower()[0:3] == "mod" else 'REFERENCE'
+
+	# Read USAGE or REFERENCE data file.
+	stream: NullableBytes = pkgutil.get_data(__name__, filename)
 
 	# HACK  Allow ANSI color codes using a tortuous decoding/encoding chain.
 	# See https://stackoverflow.com/questions/14820429/how-do-i-decodestring-escape-in-python-3
-	usage: NullableStr = stream.decode('unicode-escape').encode('latin-1').decode('utf-8') if stream else None
+	text: NullableStr = stream.decode('unicode-escape').encode('latin-1').decode('utf-8') if stream else None
 
-	if usage:
-		match: Match[str] | None
+	if text:
+		match: Match[str] | None = None
 		if help:
 			# Find the appropiate usage section according to help.
 			match = re.search(
-				r'^Usage:[ \n]+cpanel [A-Za-z\[\]]+ %s' % help.rstrip("s"), usage, re.M|re.I)
-			if match:
-				start: int = match.start()
-				# ‘---’ marks the end of the section.
-				match = re.search(r'---', usage[start:], re.M)
-				end: int  = start + match.end() if match else len(usage)
-				return usage[start:end].rstrip("-\n")
+				r'^Usage:[ \n]+cpanel [A-Za-z\[\]]+ %s' % help.rstrip("s"), text, re.M|re.I)
 
-		# Find the default usage section.
-		match = re.search(r'^Usage: cpanel \[OPTIONS\] COMMAND', usage, re.M|re.I)
+		if not match:
+			# Find the default usage section.
+			match = re.search(r'^Usage: cpanel \[OPTIONS\] COMMAND', text, re.M|re.I)
+
 		if match:
-			return usage[match.start():].rstrip("-\n")
+			start: int = match.start()
+			# ‘---’ marks the end of the section.
+			match = re.search(r'---', text[start:], re.M)
+			end: int  = start + match.end() if match else len(text)
+			return text[start:end].rstrip("-\n")
 
 	return "cpanel: use --help"
