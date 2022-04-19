@@ -38,6 +38,7 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		return False
 
 	r: str = ""
+
 	try:
 		if cmd_is(cmd, "list feature"):
 			r = host.dump(lambda: uapi.Features.list_features())
@@ -140,6 +141,25 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 
 		elif cmd_is(cmd, "list dir protection"):
 			r = host.dump(lambda: uapi.DirectoryProtection.list_directories(dir = args[3]))
+
+		elif cmd_is(cmd, "check dns"):
+			r = host.dump_null(
+				lambda: uapi.DNS.ensure_domains_reside_only_locally(domain = args[2]), args[2])
+
+		elif cmd_is(cmd, "authoritative dns"):
+			r = host.dump(lambda: uapi.DNS.has_local_authority(domain = args[2]))
+
+		elif cmd_is(cmd, "lookup dns"):
+			r = host.dump(lambda: uapi.DNS.lookup(domain = args[2]))
+
+		elif cmd_is(cmd, "list dynamic dns"):
+			r = host.dump(lambda: uapi.DynamicDNS.list())
+
+		elif cmd_is(cmd, "create dynamic dns"):
+			if len(args) > 4:
+				r = host.dump(lambda: uapi.DynamicDNS.create(domain = args[3], description = args[4]))
+			else:
+				r = host.dump(lambda: uapi.DynamicDNS.create(domain = args[3]))
 
 		elif cmd_is(cmd, "list mail account"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())

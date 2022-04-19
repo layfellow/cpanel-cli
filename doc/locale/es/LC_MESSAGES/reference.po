@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-18 18:31-0400\n"
+"POT-Creation-Date: 2022-04-18 19:57-0400\n"
 "PO-Revision-Date: 2022-04-10 22:10-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -48,9 +48,10 @@ msgstr ""
 #: ../../reference.rst:460 ../../reference.rst:471 ../../reference.rst:495
 #: ../../reference.rst:507 ../../reference.rst:518 ../../reference.rst:528
 #: ../../reference.rst:553 ../../reference.rst:563 ../../reference.rst:573
-#: ../../reference.rst:591 ../../reference.rst:619 ../../reference.rst:631
-#: ../../reference.rst:643 ../../reference.rst:659 ../../reference.rst:671
-#: ../../reference.rst:698
+#: ../../reference.rst:591 ../../reference.rst:619 ../../reference.rst:629
+#: ../../reference.rst:639 ../../reference.rst:649 ../../reference.rst:694
+#: ../../reference.rst:706 ../../reference.rst:718 ../../reference.rst:734
+#: ../../reference.rst:746
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
@@ -64,7 +65,9 @@ msgstr "**get quota**"
 
 #: ../../reference.rst:29
 msgid "Get the cPanel account’s total disk quota information in megabytes."
-msgstr "Obtiene información de la cuota de disco total de la cuenta de cPanel en megabytes."
+msgstr ""
+"Obtiene información de la cuota de disco total de la cuenta de cPanel en "
+"megabytes."
 
 #: ../../reference.rst:40
 msgid "Module: ``usage``"
@@ -110,7 +113,7 @@ msgstr ""
 "‘display parameters’ en "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats"
 
-#: ../../reference.rst:69 ../../reference.rst:185
+#: ../../reference.rst:69 ../../reference.rst:185 ../../reference.rst:665
 msgid "*Examples*"
 msgstr "*Ejemplos*"
 
@@ -128,13 +131,11 @@ msgstr "**get account**"
 
 #: ../../reference.rst:89
 msgid "List basic information of the main cPanel account."
-msgstr ""
-"Lista información básica de la cuenta principal de cPanel."
+msgstr "Lista información básica de la cuenta principal de cPanel."
 
 #: ../../reference.rst:99
 msgid "Show detailed information of the main account."
-msgstr ""
-"Muestra información detallada de la cuenta principal."
+msgstr "Muestra información detallada de la cuenta principal."
 
 #: ../../reference.rst:110
 msgid "Module: ``subaccounts``"
@@ -181,7 +182,7 @@ msgstr "**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 
 #: ../../reference.rst:150 ../../reference.rst:179
 msgid "**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
-msgstr ""
+msgstr "**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 
 #: ../../reference.rst:152 ../../reference.rst:195
 msgid "**list backups**"
@@ -227,6 +228,13 @@ msgid ""
 "relative to the login directory, i.e., /public corresponds to <remote "
 "login directory>/public."
 msgstr ""
+"HOST es el nombre de host del servidor FTP remoto. USERNAME y "
+"PASSWORD son las credenciales para acceder a éste. DIRECTORY "
+"(opcional) es el directorio de destino en el servidor remoto; "
+"por defecto se usa el directorio de inicio de sesión del usuario "
+"remoto. Tenga en cuenta que DIRECTORY no es una ruta absoluta, "
+"sino una ruta relativa al directorio de inicio de sesión, "
+"es decir, /public corresponde a <directorio de inicio remoto>/public."
 
 #: ../../reference.rst:181
 msgid "Create a backup tarball and store it on a remote SCP server."
@@ -242,8 +250,7 @@ msgstr ""
 
 #: ../../reference.rst:197
 msgid "List the account’s backup files."
-msgstr ""
-"Lista los archivos de respaldo de la cuenta."
+msgstr "Lista los archivos de respaldo de la cuenta."
 
 #: ../../reference.rst:208
 msgid "Module: ``cache``"
@@ -369,8 +376,7 @@ msgid ""
 "‘basic’, ‘dark’, ‘light’ or ‘glass’"
 msgstr ""
 "Establece el estilo por defecto de la interfaz de usuario a NAME. NAME "
-"debe ser uno de los siguientes: ‘basic’, ‘dark’, ‘light’ o "
-"‘glass’."
+"debe ser uno de los siguientes: ‘basic’, ‘dark’, ‘light’ o ‘glass’."
 
 #: ../../reference.rst:349
 msgid "Module: ``themes``"
@@ -486,24 +492,23 @@ msgstr "‘inherit’: Utiliza la configuración del directorio padre."
 #: ../../reference.rst:430
 msgid "‘disabled’ (No Indexing): do not list the directory contents."
 msgstr ""
-"‘disabled’: (No Indexing, *Sin indexación*), no "
-"lista el contenido del directorio."
+"‘disabled’: (No Indexing, *Sin indexación*), no lista el contenido del "
+"directorio."
 
 #: ../../reference.rst:431
 msgid "‘standard’ (Show Filename Only): list only the directory’s file names."
 msgstr ""
-"‘standard’: (Show Filename Only, *Sólo mostrar "
-"nombre de archivo*), lista sólo los nombres de los archivos del "
-"directorio."
+"‘standard’: (Show Filename Only, *Sólo mostrar nombre de archivo*), lista"
+" sólo los nombres de los archivos del directorio."
 
 #: ../../reference.rst:432
 msgid ""
 "‘fancy’: (Show Filename and Description) list the directory’s file names,"
 " sizes and types."
 msgstr ""
-"‘fancy’: (Show Filename and Description, "
-"*Mostrar nombre de archivo y descripción*), lista los nombres, tamaños y"
-" tipos de archivos del directorio."
+"‘fancy’: (Show Filename and Description, *Mostrar nombre de archivo y "
+"descripción*), lista los nombres, tamaños y tipos de archivos del "
+"directorio."
 
 #: ../../reference.rst:434
 msgid ""
@@ -517,7 +522,7 @@ msgstr ""
 
 #: ../../reference.rst:437
 msgid "Options +Indexes IndexOptions +HTMLTable +FancyIndexing"
-msgstr ""
+msgstr "Options +Indexes IndexOptions +HTMLTable +FancyIndexing"
 
 #: ../../reference.rst:440
 msgid ""
@@ -540,7 +545,9 @@ msgstr ""
 
 #: ../../reference.rst:448
 msgid "List the index settings for remote PATH and its subdirectories (children)."
-msgstr "Listar la configuración de los índices del PATH remoto y sus subdirectorios (hijos)."
+msgstr ""
+"Listar la configuración de los índices del PATH remoto y sus "
+"subdirectorios (hijos)."
 
 #: ../../reference.rst:458
 msgid "Get the index setting for remote PATH only."
@@ -552,8 +559,7 @@ msgid ""
 "‘inherit’, ‘disabled’, ‘standard’ or ‘fancy’."
 msgstr ""
 "Establece la configuración de índice del PATH remoto. Los valores "
-"posibles para TYPE son ‘inherit’, ‘disabled’, ‘standard’ o "
-"‘fancy’."
+"posibles para TYPE son ‘inherit’, ‘disabled’, ‘standard’ o ‘fancy’."
 
 #: ../../reference.rst:477
 msgid "**PRIVACY COMMANDS**"
@@ -596,8 +602,8 @@ msgid ""
 msgstr ""
 "Obtiene la configuración de privacidad sólo para el PATH remoto. La "
 "salida está en formato JSON. Puede habilitar o deshabilitar la protección"
-" con contraseña usando ‘cpanel enable dir privacy’ o ‘cpanel disable "
-"dir privacy’ (vea más abajo)."
+" con contraseña usando ‘cpanel enable dir privacy’ o ‘cpanel disable dir "
+"privacy’ (vea más abajo)."
 
 #: ../../reference.rst:515
 msgid ""
@@ -616,7 +622,7 @@ msgstr "Desactiva la protección con contraseña para PATH."
 msgid "**USER MANAGEMENT COMMANDS**"
 msgstr "**COMANDOS DE GESTIÓN DE USUARIOS**"
 
-#: ../../reference.rst:536
+#: ../../reference.rst:537
 msgid ""
 "cPanel grants access to remote password-protected directories using ad "
 "hoc users and passwords specific to every directory. Use the commands "
@@ -682,38 +688,107 @@ msgstr ""
 "subdirectorios (hijos)."
 
 #: ../../reference.rst:600
-msgid "Module: ``mail``"
-msgstr "Módulo: ``mail``"
+msgid "Module: ``dns``"
+msgstr "Módulo: ``dns``"
 
 #: ../../reference.rst:602 ../../reference.rst:615
-msgid "**list mail accounts**"
-msgstr "**list mail accounts**"
+msgid "**check dns DOMAIN**"
+msgstr "**check dns DOMAIN**"
 
-#: ../../reference.rst:604 ../../reference.rst:625
-msgid "**list mail filters ACCOUNT**"
-msgstr "**list mail filters ACCOUNT**"
+#: ../../reference.rst:604
+msgid "**authoritative dns DOMAIN**"
+msgstr "**authoritative dns DOMAIN**"
 
-#: ../../reference.rst:606 ../../reference.rst:637
-msgid "**get mail filter ACCOUNT FILTERNAME**"
-msgstr "**get mail filter ACCOUNT FILTERNAME**"
+#: ../../reference.rst:606
+msgid "**lookup dns**"
+msgstr "**lookup dns**"
 
-#: ../../reference.rst:608 ../../reference.rst:649
-msgid "**set mail filter ACCOUNT FILE**"
-msgstr "**set mail filter ACCOUNT FILE**"
+#: ../../reference.rst:608 ../../reference.rst:645
+msgid "**list dynamic dns**"
+msgstr "**list dynamic dns**"
 
-#: ../../reference.rst:610 ../../reference.rst:666
-msgid "**delete mail filter ACCOUNT FILTERNAME**"
-msgstr "**delete mail filter ACCOUNT FILTERNAME**"
+#: ../../reference.rst:610 ../../reference.rst:655
+msgid "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
+msgstr "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
 
-#: ../../reference.rst:613 ../../reference.rst:693
+#: ../../reference.rst:613 ../../reference.rst:688
 msgid "COMMANDS"
 msgstr "Comandos"
 
 #: ../../reference.rst:617
+msgid "Check if DOMAIN resolves to the cPanel server."
+msgstr "Comprueba si DOMAIN resuelve hacia este servidor de cPanel."
+
+#: ../../reference.rst:625
+msgid "**check authoritative dns DOMAIN**"
+msgstr "**check authoritative dns DOMAIN**"
+
+#: ../../reference.rst:627
+msgid "Tell if cPanel server is the authoritative server for DOMAIN."
+msgstr ""
+"Indica si el servidor de cPanel es el servidor DNS con autoridad para"
+" DOMAIN."
+
+#: ../../reference.rst:635
+msgid "**lookup dns DOMAIN**"
+msgstr "**lookup dns DOMAIN**"
+
+#: ../../reference.rst:637
+msgid "Return DNS zone information about DOMAIN."
+msgstr "Devuelve información de la zona DNS de DOMAIN."
+
+#: ../../reference.rst:647
+msgid "List the Dynamic DNS domains for your cPanel user."
+msgstr "Lista los dominios DNS dinámicos para el usuario de cPanel."
+
+#: ../../reference.rst:657
+msgid ""
+"Create a new Dynamic DNS entry attached to SUBDOMAIN. Optionally include "
+"a human-readable DESCRIPTION. Return an ID which you can later use in a "
+"web call https://example.com/cpanelwebcall/<ID>."
+msgstr ""
+"Cree una nueva entrada DNS dinámica adjunta a SUBDOMAIN. "
+"Opcionalmente incluye una DESCRIPTION legible "
+"Devuelve un ID que más tarde puede utilizar en "
+"una llamada web https://example.com/cpanelwebcall/<ID>"
+
+#: ../../reference.rst:662
+msgid ""
+"For further information see: https://docs.cpanel.net/cpanel/domains"
+"/dynamic-dns/"
+msgstr ""
+"Para más información véase: "
+"https://docs.cpanel.net/cpanel/domains/dynamic-dns"
+
+#: ../../reference.rst:675
+msgid "Module: ``mail``"
+msgstr "Módulo: ``mail``"
+
+#: ../../reference.rst:677 ../../reference.rst:690
+msgid "**list mail accounts**"
+msgstr "**list mail accounts**"
+
+#: ../../reference.rst:679 ../../reference.rst:700
+msgid "**list mail filters ACCOUNT**"
+msgstr "**list mail filters ACCOUNT**"
+
+#: ../../reference.rst:681 ../../reference.rst:712
+msgid "**get mail filter ACCOUNT FILTERNAME**"
+msgstr "**get mail filter ACCOUNT FILTERNAME**"
+
+#: ../../reference.rst:683 ../../reference.rst:724
+msgid "**set mail filter ACCOUNT FILE**"
+msgstr "**set mail filter ACCOUNT FILE**"
+
+#: ../../reference.rst:685 ../../reference.rst:741
+msgid "**delete mail filter ACCOUNT FILTERNAME**"
+msgstr "**delete mail filter ACCOUNT FILTERNAME**"
+
+#: ../../reference.rst:692
 msgid "List cPanel email accounts."
 msgstr "Lista las cuentas de correo."
 
-#: ../../reference.rst:627
+#: ../../reference.rst:702
 msgid ""
 "List mail filters associated to ACCOUNT. Output is a JSON-formatted array"
 " of filter names. ACCOUNT is the name of a cPanel email account, usually "
@@ -722,7 +797,7 @@ msgstr ""
 "Lista los filtros de correo asociados a ACCOUNT. La salida es una serie "
 "de nombres de filtros en formato JSON."
 
-#: ../../reference.rst:639
+#: ../../reference.rst:714
 msgid ""
 "Return a JSON-formatted description of email filter FILTERNAME associated"
 " to email ACCOUNT. To get a list of current filter names, use ‘cpanel "
@@ -732,7 +807,7 @@ msgstr ""
 " FILTERNAME asociado al correo ACCOUNT. Para obtener una lista de nombres"
 " de filtros actuales, use ‘cpanel list mail filters ACCOUNT’"
 
-#: ../../reference.rst:651
+#: ../../reference.rst:726
 msgid ""
 "Create or update an email filter associated with email ACCOUNT. If the "
 "filter already exists, it updates it; otherwise, it creates a new filter."
@@ -746,12 +821,12 @@ msgstr ""
 "ACCOUNT. Si el filtro ya existe, lo actualiza; de lo contrario, crea un "
 "nuevo filtro. Utilice un JSON FILE para describir las reglas del filtro. "
 "Este JSON FILE tiene el mismo formato textual que la salida de ‘cpanel "
-"get mail filter’, por lo que la forma más fácil de crear un nuevo filtro"
-" es descargar un filtro existente a un archivo ‘filter.json’, editarlo "
-"y luego cargarlo con ‘cpanel set mail filter’. Vea el ejemplo a "
+"get mail filter’, por lo que la forma más fácil de crear un nuevo filtro "
+"es descargar un filtro existente a un archivo ‘filter.json’, editarlo y "
+"luego cargarlo con ‘cpanel set mail filter’. Vea el ejemplo a "
 "continuación."
 
-#: ../../reference.rst:668
+#: ../../reference.rst:743
 msgid ""
 "Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
 "current filter names, use ‘cpanel list mail filters ACCOUNT’"
@@ -759,28 +834,4 @@ msgstr ""
 "Elimina el filtro de correo FILTERNAME asociado a ACCOUNT. Para obtener "
 "una lista de nombres de filtros actuales, utilice ‘cpanel list mail "
 "filters ACCOUNT’"
-
-#: ../../reference.rst:680
-msgid "Module: ``dns``"
-msgstr "Módulo: ``dns``"
-
-#: ../../reference.rst:682 ../../reference.rst:695
-msgid "**check dns**"
-msgstr "**check dns**"
-
-#: ../../reference.rst:684
-msgid "**authoritative dns**"
-msgstr "**authoritative dns**"
-
-#: ../../reference.rst:686
-msgid "**lookup dns**"
-msgstr "**lookup dns**"
-
-#: ../../reference.rst:688
-msgid "**list dynamic dns**"
-msgstr "**list dymanic dns**"
-
-#: ../../reference.rst:690
-msgid "**create dynamic dns**"
-msgstr "**create dynamic dns**"
 

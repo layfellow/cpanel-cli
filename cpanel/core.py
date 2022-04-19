@@ -89,6 +89,24 @@ class CPanelEndpoint:
 		return self.safely(r, lambda: self.extract(r, key))
 
 
+	def dump_null(self, apicall: Callable, replace: str) -> str:
+		"""Call API and get stringified JSON result, but replaces nulls.
+
+		apicall    deferred API call
+		replace    string to replace nulls with
+
+		Returns stringified JSON data
+		"""
+		r: Result = apicall()
+		i = 0
+		for item in r['data']:
+			if item is None:
+				r['data'][i] = replace
+			i += 1
+
+		return self.safely(r, lambda: json.dumps(r.data, indent = 4, sort_keys = True))
+
+
 	def create_backup(self, *args: str) -> str:
 		"""Create a backup tarball and store it on a remote server.
 

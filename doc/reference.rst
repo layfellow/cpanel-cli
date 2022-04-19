@@ -596,6 +596,81 @@ List leech protection status for PATH and its subdirectories (children).
 
 
 
+Module: ``dns``
+==================================================
+
+**check dns DOMAIN**
+
+**authoritative dns DOMAIN**
+
+**lookup dns**
+
+**list dynamic dns**
+
+**create dynamic dns SUBDOMAIN [DESCRIPTION]**
+
+
+COMMANDS
+
+**check dns DOMAIN**
+
+Check if DOMAIN resolves to the cPanel server.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel check dns example.com
+
+**check authoritative dns DOMAIN**
+
+Tell if cPanel server is the authoritative server for DOMAIN.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel authoritative dns example.com
+
+**lookup dns DOMAIN**
+
+Return DNS zone information about DOMAIN.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel lookup dns DOMAIN
+
+**list dynamic dns**
+
+List the Dynamic DNS domains for your cPanel user.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list dynamic dns
+
+**create dynamic dns SUBDOMAIN [DESCRIPTION]**
+
+Create a new Dynamic DNS entry attached to SUBDOMAIN.
+Optionally include a human-readable DESCRIPTION.
+Return an ID which you can later use in a web call
+https://example.com/cpanelwebcall/<ID>.
+
+For further information see:
+https://docs.cpanel.net/cpanel/domains/dynamic-dns/
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel create dynamic dns homeserver.example.com
+    $ cpanel create dynamic dns homeserver.example.com "A home server with variable IP"
+
+
+
 Module: ``mail``
 ==================================================
 
@@ -673,32 +748,5 @@ filter names, use ‘cpanel list mail filters ACCOUNT’
 .. code:: sh
 
     $ cpanel delete mail filter scott@example.com spamkiller
-
-
-
-Module: ``dns``
-==================================================
-
-**check dns**
-
-**authoritative dns**
-
-**lookup dns**
-
-**list dynamic dns**
-
-**create dynamic dns**
-
-
-COMMANDS
-
-**check dns**
-
-
-*Example*
-
-.. code:: sh
-
-    $ cpanel check dns
 
 

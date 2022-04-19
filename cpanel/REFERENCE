@@ -417,6 +417,55 @@ For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest
 
 ---
 
+Usage: cpanel check dns DOMAIN
+    cpanel authoritative dns DOMAIN
+    cpanel lookup dns
+    cpanel list dynamic dns
+    cpanel create dynamic dns SUBDOMAIN [DESCRIPTION]
+
+COMMANDS
+
+\033[1mcheck dns DOMAIN\033[0m
+    Check if DOMAIN resolves to the cPanel server.
+
+    EXAMPLE
+        \033[1;34mcpanel check dns example.com\033[00m
+
+\033[1mcheck authoritative dns DOMAIN\033[0m
+    Tell if cPanel server is the authoritative server for DOMAIN.
+
+    EXAMPLE
+        \033[1;34mcpanel authoritative dns example.com\033[00m
+
+\033[1mlookup dns DOMAIN\033[0m
+    Return DNS zone information about DOMAIN.
+
+    EXAMPLE
+        \033[1;34mcpanel lookup dns DOMAIN\033[00m
+
+\033[1mlist dynamic dns\033[0m
+    List the Dynamic DNS domains for your cPanel user.
+
+    EXAMPLE
+        \033[1;34mcpanel list dynamic dns\033[00m
+
+\033[1mcreate dynamic dns SUBDOMAIN [DESCRIPTION]\033[0m
+    Create a new Dynamic DNS entry attached to SUBDOMAIN.
+    Optionally include a human-readable DESCRIPTION.
+    Return an ID which you can later use in a web call
+    https://example.com/cpanelwebcall/<ID>.
+
+   For further information see:
+   https://docs.cpanel.net/cpanel/domains/dynamic-dns/
+
+    EXAMPLES
+        \033[1;34mcpanel create dynamic dns homeserver.example.com\033[00m
+        \033[1;34mcpanel create dynamic dns homeserver.example.com "A home server with variable IP"\033[00m
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+---
+
 Usage: cpanel list mail accounts
     cpanel list mail filters ACCOUNT
     cpanel get mail filter ACCOUNT FILTERNAME
@@ -466,23 +515,6 @@ COMMANDS
 
     EXAMPLE
          \033[1;34mcpanel delete mail filter scott@example.com spamkiller\033[00m
-
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
-
----
-
-Usage: cpanel check dns
-    cpanel authoritative dns
-    cpanel lookup dns
-    cpanel list dynamic dns
-    cpanel create dynamic dns
-
-COMMANDS
-
-\033[1mcheck dns\033[0m
-
-    EXAMPLE
-        \033[1;34mcpanel check dns\033[00m
 
 For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
