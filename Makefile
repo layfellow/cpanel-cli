@@ -22,7 +22,7 @@ package: venv
 	rm -f dist/*
 	$(BIN)/python3 -m build
 
-doc: venv doc/build/gettext
+doc: venv doc/build/gettext doc/reference.rst
 	$(BIN)/$(DOCBUILDER) -b html doc doc/build/html/en
 	$(foreach iso,$(LOCALES),$(BIN)/$(DOCBUILDER) -b html -D language=$(iso) doc doc/build/html/$(iso);)
 
@@ -37,7 +37,7 @@ doc/build/gettext: venv install
 	$(BIN)/$(DOCBUILDER) -b gettext doc doc/build/gettext
 
 doc/reference.rst: cpanel/REFERENCE
-	@bash ./doc/reference.sh $< > $@
+	bash ./doc/reference.sh $< > $@
 
 locale: doc/build/gettext
 	$(BIN)/$(LOCALIZER) -c doc/conf.py update -p doc/build/gettext -l $(iso)
