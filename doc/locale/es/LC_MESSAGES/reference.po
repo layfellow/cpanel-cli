@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-18 19:57-0400\n"
+"POT-Creation-Date: 2022-04-18 22:07-0400\n"
 "PO-Revision-Date: 2022-04-10 22:10-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -48,10 +48,12 @@ msgstr ""
 #: ../../reference.rst:460 ../../reference.rst:471 ../../reference.rst:495
 #: ../../reference.rst:507 ../../reference.rst:518 ../../reference.rst:528
 #: ../../reference.rst:553 ../../reference.rst:563 ../../reference.rst:573
-#: ../../reference.rst:591 ../../reference.rst:619 ../../reference.rst:629
-#: ../../reference.rst:639 ../../reference.rst:649 ../../reference.rst:694
-#: ../../reference.rst:706 ../../reference.rst:718 ../../reference.rst:734
-#: ../../reference.rst:746
+#: ../../reference.rst:591 ../../reference.rst:625 ../../reference.rst:635
+#: ../../reference.rst:645 ../../reference.rst:655 ../../reference.rst:684
+#: ../../reference.rst:694 ../../reference.rst:705 ../../reference.rst:731
+#: ../../reference.rst:741 ../../reference.rst:752 ../../reference.rst:762
+#: ../../reference.rst:790 ../../reference.rst:802 ../../reference.rst:814
+#: ../../reference.rst:830 ../../reference.rst:842
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
@@ -113,7 +115,7 @@ msgstr ""
 "‘display parameters’ en "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats"
 
-#: ../../reference.rst:69 ../../reference.rst:185 ../../reference.rst:665
+#: ../../reference.rst:69 ../../reference.rst:185 ../../reference.rst:671
 msgid "*Examples*"
 msgstr "*Ejemplos*"
 
@@ -228,13 +230,13 @@ msgid ""
 "relative to the login directory, i.e., /public corresponds to <remote "
 "login directory>/public."
 msgstr ""
-"HOST es el nombre de host del servidor FTP remoto. USERNAME y "
-"PASSWORD son las credenciales para acceder a éste. DIRECTORY "
-"(opcional) es el directorio de destino en el servidor remoto; "
-"por defecto se usa el directorio de inicio de sesión del usuario "
-"remoto. Tenga en cuenta que DIRECTORY no es una ruta absoluta, "
-"sino una ruta relativa al directorio de inicio de sesión, "
-"es decir, /public corresponde a <directorio de inicio remoto>/public."
+"HOST es el nombre de host del servidor FTP remoto. USERNAME y PASSWORD "
+"son las credenciales para acceder a éste. DIRECTORY (opcional) es el "
+"directorio de destino en el servidor remoto; por defecto se usa el "
+"directorio de inicio de sesión del usuario remoto. Tenga en cuenta que "
+"DIRECTORY no es una ruta absoluta, sino una ruta relativa al directorio "
+"de inicio de sesión, es decir, /public corresponde a <directorio de "
+"inicio remoto>/public."
 
 #: ../../reference.rst:181
 msgid "Create a backup tarball and store it on a remote SCP server."
@@ -691,7 +693,7 @@ msgstr ""
 msgid "Module: ``dns``"
 msgstr "Módulo: ``dns``"
 
-#: ../../reference.rst:602 ../../reference.rst:615
+#: ../../reference.rst:602 ../../reference.rst:621
 msgid "**check dns DOMAIN**"
 msgstr "**check dns DOMAIN**"
 
@@ -703,92 +705,175 @@ msgstr "**authoritative dns DOMAIN**"
 msgid "**lookup dns**"
 msgstr "**lookup dns**"
 
-#: ../../reference.rst:608 ../../reference.rst:645
+#: ../../reference.rst:608 ../../reference.rst:651
 msgid "**list dynamic dns**"
 msgstr "**list dynamic dns**"
 
-#: ../../reference.rst:610 ../../reference.rst:655
+#: ../../reference.rst:610 ../../reference.rst:661
 msgid "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
 msgstr "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
 
-#: ../../reference.rst:613 ../../reference.rst:688
+#: ../../reference.rst:612 ../../reference.rst:678
+msgid "**recreate dynamic dns ID**"
+msgstr "**recreate dynamic dns ID**"
+
+#: ../../reference.rst:614
+msgid "**update dynamic dns ID DESCRITPION**"
+msgstr "**update dynamic dns ID DESCRITPION**"
+
+#: ../../reference.rst:616 ../../reference.rst:700
+msgid "**delete dynamic dns ID**"
+msgstr "**delete dynamic dns ID**"
+
+#: ../../reference.rst:619 ../../reference.rst:725 ../../reference.rst:784
 msgid "COMMANDS"
 msgstr "Comandos"
 
-#: ../../reference.rst:617
+#: ../../reference.rst:623
 msgid "Check if DOMAIN resolves to the cPanel server."
 msgstr "Comprueba si DOMAIN resuelve hacia este servidor de cPanel."
 
-#: ../../reference.rst:625
+#: ../../reference.rst:631
 msgid "**check authoritative dns DOMAIN**"
 msgstr "**check authoritative dns DOMAIN**"
 
-#: ../../reference.rst:627
+#: ../../reference.rst:633
 msgid "Tell if cPanel server is the authoritative server for DOMAIN."
 msgstr ""
-"Indica si el servidor de cPanel es el servidor DNS con autoridad para"
-" DOMAIN."
+"Indica si el servidor de cPanel es el servidor DNS con autoridad para "
+"DOMAIN."
 
-#: ../../reference.rst:635
+#: ../../reference.rst:641
 msgid "**lookup dns DOMAIN**"
 msgstr "**lookup dns DOMAIN**"
 
-#: ../../reference.rst:637
+#: ../../reference.rst:643
 msgid "Return DNS zone information about DOMAIN."
 msgstr "Devuelve información de la zona DNS de DOMAIN."
 
-#: ../../reference.rst:647
+#: ../../reference.rst:653
 msgid "List the Dynamic DNS domains for your cPanel user."
 msgstr "Lista los dominios DNS dinámicos para el usuario de cPanel."
 
-#: ../../reference.rst:657
+#: ../../reference.rst:663
 msgid ""
 "Create a new Dynamic DNS entry attached to SUBDOMAIN. Optionally include "
 "a human-readable DESCRIPTION. Return an ID which you can later use in a "
 "web call https://example.com/cpanelwebcall/<ID>."
 msgstr ""
-"Cree una nueva entrada DNS dinámica adjunta a SUBDOMAIN. "
-"Opcionalmente incluye una DESCRIPTION legible "
-"Devuelve un ID que más tarde puede utilizar en "
-"una llamada web https://example.com/cpanelwebcall/<ID>"
+"Cree una nueva entrada DNS dinámica adjunta a SUBDOMAIN. Opcionalmente "
+"incluye una DESCRIPTION legible Devuelve un ID que más tarde puede "
+"utilizar en una llamada web https://example.com/cpanelwebcall/<ID>"
 
-#: ../../reference.rst:662
+#: ../../reference.rst:668
 msgid ""
 "For further information see: https://docs.cpanel.net/cpanel/domains"
 "/dynamic-dns/"
 msgstr ""
-"Para más información véase: "
-"https://docs.cpanel.net/cpanel/domains/dynamic-dns"
+"Para más información véase: https://docs.cpanel.net/cpanel/domains"
+"/dynamic-dns"
 
-#: ../../reference.rst:675
+#: ../../reference.rst:680
+msgid ""
+"Delete and create again a Dynamic DNS entry identified by ID. Return a "
+"new ID. Use ‘cpanel list dynamic dns’ to get a list of IDs and associated"
+" subdomains."
+msgstr ""
+"Elimina y crea de nuevo una entrada DNS dinámica identificada por ID. "
+"Devuelve una nueva ID. Use ‘cpanel list dinamyc dns’ para obtener una "
+"lista de IDs y subdominios asociados."
+
+#: ../../reference.rst:690
+msgid "**update dynamic dns ID DESCRIPTION**"
+msgstr "**update dynamic dns ID DESCRIPTION**"
+
+#: ../../reference.rst:692
+msgid "Update the DESCRIPTION of Dynamic DNS entry identified by ID."
+msgstr ""
+"Actualiza la descripción de la entrada DNS dinámica identificada por ID a"
+" DESCRIPTION."
+
+#: ../../reference.rst:702
+msgid ""
+"Delete a Dynamic DNS entry identified by ID. Use ‘cpanel list dynamic "
+"dns’ to get a list of IDs and associated subdomains."
+msgstr ""
+"Elimina una entrada DNS dinámica identificada por su ID. Use ‘cpanel list"
+" dinamyc dns’ para obtener una lista de IDs y subdominios asociados."
+
+#: ../../reference.rst:714
+msgid "Module: ``domains``"
+msgstr "Módulo: ``domains``"
+
+#: ../../reference.rst:716 ../../reference.rst:727
+msgid "**list domains**"
+msgstr "**list domains**"
+
+#: ../../reference.rst:718 ../../reference.rst:737
+msgid "**list domain data**"
+msgstr "**list domain data**"
+
+#: ../../reference.rst:720 ../../reference.rst:747
+msgid "**get domain data DOMAIN**"
+msgstr "**get domain data DOMAIN**"
+
+#: ../../reference.rst:722 ../../reference.rst:758
+msgid "**get domain aliases**"
+msgstr "**get domain aliases**"
+
+#: ../../reference.rst:729
+msgid "List domains for the cPanel account’s."
+msgstr "Lista los dominios de esta cuenta de cPanel."
+
+#: ../../reference.rst:739
+msgid "Get hosting data for all the cPanel account’s domains."
+msgstr ""
+"Obtiene los datos de hosting para todos los dominios de esta cuenta de "
+"cPanel."
+
+#: ../../reference.rst:749
+msgid ""
+"Get hosting data for DOMAIN. Use ‘cpanel list domains’ to get a list of "
+"domains."
+msgstr ""
+"Obtiene los datos de hosting para el dominio DOMAIN. Use ‘cpanel list domains’ "
+"para obtener una lista de dominios."
+
+#: ../../reference.rst:760
+msgid "List the built-in subdomain aliases for an account’s main domain."
+msgstr ""
+"Lista los alias de los subdominios incorporados para el dominio principal"
+" de esta cuenta."
+
+#: ../../reference.rst:771
 msgid "Module: ``mail``"
 msgstr "Módulo: ``mail``"
 
-#: ../../reference.rst:677 ../../reference.rst:690
+#: ../../reference.rst:773 ../../reference.rst:786
 msgid "**list mail accounts**"
 msgstr "**list mail accounts**"
 
-#: ../../reference.rst:679 ../../reference.rst:700
+#: ../../reference.rst:775 ../../reference.rst:796
 msgid "**list mail filters ACCOUNT**"
 msgstr "**list mail filters ACCOUNT**"
 
-#: ../../reference.rst:681 ../../reference.rst:712
+#: ../../reference.rst:777 ../../reference.rst:808
 msgid "**get mail filter ACCOUNT FILTERNAME**"
 msgstr "**get mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:683 ../../reference.rst:724
+#: ../../reference.rst:779 ../../reference.rst:820
 msgid "**set mail filter ACCOUNT FILE**"
 msgstr "**set mail filter ACCOUNT FILE**"
 
-#: ../../reference.rst:685 ../../reference.rst:741
+#: ../../reference.rst:781 ../../reference.rst:837
 msgid "**delete mail filter ACCOUNT FILTERNAME**"
 msgstr "**delete mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:692
+#: ../../reference.rst:788
 msgid "List cPanel email accounts."
 msgstr "Lista las cuentas de correo."
 
-#: ../../reference.rst:702
+#: ../../reference.rst:798
 msgid ""
 "List mail filters associated to ACCOUNT. Output is a JSON-formatted array"
 " of filter names. ACCOUNT is the name of a cPanel email account, usually "
@@ -797,7 +882,7 @@ msgstr ""
 "Lista los filtros de correo asociados a ACCOUNT. La salida es una serie "
 "de nombres de filtros en formato JSON."
 
-#: ../../reference.rst:714
+#: ../../reference.rst:810
 msgid ""
 "Return a JSON-formatted description of email filter FILTERNAME associated"
 " to email ACCOUNT. To get a list of current filter names, use ‘cpanel "
@@ -807,7 +892,7 @@ msgstr ""
 " FILTERNAME asociado al correo ACCOUNT. Para obtener una lista de nombres"
 " de filtros actuales, use ‘cpanel list mail filters ACCOUNT’"
 
-#: ../../reference.rst:726
+#: ../../reference.rst:822
 msgid ""
 "Create or update an email filter associated with email ACCOUNT. If the "
 "filter already exists, it updates it; otherwise, it creates a new filter."
@@ -826,7 +911,7 @@ msgstr ""
 "luego cargarlo con ‘cpanel set mail filter’. Vea el ejemplo a "
 "continuación."
 
-#: ../../reference.rst:743
+#: ../../reference.rst:839
 msgid ""
 "Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
 "current filter names, use ‘cpanel list mail filters ACCOUNT’"
@@ -834,4 +919,7 @@ msgstr ""
 "Elimina el filtro de correo FILTERNAME asociado a ACCOUNT. Para obtener "
 "una lista de nombres de filtros actuales, utilice ‘cpanel list mail "
 "filters ACCOUNT’"
+
+#~ msgid "Get hosting data for DOMAIN."
+#~ msgstr "Obtiene los datos de hosting para el dominio DOMAIN."
 

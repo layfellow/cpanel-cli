@@ -161,6 +161,27 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 			else:
 				r = host.dump(lambda: uapi.DynamicDNS.create(domain = args[3]))
 
+		elif cmd_is(cmd, "recreate dynamic dns"):
+			r = host.check(lambda: uapi.DynamicDNS.recreate(id = args[3]))
+
+		elif cmd_is(cmd, "update dynamic dns"):
+			r = host.check(lambda: uapi.DynamicDNS.set_description(id = args[3], description = args[4]))
+
+		elif cmd_is(cmd, "delete dynamic dns", "rm dynamic dns", "remove dynamic dns"):
+			r = host.check(lambda: uapi.DynamicDNS.delete(id = args[3]))
+
+		elif cmd_is(cmd, "list domains"):
+			r = host.dump(lambda: uapi.DomainInfo.list_domains())
+
+		elif cmd_is(cmd, "list domain data"):
+			r = host.dump(lambda: uapi.DomainInfo.domains_data(format = 'hash', return_https_redirects_status = 1))
+
+		elif cmd_is(cmd, "get domain data"):
+			r = host.dump(lambda: uapi.DomainInfo.single_domain_data(domain = args[3], return_https_redirects_status = 1))
+
+		elif cmd_is(cmd, "get domain aliases"):
+			r = host.dump(lambda: uapi.DomainInfo.main_domain_builtin_subdomain_aliases())
+
 		elif cmd_is(cmd, "list mail account"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
 

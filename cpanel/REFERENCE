@@ -422,6 +422,9 @@ Usage: cpanel check dns DOMAIN
     cpanel lookup dns
     cpanel list dynamic dns
     cpanel create dynamic dns SUBDOMAIN [DESCRIPTION]
+    cpanel recreate dynamic dns ID
+    cpanel update dynamic dns ID DESCRITPION
+    cpanel delete dynamic dns ID
 
 COMMANDS
 
@@ -461,6 +464,63 @@ COMMANDS
     EXAMPLES
         \033[1;34mcpanel create dynamic dns homeserver.example.com\033[00m
         \033[1;34mcpanel create dynamic dns homeserver.example.com "A home server with variable IP"\033[00m
+
+\033[1mrecreate dynamic dns ID\033[0m
+    Delete and create again a Dynamic DNS entry identified by ID.
+    Return a new ID. Use ‘cpanel list dynamic dns’ to get a list of IDs and
+    associated subdomains.
+
+    EXAMPLE
+        \033[1;34mcpanel recreate dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj\033[00m
+
+\033[1mupdate dynamic dns ID DESCRIPTION\033[0m
+    Update the DESCRIPTION of Dynamic DNS entry identified by ID.
+
+    EXAMPLE
+        \033[1;34mcpanel update dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj "A home server with variable IP"\033[00m
+
+\033[1mdelete dynamic dns ID\033[0m
+    Delete a Dynamic DNS entry identified by ID. Use ‘cpanel list dynamic dns’
+    to get a list of IDs and associated subdomains.
+
+    EXAMPLE
+        \033[1;34mcpanel delete dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj\033[00m
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+---
+
+Usage: cpanel list domains
+    cpanel list domain data
+    cpanel get domain data DOMAIN
+    cpanel get domain aliases
+
+COMMANDS
+
+\033[1mlist domains\033[0m
+    List domains for the cPanel account’s.
+
+    EXAMPLE
+        \033[1;34mcpanel list domains\033[00m
+
+\033[1mlist domain data\033[0m
+    Get hosting data for all the cPanel account’s domains.
+
+    EXAMPLE
+        \033[1;34mcpanel list domain data\033[00m
+
+\033[1mget domain data DOMAIN\033[0m
+    Get hosting data for DOMAIN. Use ‘cpanel list domains’
+    to get a list of domains.
+
+    EXAMPLE
+        \033[1;34mcpanel get domain data example.com\033[00m
+
+\033[1mget domain aliases\033[0m
+    List the built-in subdomain aliases for an account’s main domain.
+
+    EXAMPLE
+        \033[1;34mcpanel get domain aliases\033[00m
 
 For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 

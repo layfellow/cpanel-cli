@@ -59,6 +59,7 @@ styles
 themes
 directory
 dns
+domains
 mail
 
 Use ‘cpanel help MODULE’ to learn more about the functions implemented

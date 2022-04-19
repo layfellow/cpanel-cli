@@ -609,6 +609,12 @@ Module: ``dns``
 
 **create dynamic dns SUBDOMAIN [DESCRIPTION]**
 
+**recreate dynamic dns ID**
+
+**update dynamic dns ID DESCRITPION**
+
+**delete dynamic dns ID**
+
 
 COMMANDS
 
@@ -668,6 +674,96 @@ https://docs.cpanel.net/cpanel/domains/dynamic-dns/
 
     $ cpanel create dynamic dns homeserver.example.com
     $ cpanel create dynamic dns homeserver.example.com "A home server with variable IP"
+
+**recreate dynamic dns ID**
+
+Delete and create again a Dynamic DNS entry identified by ID.
+Return a new ID. Use ‘cpanel list dynamic dns’ to get a list of IDs and
+associated subdomains.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel recreate dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj
+
+**update dynamic dns ID DESCRIPTION**
+
+Update the DESCRIPTION of Dynamic DNS entry identified by ID.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel update dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj "A home server with variable IP"
+
+**delete dynamic dns ID**
+
+Delete a Dynamic DNS entry identified by ID. Use ‘cpanel list dynamic dns’
+to get a list of IDs and associated subdomains.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel delete dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj
+
+
+
+Module: ``domains``
+==================================================
+
+**list domains**
+
+**list domain data**
+
+**get domain data DOMAIN**
+
+**get domain aliases**
+
+
+COMMANDS
+
+**list domains**
+
+List domains for the cPanel account’s.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list domains
+
+**list domain data**
+
+Get hosting data for all the cPanel account’s domains.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list domain data
+
+**get domain data DOMAIN**
+
+Get hosting data for DOMAIN. Use ‘cpanel list domains’
+to get a list of domains.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get domain data example.com
+
+**get domain aliases**
+
+List the built-in subdomain aliases for an account’s main domain.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get domain aliases
 
 
 

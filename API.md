@@ -94,15 +94,15 @@
 - [x] DirectoryPrivacy list_directories
 - [x] DirectoryPrivacy list_users
 - [x] DirectoryProtection list_directories
-- [ ] DomainInfo domains_data
-- [ ] DomainInfo list_domains
-- [ ] DomainInfo main_domain_builtin_subdomain_aliases
-- [ ] DomainInfo single_domain_data
+- [x] DomainInfo domains_data
+- [x] DomainInfo list_domains
+- [x] DomainInfo main_domain_builtin_subdomain_aliases
+- [x] DomainInfo single_domain_data
 - [x] DynamicDNS create
-- [ ] DynamicDNS delete
+- [x] DynamicDNS delete
 - [x] DynamicDNS list
-- [ ] DynamicDNS recreate
-- [ ] DynamicDNS set_description
+- [x] DynamicDNS recreate
+- [x] DynamicDNS set_description
 - [ ] EA4 get_php_recommendations
 - [ ] EA4 get_recommendations
 - [ ] Email account_name
