@@ -2,6 +2,8 @@ import os
 import sys
 import json
 import logging
+import requests
+from urllib.parse import urljoin
 from logging import Logger
 from json import JSONDecodeError
 import cpanel
@@ -144,6 +146,97 @@ class CPanelEndpoint:
 
 		except IndexError:
 			raise CPanelError("missing arguments for create backup")
+
+
+	def set_log_settings(self, flag: int, *args: str) -> str:
+		"""Enable or disable log archival settings.
+
+		flag        0 to enable, 1 to disable
+		args        List of archival settings to enable or disable
+
+		Returns "OK" or prints error
+		"""
+		parameters: Mapping[str, NullableStr] = {}
+
+		log.debug(str(args))
+
+		if len(args) == 0:
+			raise CPanelError("missing arguments for set log settings")
+		if 'archive' in args:
+			parameters['archive_logs'] = str(flag)
+		if 'prune' in args:
+			parameters['prune_archive'] = str(flag)
+		if len(parameters) == 0:
+			raise CPanelError("unrecognized arguments for set log settings")
+
+		return self.check(lambda: self.client.uapi.LogManager.set_settings(**parameters))
+
+
+	def get_file_contents(self, filepath: str) -> bytes:
+		"""Return the contents of remote filepath encoded using UTF-8.
+
+		filepath    path to file.
+		"""
+		dirname: str = os.path.dirname(filepath)
+		if len(dirname) == 0:
+			dirname = "/"
+		basename: str = os.path.basename(filepath)
+
+		r: Result = self.client.uapi.Fileman.get_file_content(
+			dir = dirname, file = basename, to_charset = 'utf-8')
+		if r.status != 1 or r.errors is not None:
+			raise CPanelError(r.errors[0])
+
+		return r.data.content.encode('utf-8')
+
+
+	def write_file(self, filepath: str, content: str) -> str:
+		""".
+		"""
+		dirname: str = os.path.dirname(filepath)
+		if len(dirname) == 0:
+			dirname = "/"
+		basename: str = os.path.basename(filepath)
+
+		# Unescape backslash-escaped codes.
+		content = content.encode('raw_unicode_escape').decode('unicode_escape')
+
+		return self.check(lambda: self.client.uapi.Fileman.save_file_content(
+			dir = dirname, file = basename, content = content, fallback = 0))
+
+
+	def upload_file(self, directory: str, filename: str) -> str:
+		""".
+		"""
+		if not os.path.isfile(filename):
+			raise CPanelError("missing file {}".format(filename))
+
+		url: str = urljoin(self.client.base_url, '/execute/Fileman/upload_files')
+		permissions: str = "0{}".format(oct(os.stat(filename).st_mode)[-3:])
+
+		# Upload the actual file contents as multipart-encoded form data.
+		with open(filename, 'rb') as stream:
+			response: requests.Response = self.client.session.post(
+				url,
+				{ 'dir': directory,
+				  'file': filename,
+				  'overwrite': 1,
+				  'permissions': permissions },
+				files = { filename: stream },
+				allow_redirects = False,
+				headers = { 'Authorization': self.client.auth },
+				timeout = self.client.timeout,
+				verify = self.client.verify)
+
+		if response.status_code == 401:
+			raise CPanelError("Unauthorized")
+
+		r: Result = None
+		try:
+			r = response.json(object_hook = Result)
+		except ValueError:
+			raise CPanelError("Bad response")
+		return self.safely(r, lambda: "OK")
 
 
 	def set_mail_filter(self, account: str, filterfile: str) -> str:

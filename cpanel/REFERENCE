@@ -5,7 +5,8 @@ List a cPanel account’s features.
 EXAMPLE
     \033[1;34mcpanel list features\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/
 
 ---
 
@@ -16,7 +17,8 @@ Get the cPanel account’s total disk quota information in megabytes.
 EXAMPLE
     \033[1;34mcpanel get quota\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_quota_info/
 
 ---
 
@@ -28,7 +30,8 @@ disk usage, number of mail filters, etc.
 EXAMPLE
     \033[1;34mcpanel get usage\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_usages/
 
 ---
 
@@ -45,7 +48,8 @@ EXAMPLES
     \033[1;34mcpanel get stats hostname\033[00m
     \033[1;34mcpanel get stats machinetype cpanelversion\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
 
 ---
 
@@ -60,13 +64,17 @@ Usage: cpanel list accounts
     EXAMPLE
         \033[1;34mcpanel list accounts\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_accounts/
+
 \033[1mget account\033[0m
     Show detailed information of the main account.
 
     EXAMPLE
         \033[1;34mcpanel get account\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Variables-get_user_information/
 
 ---
 
@@ -82,6 +90,9 @@ Usage: cpanel list subaccounts
     EXAMPLE
         \033[1;34mcpanel list subaccounts\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-list_users/
+
 \033[1mget subaccount GUID\033[0m
     Show detailed information of a sub-account, identified by its GUID. To get
     this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts with a
@@ -90,7 +101,8 @@ Usage: cpanel list subaccounts
     EXAMPLE
         \033[1;34mcpanel get subaccount EXAMPLE1:EXAMPLE.COM:564CD663:FE50072F2620B50988EA4E5F46022546FBE6BDDE3C36C2F2534F4967C661EC37\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/
 
 ---
 
@@ -140,15 +152,13 @@ confirmation email after it completes the backup.
     EXAMPLE
         \033[1;34mcpanel list backups\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/
 
 ---
 
 Usage: cpanel update cache
     cpanel read cache
-
-See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
-for information on cache IDs.
 
 \033[1mCOMMANDS\033[0m
 
@@ -158,13 +168,17 @@ for information on cache IDs.
     EXAMPLE
         \033[1;34mcpanel update cache\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/update/
+
 \033[1mread cache\033[0m
     Return web browser cached file override ID.
 
     EXAMPLE
         \033[1;34mcpanel read cache\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/
 
 ---
 
@@ -181,12 +195,18 @@ Usage: cpanel list locales
     EXAMPLE
         \033[1;34mcpanel list locales\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_locales/
+
 \033[1mget locale\033[0m
     Return the current locale (language and conventions) used for the cPanel user
     interface.
 
     EXAMPLE
         \033[1;34mcpanel get locale\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_attributes/
 
 \033[1mset locale LOCALE\033[0m
     Set the cPanel user interface locale (language and conventions) to LOCALE.
@@ -195,8 +215,6 @@ Usage: cpanel list locales
 
     EXAMPLE
         \033[1;34mcpanel set locale bg\033[00m  # Set UI to Bulgarian
-
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 ---
 
@@ -216,11 +234,17 @@ A style is a variation of a user interface theme for cPanel. For example, the
     EXAMPLE
         \033[1;34mcpanel list styles\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list/
+
 \033[1mget style\033[0m
     Return the current user interface style.
 
     EXAMPLE
         \033[1;34mcpanel get style\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/current/
 
 \033[1mset style NAME\033[0m
     Set the current user interface style to NAME.
@@ -235,8 +259,6 @@ A style is a variation of a user interface theme for cPanel. For example, the
 
     EXAMPLE
         \033[1;34mcpanel default style basic\033[00m
-
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 ---
 
@@ -255,11 +277,17 @@ cPanel theme is ‘jupiter’; another popular theme is ‘paper lantern’.
     EXAMPLE
         \033[1;34mcpanel list themes\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Themes::list/
+
 \033[1mget theme\033[0m
     Return the current theme.
 
     EXAMPLE
         \033[1;34mcpanel get theme\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_theme_base/
 
 \033[1mset theme NAME\033[0m
     Set the current theme to NAME.
@@ -267,8 +295,6 @@ cPanel theme is ‘jupiter’; another popular theme is ‘paper lantern’.
 
     EXAMPLE
         \033[1;34mcpanel set theme paper_lantern\033[00m
-
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 ---
 
@@ -314,11 +340,17 @@ remote login directory, i.e., /public_html corresponds to
     EXAMPLE
         \033[1;34mcpanel list dir indexing /public_html\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryIndexes-list_directories/
+
 \033[1mget dir indexing PATH\033[0m
     Get the index setting for remote PATH only.
 
     EXAMPLE
         \033[1;34mcpanel get dir indexing /public_html\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_indexing/
 
 \033[1mset dir indexing PATH TYPE\033[0m
     Set the index setting for remote PATH. Possible values for TYPE are
@@ -346,6 +378,9 @@ remote login directory, i.e., /public_html corresponds to
     EXAMPLE
         \033[1;34mcpanel list dir privacy /public_html\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy-list_directories/
+
 \033[1mget dir privacy PATH\033[0m
     Get the privacy settings for remote PATH only.
     You can enable or disable password protection using
@@ -353,6 +388,9 @@ remote login directory, i.e., /public_html corresponds to
 
     EXAMPLE
         \033[1;34mcpanel get dir privacy /public_html\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/is_directory_protected/
 
 \033[1menable dir privacy PATH\033[0m
     Enable password protection for PATH. Note that you need to add users
@@ -399,6 +437,9 @@ remote login directory, i.e., /public_html corresponds to
     EXAMPLE
         \033[1;34mcpanel list users /public_html\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy::list_users/
+
 \033[1mLEECH PROTECTION COMMANDS\033[0m
 
 Leech protection adds some basic measures against the abuse of
@@ -413,7 +454,8 @@ See https://docs.cpanel.net/cpanel/security/leech-protection/ for further inform
     EXAMPLE
         \033[1;34mcpanel list dir protection /public_html\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryProtection-list_directories/
 
 ---
 
@@ -426,7 +468,7 @@ Usage: cpanel check dns DOMAIN
     cpanel update dynamic dns ID DESCRITPION
     cpanel delete dynamic dns ID
 
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
 \033[1mcheck dns DOMAIN\033[0m
     Check if DOMAIN resolves to the cPanel server.
@@ -434,11 +476,17 @@ COMMANDS
     EXAMPLE
         \033[1;34mcpanel check dns example.com\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/ensure_domains_reside_only_locally/
+
 \033[1mcheck authoritative dns DOMAIN\033[0m
     Tell if cPanel server is the authoritative server for DOMAIN.
 
     EXAMPLE
         \033[1;34mcpanel authoritative dns example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/has_local_authority/
 
 \033[1mlookup dns DOMAIN\033[0m
     Return DNS zone information about DOMAIN.
@@ -446,11 +494,17 @@ COMMANDS
     EXAMPLE
         \033[1;34mcpanel lookup dns DOMAIN\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/dns-lookup/
+
 \033[1mlist dynamic dns\033[0m
     List the Dynamic DNS domains for your cPanel user.
 
     EXAMPLE
         \033[1;34mcpanel list dynamic dns\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-list/
 
 \033[1mcreate dynamic dns SUBDOMAIN [DESCRIPTION]\033[0m
     Create a new Dynamic DNS entry attached to SUBDOMAIN.
@@ -465,6 +519,9 @@ COMMANDS
         \033[1;34mcpanel create dynamic dns homeserver.example.com\033[00m
         \033[1;34mcpanel create dynamic dns homeserver.example.com "A home server with variable IP"\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-create/
+
 \033[1mrecreate dynamic dns ID\033[0m
     Delete and create again a Dynamic DNS entry identified by ID.
     Return a new ID. Use ‘cpanel list dynamic dns’ to get a list of IDs and
@@ -472,6 +529,9 @@ COMMANDS
 
     EXAMPLE
         \033[1;34mcpanel recreate dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-recreate/
 
 \033[1mupdate dynamic dns ID DESCRIPTION\033[0m
     Update the DESCRIPTION of Dynamic DNS entry identified by ID.
@@ -486,8 +546,6 @@ COMMANDS
     EXAMPLE
         \033[1;34mcpanel delete dynamic dns gziugyxxjwnamqtwysgmvrurplmafxpj\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
-
 ---
 
 Usage: cpanel list domains
@@ -495,7 +553,7 @@ Usage: cpanel list domains
     cpanel get domain data DOMAIN
     cpanel get domain aliases
 
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
 \033[1mlist domains\033[0m
     List domains for the cPanel account’s.
@@ -503,11 +561,17 @@ COMMANDS
     EXAMPLE
         \033[1;34mcpanel list domains\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_domains/
+
 \033[1mlist domain data\033[0m
     Get hosting data for all the cPanel account’s domains.
 
     EXAMPLE
         \033[1;34mcpanel list domain data\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/domains_data/
 
 \033[1mget domain data DOMAIN\033[0m
     Get hosting data for DOMAIN. Use ‘cpanel list domains’
@@ -516,13 +580,190 @@ COMMANDS
     EXAMPLE
         \033[1;34mcpanel get domain data example.com\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/single_domain_data/
+
 \033[1mget domain aliases\033[0m
     List the built-in subdomain aliases for an account’s main domain.
 
     EXAMPLE
         \033[1;34mcpanel get domain aliases\033[00m
 
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/main_domain_builtin_subdomain_aliases/
+
+---
+
+Usage: cpanel get log settings
+    cpanel set log settings SETTING...
+    cpanel unset log settings SETTING...
+    cpanel list log archives
+
+cPanel log archival settings are:
+
+- ‘archive’
+- ‘prune’
+
+If ‘archive’ is set, log files will be archived to your home directory
+after the system processes statistics.
+
+If ‘prune’ is set, cPanel will remove the previous month’s archived logs
+at the end of every month.
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mget log settings\033[0m
+    Get the account’s log archival settings.
+
+    EXAMPLE
+        \033[1;34mcpanel get log settings\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_settings/
+
+\033[1mset log settings SETTING...\033[0m
+    Set the account’s log archival settings.
+    SETTING is ‘archive’ or ‘prune’.
+
+    EXAMPLES
+        \033[1;34mcpanel set log settings archive\033[00m
+        \033[1;34mcpanel set log settings prune\033[00m
+        \033[1;34mcpanel set log settings archive prune\033[00m
+
+\033[1munset log settings SETTING...\033[0m
+    Unset the account’s log archival settings.
+    SETTING is ‘archive’ or ‘prune’.
+
+    EXAMPLES
+        \033[1;34mcpanel unset log settings archive\033[00m
+        \033[1;34mcpanel unset log settings prune\033[00m
+        \033[1;34mcpanel unset log settings archive prune\033[00m
+
+\033[1mlist log archives\033[0m
+    List the account’s archived log files.
+
+    EXAMPLE
+        \033[1;34mcpanel list log archives\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/
+
+---
+
+Usage: cpanel get bandwidth services
+    cpanel get bandwidth retention
+
+For further information see:
+https://docs.cpanel.net/cpanel/metrics/bandwidth/
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mget bandwidth services\033[0m
+    Return a list of services (by protocol) being monitored in bandwidth data.
+
+    EXAMPLE
+        \033[1;34mcpanel get bandwidth services\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_enabled_protocols/
+
+\033[1mget bandwidth retention\033[0m
+    Get the collection interval and retention periods for bandwidth data.
+
+    EXAMPLE
+        \033[1;34mcpanel get bandwidth services\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_retention_periods/
+
+---
+
+Usage: cpanel list files [DIRECTORY]
+    cpanel glob files PARTIALPATH
+    cpanel get file info PATH
+    cpanel cat file FILE
+    cpanel write file FILE
+    cpanel upload file DIRECTORY LOCALFILE
+    cpanel delete file trash [DAYS]
+
+Arguments:
+
+- Optional DIRECTORY is a remote directory
+- PATH can refer to either a remote directory or a remote file
+- PARTIALPATH is an incomplete remote PATH
+- FILE is a remote file
+- LOCALFILE is a local file
+
+Use ‘/’ to separate subdirectory components in DIRECTORY, PATH,
+PARTIALPATH or FILE. For example, a DIRECTORY could be
+public_html/images or a PATH could be public_ftp/.htacccess.
+
+All the remote arguments are relative to the remote user’s login
+directory, e.g., public corresponds to <remote login directory>/public.
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mlist files DIRECTORY\033[0m
+    Return a list of files and subdirectories in DIRECTORY
+
+    EXAMPLE
+        \033[1;34mcpanel list files public_html\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_files/
+
+\033[1mglob files PARTIALPATH\033[0m
+    Return a list of files and subdirectories whose names start
+    with PARTIALPATH. For instance, /public matches /public_html and
+    /public_ftp.
+
+    EXAMPLE
+        \033[1;34mcpanel glob files /public\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/autocompletedir/
+
+\033[1mget file info PATH\033[0m
+    Return file information about PATH.
+
+    EXAMPLES
+        \033[1;34mcpanel get file info ssl\033[00m
+        \033[1;34mcpanel get file info .bashrc\033[00m
+        \033[1;34mcpanel get file info public_html/.htaccess\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_file_information/
+
+\033[1mcat file FILE\033[0m
+    Return the contents of FILE. Note that only UTF-8 encoded files are supported.
+
+    EXAMPLES
+        \033[1;34mcpanel cat file .mysqlhistory\033[00m
+        \033[1;34mcpanel cat file public_html/.htaccess\033[00m
+
+\033[1mwrite file FILE CONTENTS\033[0m
+    Write CONTENTS as a remote text FILE.
+    Note that only UTF-8 encoded content is supported.
+    Escape codes, such as ‘\\n’, ‘\\t’ and others, are supported.
+
+    EXAMPLES
+        \033[1;34mcpanel write file public_html/index.txt "Hallo\\nTschüss\\n"\033[00m
+
+\033[1mupload file DIRECTORY LOCALFILE\033[0m
+    Upload a LOCALFILE to remote DIRECTORY .
+    If the remote DIRECTORY doesn’t exist, it will be created.
+
+    EXAMPLES
+        \033[1;34mcpanel upload file public_html index.html\033[00m
+
+\033[1mdelete file trash [DAYS]\033[0m
+    Delete the contents of the .trash directory in the user’s home.
+    Optional DAYS will only delete files older than DAYS days.
+    By default, all files are deleted.
+
+    EXAMPLES
+        \033[1;34mcpanel delete file trash\033[00m
+        \033[1;34mcpanel delete file trash 31\033[00m
 
 ---
 
@@ -532,13 +773,16 @@ Usage: cpanel list mail accounts
     cpanel set mail filter ACCOUNT FILE
     cpanel delete mail filter ACCOUNT FILTERNAME
 
-COMMANDS
+\033[1mCOMMANDS\033[0m
 
 \033[1mlist mail accounts\033[0m
     List cPanel email accounts.
 
     EXAMPLE
         \033[1;34mcpanel list mail accounts\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_pops/
 
 \033[1mlist mail filters ACCOUNT\033[0m
     List mail filters associated to ACCOUNT. Output is a JSON-formatted
@@ -548,6 +792,9 @@ COMMANDS
     EXAMPLE
         \033[1;34mcpanel list mail filters scott@example.com\033[00m
 
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/
+
 \033[1mget mail filter ACCOUNT FILTERNAME\033[0m
     Return a JSON-formatted description of email filter FILTERNAME associated
     to email ACCOUNT. To get a list of current filter names, use
@@ -555,6 +802,9 @@ COMMANDS
 
     EXAMPLE
         \033[1;34mcpanel get mail filter scott@example.com spamkiller\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/
 
 \033[1mset mail filter ACCOUNT FILE\033[0m
     Create or update an email filter associated with email ACCOUNT.
@@ -575,7 +825,5 @@ COMMANDS
 
     EXAMPLE
          \033[1;34mcpanel delete mail filter scott@example.com spamkiller\033[00m
-
-For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 ---

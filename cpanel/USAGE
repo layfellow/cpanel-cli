@@ -44,7 +44,7 @@ Usage: cpanel help MODULE
 
 \033[1mMODULES\033[0m
 
-The currently implemented modules and functions are:
+The currently implemented modules are:
 
 features
 quota
@@ -60,6 +60,9 @@ themes
 directory
 dns
 domains
+log
+bandwidth
+files
 mail
 
 Use ‘cpanel help MODULE’ to learn more about the functions implemented

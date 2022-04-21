@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-18 22:07-0400\n"
+"POT-Creation-Date: 2022-04-20 20:53-0400\n"
 "PO-Revision-Date: 2022-04-10 22:10-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -38,48 +38,66 @@ msgstr ""
 "Lista las características de una cuenta de cPanel. La salida está en "
 "formato JSON."
 
-#: ../../reference.rst:15 ../../reference.rst:31 ../../reference.rst:48
-#: ../../reference.rst:91 ../../reference.rst:101 ../../reference.rst:123
-#: ../../reference.rst:135 ../../reference.rst:199 ../../reference.rst:223
-#: ../../reference.rst:233 ../../reference.rst:257 ../../reference.rst:268
-#: ../../reference.rst:280 ../../reference.rst:308 ../../reference.rst:318
-#: ../../reference.rst:329 ../../reference.rst:340 ../../reference.rst:366
-#: ../../reference.rst:376 ../../reference.rst:387 ../../reference.rst:450
-#: ../../reference.rst:460 ../../reference.rst:471 ../../reference.rst:495
-#: ../../reference.rst:507 ../../reference.rst:518 ../../reference.rst:528
-#: ../../reference.rst:553 ../../reference.rst:563 ../../reference.rst:573
-#: ../../reference.rst:591 ../../reference.rst:625 ../../reference.rst:635
-#: ../../reference.rst:645 ../../reference.rst:655 ../../reference.rst:684
-#: ../../reference.rst:694 ../../reference.rst:705 ../../reference.rst:731
-#: ../../reference.rst:741 ../../reference.rst:752 ../../reference.rst:762
-#: ../../reference.rst:790 ../../reference.rst:802 ../../reference.rst:814
-#: ../../reference.rst:830 ../../reference.rst:842
+#: ../../reference.rst:15 ../../reference.rst:33 ../../reference.rst:52
+#: ../../reference.rst:101 ../../reference.rst:114 ../../reference.rst:140
+#: ../../reference.rst:155 ../../reference.rst:223 ../../reference.rst:248
+#: ../../reference.rst:261 ../../reference.rst:289 ../../reference.rst:303
+#: ../../reference.rst:318 ../../reference.rst:347 ../../reference.rst:360
+#: ../../reference.rst:374 ../../reference.rst:385 ../../reference.rst:412
+#: ../../reference.rst:425 ../../reference.rst:439 ../../reference.rst:501
+#: ../../reference.rst:514 ../../reference.rst:528 ../../reference.rst:552
+#: ../../reference.rst:567 ../../reference.rst:581 ../../reference.rst:591
+#: ../../reference.rst:616 ../../reference.rst:626 ../../reference.rst:636
+#: ../../reference.rst:657 ../../reference.rst:694 ../../reference.rst:707
+#: ../../reference.rst:720 ../../reference.rst:733 ../../reference.rst:768
+#: ../../reference.rst:781 ../../reference.rst:792 ../../reference.rst:818
+#: ../../reference.rst:831 ../../reference.rst:845 ../../reference.rst:858
+#: ../../reference.rst:898 ../../reference.rst:937 ../../reference.rst:965
+#: ../../reference.rst:978 ../../reference.rst:1028 ../../reference.rst:1043
+#: ../../reference.rst:1136 ../../reference.rst:1151 ../../reference.rst:1166
+#: ../../reference.rst:1185 ../../reference.rst:1197
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
-#: ../../reference.rst:24
+#: ../../reference.rst:21
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/"
+
+#: ../../reference.rst:26
 msgid "Module: ``quota``"
 msgstr "Módulo: ``quota``"
 
-#: ../../reference.rst:26
+#: ../../reference.rst:28
 msgid "**get quota**"
 msgstr "**get quota**"
 
-#: ../../reference.rst:29
+#: ../../reference.rst:31
 msgid "Get the cPanel account’s total disk quota information in megabytes."
 msgstr ""
 "Obtiene información de la cuota de disco total de la cuenta de cPanel en "
 "megabytes."
 
-#: ../../reference.rst:40
+#: ../../reference.rst:39
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_quota_info/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_quota_info/"
+
+#: ../../reference.rst:44
 msgid "Module: ``usage``"
 msgstr "Módulo: ``usage``"
 
-#: ../../reference.rst:42
+#: ../../reference.rst:46
 msgid "**get usage**"
 msgstr "**get usage**"
 
-#: ../../reference.rst:45
+#: ../../reference.rst:49
 msgid ""
 "Show resource usage and some statistics, like bandwidth, number of "
 "subdomains, disk usage, number of mail filters, etc."
@@ -87,15 +105,23 @@ msgstr ""
 "Muestra el uso de recursos y algunas estadísticas, como ancho de banda, "
 "número de subdominios, uso de disco, número de filtros de correo, etc."
 
-#: ../../reference.rst:57
+#: ../../reference.rst:58
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_usages/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_usages/"
+
+#: ../../reference.rst:63
 msgid "Module: ``stats``"
 msgstr "Módulo: ``stats``"
 
-#: ../../reference.rst:59
+#: ../../reference.rst:65
 msgid "**get stats STAT...**"
 msgstr "**get stats STAT...**"
 
-#: ../../reference.rst:62
+#: ../../reference.rst:68
 msgid ""
 "Show detailed data and statistics, like hostname, file usage, database "
 "usage, dedicated IPs, etc."
@@ -103,7 +129,7 @@ msgstr ""
 "Muestra datos y estadísticas detalladas, como el nombre de host, el uso "
 "de archivos, el uso de bases de datos, IPs dedicadas, etc."
 
-#: ../../reference.rst:65
+#: ../../reference.rst:71
 msgid ""
 "STAT is the name of the statistic you want, you can provide a list of "
 "STATs to be displayed. For a complete list ot STAT names, see ‘display "
@@ -115,43 +141,80 @@ msgstr ""
 "‘display parameters’ en "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats"
 
-#: ../../reference.rst:69 ../../reference.rst:185 ../../reference.rst:671
+#: ../../reference.rst:75 ../../reference.rst:209 ../../reference.rst:752
+#: ../../reference.rst:912 ../../reference.rst:925 ../../reference.rst:1056
+#: ../../reference.rst:1071 ../../reference.rst:1084 ../../reference.rst:1095
+#: ../../reference.rst:1107
 msgid "*Examples*"
 msgstr "*Ejemplos*"
 
-#: ../../reference.rst:79
+#: ../../reference.rst:82
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/"
+
+#: ../../reference.rst:87
 msgid "Module: ``accounts``"
 msgstr "Módulo: ``accounts``"
 
-#: ../../reference.rst:81 ../../reference.rst:87
+#: ../../reference.rst:89 ../../reference.rst:97
 msgid "**list accounts**"
 msgstr "**list accounts**"
 
-#: ../../reference.rst:83 ../../reference.rst:97
+#: ../../reference.rst:91 ../../reference.rst:110
 msgid "**get account**"
 msgstr "**get account**"
 
-#: ../../reference.rst:89
+#: ../../reference.rst:94 ../../reference.rst:132 ../../reference.rst:177
+#: ../../reference.rst:241 ../../reference.rst:281 ../../reference.rst:337
+#: ../../reference.rst:405 ../../reference.rst:687 ../../reference.rst:811
+#: ../../reference.rst:891 ../../reference.rst:958 ../../reference.rst:1021
+#: ../../reference.rst:1129
+msgid "**COMMANDS**"
+msgstr "**COMMANDS**"
+
+#: ../../reference.rst:99
 msgid "List basic information of the main cPanel account."
 msgstr "Lista información básica de la cuenta principal de cPanel."
 
-#: ../../reference.rst:99
+#: ../../reference.rst:107
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_accounts/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_accounts/"
+
+#: ../../reference.rst:112
 msgid "Show detailed information of the main account."
 msgstr "Muestra información detallada de la cuenta principal."
 
-#: ../../reference.rst:110
+#: ../../reference.rst:120
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Variables-"
+"get_user_information/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Variables-"
+"get_user_information/"
+
+#: ../../reference.rst:125
 msgid "Module: ``subaccounts``"
 msgstr "Módulo: ``subaccounts``"
 
-#: ../../reference.rst:112 ../../reference.rst:118
+#: ../../reference.rst:127 ../../reference.rst:135
 msgid "**list subaccounts**"
 msgstr "**list subaccounts**"
 
-#: ../../reference.rst:114 ../../reference.rst:129
+#: ../../reference.rst:129 ../../reference.rst:149
 msgid "**get subaccount GUID**"
 msgstr "**get subaccount GUID**"
 
-#: ../../reference.rst:120
+#: ../../reference.rst:137
 msgid ""
 "List the sub-accounts of the main cPanel account, along with detailed "
 "information of each sub-account."
@@ -159,7 +222,17 @@ msgstr ""
 "Lista las sub-cuentas de la cuenta principal de cPanel, junto con "
 "información detallada de cada sub-cuenta."
 
-#: ../../reference.rst:131
+#: ../../reference.rst:146
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-"
+"list_users/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-"
+"list_users/"
+
+#: ../../reference.rst:151
 msgid ""
 "Show detailed information of a sub-account, identified by its GUID. To "
 "get this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts"
@@ -170,27 +243,35 @@ msgstr ""
 "cuenta que sólo sub-cuentas con un flag ``sub_account_exists`` "
 "establecido a 1 devuelven información."
 
-#: ../../reference.rst:144
+#: ../../reference.rst:161
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/"
+
+#: ../../reference.rst:166
 msgid "Module: ``backup``"
 msgstr "Módulo: ``backup``"
 
-#: ../../reference.rst:146 ../../reference.rst:164
+#: ../../reference.rst:168 ../../reference.rst:188
 msgid "**create backup home [EMAIL]**"
 msgstr "**cpanel backup home [EMAIL]**"
 
-#: ../../reference.rst:148 ../../reference.rst:168
+#: ../../reference.rst:170 ../../reference.rst:192
 msgid "**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 msgstr "**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 
-#: ../../reference.rst:150 ../../reference.rst:179
+#: ../../reference.rst:172 ../../reference.rst:203
 msgid "**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 msgstr "**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
 
-#: ../../reference.rst:152 ../../reference.rst:195
+#: ../../reference.rst:174 ../../reference.rst:219
 msgid "**list backups**"
 msgstr "**list backups**"
 
-#: ../../reference.rst:156
+#: ../../reference.rst:180
 msgid ""
 "All ‘create backup’ commands create a backup tarball (a .tar.gz file) of "
 "the user’s home directory along with other account data, such as the "
@@ -203,7 +284,7 @@ msgstr ""
 " datos. El nombre del tarball de respaldo es ``backup-MM.DD.YYY_HH-MM-"
 "SS_USERNAME.tar.gz``."
 
-#: ../../reference.rst:161
+#: ../../reference.rst:185
 msgid ""
 "If you pass an optional EMAIL argument, the backup engine will send a "
 "confirmation email after it completes the backup."
@@ -211,17 +292,17 @@ msgstr ""
 "Si se pasa el argumento opcional EMAIL, el motor de respaldo envia un "
 "correo electrónico de confirmación después de que complete el respaldo."
 
-#: ../../reference.rst:166
+#: ../../reference.rst:190
 msgid "Create a backup tarball and store it in the user’s home directory itself."
 msgstr ""
 "Crea un tarball de respaldo y lo almacena en el mismo directorio home del"
 " usuario."
 
-#: ../../reference.rst:170
+#: ../../reference.rst:194
 msgid "Create a backup tarball and store it on a remote FTP server."
 msgstr "Crea un tarball de respaldo y lo almacena en un servidor FTP remoto."
 
-#: ../../reference.rst:172
+#: ../../reference.rst:196
 msgid ""
 "HOST is the hostname of the remote FTP server. USERNAME and PASSWORD are "
 "the credentials to log in to it. Optional DIRECTORY is the destination "
@@ -238,11 +319,11 @@ msgstr ""
 "de inicio de sesión, es decir, /public corresponde a <directorio de "
 "inicio remoto>/public."
 
-#: ../../reference.rst:181
+#: ../../reference.rst:205
 msgid "Create a backup tarball and store it on a remote SCP server."
 msgstr "Crea un tarball de respaldo y lo almacena en un servidor SCP remoto."
 
-#: ../../reference.rst:183
+#: ../../reference.rst:207
 msgid ""
 "USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ‘create backup"
 " ftp’."
@@ -250,55 +331,71 @@ msgstr ""
 "USERNAME, PASSWORD, HOST y DIRECTORY son los mismos que para ‘create "
 "backup ftp’."
 
-#: ../../reference.rst:197
+#: ../../reference.rst:221
 msgid "List the account’s backup files."
 msgstr "Lista los archivos de respaldo de la cuenta."
 
-#: ../../reference.rst:208
+#: ../../reference.rst:229
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/"
+
+#: ../../reference.rst:234
 msgid "Module: ``cache``"
 msgstr "Módulo: ``cache``"
 
-#: ../../reference.rst:210 ../../reference.rst:219
+#: ../../reference.rst:236 ../../reference.rst:244
 msgid "**update cache**"
 msgstr "**update cache**"
 
-#: ../../reference.rst:212 ../../reference.rst:229
+#: ../../reference.rst:238 ../../reference.rst:257
 msgid "**read cache**"
 msgstr "**read cache**"
 
-#: ../../reference.rst:215
-msgid ""
-"See https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-"
-"read/ for information on cache IDs."
-msgstr ""
-"Consulte https://api.docs.cpanel.net/openapi/cpanel/operation"
-"/CacheBuster-read/ para obtener más información sobre los IDs de caché."
-
-#: ../../reference.rst:221
+#: ../../reference.rst:246
 msgid "Create web browser cached file override ID."
 msgstr "Crea un  ID de anulación de caché del navegador web."
 
-#: ../../reference.rst:231
+#: ../../reference.rst:254
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/update/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/update/"
+
+#: ../../reference.rst:259
 msgid "Return web browser cached file override ID."
 msgstr "Devuelve el ID de anulación de caché del navegador web."
 
-#: ../../reference.rst:242
+#: ../../reference.rst:267
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/"
+
+#: ../../reference.rst:272
 msgid "Module: ``locales``"
 msgstr "Módulo: ``locale``"
 
-#: ../../reference.rst:244 ../../reference.rst:252
+#: ../../reference.rst:274 ../../reference.rst:284
 msgid "**list locales**"
 msgstr "**list locales**"
 
-#: ../../reference.rst:246 ../../reference.rst:263
+#: ../../reference.rst:276 ../../reference.rst:298
 msgid "**get locale**"
 msgstr "**get locale**"
 
-#: ../../reference.rst:248 ../../reference.rst:274
+#: ../../reference.rst:278 ../../reference.rst:312
 msgid "**set locale LOCALE**"
 msgstr "**set locale LOCALE**"
 
-#: ../../reference.rst:254
+#: ../../reference.rst:286
 msgid ""
 "List all the available locales (language and conventions) for the cPanel "
 "user interface."
@@ -306,7 +403,15 @@ msgstr ""
 "Lista todas las configuraciones regionales (idioma y convenciones) "
 "disponibles para la interfaz de usuario de cPanel."
 
-#: ../../reference.rst:265
+#: ../../reference.rst:295
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_locales/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_locales/"
+
+#: ../../reference.rst:300
 msgid ""
 "Return the current locale (language and conventions) used for the cPanel "
 "user interface."
@@ -314,7 +419,15 @@ msgstr ""
 "Devuelve la configuración regional (idioma y convenciones) actual de la "
 "interfaz de usuario de cPanel."
 
-#: ../../reference.rst:276
+#: ../../reference.rst:309
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_attributes/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_attributes/"
+
+#: ../../reference.rst:314
 msgid ""
 "Set the cPanel user interface locale (language and conventions) to "
 "LOCALE. Use ‘cpanel list locales’ for a list of available locales. In "
@@ -326,27 +439,27 @@ msgstr ""
 "para obtener una lista de los idiomas disponibles. En términos generales,"
 " un LOCALE corresponde a un código de idioma de dos letras ISO 639-1."
 
-#: ../../reference.rst:289
+#: ../../reference.rst:326
 msgid "Module: ``styles``"
 msgstr "Módulo: ``styles``"
 
-#: ../../reference.rst:291 ../../reference.rst:304
+#: ../../reference.rst:328 ../../reference.rst:343
 msgid "**list styles**"
 msgstr "**list styles**"
 
-#: ../../reference.rst:293 ../../reference.rst:314
+#: ../../reference.rst:330 ../../reference.rst:356
 msgid "**get style**"
 msgstr "**get style**"
 
-#: ../../reference.rst:295 ../../reference.rst:324
+#: ../../reference.rst:332 ../../reference.rst:369
 msgid "**set style NAME**"
 msgstr "**get style NAME**"
 
-#: ../../reference.rst:297 ../../reference.rst:335
+#: ../../reference.rst:334 ../../reference.rst:380
 msgid "**default style NAME**"
 msgstr "**default style NAME**"
 
-#: ../../reference.rst:301
+#: ../../reference.rst:340
 msgid ""
 "A style is a variation of a user interface theme for cPanel. For example,"
 " the ‘paper lantern’ theme has four styles: ‘basic’, ‘dark’, ‘light’ and "
@@ -356,15 +469,31 @@ msgstr ""
 " Por ejemplo, el tema Paper Lantern tiene cuatro estilos: ‘basic’, "
 "‘dark’, ‘light’ y ‘glass’."
 
-#: ../../reference.rst:306
+#: ../../reference.rst:345
 msgid "Return all the available user interface styles."
 msgstr "Devuelve todos los estilos de interfaz de usuario disponibles."
 
-#: ../../reference.rst:316
+#: ../../reference.rst:353
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list/"
+
+#: ../../reference.rst:358
 msgid "Return the current user interface style."
 msgstr "Devuelve el estilo de interfaz de usuario actual."
 
-#: ../../reference.rst:326
+#: ../../reference.rst:366
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/current/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/current/"
+
+#: ../../reference.rst:371
 msgid ""
 "Set the current user interface style to NAME. NAME must be one of "
 "‘basic’, ‘dark’, ‘light’ or ‘glass’"
@@ -372,7 +501,7 @@ msgstr ""
 "Establece el estilo actual de la interfaz de usuario a NAME. NAME debe "
 "ser uno de los siguientes: ‘basic’, ‘dark’, ‘light’ o ‘glass’."
 
-#: ../../reference.rst:337
+#: ../../reference.rst:382
 msgid ""
 "Set the default user interface style to NAME. NAME must be one of "
 "‘basic’, ‘dark’, ‘light’ or ‘glass’"
@@ -380,23 +509,23 @@ msgstr ""
 "Establece el estilo por defecto de la interfaz de usuario a NAME. NAME "
 "debe ser uno de los siguientes: ‘basic’, ‘dark’, ‘light’ o ‘glass’."
 
-#: ../../reference.rst:349
+#: ../../reference.rst:393
 msgid "Module: ``themes``"
 msgstr "Módulo: ``themes``"
 
-#: ../../reference.rst:351 ../../reference.rst:362
+#: ../../reference.rst:395 ../../reference.rst:408
 msgid "**list themes**"
 msgstr "**list themes**"
 
-#: ../../reference.rst:353 ../../reference.rst:372
+#: ../../reference.rst:397 ../../reference.rst:421
 msgid "**get theme**"
 msgstr "**get theme**"
 
-#: ../../reference.rst:355 ../../reference.rst:382
+#: ../../reference.rst:399 ../../reference.rst:434
 msgid "**set theme NAME**"
 msgstr "**set theme NAME**"
 
-#: ../../reference.rst:358
+#: ../../reference.rst:402
 msgid ""
 "A theme is a customized look and feel for the cPanel user interface. The "
 "default cPanel theme is ‘jupiter’; another popular theme is ‘paper "
@@ -406,15 +535,31 @@ msgstr ""
 "cPanel. El tema por defecto de cPanel es ‘jupiter’; otro tema popular es "
 "‘paper lantern’."
 
-#: ../../reference.rst:364
+#: ../../reference.rst:410
 msgid "Return all the available themes."
 msgstr "Devuelve todos los temas disponibles."
 
-#: ../../reference.rst:374
+#: ../../reference.rst:418
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Themes::list/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Themes::list/"
+
+#: ../../reference.rst:423
 msgid "Return the current theme."
 msgstr "Devuelve el tema actual."
 
-#: ../../reference.rst:384
+#: ../../reference.rst:431
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_theme_base/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_theme_base/"
+
+#: ../../reference.rst:436
 msgid ""
 "Set the current theme to NAME. NAME must be one the available themes "
 "reported by ‘cpanel list themes’."
@@ -422,59 +567,59 @@ msgstr ""
 "Establece el tema actual a NAME. NAME debe ser uno de los temas "
 "disponibles según lo reporta ‘cpanel list themes’."
 
-#: ../../reference.rst:396
+#: ../../reference.rst:447
 msgid "Module: ``dir``"
 msgstr "Módulo: ``dir``"
 
-#: ../../reference.rst:398 ../../reference.rst:446
+#: ../../reference.rst:449 ../../reference.rst:497
 msgid "**list dir indexing PATH**"
 msgstr "**list dir indexing PATH**"
 
-#: ../../reference.rst:400 ../../reference.rst:456
+#: ../../reference.rst:451 ../../reference.rst:510
 msgid "**get dir indexing PATH**"
 msgstr "**get dir indexing PATH**"
 
-#: ../../reference.rst:402 ../../reference.rst:466
+#: ../../reference.rst:453 ../../reference.rst:523
 msgid "**set dir indexing PATH TYPE**"
 msgstr "**set dir indexing PATH TYPE**"
 
-#: ../../reference.rst:404 ../../reference.rst:491
+#: ../../reference.rst:455 ../../reference.rst:548
 msgid "**list dir privacy PATH**"
 msgstr "**list dir privacy PATH**"
 
-#: ../../reference.rst:406 ../../reference.rst:501
+#: ../../reference.rst:457 ../../reference.rst:561
 msgid "**get dir privacy PATH**"
 msgstr "**get dir privacy PATH**"
 
-#: ../../reference.rst:408 ../../reference.rst:513
+#: ../../reference.rst:459 ../../reference.rst:576
 msgid "**enable dir privacy PATH**"
 msgstr "**enable dir privacy PATH**"
 
-#: ../../reference.rst:410 ../../reference.rst:524
+#: ../../reference.rst:461 ../../reference.rst:587
 msgid "**disable dir privacy PATH**"
 msgstr "**disable dir privacy PATH**"
 
-#: ../../reference.rst:412 ../../reference.rst:548
+#: ../../reference.rst:463 ../../reference.rst:611
 msgid "**add dir user PATH USER PASSWORD**"
 msgstr "**add dir user PATH USER PASSWORD**"
 
-#: ../../reference.rst:414 ../../reference.rst:559
+#: ../../reference.rst:465 ../../reference.rst:622
 msgid "**delete dir user PATH USER**"
 msgstr "**delete dir user PATH USER**"
 
-#: ../../reference.rst:416 ../../reference.rst:569
+#: ../../reference.rst:467 ../../reference.rst:632
 msgid "**list dir users PATH**"
 msgstr "**list dir users PATH**"
 
-#: ../../reference.rst:418
+#: ../../reference.rst:469
 msgid "**list dir protection PATH**"
 msgstr "**list dir protection PATH**"
 
-#: ../../reference.rst:421
+#: ../../reference.rst:472
 msgid "**INDEXING COMMANDS**"
 msgstr "**COMANDOS DE INDEXACIÓN**"
 
-#: ../../reference.rst:424
+#: ../../reference.rst:475
 msgid ""
 "The indexing of a remote directory controls how to present that directory"
 " to a web browser if no default HTML index page is found."
@@ -483,27 +628,27 @@ msgstr ""
 "directorio a un navegador web si no se encuentra una página de índice "
 "HTML por defecto."
 
-#: ../../reference.rst:427
+#: ../../reference.rst:478
 msgid "There are four possible index settings:"
 msgstr "Hay cuatro posibles configuraciones de indexación:"
 
-#: ../../reference.rst:429
+#: ../../reference.rst:480
 msgid "‘inherit’: Use the parent directory’s setting."
 msgstr "‘inherit’: Utiliza la configuración del directorio padre."
 
-#: ../../reference.rst:430
+#: ../../reference.rst:481
 msgid "‘disabled’ (No Indexing): do not list the directory contents."
 msgstr ""
 "‘disabled’: (No Indexing, *Sin indexación*), no lista el contenido del "
 "directorio."
 
-#: ../../reference.rst:431
+#: ../../reference.rst:482
 msgid "‘standard’ (Show Filename Only): list only the directory’s file names."
 msgstr ""
 "‘standard’: (Show Filename Only, *Sólo mostrar nombre de archivo*), lista"
 " sólo los nombres de los archivos del directorio."
 
-#: ../../reference.rst:432
+#: ../../reference.rst:483
 msgid ""
 "‘fancy’: (Show Filename and Description) list the directory’s file names,"
 " sizes and types."
@@ -512,7 +657,7 @@ msgstr ""
 "descripción*), lista los nombres, tamaños y tipos de archivos del "
 "directorio."
 
-#: ../../reference.rst:434
+#: ../../reference.rst:485
 msgid ""
 "cPanel uses a .htaccess directive in the remote directory to control the "
 "index settings. For instance, for ‘fancy’, it adds the following to "
@@ -522,11 +667,11 @@ msgstr ""
 "controlar la configuración de los índices. Por ejemplo, para ‘fancy’, "
 "añade lo siguiente a .htaccess:"
 
-#: ../../reference.rst:437
+#: ../../reference.rst:488
 msgid "Options +Indexes IndexOptions +HTMLTable +FancyIndexing"
 msgstr "Options +Indexes IndexOptions +HTMLTable +FancyIndexing"
 
-#: ../../reference.rst:440
+#: ../../reference.rst:491
 msgid ""
 "See https://docs.cpanel.net/cpanel/advanced/indexes/ for further "
 "information."
@@ -534,7 +679,7 @@ msgstr ""
 "Para más información, consulte "
 "https://docs.cpanel.net/cpanel/advanced/indexes/"
 
-#: ../../reference.rst:442 ../../reference.rst:487 ../../reference.rst:544
+#: ../../reference.rst:493 ../../reference.rst:544 ../../reference.rst:607
 msgid ""
 "Note that the PATH in all commands below is not absolute, but relative to"
 " the remote login directory, i.e., /public_html corresponds to <remote "
@@ -545,17 +690,35 @@ msgstr ""
 "``/public_html`` corresponde a <directorio de inicio de "
 "sesión>/public_html."
 
-#: ../../reference.rst:448
+#: ../../reference.rst:499
 msgid "List the index settings for remote PATH and its subdirectories (children)."
 msgstr ""
 "Listar la configuración de los índices del PATH remoto y sus "
 "subdirectorios (hijos)."
 
-#: ../../reference.rst:458
+#: ../../reference.rst:507
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryIndexes-"
+"list_directories/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryIndexes-"
+"list_directories/"
+
+#: ../../reference.rst:512
 msgid "Get the index setting for remote PATH only."
 msgstr "Obtiene la configuración de índice sólo para el PATH remoto."
 
-#: ../../reference.rst:468
+#: ../../reference.rst:520
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_indexing/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_indexing/"
+
+#: ../../reference.rst:525
 msgid ""
 "Set the index setting for remote PATH. Possible values for TYPE are "
 "‘inherit’, ‘disabled’, ‘standard’ or ‘fancy’."
@@ -563,11 +726,11 @@ msgstr ""
 "Establece la configuración de índice del PATH remoto. Los valores "
 "posibles para TYPE son ‘inherit’, ‘disabled’, ‘standard’ o ‘fancy’."
 
-#: ../../reference.rst:477
+#: ../../reference.rst:534
 msgid "**PRIVACY COMMANDS**"
 msgstr "**COMANDOS DE PRIVACIDAD**"
 
-#: ../../reference.rst:480
+#: ../../reference.rst:537
 msgid ""
 "cPanel can password-protect remote directories for privacy. Any attempt "
 "to access a private directory using a web browser will prompt for a "
@@ -578,7 +741,7 @@ msgstr ""
 "utilizando un navegador web solicitará un nombre de usuario y una "
 "contraseña."
 
-#: ../../reference.rst:484
+#: ../../reference.rst:541
 msgid ""
 "The actual underlying authentication method is Basic HTTP authentication;"
 " these users and passwords are local to the directory, they are not "
@@ -588,7 +751,7 @@ msgstr ""
 "estos usuarios y contraseñas son locales para el directorio, no son "
 "usuarios de cPanel."
 
-#: ../../reference.rst:493
+#: ../../reference.rst:550
 msgid ""
 "List the privacy settings for remote PATH and its subdirectories "
 "(children)."
@@ -596,7 +759,17 @@ msgstr ""
 "Lista la configuración de privacidad de PATH remoto y sus subdirectorios "
 "(hijos). La salida está enformato JSON."
 
-#: ../../reference.rst:503
+#: ../../reference.rst:558
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy-"
+"list_directories/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy-"
+"list_directories/"
+
+#: ../../reference.rst:563
 msgid ""
 "Get the privacy settings for remote PATH only. You can enable or disable "
 "password protection using ‘cpanel enable dir privacy’ or ‘cpanel disable "
@@ -607,7 +780,15 @@ msgstr ""
 " con contraseña usando ‘cpanel enable dir privacy’ o ‘cpanel disable dir "
 "privacy’ (vea más abajo)."
 
-#: ../../reference.rst:515
+#: ../../reference.rst:573
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/is_directory_protected/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/is_directory_protected/"
+
+#: ../../reference.rst:578
 msgid ""
 "Enable password protection for PATH. Note that you need to add users "
 "using ‘cpanel add dir user’ (see below) to grant access to PATH."
@@ -616,15 +797,15 @@ msgstr ""
 "necesita agregar usuarios usando ``cpanel add dir user`` (vea más abajo) "
 "para otorgar acceso al PATH."
 
-#: ../../reference.rst:526
+#: ../../reference.rst:589
 msgid "Disable password protection for PATH."
 msgstr "Desactiva la protección con contraseña para PATH."
 
-#: ../../reference.rst:534
+#: ../../reference.rst:597
 msgid "**USER MANAGEMENT COMMANDS**"
 msgstr "**COMANDOS DE GESTIÓN DE USUARIOS**"
 
-#: ../../reference.rst:537
+#: ../../reference.rst:600
 msgid ""
 "cPanel grants access to remote password-protected directories using ad "
 "hoc users and passwords specific to every directory. Use the commands "
@@ -634,7 +815,7 @@ msgstr ""
 "utilizando usuarios y contraseñas específicas para cada directorio. "
 "Utilice los comandos siguientes para gestionar estos usuarios."
 
-#: ../../reference.rst:541
+#: ../../reference.rst:604
 msgid ""
 "cPanel stores the credentials in a .htpasswd file. See "
 "https://en.wikipedia.org/wiki/.htpasswd for further information."
@@ -642,7 +823,7 @@ msgstr ""
 "cPanel almacena las credenciales en un archivo .htpasswd. Consulte "
 "https://en.wikipedia.org/wiki/.htpasswd para más información. "
 
-#: ../../reference.rst:550
+#: ../../reference.rst:613
 msgid ""
 "Add USER with corresponding PASSWORD to the list of allowed users for "
 "PATH."
@@ -650,19 +831,27 @@ msgstr ""
 "Añade el usuario USER con su correspondiente contraseña PASSWORD a la "
 "lista de usuarios permitidos para PATH."
 
-#: ../../reference.rst:561
+#: ../../reference.rst:624
 msgid "Remove USER from the list of allowed users for PATH."
 msgstr "Elimina  USER de la lista de usuarios permitidos para PATH."
 
-#: ../../reference.rst:571
+#: ../../reference.rst:634
 msgid "List allowed users for PATH."
 msgstr "Lista los usuarios permitidos para PATH."
 
-#: ../../reference.rst:579
+#: ../../reference.rst:642
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy::list_users/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy::list_users/"
+
+#: ../../reference.rst:645
 msgid "**LEECH PROTECTION COMMANDS**"
 msgstr "**COMANDOS DE PROTECCIÓN CONTRA ABUSOS**"
 
-#: ../../reference.rst:582
+#: ../../reference.rst:648
 msgid ""
 "Leech protection adds some basic measures against the abuse of password-"
 "protected directories. The system allows a maximum number of logins per "
@@ -673,7 +862,7 @@ msgstr ""
 "sistema sólo permite un número máximo de inicios de sesión por hora para "
 "un directorio protegido contra abusos (*leech*)."
 
-#: ../../reference.rst:586
+#: ../../reference.rst:652
 msgid ""
 "See https://docs.cpanel.net/cpanel/security/leech-protection/ for further"
 " information."
@@ -681,7 +870,7 @@ msgstr ""
 "Consulte https://docs.cpanel.net/cpanel/security/leech-protection/ para "
 "obtener más información."
 
-#: ../../reference.rst:588
+#: ../../reference.rst:654
 msgid ""
 "033[1mlist dir protection PATH033[00m List leech protection status for "
 "PATH and its subdirectories (children)."
@@ -689,73 +878,111 @@ msgstr ""
 "Lista el estado de la protección contra abusos para PATH y sus "
 "subdirectorios (hijos)."
 
-#: ../../reference.rst:600
+#: ../../reference.rst:663
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryProtection-"
+"list_directories/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryProtection-"
+"list_directories/"
+
+#: ../../reference.rst:668
 msgid "Module: ``dns``"
 msgstr "Módulo: ``dns``"
 
-#: ../../reference.rst:602 ../../reference.rst:621
+#: ../../reference.rst:670 ../../reference.rst:690
 msgid "**check dns DOMAIN**"
 msgstr "**check dns DOMAIN**"
 
-#: ../../reference.rst:604
+#: ../../reference.rst:672
 msgid "**authoritative dns DOMAIN**"
 msgstr "**authoritative dns DOMAIN**"
 
-#: ../../reference.rst:606
+#: ../../reference.rst:674
 msgid "**lookup dns**"
 msgstr "**lookup dns**"
 
-#: ../../reference.rst:608 ../../reference.rst:651
+#: ../../reference.rst:676 ../../reference.rst:729
 msgid "**list dynamic dns**"
 msgstr "**list dynamic dns**"
 
-#: ../../reference.rst:610 ../../reference.rst:661
+#: ../../reference.rst:678 ../../reference.rst:742
 msgid "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
 msgstr "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
 
-#: ../../reference.rst:612 ../../reference.rst:678
+#: ../../reference.rst:680 ../../reference.rst:762
 msgid "**recreate dynamic dns ID**"
 msgstr "**recreate dynamic dns ID**"
 
-#: ../../reference.rst:614
+#: ../../reference.rst:682
 msgid "**update dynamic dns ID DESCRITPION**"
 msgstr "**update dynamic dns ID DESCRITPION**"
 
-#: ../../reference.rst:616 ../../reference.rst:700
+#: ../../reference.rst:684 ../../reference.rst:787
 msgid "**delete dynamic dns ID**"
 msgstr "**delete dynamic dns ID**"
 
-#: ../../reference.rst:619 ../../reference.rst:725 ../../reference.rst:784
-msgid "COMMANDS"
-msgstr "Comandos"
-
-#: ../../reference.rst:623
+#: ../../reference.rst:692
 msgid "Check if DOMAIN resolves to the cPanel server."
 msgstr "Comprueba si DOMAIN resuelve hacia este servidor de cPanel."
 
-#: ../../reference.rst:631
+#: ../../reference.rst:700
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/ensure_domains_reside_only_locally/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/ensure_domains_reside_only_locally/"
+
+#: ../../reference.rst:703
 msgid "**check authoritative dns DOMAIN**"
 msgstr "**check authoritative dns DOMAIN**"
 
-#: ../../reference.rst:633
+#: ../../reference.rst:705
 msgid "Tell if cPanel server is the authoritative server for DOMAIN."
 msgstr ""
 "Indica si el servidor de cPanel es el servidor DNS con autoridad para "
 "DOMAIN."
 
-#: ../../reference.rst:641
+#: ../../reference.rst:713
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/has_local_authority/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/has_local_authority/"
+
+#: ../../reference.rst:716
 msgid "**lookup dns DOMAIN**"
 msgstr "**lookup dns DOMAIN**"
 
-#: ../../reference.rst:643
+#: ../../reference.rst:718
 msgid "Return DNS zone information about DOMAIN."
 msgstr "Devuelve información de la zona DNS de DOMAIN."
 
-#: ../../reference.rst:653
+#: ../../reference.rst:726
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dns-lookup/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dns-lookup/"
+
+#: ../../reference.rst:731
 msgid "List the Dynamic DNS domains for your cPanel user."
 msgstr "Lista los dominios DNS dinámicos para el usuario de cPanel."
 
-#: ../../reference.rst:663
+#: ../../reference.rst:739
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-list/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-list/"
+
+#: ../../reference.rst:744
 msgid ""
 "Create a new Dynamic DNS entry attached to SUBDOMAIN. Optionally include "
 "a human-readable DESCRIPTION. Return an ID which you can later use in a "
@@ -765,7 +992,7 @@ msgstr ""
 "incluye una DESCRIPTION legible Devuelve un ID que más tarde puede "
 "utilizar en una llamada web https://example.com/cpanelwebcall/<ID>"
 
-#: ../../reference.rst:668
+#: ../../reference.rst:749
 msgid ""
 "For further information see: https://docs.cpanel.net/cpanel/domains"
 "/dynamic-dns/"
@@ -773,7 +1000,15 @@ msgstr ""
 "Para más información véase: https://docs.cpanel.net/cpanel/domains"
 "/dynamic-dns"
 
-#: ../../reference.rst:680
+#: ../../reference.rst:759
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-create/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-create/"
+
+#: ../../reference.rst:764
 msgid ""
 "Delete and create again a Dynamic DNS entry identified by ID. Return a "
 "new ID. Use ‘cpanel list dynamic dns’ to get a list of IDs and associated"
@@ -783,17 +1018,25 @@ msgstr ""
 "Devuelve una nueva ID. Use ‘cpanel list dinamyc dns’ para obtener una "
 "lista de IDs y subdominios asociados."
 
-#: ../../reference.rst:690
+#: ../../reference.rst:774
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-recreate/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-recreate/"
+
+#: ../../reference.rst:777
 msgid "**update dynamic dns ID DESCRIPTION**"
 msgstr "**update dynamic dns ID DESCRIPTION**"
 
-#: ../../reference.rst:692
+#: ../../reference.rst:779
 msgid "Update the DESCRIPTION of Dynamic DNS entry identified by ID."
 msgstr ""
 "Actualiza la descripción de la entrada DNS dinámica identificada por ID a"
 " DESCRIPTION."
 
-#: ../../reference.rst:702
+#: ../../reference.rst:789
 msgid ""
 "Delete a Dynamic DNS entry identified by ID. Use ‘cpanel list dynamic "
 "dns’ to get a list of IDs and associated subdomains."
@@ -801,79 +1044,415 @@ msgstr ""
 "Elimina una entrada DNS dinámica identificada por su ID. Use ‘cpanel list"
 " dinamyc dns’ para obtener una lista de IDs y subdominios asociados."
 
-#: ../../reference.rst:714
+#: ../../reference.rst:800
 msgid "Module: ``domains``"
 msgstr "Módulo: ``domains``"
 
-#: ../../reference.rst:716 ../../reference.rst:727
+#: ../../reference.rst:802 ../../reference.rst:814
 msgid "**list domains**"
 msgstr "**list domains**"
 
-#: ../../reference.rst:718 ../../reference.rst:737
+#: ../../reference.rst:804 ../../reference.rst:827
 msgid "**list domain data**"
 msgstr "**list domain data**"
 
-#: ../../reference.rst:720 ../../reference.rst:747
+#: ../../reference.rst:806 ../../reference.rst:840
 msgid "**get domain data DOMAIN**"
 msgstr "**get domain data DOMAIN**"
 
-#: ../../reference.rst:722 ../../reference.rst:758
+#: ../../reference.rst:808 ../../reference.rst:854
 msgid "**get domain aliases**"
 msgstr "**get domain aliases**"
 
-#: ../../reference.rst:729
+#: ../../reference.rst:816
 msgid "List domains for the cPanel account’s."
 msgstr "Lista los dominios de esta cuenta de cPanel."
 
-#: ../../reference.rst:739
+#: ../../reference.rst:824
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_domains/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_domains/"
+
+#: ../../reference.rst:829
 msgid "Get hosting data for all the cPanel account’s domains."
 msgstr ""
 "Obtiene los datos de hosting para todos los dominios de esta cuenta de "
 "cPanel."
 
-#: ../../reference.rst:749
+#: ../../reference.rst:837
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/domains_data/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/domains_data/"
+
+#: ../../reference.rst:842
 msgid ""
 "Get hosting data for DOMAIN. Use ‘cpanel list domains’ to get a list of "
 "domains."
 msgstr ""
-"Obtiene los datos de hosting para el dominio DOMAIN. Use ‘cpanel list domains’ "
-"para obtener una lista de dominios."
+"Obtiene los datos de hosting para el dominio DOMAIN. Use ‘cpanel list "
+"domains’ para obtener una lista de dominios."
 
-#: ../../reference.rst:760
+#: ../../reference.rst:851
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/single_domain_data/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/single_domain_data/"
+
+#: ../../reference.rst:856
 msgid "List the built-in subdomain aliases for an account’s main domain."
 msgstr ""
 "Lista los alias de los subdominios incorporados para el dominio principal"
 " de esta cuenta."
 
-#: ../../reference.rst:771
+#: ../../reference.rst:864
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/main_domain_builtin_subdomain_aliases/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/main_domain_builtin_subdomain_aliases/"
+
+#: ../../reference.rst:869
+msgid "Module: ``log``"
+msgstr "Módulo: ``log``"
+
+#: ../../reference.rst:871 ../../reference.rst:894
+msgid "**get log settings**"
+msgstr "**get log settings**"
+
+#: ../../reference.rst:873 ../../reference.rst:907
+msgid "**set log settings SETTING...**"
+msgstr "**set log settings SETTING...**"
+
+#: ../../reference.rst:875 ../../reference.rst:920
+msgid "**unset log settings SETTING...**"
+msgstr "**unset log settings SETTING...**"
+
+#: ../../reference.rst:877 ../../reference.rst:933
+msgid "**list log archives**"
+msgstr "**list log archives**"
+
+#: ../../reference.rst:880
+msgid "cPanel log archival settings are:"
+msgstr "Los parámetros para archivar los logs de cPanel son:"
+
+#: ../../reference.rst:882
+msgid "‘archive’"
+msgstr "‘archive’"
+
+#: ../../reference.rst:883
+msgid "‘prune’"
+msgstr "‘prune’"
+
+#: ../../reference.rst:885
+msgid ""
+"If ‘archive’ is set, log files will be archived to your home directory "
+"after the system processes statistics."
+msgstr ""
+"Si se establece ‘archive’, los logs serán archivados en su directorio "
+"home después de que el sisteme procese las estadísticas."
+
+#: ../../reference.rst:888
+msgid ""
+"If ‘prune’ is set, cPanel will remove the previous month’s archived logs "
+"at the end of every month."
+msgstr ""
+"Si se establece ‘prune’, cPanel eliminará los logs archivados del mes "
+"anterior al final de cada mes."
+
+#: ../../reference.rst:896
+msgid "Get the account’s log archival settings."
+msgstr "Obtiene los parámetros para archivar logs de la cuenta."
+
+#: ../../reference.rst:904
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_settings/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_settings/"
+
+#: ../../reference.rst:909
+msgid "Set the account’s log archival settings. SETTING is ‘archive’ or ‘prune’."
+msgstr ""
+"Activa los parámetros para archivar los logs de la cuenta. SETTING es "
+"‘archive’ o ‘prune’."
+
+#: ../../reference.rst:922
+msgid ""
+"Unset the account’s log archival settings. SETTING is ‘archive’ or "
+"‘prune’."
+msgstr ""
+"Desactiva los parámetros para archivar los logs de la cuenta. SETTING es "
+"‘archive’ o ‘prune’."
+
+#: ../../reference.rst:935
+msgid "List the account’s archived log files."
+msgstr "Lista los logs archivados de la cuenta."
+
+#: ../../reference.rst:943
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/"
+
+#: ../../reference.rst:948
+msgid "Module: ``bandwidth``"
+msgstr "Módulo: ``bandwidth``"
+
+#: ../../reference.rst:950 ../../reference.rst:961
+msgid "**get bandwidth services**"
+msgstr "**get bandwidth services**"
+
+#: ../../reference.rst:952 ../../reference.rst:974
+msgid "**get bandwidth retention**"
+msgstr "**get bandwidth retention**"
+
+#: ../../reference.rst:955
+msgid ""
+"For further information see: "
+"https://docs.cpanel.net/cpanel/metrics/bandwidth/"
+msgstr ""
+"Para más información véase: "
+"https://docs.cpanel.net/cpanel/metrics/bandwidth/"
+
+#: ../../reference.rst:963
+msgid "Return a list of services (by protocol) being monitored in bandwidth data."
+msgstr ""
+"Devuelve una lista de servicios (por protocolo) cuyo uso de ancho de "
+"banda es monitoreado."
+
+#: ../../reference.rst:971
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_enabled_protocols/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_enabled_protocols/"
+
+#: ../../reference.rst:976
+msgid "Get the collection interval and retention periods for bandwidth data."
+msgstr ""
+"Obtiene el intervalo de recolección y los períodos de retención para "
+"datos de ancho de banda."
+
+#: ../../reference.rst:984
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_retention_periods/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_retention_periods/"
+
+#: ../../reference.rst:989
+msgid "Module: ``files``"
+msgstr "Módulo: ``files``"
+
+#: ../../reference.rst:991
+msgid "**list files [DIRECTORY]**"
+msgstr "**list files [DIRECTORY]**"
+
+#: ../../reference.rst:993 ../../reference.rst:1037
+msgid "**glob files PARTIALPATH**"
+msgstr "**glob files PARTIALPATH**"
+
+#: ../../reference.rst:995 ../../reference.rst:1052
+msgid "**get file info PATH**"
+msgstr "**get file info PATH**"
+
+#: ../../reference.rst:997 ../../reference.rst:1067
+msgid "**cat file FILE**"
+msgstr "**cat file FILE**"
+
+#: ../../reference.rst:999
+msgid "**write file FILE**"
+msgstr "**write file FILE**"
+
+#: ../../reference.rst:1001 ../../reference.rst:1090
+msgid "**upload file DIRECTORY LOCALFILE**"
+msgstr "**upload file DIRECTORY LOCALFILE**"
+
+#: ../../reference.rst:1003 ../../reference.rst:1101
+msgid "**delete file trash [DAYS]**"
+msgstr "**delete file trash [DAYS]**"
+
+#: ../../reference.rst:1006
+msgid "Arguments:"
+msgstr "Argumentos:"
+
+#: ../../reference.rst:1008
+msgid "Optional DIRECTORY is a remote directory"
+msgstr "El argumento opcional DIRECTORY es un directorio remoto"
+
+#: ../../reference.rst:1009
+msgid "PATH can refer to either a remote directory or a remote file"
+msgstr "PATH puede referirse a un directorio remoto o a un archivo remoto"
+
+#: ../../reference.rst:1010
+msgid "PARTIALPATH is an incomplete remote PATH"
+msgstr "PARTIALPATH es un PATH remoto incompleto"
+
+#: ../../reference.rst:1011
+msgid "FILE is a remote file"
+msgstr "FILE es un archivo remoto"
+
+#: ../../reference.rst:1012
+msgid "LOCALFILE is a local file"
+msgstr "LOCALFILE es un archivo local"
+
+#: ../../reference.rst:1014
+msgid ""
+"Use ‘/’ to separate subdirectory components in DIRECTORY, PATH, "
+"PARTIALPATH or FILE. For example, a DIRECTORY could be public_html/images"
+" or a PATH could be public_ftp/.htacccess."
+msgstr ""
+"Utilice ‘/’ para separar componentes de subdirectorio en DIRECTORY, PATH,"
+" PARTIALPATH o FILE. Por ejemplo, un DIRECTORY podría ser "
+"public_html/images o un PATH podría ser public_ftp/.htacccess"
+
+#: ../../reference.rst:1018
+msgid ""
+"All the remote arguments are relative to the remote user’s login "
+"directory, e.g., public corresponds to <remote login directory>/public."
+msgstr ""
+"Todos los argumentos remotos son relativos al directorio de inicio de sesión del "
+"usuario, por ejemplo, public corresponde a <directorio de inicio "
+"de sesión remoto>/public."
+
+#: ../../reference.rst:1024
+msgid "**list files DIRECTORY**"
+msgstr "**list files DIRECTORY**"
+
+#: ../../reference.rst:1026
+msgid "Return a list of files and subdirectories in DIRECTORY"
+msgstr ""
+"Devuelve una lista de los archivos y subdirectorios del directorio "
+"DIRECTORY"
+
+#: ../../reference.rst:1034
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_files/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_files/"
+
+#: ../../reference.rst:1039
+msgid ""
+"Return a list of files and subdirectories whose names start with "
+"PARTIALPATH. For instance, /public matches /public_html and /public_ftp."
+msgstr ""
+"Devuelve una lista de archivos y subdirectorios cuyos nombres comienzan "
+"con PARTIALPATH. Por ejemplo, /public hace referencia a /public_html y "
+"/public_ftp."
+
+#: ../../reference.rst:1049
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/autocompletedir/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/autocompletedir/"
+
+#: ../../reference.rst:1054
+msgid "Return file information about PATH."
+msgstr "Devuelve información del archivo o directorio PATH."
+
+#: ../../reference.rst:1064
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_file_information/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_file_information/"
+
+#: ../../reference.rst:1069
+msgid ""
+"Return the contents of FILE. Note that only UTF-8 encoded files are "
+"supported."
+msgstr ""
+"Devuelve el contenido de FILE. Tenga en cuenta que sólo los archivos "
+"codificados en UTF-8 son compatibles con este comando."
+
+#: ../../reference.rst:1078
+msgid "**write file FILE CONTENTS**"
+msgstr "**write file FILE CONTENTS**"
+
+#: ../../reference.rst:1080
+msgid ""
+"Write CONTENTS as a remote text FILE. Note that only UTF-8 encoded "
+"content is supported. Escape codes, such as ``\\n``, ``\\t`` and others, "
+"are supported."
+msgstr ""
+"Escribe CONTENTS como un archivo remoto FILE. Tenga en cuenta que sólo "
+"texto codificado en UTF-8 es compatible. Se aceptan códigos de escape, "
+"como ``\\n``, ``\\t`` y otros."
+
+#: ../../reference.rst:1092
+msgid ""
+"Upload a LOCALFILE to remote DIRECTORY . If the remote DIRECTORY doesn’t "
+"exist, it will be created."
+msgstr ""
+"Carga un archivo local LOCALFILE al directorio remoto DIRECTORY. "
+"Si el directorio remoto DIRECTORY no existe, se crea."
+
+#: ../../reference.rst:1103
+msgid ""
+"Delete the contents of the .trash directory in the user’s home. Optional "
+"DAYS will only delete files older than DAYS days. By default, all files "
+"are deleted."
+msgstr ""
+"Elimina el contenido del directorio .trash en el home remoto del usuario."
+" El argumento opcional DAYS indica que sólo se eliminen archivos más "
+"antiguos a DAYS días. Por defecto, todos los archivos se eliminan."
+
+#: ../../reference.rst:1116
 msgid "Module: ``mail``"
 msgstr "Módulo: ``mail``"
 
-#: ../../reference.rst:773 ../../reference.rst:786
+#: ../../reference.rst:1118 ../../reference.rst:1132
 msgid "**list mail accounts**"
 msgstr "**list mail accounts**"
 
-#: ../../reference.rst:775 ../../reference.rst:796
+#: ../../reference.rst:1120 ../../reference.rst:1145
 msgid "**list mail filters ACCOUNT**"
 msgstr "**list mail filters ACCOUNT**"
 
-#: ../../reference.rst:777 ../../reference.rst:808
+#: ../../reference.rst:1122 ../../reference.rst:1160
 msgid "**get mail filter ACCOUNT FILTERNAME**"
 msgstr "**get mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:779 ../../reference.rst:820
+#: ../../reference.rst:1124 ../../reference.rst:1175
 msgid "**set mail filter ACCOUNT FILE**"
 msgstr "**set mail filter ACCOUNT FILE**"
 
-#: ../../reference.rst:781 ../../reference.rst:837
+#: ../../reference.rst:1126 ../../reference.rst:1192
 msgid "**delete mail filter ACCOUNT FILTERNAME**"
 msgstr "**delete mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference.rst:788
+#: ../../reference.rst:1134
 msgid "List cPanel email accounts."
 msgstr "Lista las cuentas de correo."
 
-#: ../../reference.rst:798
+#: ../../reference.rst:1142
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_pops/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_pops/"
+
+#: ../../reference.rst:1147
 msgid ""
 "List mail filters associated to ACCOUNT. Output is a JSON-formatted array"
 " of filter names. ACCOUNT is the name of a cPanel email account, usually "
@@ -882,7 +1461,15 @@ msgstr ""
 "Lista los filtros de correo asociados a ACCOUNT. La salida es una serie "
 "de nombres de filtros en formato JSON."
 
-#: ../../reference.rst:810
+#: ../../reference.rst:1157
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/"
+
+#: ../../reference.rst:1162
 msgid ""
 "Return a JSON-formatted description of email filter FILTERNAME associated"
 " to email ACCOUNT. To get a list of current filter names, use ‘cpanel "
@@ -892,7 +1479,15 @@ msgstr ""
 " FILTERNAME asociado al correo ACCOUNT. Para obtener una lista de nombres"
 " de filtros actuales, use ‘cpanel list mail filters ACCOUNT’"
 
-#: ../../reference.rst:822
+#: ../../reference.rst:1172
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/"
+
+#: ../../reference.rst:1177
 msgid ""
 "Create or update an email filter associated with email ACCOUNT. If the "
 "filter already exists, it updates it; otherwise, it creates a new filter."
@@ -911,7 +1506,7 @@ msgstr ""
 "luego cargarlo con ‘cpanel set mail filter’. Vea el ejemplo a "
 "continuación."
 
-#: ../../reference.rst:839
+#: ../../reference.rst:1194
 msgid ""
 "Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
 "current filter names, use ‘cpanel list mail filters ACCOUNT’"
@@ -919,7 +1514,4 @@ msgstr ""
 "Elimina el filtro de correo FILTERNAME asociado a ACCOUNT. Para obtener "
 "una lista de nombres de filtros actuales, utilice ‘cpanel list mail "
 "filters ACCOUNT’"
-
-#~ msgid "Get hosting data for DOMAIN."
-#~ msgstr "Obtiene los datos de hosting para el dominio DOMAIN."
 

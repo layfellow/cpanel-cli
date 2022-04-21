@@ -8,7 +8,7 @@ include cpanel/USAGE
 include cpanel/REFERENCE
 
 recursive-include test *.py cpanelrc.test.example
-recursive-include doc *.rst conf.py requirements.txt *.po *.sh
+recursive-include doc *.rst conf.py requirements.txt *.po *.sh *.svg *.css
 recursive-exclude doc/build *
 
 recursive-exclude * __pycache__

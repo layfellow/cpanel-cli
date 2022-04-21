@@ -174,13 +174,56 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 			r = host.dump(lambda: uapi.DomainInfo.list_domains())
 
 		elif cmd_is(cmd, "list domain data"):
-			r = host.dump(lambda: uapi.DomainInfo.domains_data(format = 'hash', return_https_redirects_status = 1))
+			r = host.dump(lambda: uapi.DomainInfo.domains_data(
+				format = 'hash', return_https_redirects_status = 1))
 
 		elif cmd_is(cmd, "get domain data"):
-			r = host.dump(lambda: uapi.DomainInfo.single_domain_data(domain = args[3], return_https_redirects_status = 1))
+			r = host.dump(lambda: uapi.DomainInfo.single_domain_data(
+				domain = args[3], return_https_redirects_status = 1))
 
 		elif cmd_is(cmd, "get domain aliases"):
 			r = host.dump(lambda: uapi.DomainInfo.main_domain_builtin_subdomain_aliases())
+
+		elif cmd_is(cmd, "get log settings"):
+			r = host.dump(lambda: uapi.LogManager.get_settings())
+
+		elif cmd_is(cmd, "set log settings"):
+			r = host.set_log_settings(1, *args[3:])
+
+		elif cmd_is(cmd, "unset log settings"):
+			r = host.set_log_settings(0, *args[3:])
+
+		elif cmd_is(cmd, "list log archives"):
+			r = host.dump(lambda: uapi.LogManager.list_archives())
+
+		elif cmd_is(cmd, "get bandwidth services"):
+			r = host.dump(lambda: uapi.Bandwidth.get_enabled_protocols())
+
+		elif cmd_is(cmd, "get bandwidth retention"):
+			r = host.dump(lambda: uapi.Bandwidth.get_retention_periods())
+
+		elif cmd_is(cmd, "list files"):
+			r = host.dump(lambda: uapi.Fileman.list_files(
+				dirs = args[2] if len(args) > 2 else '/', include_mime = 1, include_permissions = 1, show_hidden = 1))
+
+		elif cmd_is(cmd, "glob files"):
+			r = host.dump(lambda: uapi.Fileman.autocompletedir(path = args[2], html = 0))
+
+		elif cmd_is(cmd, "get file info"):
+			r = host.dump(lambda: uapi.Fileman.get_file_information(
+				path = args[3], include_mime = 1, include_permissions = 1, show_hidden = 1))
+
+		elif cmd_is(cmd, "cat file"):
+			sys.stdout.write(host.get_file_contents(args[2]).decode('utf-8'))
+
+		elif cmd_is(cmd, "write file"):
+			r = host.write_file(args[2], args[3])
+
+		elif cmd_is(cmd, "upload file"):
+			r = host.upload_file(args[2], args[3])
+
+		elif cmd_is(cmd, "delete file trash", "rm file trash", "remove file trash"):
+			r = host.check(lambda: uapi.Fileman.empty_trash(older_than = int(args[3]) if len(args) > 3 else 0))
 
 		elif cmd_is(cmd, "list mail account"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
@@ -244,7 +287,9 @@ def main() -> None:
 			if utoken is None: die("missing cPanel UAPI token, use cpanel --help")
 			log.debug("hostname: {}, username: {}, utoken: {}".format(hostname, username, utoken))
 
-			print(dispatch(endpoint(hostname, username, utoken), args))
+			r: str = dispatch(endpoint(hostname, username, utoken), args)
+			if len(r) > 0:
+				print(r)
 
 	except Exception as e:
 		if log.isEnabledFor(logging.DEBUG):
