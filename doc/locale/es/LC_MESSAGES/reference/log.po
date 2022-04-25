@@ -1,0 +1,127 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/log.rst:7
+msgid "Module: ``log``"
+msgstr "Módulo: ``log``"
+
+#: ../../reference/log.rst:9
+msgid "`Leer en español </es/latest/reference/log.html>`_"
+msgstr "`Read in English </en/latest/reference/log.html>`_"
+
+#: ../../reference/log.rst:11 ../../reference/log.rst:30
+msgid "**get log settings**"
+msgstr "**get log settings**"
+
+#: ../../reference/log.rst:12 ../../reference/log.rst:43
+msgid "**set log settings SETTING...**"
+msgstr "**set log settings SETTING...**"
+
+#: ../../reference/log.rst:13 ../../reference/log.rst:56
+msgid "**unset log settings SETTING...**"
+msgstr "**unset log settings SETTING...**"
+
+#: ../../reference/log.rst:14 ../../reference/log.rst:69
+msgid "**list log archives**"
+msgstr "**list log archives**"
+
+#: ../../reference/log.rst:16
+msgid "cPanel log archival settings are:"
+msgstr "Los parámetros para archivar los logs de cPanel son:"
+
+#: ../../reference/log.rst:18
+msgid "‘archive’"
+msgstr "‘archive’"
+
+#: ../../reference/log.rst:19
+msgid "‘prune’"
+msgstr "‘prune’"
+
+#: ../../reference/log.rst:21
+msgid ""
+"If ‘archive’ is set, log files will be archived to your home directory "
+"after the system processes statistics."
+msgstr ""
+"Si se establece ‘archive’, los logs "
+"serán archivados en su directorio home"
+" después de que el sisteme procese"
+" las estadísticas."
+
+#: ../../reference/log.rst:24
+msgid ""
+"If ‘prune’ is set, cPanel will remove the previous month’s archived logs "
+"at the end of every month."
+msgstr ""
+"Si se establece ‘prune’, cPanel "
+"eliminará los logs archivados del mes"
+" anterior al final de cada mes."
+
+#: ../../reference/log.rst:27
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/log.rst:32
+msgid "Get the account’s log archival settings."
+msgstr "Obtiene los parámetros para archivar logs de la cuenta."
+
+#: ../../reference/log.rst:34 ../../reference/log.rst:73
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/log.rst:40
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_settings/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_settings/"
+
+#: ../../reference/log.rst:45
+msgid "Set the account’s log archival settings. SETTING is ‘archive’ or ‘prune’."
+msgstr ""
+"Activa los parámetros para archivar los"
+" logs de la cuenta. SETTING es "
+"‘archive’ o ‘prune’."
+
+#: ../../reference/log.rst:48 ../../reference/log.rst:61
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/log.rst:58
+msgid ""
+"Unset the account’s log archival settings. SETTING is ‘archive’ or "
+"‘prune’."
+msgstr ""
+"Desactiva los parámetros para archivar "
+"los logs de la cuenta. SETTING es"
+" ‘archive’ o ‘prune’."
+
+#: ../../reference/log.rst:71
+msgid "List the account’s archived log files."
+msgstr "Lista los logs archivados de la cuenta."
+
+#: ../../reference/log.rst:79
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/"
+

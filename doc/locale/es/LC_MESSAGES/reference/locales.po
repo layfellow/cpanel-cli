@@ -1,0 +1,97 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/locales.rst:7
+msgid "Module: ``locales``"
+msgstr "Módulo: ``locales``"
+
+#: ../../reference/locales.rst:9
+msgid "`Leer en español </es/latest/reference/locales.html>`_"
+msgstr "`Read in English </en/latest/reference/locales.html>`_"
+
+#: ../../reference/locales.rst:11 ../../reference/locales.rst:18
+msgid "**list locales**"
+msgstr "**list locales**"
+
+#: ../../reference/locales.rst:12 ../../reference/locales.rst:32
+msgid "**get locale**"
+msgstr "**get locale**"
+
+#: ../../reference/locales.rst:13 ../../reference/locales.rst:46
+msgid "**set locale LOCALE**"
+msgstr "**set locale LOCALE**"
+
+#: ../../reference/locales.rst:15
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/locales.rst:20
+msgid ""
+"List all the available locales (language and conventions) for the cPanel "
+"user interface."
+msgstr ""
+"Lista todas las configuraciones regionales "
+"(idioma y convenciones) disponibles para "
+"la interfaz de usuario de cPanel."
+
+#: ../../reference/locales.rst:23 ../../reference/locales.rst:37
+#: ../../reference/locales.rst:52
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/locales.rst:29
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_locales/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_locales/"
+
+#: ../../reference/locales.rst:34
+msgid ""
+"Return the current locale (language and conventions) used for the cPanel "
+"user interface."
+msgstr ""
+"Devuelve la configuración regional (idioma "
+"y convenciones) actual de la interfaz "
+"de usuario de cPanel."
+
+#: ../../reference/locales.rst:43
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_attributes/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_attributes/"
+
+#: ../../reference/locales.rst:48
+msgid ""
+"Set the cPanel user interface locale (language and conventions) to "
+"LOCALE. Use ‘cpanel list locales’ for a list of available locales. In "
+"general terms, a LOCALE corresponds to a ISO 639-1 two-letter language "
+"code."
+msgstr ""
+"Establece la configuración regional (idioma "
+"y convenciones) de la interfaz de "
+"usuario de cPanel a LOCALE. Utilice "
+"‘cpanel list locales’ para obtener "
+"una lista de los idiomas disponibles. "
+"En términos generales, un LOCALE "
+"corresponde a un código de idioma "
+"de dos letras ISO 639-1."
+

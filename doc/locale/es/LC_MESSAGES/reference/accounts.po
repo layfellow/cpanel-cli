@@ -1,0 +1,70 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/accounts.rst:7
+msgid "Module: ``accounts``"
+msgstr "Módulo: ``accounts``"
+
+#: ../../reference/accounts.rst:9
+msgid "`Leer en español </es/latest/reference/accounts.html>`_"
+msgstr ""
+
+#: ../../reference/accounts.rst:11 ../../reference/accounts.rst:17
+msgid "**list accounts**"
+msgstr "**list accounts**"
+
+#: ../../reference/accounts.rst:12 ../../reference/accounts.rst:30
+msgid "**get account**"
+msgstr "**get account**"
+
+#: ../../reference/accounts.rst:14
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/accounts.rst:19
+msgid "List basic information of the main cPanel account."
+msgstr "Lista información básica de la cuenta principal de cPanel."
+
+#: ../../reference/accounts.rst:21 ../../reference/accounts.rst:34
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/accounts.rst:27
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_accounts/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_accounts/"
+
+#: ../../reference/accounts.rst:32
+msgid "Show detailed information of the main account."
+msgstr "Muestra información detallada de la cuenta principal."
+
+#: ../../reference/accounts.rst:40
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Variables-"
+"get_user_information/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Variables-"
+"get_user_information/"
+

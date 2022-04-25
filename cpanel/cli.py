@@ -121,17 +121,27 @@ def version() -> str:
 	return "{} client version {}".format(cpanel.__description__, cpanel.__version__)
 
 
-def usage(help: NullableStr = None) -> str:
+def usage(*args: str) -> str:
 	"""Return usage string depending on help arguments.
 
-	help       arguments after `cpanel help`
+	args arguments after `cpanel help`
 
 	Return multiline string with usage description
 	"""
-	filename: str = 'USAGE' if help is None or help.lower()[0:3] == "mod" else 'REFERENCE'
 
+	def is_usage(*args: str) -> bool:
+		if len(args) == 0:
+			return True
+		if len(args) == 1:
+			# HACK  Redirect to USAGE to get help for mail and dir submodules
+			if args[0][:3].lower() == "mod" or \
+					args[0][:4].lower() == "mail" or \
+					args[0][:3].lower() == "dir":
+				return True
+		return False 
+		
 	# Read USAGE or REFERENCE data file.
-	stream: NullableBytes = pkgutil.get_data(__name__, filename)
+	stream: NullableBytes = pkgutil.get_data(__name__, 'USAGE' if is_usage(*args) else 'REFERENCE')
 
 	# HACK  Allow ANSI color codes using a tortuous decoding/encoding chain.
 	# See https://stackoverflow.com/questions/14820429/how-do-i-decodestring-escape-in-python-3
@@ -139,12 +149,12 @@ def usage(help: NullableStr = None) -> str:
 
 	if text:
 		match: Match[str] | None = None
-		if help:
+		if len(args) > 0:
 			# Find the appropiate usage section according to help.
 			match = re.search(
-				r'^Usage:[ \n]+cpanel [A-Za-z\[\]]+ %s' % help.rstrip("s"), text, re.M|re.I)
+				r'^Usage:[ \n]+cpanel [A-Za-z\[\]]+ %s' % " ".join(args).rstrip("s"), text, re.M|re.I)
 
-		if not match:
+		if match is None:
 			# Find the default usage section.
 			match = re.search(r'^Usage: cpanel \[OPTIONS\] COMMAND', text, re.M|re.I)
 

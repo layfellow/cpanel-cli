@@ -36,8 +36,8 @@ venv:
 doc/build/gettext: venv install
 	$(BIN)/$(DOCBUILDER) -b gettext doc doc/build/gettext
 
-doc/reference.rst: cpanel/REFERENCE
-	bash ./doc/reference.sh $< > $@
+doc/reference.rst: cpanel/REFERENCE cpanel/USAGE
+	bash ./doc/reference.sh $< doc/reference
 
 locale: doc/build/gettext
 	$(BIN)/$(LOCALIZER) -c doc/conf.py update -p doc/build/gettext -l $(iso)

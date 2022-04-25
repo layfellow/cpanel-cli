@@ -46,28 +46,68 @@ Usage: cpanel help MODULE
 
 The currently implemented modules are:
 
-features
-quota
-usage
-stats
 accounts
-subaccounts
 backup
+bandwidth
 cache
-locale
-styles
-themes
-directory
+dir
 dns
 domains
-log
-bandwidth
+features
 files
+locales
+log
 mail
+quota
+stats
+styles
+subaccounts
+themes
+usage
+webmail
 
 Use ‘cpanel help MODULE’ to learn more about the functions implemented
 for MODULE; for example, ‘cpanel help mail’ to print detailed help on all
 the functions implemented for the ‘mail’ module.
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+---
+
+Usage: cpanel help dir SUBMODULE
+
+\033[1mSUBMODULES\033[0m
+
+The currently implemented submodules for ‘dir’ are:
+
+dir indexing
+dir privacy
+dir user
+dir protection
+
+Use ‘cpanel help dir SUBMODULE’ to learn more about the functions implemented
+for SUBMODULE; for example, ‘cpanel help dir privacy’ to print detailed
+help on all the functions implemented for ‘dir privacy’.
+
+For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
+
+---
+
+Usage: cpanel help mail SUBMODULE
+
+\033[1mSUBMODULES\033[0m
+
+The currently implemented submodules for ‘mail’ are:
+
+mail accounts
+mail settings
+mail boxes
+mail autoresponders
+mail filters
+
+Use ‘cpanel help mail SUBMODULES’ to learn more about the functions implemented
+for SUBMODULE; for example, ‘cpanel help mail autoresponders’ to print detailed
+help on all the functions implemented for ‘mail autoresponders’.
 
 For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 

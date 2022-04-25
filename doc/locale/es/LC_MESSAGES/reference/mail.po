@@ -1,0 +1,364 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/mail.rst:7
+msgid "Module: ``mail``"
+msgstr "Módulo: ``mail``"
+
+
+#: ../../reference/mail.rst:9
+msgid "`Leer en español </es/latest/reference/mail.html>`_"
+msgstr "`Read in English </en/latest/reference/mail.html>`_"
+
+#: ../../reference/mail.rst:13
+msgid "``accounts``"
+msgstr "``accounts``"
+
+#: ../../reference/mail.rst:15 ../../reference/mail.rst:21
+msgid "**count mail accounts**"
+msgstr "**count mail accounts**"
+
+#: ../../reference/mail.rst:16 ../../reference/mail.rst:34
+msgid "**list mail accounts**"
+msgstr "**list mail accounts**"
+
+#: ../../reference/mail.rst:18 ../../reference/mail.rst:114
+#: ../../reference/mail.rst:225
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/mail.rst:23
+msgid "Count the number of cPanel email accounts."
+msgstr "Devuelve el número de cuentas de correo de cPanel."
+
+#: ../../reference/mail.rst:25 ../../reference/mail.rst:38
+#: ../../reference/mail.rst:61 ../../reference/mail.rst:121
+#: ../../reference/mail.rst:134 ../../reference/mail.rst:147
+#: ../../reference/mail.rst:204 ../../reference/mail.rst:232
+#: ../../reference/mail.rst:247 ../../reference/mail.rst:266
+#: ../../reference/mail.rst:278
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/mail.rst:31
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_pops/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_pops/"
+
+#: ../../reference/mail.rst:36
+msgid "List cPanel email accounts."
+msgstr "Lista las cuentas de correo de cPanel."
+
+#: ../../reference/mail.rst:44
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_pops/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_pops/"
+
+#: ../../reference/mail.rst:50
+msgid "``settings``"
+msgstr "``settings``"
+
+#: ../../reference/mail.rst:52
+msgid "**get mail settings ACCOUNT**"
+msgstr "**get mail settings ACCOUNT**"
+
+#: ../../reference/mail.rst:54
+msgid "Get an ACCOUNT’s email settings."
+msgstr "Obtiene la configuración del correo ACCOUNT."
+
+#: ../../reference/mail.rst:56 ../../reference/mail.rst:81
+#: ../../reference/mail.rst:109 ../../reference/mail.rst:220
+msgid ""
+"ACCOUNT is the name of a cPanel email account, usually in the form "
+"user@domain.com"
+msgstr ""
+"ACCOUNT es el nombre de una cuenta de correo de cPanel,"
+" generalmente de la forma user@domain.com"
+
+#: ../../reference/mail.rst:59 ../../reference/mail.rst:84
+#: ../../reference/mail.rst:112 ../../reference/mail.rst:223
+msgid "Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS."
+msgstr ""
+"Utilice ‘cpanel list mail accounts’ para obtener una"
+" lista de cuentas válidas para ACCOUNT."
+
+#: ../../reference/mail.rst:67
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_client_settings/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_client_settings"
+
+#: ../../reference/mail.rst:73
+msgid "``boxes``"
+msgstr "``boxes``"
+
+#: ../../reference/mail.rst:75
+msgid "**list mail boxes [ACCOUNT] [DIR]**"
+msgstr "**list mail boxes [ACCOUNT] [DIR]**"
+
+#: ../../reference/mail.rst:77
+msgid ""
+"List the mailboxes (directories and files) for ACCOUNT. If no ACCOUNT is "
+"passed, list the mailboxes for all mail accounts. Optionally, you can "
+"restrict the listing to directory DIR."
+msgstr ""
+"Lista los directorios y archivos del buzón de correo de ACCOUNT."
+" Si no se proporciona ACCOUNT, lista los buzones de correo para todas "
+"las cuentas de correo. Opcionalmente, puede restringir el listado "
+"al directorio DIR."
+
+#: ../../reference/mail.rst:86 ../../reference/mail.rst:181
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/mail.rst:95
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/browse_mailbox/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/browse_mailbox"
+
+#: ../../reference/mail.rst:101
+msgid "``autoresponders``"
+msgstr "``autoresponders``"
+
+#: ../../reference/mail.rst:103 ../../reference/mail.rst:117
+msgid "**list mail autoresponders DOMAIN**"
+msgstr "**list mail autoresponders DOMAIN**"
+
+#: ../../reference/mail.rst:104 ../../reference/mail.rst:130
+msgid "**count mail autoresponders**"
+msgstr "**count mail autoresponders**"
+
+#: ../../reference/mail.rst:105
+msgid "**get mail autoresponder ACCOUNT**"
+msgstr "**get mail autoresponder ACCOUNT**"
+
+#: ../../reference/mail.rst:106 ../../reference/mail.rst:156
+msgid "**set mail autoresponder ACCOUNT [FROM] [SUBJECT] [BODY] [START] [STOP]**"
+msgstr "**set mail autoresponder ACCOUNT [FROM] [SUBJECT] [BODY] [START] [STOP]**"
+
+#: ../../reference/mail.rst:107 ../../reference/mail.rst:200
+msgid "**delete mail autoresponder ACCOUNT**"
+msgstr "**delete mail autoresponder ACCOUNT**"
+
+#: ../../reference/mail.rst:119
+msgid "List the autoresponders of all email accounts in DOMAIN."
+msgstr ""
+"Lista las respuestas autómaticas de todas las cuentas de correo"
+" de DOMAIN."
+
+#: ../../reference/mail.rst:127
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_auto_responders/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_auto_responders/"
+
+#: ../../reference/mail.rst:132
+msgid "Return the number of autoresponders for all email accounts."
+msgstr ""
+"Devuelve el número de respuestas automáticas para todas las cuentas de"
+" correo."
+
+#: ../../reference/mail.rst:140
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/"
+
+#: ../../reference/mail.rst:143
+msgid "**count get mail autoresponder ACCOUNT**"
+msgstr "**count get mail autoresponder ACCOUNT**"
+
+#: ../../reference/mail.rst:145
+msgid "Retrieve autoresponder information corresponding to ACCOUNT."
+msgstr ""
+"Devuelve información de la respuesta automática correspondiente a"
+" ACCOUNT."
+
+#: ../../reference/mail.rst:153
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_auto_responder/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_auto_responder/"
+
+#: ../../reference/mail.rst:158
+msgid "Create an autoresponder for ACCOUNT."
+msgstr "Crea una respuesta automática para ACCOUNT."
+
+#: ../../reference/mail.rst:160
+msgid "FROM is the sender’s name; by default, the ACCOUNT email name is used."
+msgstr ""
+"FROM es el nombre del remitente; por defecto, se utiliza el"
+" nombre de correo ACCOUNT."
+
+#: ../../reference/mail.rst:162
+msgid ""
+"SUBJECT is the subject of the autoresponse email; the default subject is "
+"“This is an automatic message”"
+msgstr ""
+"SUBJECT es el asunto del correo de respuesta automática; el asunto"
+" por defecto es “This is an automatic message”"
+
+#: ../../reference/mail.rst:165
+msgid ""
+"BODY is the text of the autoresponse email; the default body is “I’m "
+"currently unavailable.”"
+msgstr ""
+"BODY es el texto del correo de respuesta automática; el cuerpo"
+" por defecto es “I’m currently unavailable.”"
+
+#: ../../reference/mail.rst:168
+msgid ""
+"START is when to enable the autoresponder; you can use a readable "
+"expression parsable as a time and date, e.g., “now”, “tomorrow 9 AM”, "
+"“December 20, 2022 19:00”, etc. For more examples, see "
+"https://github.com/bear/parsedatetime The default START time is “now”, "
+"meaning the autoresponder will be immediately enabled."
+msgstr ""
+"START es el instante de tiempo a partir del cual la respuesta automática está activa; puede usar "
+"una expresión legible para un humano (en inglés) que se pueda interprertar como una fecha y hora, por ejemplo, "
+"“now”, “tomorrow 9 AM”, “December 20, 2022 19:00”, etc. "
+"Para más ejemplos, véase https://github.com/bear/parsedatetime "
+"La fecha y hora START por defecto es “now”, lo que significa que "
+"la respuesta automática se habilita inmediatamente."
+
+#: ../../reference/mail.rst:175
+msgid ""
+"STOP is when to disable the autoresponder; you can use a readable "
+"expression as for START. The default STOP time is a date far in the "
+"future, meaning the autoresponder will be effectively enabled until you "
+"manually disable it using ‘cpanel delete mail autoresponder’"
+msgstr ""
+"STOP es el instante de tiempo a partir del cual se deshabilita la respuesta automática; puede usar "
+"una expresión legible como en START. La fecha y hora STOP por defecto "
+"es una fecha muy lejana en el futuro, lo que significa que a efectos prácticos "
+"la respuesta automática estará habilitada hasta que se desactive "
+"manualmente utilizando ‘cpanel delete autoresponder’"
+
+#: ../../reference/mail.rst:202
+msgid "Delete an autoresponder for ACCOUNT."
+msgstr "Elimina la respuesta automática para ACCOUNT."
+
+#: ../../reference/mail.rst:213
+msgid "``filters``"
+msgstr "``filters``"
+
+#: ../../reference/mail.rst:215 ../../reference/mail.rst:228
+msgid "**list mail filters ACCOUNT**"
+msgstr "**list mail filters ACCOUNT**"
+
+#: ../../reference/mail.rst:216 ../../reference/mail.rst:241
+msgid "**get mail filter ACCOUNT FILTERNAME**"
+msgstr "**get mail filter ACCOUNT FILTERNAME**"
+
+#: ../../reference/mail.rst:217 ../../reference/mail.rst:256
+msgid "**set mail filter ACCOUNT FILE**"
+msgstr "**set mail filter ACCOUNT FILE**"
+
+#: ../../reference/mail.rst:218 ../../reference/mail.rst:273
+msgid "**delete mail filter ACCOUNT FILTERNAME**"
+msgstr "**delete mail filter ACCOUNT FILTERNAME**"
+
+#: ../../reference/mail.rst:230
+msgid "List mail filters associated to ACCOUNT."
+msgstr "Lista los filtros de correo asociados a ACCOUNT."
+
+#: ../../reference/mail.rst:238
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/"
+
+#: ../../reference/mail.rst:243
+msgid ""
+"Return a JSON-formatted description of email filter FILTERNAME associated"
+" to email ACCOUNT. To get a list of current filter names, use ‘cpanel "
+"list mail filters ACCOUNT’"
+msgstr ""
+"Devuelve una descripción en formato JSON"
+" del filtro de correo electrónico "
+"FILTERNAME asociado al correo ACCOUNT. "
+"Para obtener una lista de nombres "
+"de filtros actuales, use ‘cpanel list"
+" mail filters ACCOUNT’"
+
+#: ../../reference/mail.rst:253
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/"
+
+#: ../../reference/mail.rst:258
+msgid ""
+"Create or update an email filter associated with email ACCOUNT. If the "
+"filter already exists, it updates it; otherwise, it creates a new filter."
+" Use a JSON FILE to describe the filter rules. This JSON FILE has the "
+"same textual format as the output from ‘cpanel get mail filter’, so the "
+"easiest way to create a new filter is to dump an existing filter into a "
+"filter.json file, edit it and then upload it with ‘cpanel set mail "
+"filter’. See the EXAMPLE below."
+msgstr ""
+"Crea o actualiza un filtro de "
+"correo electrónico asociado con el "
+"correo ACCOUNT. Si el filtro ya "
+"existe, lo actualiza; de lo contrario,"
+" crea un nuevo filtro. Utilice un "
+"JSON FILE para describir las reglas "
+"del filtro. Este JSON FILE tiene "
+"el mismo formato textual que la "
+"salida de ‘cpanel get mail filter’, "
+"por lo que la forma más fácil "
+"de crear un nuevo filtro es "
+"descargar un filtro existente a un "
+"archivo ‘filter.json’, editarlo y luego "
+"cargarlo con ‘cpanel set mail filter’."
+" Vea el ejemplo a continuación."
+
+#: ../../reference/mail.rst:275
+msgid ""
+"Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
+"current filter names, use ‘cpanel list mail filters ACCOUNT’"
+msgstr ""
+"Elimina el filtro de correo FILTERNAME"
+" asociado a ACCOUNT. Para obtener una"
+" lista de nombres de filtros "
+"actuales, utilice ‘cpanel list mail "
+"filters ACCOUNT’"
+

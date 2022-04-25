@@ -1,0 +1,395 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/dir.rst:7
+msgid "Module: ``dir``"
+msgstr "Módulo: ``dir``"
+
+#: ../../reference/dir.rst:9
+msgid "`Leer en español </es/latest/reference/dir.html>`_"
+msgstr "`Read in English </en/latest/reference/dir.html>`_"
+
+#: ../../reference/dir.rst:13
+msgid "``indexing``"
+msgstr "``indexing``"
+
+#: ../../reference/dir.rst:15 ../../reference/dir.rst:44
+msgid "**list dir indexing PATH**"
+msgstr "**list dir indexing PATH**"
+
+#: ../../reference/dir.rst:16 ../../reference/dir.rst:57
+msgid "**get dir indexing PATH**"
+msgstr "**get dir indexing PATH**"
+
+#: ../../reference/dir.rst:17 ../../reference/dir.rst:70
+msgid "**set dir indexing PATH TYPE**"
+msgstr "**set dir indexing PATH TYPE**"
+
+#: ../../reference/dir.rst:19
+msgid ""
+"The indexing of a remote directory controls how to present that directory"
+" to a web browser if no default HTML index page is found."
+msgstr ""
+"La indexación de un directorio remoto"
+" controla cómo se presenta ese "
+"directorio a un navegador web si "
+"no se encuentra una página de "
+"índice HTML por defecto."
+
+#: ../../reference/dir.rst:22
+msgid "There are four possible index settings:"
+msgstr "Hay cuatro posibles configuraciones de indexación:"
+
+#: ../../reference/dir.rst:24
+msgid "‘inherit’: Use the parent directory’s setting."
+msgstr "‘inherit’: Utiliza la configuración del directorio padre."
+
+#: ../../reference/dir.rst:25
+msgid "‘disabled’ (No Indexing): do not list the directory contents."
+msgstr ""
+"‘disabled’: (No Indexing, *Sin indexación*),"
+" no lista el contenido del "
+"directorio."
+
+#: ../../reference/dir.rst:26
+msgid "‘standard’ (Show Filename Only): list only the directory’s file names."
+msgstr ""
+"‘standard’: (Show Filename Only, *Sólo "
+"mostrar nombre de archivo*), lista sólo"
+" los nombres de los archivos del "
+"directorio."
+
+#: ../../reference/dir.rst:27
+msgid ""
+"‘fancy’: (Show Filename and Description) list the directory’s file names,"
+" sizes and types."
+msgstr ""
+"‘fancy’: (Show Filename and Description, "
+"*Mostrar nombre de archivo y "
+"descripción*), lista los nombres, tamaños "
+"y tipos de archivos del directorio."
+
+#: ../../reference/dir.rst:29
+msgid ""
+"cPanel uses a .htaccess directive in the remote directory to control the "
+"index settings. For instance, for ‘fancy’, it adds the following code to "
+".htaccess:"
+msgstr ""
+"cPanel utiliza una directiva .htaccess "
+"en el directorio remoto para controlar"
+" la configuración de los índices. Por"
+" ejemplo, para ‘fancy’, añade lo "
+"siguiente a .htaccess:"
+
+#: ../../reference/dir.rst:32
+msgid "Options +Indexes IndexOptions +HTMLTable +FancyIndexing"
+msgstr "Options +Indexes IndexOptions +HTMLTable +FancyIndexing"
+
+#: ../../reference/dir.rst:35
+msgid ""
+"See https://docs.cpanel.net/cpanel/advanced/indexes/ for further "
+"information."
+msgstr ""
+"Para más información, consulte "
+"https://docs.cpanel.net/cpanel/advanced/indexes/"
+
+#: ../../reference/dir.rst:37 ../../reference/dir.rst:98
+#: ../../reference/dir.rst:170
+msgid ""
+"Note that the PATH in all commands below is not absolute, but relative to"
+" the remote login directory, i.e., /public_html corresponds to <remote "
+"login directory>/public_html."
+msgstr ""
+"Tenga en cuenta que el PATH en "
+"todos los comandos siguientes no es "
+"absoluto, sino relativo al directorio de"
+" inicio de sesión, es decir, "
+"/public_html corresponde a <directorio de"
+" inicio de sesión>/public_html."
+
+#: ../../reference/dir.rst:41 ../../reference/dir.rst:102
+#: ../../reference/dir.rst:174
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/dir.rst:46
+msgid "List the index settings for remote PATH and its subdirectories (children)."
+msgstr ""
+"Listar la configuración de los índices"
+" del PATH remoto y sus subdirectorios"
+" (hijos)."
+
+#: ../../reference/dir.rst:48 ../../reference/dir.rst:61
+#: ../../reference/dir.rst:75 ../../reference/dir.rst:109
+#: ../../reference/dir.rst:124 ../../reference/dir.rst:138
+#: ../../reference/dir.rst:148 ../../reference/dir.rst:182
+#: ../../reference/dir.rst:192 ../../reference/dir.rst:202
+#: ../../reference/dir.rst:228
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/dir.rst:54
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryIndexes-"
+"list_directories/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation"
+"/DirectoryIndexes-list_directories/"
+
+#: ../../reference/dir.rst:59
+msgid "Get the index setting for remote PATH only."
+msgstr "Obtiene la configuración de índice sólo para el PATH remoto."
+
+#: ../../reference/dir.rst:67
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_indexing/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_indexing/"
+
+#: ../../reference/dir.rst:72
+msgid ""
+"Set the index setting for remote PATH. Possible values for TYPE are "
+"‘inherit’, ‘disabled’, ‘standard’ or ‘fancy’."
+msgstr ""
+"Establece la configuración de índice del"
+" PATH remoto. Los valores posibles "
+"para TYPE son ‘inherit’, ‘disabled’, "
+"‘standard’ o ‘fancy’."
+
+#: ../../reference/dir.rst:84
+msgid "``privacy``"
+msgstr "``privacy``"
+
+#: ../../reference/dir.rst:86 ../../reference/dir.rst:105
+msgid "**list dir privacy PATH**"
+msgstr "**list dir privacy PATH**"
+
+#: ../../reference/dir.rst:87 ../../reference/dir.rst:118
+msgid "**get dir privacy PATH**"
+msgstr "**get dir privacy PATH**"
+
+#: ../../reference/dir.rst:88 ../../reference/dir.rst:133
+msgid "**enable dir privacy PATH**"
+msgstr "**enable dir privacy PATH**"
+
+#: ../../reference/dir.rst:89 ../../reference/dir.rst:144
+msgid "**disable dir privacy PATH**"
+msgstr "**disable dir privacy PATH**"
+
+#: ../../reference/dir.rst:91
+msgid ""
+"cPanel can password-protect remote directories for privacy. Any attempt "
+"to access a private directory using a web browser will prompt for a "
+"username and password."
+msgstr ""
+"cPanel puede proteger con contraseña los"
+" directorios remotos para su privacidad."
+" Cualquier intento de acceder a un"
+" directorio privado utilizando un navegador"
+" web solicitará un nombre de usuario"
+" y una contraseña."
+
+#: ../../reference/dir.rst:95
+msgid ""
+"The actual underlying authentication method is Basic HTTP authentication;"
+" these users and passwords are local to the directory, they are not "
+"cPanel users."
+msgstr ""
+"El método de autenticación subyacente es"
+" la autenticación básica HTTP; estos "
+"usuarios y contraseñas son locales para"
+" el directorio, no son usuarios de"
+" cPanel."
+
+#: ../../reference/dir.rst:107
+msgid ""
+"List the privacy settings for remote PATH and its subdirectories "
+"(children)."
+msgstr ""
+"Lista la configuración de privacidad de"
+" PATH remoto y sus subdirectorios "
+"(hijos). La salida está enformato JSON."
+
+#: ../../reference/dir.rst:115
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy-"
+"list_directories/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation"
+"/DirectoryPrivacy-list_directories/"
+
+#: ../../reference/dir.rst:120
+msgid ""
+"Get the privacy settings for remote PATH only. You can enable or disable "
+"password protection using ‘cpanel enable dir privacy’ or ‘cpanel disable "
+"dir privacy’ (see below)."
+msgstr ""
+"Obtiene la configuración de privacidad "
+"sólo para el PATH remoto. La "
+"salida está en formato JSON. Puede "
+"habilitar o deshabilitar la protección "
+"con contraseña usando ‘cpanel enable dir"
+" privacy’ o ‘cpanel disable dir "
+"privacy’ (vea más abajo)."
+
+#: ../../reference/dir.rst:130
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/is_directory_protected/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/is_directory_protected/"
+
+#: ../../reference/dir.rst:135
+msgid ""
+"Enable password protection for PATH. Note that you need to add users "
+"using ‘cpanel add dir user’ (see below) to grant access to PATH."
+msgstr ""
+"Habilita la protección con contraseña "
+"para PATH. Tenga en cuenta que "
+"necesita agregar usuarios usando ``cpanel "
+"add dir user`` (vea más abajo) "
+"para otorgar acceso al PATH."
+
+#: ../../reference/dir.rst:146
+msgid "Disable password protection for PATH."
+msgstr "Desactiva la protección con contraseña para PATH."
+
+#: ../../reference/dir.rst:157
+msgid "``user``"
+msgstr "``user``"
+
+#: ../../reference/dir.rst:159 ../../reference/dir.rst:177
+msgid "**add dir user PATH USER PASSWORD**"
+msgstr "**add dir user PATH USER PASSWORD**"
+
+#: ../../reference/dir.rst:160 ../../reference/dir.rst:188
+msgid "**delete dir user PATH USER**"
+msgstr "**delete dir user PATH USER**"
+
+#: ../../reference/dir.rst:161 ../../reference/dir.rst:198
+msgid "**list dir users PATH**"
+msgstr "**list dir users PATH**"
+
+#: ../../reference/dir.rst:163
+msgid ""
+"cPanel grants access to remote password-protected directories using ad "
+"hoc users and passwords specific to every directory. Use the commands "
+"below to manage these users."
+msgstr ""
+"cPanel permite el acceso a directorios"
+" remotos protegidos por contraseña "
+"utilizando usuarios y contraseñas específicas"
+" para cada directorio. Utilice los "
+"comandos siguientes para gestionar estos "
+"usuarios."
+
+#: ../../reference/dir.rst:167
+msgid ""
+"cPanel stores the credentials in a .htpasswd file. See "
+"https://en.wikipedia.org/wiki/.htpasswd for further information."
+msgstr ""
+"cPanel almacena las credenciales en un"
+" archivo .htpasswd. Consulte "
+"https://en.wikipedia.org/wiki/.htpasswd para más "
+"información. "
+
+#: ../../reference/dir.rst:179
+msgid ""
+"Add USER with corresponding PASSWORD to the list of allowed users for "
+"PATH."
+msgstr ""
+"Añade el usuario USER con su "
+"correspondiente contraseña PASSWORD a la "
+"lista de usuarios permitidos para PATH."
+
+#: ../../reference/dir.rst:190
+msgid "Remove USER from the list of allowed users for PATH."
+msgstr "Elimina  USER de la lista de usuarios permitidos para PATH."
+
+#: ../../reference/dir.rst:200
+msgid "List allowed users for PATH."
+msgstr "Lista los usuarios permitidos para PATH."
+
+#: ../../reference/dir.rst:208
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy::list_users/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy::list_users/"
+
+#: ../../reference/dir.rst:213
+msgid "``protection``"
+msgstr "``protection``"
+
+#: ../../reference/dir.rst:216 ../../reference/dir.rst:224
+msgid "**list dir protection PATH**"
+msgstr "**list dir protection PATH**"
+
+#: ../../reference/dir.rst:218
+msgid ""
+"Leech protection adds some basic measures against the abuse of password-"
+"protected directories. The system allows a maximum number of logins per "
+"hour for a leech-protected directory."
+msgstr ""
+"La protección contra abusos (*leech*) "
+"añade algunas medidas básicas contra el"
+" uso excesivo de directorios protegidos "
+"por contraseña. El sistema sólo permite"
+" un número máximo de inicios de "
+"sesión por hora para un directorio "
+"protegido contra abusos (*leech*)."
+
+#: ../../reference/dir.rst:222
+msgid ""
+"See https://docs.cpanel.net/cpanel/security/leech-protection/ for further"
+" information."
+msgstr ""
+"Consulte https://docs.cpanel.net/cpanel/security/leech-"
+"protection/ para obtener más información."
+
+#: ../../reference/dir.rst:226
+msgid "List leech protection status for PATH and its subdirectories (children)."
+msgstr ""
+"Lista el estado de la protección "
+"contra abusos para PATH y sus "
+"subdirectorios (hijos)."
+
+#: ../../reference/dir.rst:234
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryProtection-"
+"list_directories/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation"
+"/DirectoryProtection-list_directories/"
+

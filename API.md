@@ -105,8 +105,8 @@
 - [x] DynamicDNS::set_description
 - [ ] EA4::get_php_recommendations
 - [ ] EA4::get_recommendations
-- [ ] Email::account_name
-- [ ] Email::add_auto_responder
+- [-] Email::account_name
+- [x] Email::add_auto_responder
 - [ ] Email::add_domain_forwarder
 - [ ] Email::add_forwarder
 - [ ] Email::add_list
@@ -114,15 +114,15 @@
 - [ ] Email::add_mx
 - [ ] Email::add_pop
 - [ ] Email::add_spam_filter
-- [ ] Email::browse_mailbox
+- [x] Email::browse_mailbox
 - [ ] Email::change_mx
 - [ ] Email::check_fastmail
-- [ ] Email::count_auto_responders
+- [x] Email::count_auto_responders
 - [ ] Email::count_filters
 - [ ] Email::count_forwarders
 - [ ] Email::count_lists
-- [ ] Email::count_pops
-- [ ] Email::delete_auto_responder
+- [x] Email::count_pops
+- [x] Email::delete_auto_responder
 - [ ] Email::delete_domain_forwarder
 - [x] Email::delete_filter
 - [ ] Email::delete_forwarder
@@ -144,9 +144,9 @@
 - [ ] Email::fetch_charmaps
 - [ ] Email::fts_rescan_mailbox
 - [ ] Email::generate_mailman_otp
-- [ ] Email::get_auto_responder
+- [x] Email::get_auto_responder
 - [ ] Email::get_charsets
-- [ ] Email::get_client_settings
+- [x] Email::get_client_settings
 - [ ] Email::get_default_email_quota
 - [ ] Email::get_default_email_quota_mib
 - [ ] Email::get_disk_usage
@@ -161,11 +161,11 @@
 - [ ] Email::get_max_email_quota_mib
 - [ ] Email::get_pop_quota
 - [ ] Email::get_spam_settings
-- [ ] Email::get_webmail_settings
+- [x] Email::get_webmail_settings
 - [ ] Email::has_delegated_mailman_lists
 - [ ] Email::has_plaintext_authentication
 - [ ] Email::hold_outgoing
-- [ ] Email::list_auto_responders
+- [x] Email::list_auto_responders
 - [ ] Email::list_default_address
 - [ ] Email::list_domain_forwarders
 - [x] Email::list_filters
@@ -503,7 +503,7 @@
 - [ ] WebDisk::set_permissions
 - [ ] WebVhosts::list_domains
 - [ ] WebVhosts::list_ssl_capable_domains
-- [ ] WebmailApps::list_webmail_apps
+- [x] WebmailApps::list_webmail_apps
 - [ ] cPAddons::get_available_addons
 - [ ] cPAddons::get_instance_settings
 - [ ] cPAddons::list_addon_instances

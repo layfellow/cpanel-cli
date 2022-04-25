@@ -1,0 +1,215 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/files.rst:7
+msgid "Module: ``files``"
+msgstr "Módulo: ``files``"
+
+#: ../../reference/files.rst:9
+msgid "`Leer en español </es/latest/reference/files.html>`_"
+msgstr "`Read in English </en/latest/reference/files.html>`_"
+
+#: ../../reference/files.rst:11
+msgid "**list files [DIRECTORY]**"
+msgstr "**list files [DIRECTORY]**"
+
+#: ../../reference/files.rst:12 ../../reference/files.rst:50
+msgid "**glob files PARTIALPATH**"
+msgstr "**glob files PARTIALPATH**"
+
+#: ../../reference/files.rst:13 ../../reference/files.rst:65
+msgid "**get file info PATH**"
+msgstr "**get file info PATH**"
+
+#: ../../reference/files.rst:14 ../../reference/files.rst:80
+msgid "**cat file FILE**"
+msgstr "**cat file FILE**"
+
+#: ../../reference/files.rst:15
+msgid "**write file FILE**"
+msgstr "**write file FILE**"
+
+#: ../../reference/files.rst:16 ../../reference/files.rst:103
+msgid "**upload file DIRECTORY LOCALFILE**"
+msgstr "**upload file DIRECTORY LOCALFILE**"
+
+#: ../../reference/files.rst:17 ../../reference/files.rst:114
+msgid "**delete file trash [DAYS]**"
+msgstr "**delete file trash [DAYS]**"
+
+#: ../../reference/files.rst:19
+msgid "Arguments:"
+msgstr "Argumentos:"
+
+#: ../../reference/files.rst:21
+msgid "Optional DIRECTORY is a remote directory"
+msgstr "El argumento opcional DIRECTORY es un directorio remoto"
+
+#: ../../reference/files.rst:22
+msgid "PATH can refer to either a remote directory or a remote file"
+msgstr "PATH puede referirse a un directorio remoto o a un archivo remoto"
+
+#: ../../reference/files.rst:23
+msgid "PARTIALPATH is an incomplete remote PATH"
+msgstr "PARTIALPATH es un PATH remoto incompleto"
+
+#: ../../reference/files.rst:24
+msgid "FILE is a remote file"
+msgstr "FILE es un archivo remoto"
+
+#: ../../reference/files.rst:25
+msgid "LOCALFILE is a local file"
+msgstr "LOCALFILE es un archivo local"
+
+#: ../../reference/files.rst:27
+msgid ""
+"Use ‘/’ to separate subdirectory components in DIRECTORY, PATH, "
+"PARTIALPATH or FILE. For example, a DIRECTORY could be public_html/images"
+" or a PATH could be public_ftp/.htacccess."
+msgstr ""
+"Utilice ‘/’ para separar componentes de"
+" subdirectorio en DIRECTORY, PATH, "
+"PARTIALPATH o FILE. Por ejemplo, un "
+"DIRECTORY podría ser public_html/images o "
+"un PATH podría ser public_ftp/.htacccess"
+
+#: ../../reference/files.rst:31
+msgid ""
+"All the remote arguments are relative to the remote user’s login "
+"directory, e.g., public corresponds to <remote login directory>/public."
+msgstr ""
+"Todos los argumentos remotos son "
+"relativos al directorio de inicio de "
+"sesión del usuario, por ejemplo, public"
+" corresponde a <directorio de inicio "
+"de sesión remoto>/public."
+
+#: ../../reference/files.rst:34
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/files.rst:37
+msgid "**list files DIRECTORY**"
+msgstr "**list files DIRECTORY**"
+
+#: ../../reference/files.rst:39
+msgid "Return a list of files and subdirectories in DIRECTORY"
+msgstr ""
+"Devuelve una lista de los archivos "
+"y subdirectorios del directorio DIRECTORY"
+
+#: ../../reference/files.rst:41 ../../reference/files.rst:56
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/files.rst:47
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_files/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_files/"
+
+#: ../../reference/files.rst:52
+msgid ""
+"Return a list of files and subdirectories whose names start with "
+"PARTIALPATH. For instance, /public matches /public_html and /public_ftp."
+msgstr ""
+"Devuelve una lista de archivos y "
+"subdirectorios cuyos nombres comienzan con "
+"PARTIALPATH. Por ejemplo, /public hace "
+"referencia a /public_html y /public_ftp."
+
+#: ../../reference/files.rst:62
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/autocompletedir/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/autocompletedir/"
+
+#: ../../reference/files.rst:67
+msgid "Return file information about PATH."
+msgstr "Devuelve información del archivo o directorio PATH."
+
+#: ../../reference/files.rst:69 ../../reference/files.rst:84
+#: ../../reference/files.rst:97 ../../reference/files.rst:108
+#: ../../reference/files.rst:120
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/files.rst:77
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_file_information/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_file_information/"
+
+#: ../../reference/files.rst:82
+msgid ""
+"Return the contents of FILE. Note that only UTF-8 encoded files are "
+"supported."
+msgstr ""
+"Devuelve el contenido de FILE. Tenga "
+"en cuenta que sólo los archivos "
+"codificados en UTF-8 son compatibles con"
+" este comando."
+
+#: ../../reference/files.rst:91
+msgid "**write file FILE CONTENTS**"
+msgstr "**write file FILE CONTENTS**"
+
+#: ../../reference/files.rst:93
+msgid ""
+"Write CONTENTS as a remote text FILE. Note that only UTF-8 encoded "
+"content is supported. Escape codes, such as ``\\n``, ``\\t`` and others, "
+"are supported."
+msgstr ""
+"Escribe CONTENTS como un archivo remoto"
+" FILE. Tenga en cuenta que sólo "
+"texto codificado en UTF-8 es compatible."
+" Se aceptan códigos de escape, como"
+" ``\\n``, ``\\t`` y otros."
+
+#: ../../reference/files.rst:105
+msgid ""
+"Upload a LOCALFILE to remote DIRECTORY . If the remote DIRECTORY doesn’t "
+"exist, it will be created."
+msgstr ""
+"Carga un archivo local LOCALFILE al "
+"directorio remoto DIRECTORY. Si el "
+"directorio remoto DIRECTORY no existe, "
+"se crea."
+
+#: ../../reference/files.rst:116
+msgid ""
+"Delete the contents of the .trash directory in the user’s home. Optional "
+"DAYS will only delete files older than DAYS days. By default, all files "
+"are deleted."
+msgstr ""
+"Elimina el contenido del directorio "
+".trash en el home remoto del "
+"usuario. El argumento opcional DAYS "
+"indica que sólo se eliminen archivos "
+"más antiguos a DAYS días. Por "
+"defecto, todos los archivos se eliminan."
+

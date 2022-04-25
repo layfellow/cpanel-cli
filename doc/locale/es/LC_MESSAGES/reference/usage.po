@@ -1,0 +1,54 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/usage.rst:7
+msgid "Module: ``usage``"
+msgstr "Módulo: ``usage``"
+
+#: ../../reference/usage.rst:9
+msgid "`Leer en español </es/latest/reference/usage.html>`_"
+msgstr ""
+
+#: ../../reference/usage.rst:11
+msgid "**get usage**"
+msgstr "**get usage**"
+
+#: ../../reference/usage.rst:13
+msgid ""
+"Show resource usage and some statistics, like bandwidth, number of "
+"subdomains, disk usage, number of mail filters, etc."
+msgstr ""
+"Muestra el uso de recursos y "
+"algunas estadísticas, como ancho de "
+"banda, número de subdominios, uso de "
+"disco, número de filtros de correo, "
+"etc."
+
+#: ../../reference/usage.rst:16
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/usage.rst:22
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_usages/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_usages/"
+

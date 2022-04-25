@@ -1,0 +1,84 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/subaccounts.rst:7
+msgid "Module: ``subaccounts``"
+msgstr "Módulo: ``subaccounts``"
+
+#: ../../reference/subaccounts.rst:9
+msgid "`Leer en español </es/latest/reference/subaccounts.html>`_"
+msgstr "`Read in English </en/latest/reference/subaccounts.html>`_"
+
+#: ../../reference/subaccounts.rst:11 ../../reference/subaccounts.rst:17
+msgid "**list subaccounts**"
+msgstr "**list subaccounts**"
+
+#: ../../reference/subaccounts.rst:12 ../../reference/subaccounts.rst:31
+msgid "**get subaccount GUID**"
+msgstr "**get subaccount GUID**"
+
+#: ../../reference/subaccounts.rst:14
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/subaccounts.rst:19
+msgid ""
+"List the sub-accounts of the main cPanel account, along with detailed "
+"information of each sub-account."
+msgstr ""
+"Lista las sub-cuentas de la cuenta "
+"principal de cPanel, junto con "
+"información detallada de cada sub-"
+"cuenta."
+
+#: ../../reference/subaccounts.rst:22 ../../reference/subaccounts.rst:37
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/subaccounts.rst:28
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-"
+"list_users/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-"
+"list_users/"
+
+#: ../../reference/subaccounts.rst:33
+msgid ""
+"Show detailed information of a sub-account, identified by its GUID. To "
+"get this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts"
+" with a sub_account_exists flag set to 1 can be queried."
+msgstr ""
+"Muestra información detallada de una "
+"sub-cuenta, identificada por su GUID. "
+"Para obtener este GUID, use ‘cpanel "
+"list subaccounts’. Tenga en cuenta que"
+" sólo sub-cuentas con un flag "
+"sub_account_exists establecido a 1 "
+"devuelven información."
+
+#: ../../reference/subaccounts.rst:43
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/"
+

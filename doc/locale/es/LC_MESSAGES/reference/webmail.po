@@ -1,0 +1,83 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-24 18:40-0400\n"
+"PO-Revision-Date: 2022-04-24 23:44-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/webmail.rst:7
+msgid "Module: ``webmail``"
+msgstr "Módulo: ``webmail``"
+
+#: ../../reference/webmail.rst:9
+msgid "`Leer en español </es/latest/reference/webmail.html>`_"
+msgstr "`Read in English </en/latest/reference/webmail.html>`_"
+
+#: ../../reference/webmail.rst:11 ../../reference/webmail.rst:20
+msgid "**get webmail settings [ACCOUNT]**"
+msgstr "**get webmail settings [ACCOUNT]**"
+
+#: ../../reference/webmail.rst:12 ../../reference/webmail.rst:35
+msgid "**list webmail apps**"
+msgstr "**list webmail apps**"
+
+#: ../../reference/webmail.rst:14
+msgid ""
+"ACCOUNT is the name of a cPanel email account, usually in the form "
+"user@domain.com"
+msgstr ""
+"ACCOUNT es el nombre de una cuenta de correo de cPanel, usualmente de la "
+"forma user@domain.con"
+
+#: ../../reference/webmail.rst:17
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/webmail.rst:22
+msgid ""
+"Return the settings for the Web Mail app used for ACCOUNT. If no "
+"ACCOUNT is provided, the default mail account is used."
+msgstr ""
+"Devuelve la configuración de la aplicación de Correo Web usada para la "
+"cuenta ACCOUNT. Si no se proporciona ACCOUNT, se usa la cuenta de correo "
+"por defecto."
+
+#: ../../reference/webmail.rst:25
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/webmail.rst:32
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_webmail_settings/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_webmail_settings/"
+
+#: ../../reference/webmail.rst:37
+msgid "Return a list of available Web Mail apps."
+msgstr "Devuelve una lista de aplicaciones de Correo Web disponibles."
+
+#: ../../reference/webmail.rst:39
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/webmail.rst:45
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/listwebmailapps/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/listwebmailapps/"
+

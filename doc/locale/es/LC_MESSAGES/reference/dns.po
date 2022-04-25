@@ -1,0 +1,218 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/dns.rst:7
+msgid "Module: ``dns``"
+msgstr "Módulo: ``dns``"
+
+#: ../../reference/dns.rst:9
+msgid "`Leer en español </es/latest/reference/dns.html>`_"
+msgstr "`Read in English </en/latest/reference/dns.html>`_"
+
+#: ../../reference/dns.rst:11 ../../reference/dns.rst:23
+msgid "**check dns DOMAIN**"
+msgstr "**check dns DOMAIN**"
+
+#: ../../reference/dns.rst:12
+msgid "**authoritative dns DOMAIN**"
+msgstr "**authoritative dns DOMAIN**"
+
+#: ../../reference/dns.rst:13
+msgid "**lookup dns**"
+msgstr "**lookup dns**"
+
+#: ../../reference/dns.rst:14 ../../reference/dns.rst:62
+msgid "**list dynamic dns**"
+msgstr "**list dynamic dns**"
+
+#: ../../reference/dns.rst:15 ../../reference/dns.rst:75
+msgid "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
+msgstr "**create dynamic dns SUBDOMAIN [DESCRIPTION]**"
+
+
+#: ../../reference/dns.rst:16 ../../reference/dns.rst:95
+msgid "**recreate dynamic dns ID**"
+msgstr "**recreate dynamic dns ID**"
+
+#: ../../reference/dns.rst:17
+msgid "**update dynamic dns ID DESCRITPION**"
+msgstr "**update dynamic dns ID DESCRITPION**"
+
+#: ../../reference/dns.rst:18 ../../reference/dns.rst:120
+msgid "**delete dynamic dns ID**"
+msgstr "**delete dynamic dns ID**"
+
+#: ../../reference/dns.rst:20
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/dns.rst:25
+msgid "Check if DOMAIN resolves to the cPanel server."
+msgstr "Comprueba si DOMAIN resuelve hacia este servidor de cPanel."
+
+#: ../../reference/dns.rst:27 ../../reference/dns.rst:40
+#: ../../reference/dns.rst:53 ../../reference/dns.rst:66
+#: ../../reference/dns.rst:101 ../../reference/dns.rst:114
+#: ../../reference/dns.rst:125
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/dns.rst:33
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/ensure_domains_reside_only_locally/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/ensure_domains_reside_only_locally/"
+
+#: ../../reference/dns.rst:36
+msgid "**check authoritative dns DOMAIN**"
+msgstr "**check authoritative dns DOMAIN**"
+
+#: ../../reference/dns.rst:38
+msgid "Tell if cPanel server is the authoritative server for DOMAIN."
+msgstr ""
+"Indica si el servidor de cPanel es"
+" el servidor DNS con autoridad para"
+" DOMAIN."
+
+#: ../../reference/dns.rst:46
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/has_local_authority/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/has_local_authority/"
+
+
+#: ../../reference/dns.rst:49
+msgid "**lookup dns DOMAIN**"
+msgstr "**lookup dns DOMAIN**"
+
+
+#: ../../reference/dns.rst:51
+msgid "Return DNS zone information about DOMAIN."
+msgstr "Devuelve información de la zona DNS de DOMAIN."
+
+#: ../../reference/dns.rst:59
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dns-lookup/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dns-lookup/"
+
+#: ../../reference/dns.rst:64
+msgid "List the Dynamic DNS domains for your cPanel user."
+msgstr "Lista los dominios DNS dinámicos para el usuario de cPanel."
+
+
+#: ../../reference/dns.rst:72
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-list/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-"
+"list/"
+
+#: ../../reference/dns.rst:77
+msgid ""
+"Create a new Dynamic DNS entry attached to SUBDOMAIN. Optionally include "
+"a human-readable DESCRIPTION. Return an ID which you can later use in a "
+"web call https://example.com/cpanelwebcall/<ID>."
+msgstr ""
+"Cree una nueva entrada DNS dinámica "
+"adjunta a SUBDOMAIN. Opcionalmente incluye "
+"una DESCRIPTION legible Devuelve un ID"
+" que más tarde puede utilizar en "
+"una llamada web "
+"https://example.com/cpanelwebcall/<ID>"
+
+
+#: ../../reference/dns.rst:82
+msgid ""
+"For further information see: https://docs.cpanel.net/cpanel/domains"
+"/dynamic-dns/"
+msgstr ""
+"Para más información véase: "
+"https://docs.cpanel.net/cpanel/domains/dynamic-dns"
+
+
+#: ../../reference/dns.rst:85
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/dns.rst:92
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-create/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-"
+"create/"
+
+#: ../../reference/dns.rst:97
+msgid ""
+"Delete and create again a Dynamic DNS entry identified by ID. Return a "
+"new ID. Use ‘cpanel list dynamic dns’ to get a list of IDs and associated"
+" subdomains."
+msgstr ""
+"Elimina y crea de nuevo una "
+"entrada DNS dinámica identificada por "
+"ID. Devuelve una nueva ID. Use "
+"‘cpanel list dinamyc dns’ para obtener"
+" una lista de IDs y subdominios "
+"asociados."
+
+#: ../../reference/dns.rst:107
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-recreate/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/dynamicdns-"
+"recreate/"
+
+#: ../../reference/dns.rst:110
+msgid "**update dynamic dns ID DESCRIPTION**"
+msgstr "**update dynamic dns ID DESCRIPTION**"
+
+#: ../../reference/dns.rst:112
+msgid "Update the DESCRIPTION of Dynamic DNS entry identified by ID."
+msgstr ""
+"Actualiza la descripción de la entrada"
+" DNS dinámica identificada por ID a"
+" DESCRIPTION."
+
+#: ../../reference/dns.rst:122
+msgid ""
+"Delete a Dynamic DNS entry identified by ID. Use ‘cpanel list dynamic "
+"dns’ to get a list of IDs and associated subdomains."
+msgstr ""
+"Elimina una entrada DNS dinámica "
+"identificada por su ID. Use ‘cpanel "
+"list dinamyc dns’ para obtener una "
+"lista de IDs y subdominios asociados."
+

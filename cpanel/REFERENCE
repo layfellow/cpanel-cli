@@ -301,16 +301,6 @@ cPanel theme is ‘jupiter’; another popular theme is ‘paper lantern’.
 Usage: cpanel list dir indexing PATH
     cpanel get dir indexing PATH
     cpanel set dir indexing PATH TYPE
-    cpanel list dir privacy PATH
-    cpanel get dir privacy PATH
-    cpanel enable dir privacy PATH
-    cpanel disable dir privacy PATH
-    cpanel add dir user PATH USER PASSWORD
-    cpanel delete dir user PATH USER
-    cpanel list dir users PATH
-    cpanel list dir protection PATH
-
-\033[1mINDEXING COMMANDS\033[0m
 
 The indexing of a remote directory controls how to present that directory
 to a web browser if no default HTML index page is found.
@@ -323,7 +313,7 @@ There are four possible index settings:
 - ‘fancy’: (Show Filename and Description) list the directory’s file names, sizes and types.
 
 cPanel uses a .htaccess directive in the remote directory to control the
-index settings. For instance, for ‘fancy’, it adds the following to htaccess:
+index settings. For instance, for ‘fancy’, it adds the following code to .htaccess:
 
     Options +Indexes
     IndexOptions +HTMLTable +FancyIndexing
@@ -333,6 +323,8 @@ See https://docs.cpanel.net/cpanel/advanced/indexes/ for further information.
 Note that the PATH in all commands below is not absolute, but relative to the
 remote login directory, i.e., /public_html corresponds to
 <remote login directory>/public_html.
+
+\033[1mCOMMANDS\033[0m
 
 \033[1mlist dir indexing PATH\033[0m
     List the index settings for remote PATH and its subdirectories (children).
@@ -359,7 +351,12 @@ remote login directory, i.e., /public_html corresponds to
     EXAMPLE
         \033[1;34mcpanel set dir indexing /public_html fancy\033[00m
 
-\033[1mPRIVACY COMMANDS\033[0m
+---
+
+Usage: cpanel list dir privacy PATH
+    cpanel get dir privacy PATH
+    cpanel enable dir privacy PATH
+    cpanel disable dir privacy PATH
 
 cPanel can password-protect remote directories for privacy. Any attempt to
 access a private directory using a web browser will prompt for a
@@ -371,6 +368,8 @@ these users and passwords are local to the directory, they are not cPanel users.
 Note that the PATH in all commands below is not absolute, but relative to the
 remote login directory, i.e., /public_html corresponds to
 <remote login directory>/public_html.
+
+\033[1mCOMMANDS\033[0m
 
 \033[1mlist dir privacy PATH\033[0m
     List the privacy settings for remote PATH and its subdirectories (children).
@@ -405,7 +404,11 @@ remote login directory, i.e., /public_html corresponds to
     EXAMPLE
         \033[1;34mcpanel disable dir privacy /public_html\033[00m
 
-\033[1mUSER MANAGEMENT COMMANDS\033[0m
+---
+
+Usage: cpanel add dir user PATH USER PASSWORD
+    cpanel delete dir user PATH USER
+    cpanel list dir users PATH
 
 cPanel grants access to remote password-protected directories using
 ad hoc users and passwords specific to every directory. Use the
@@ -417,6 +420,8 @@ See https://en.wikipedia.org/wiki/.htpasswd for further information.
 Note that the PATH in all commands below is not absolute, but relative to the
 remote login directory, i.e., /public_html corresponds to
 <remote login directory>/public_html.
+
+\033[1mCOMMANDS\033[0m
 
 \033[1madd dir user PATH USER PASSWORD\033[0m
     Add USER with corresponding PASSWORD to the list of allowed users
@@ -435,12 +440,14 @@ remote login directory, i.e., /public_html corresponds to
     List allowed users for PATH.
 
     EXAMPLE
-        \033[1;34mcpanel list users /public_html\033[00m
+        \033[1;34mcpanel list dir users /public_html\033[00m
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/DirectoryPrivacy::list_users/
 
-\033[1mLEECH PROTECTION COMMANDS\033[0m
+---
+
+Usage: cpanel list dir protection PATH
 
 Leech protection adds some basic measures against the abuse of
 password-protected directories. The system allows a maximum number of
@@ -448,7 +455,7 @@ logins per hour for a leech-protected directory.
 
 See https://docs.cpanel.net/cpanel/security/leech-protection/ for further information.
 
-\033[1mlist dir protection PATH\033[00m
+\033[1mlist dir protection PATH\033[0m
     List leech protection status for PATH and its subdirectories (children).
 
     EXAMPLE
@@ -767,13 +774,19 @@ directory, e.g., public corresponds to <remote login directory>/public.
 
 ---
 
-Usage: cpanel list mail accounts
-    cpanel list mail filters ACCOUNT
-    cpanel get mail filter ACCOUNT FILTERNAME
-    cpanel set mail filter ACCOUNT FILE
-    cpanel delete mail filter ACCOUNT FILTERNAME
+Usage: cpanel count mail accounts
+    cpanel list mail accounts
 
 \033[1mCOMMANDS\033[0m
+
+\033[1mcount mail accounts\033[0m
+    Count the number of cPanel email accounts.
+
+    EXAMPLE
+        \033[1;34mcpanel count mail accounts\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/count_pops/
 
 \033[1mlist mail accounts\033[0m
     List cPanel email accounts.
@@ -784,10 +797,149 @@ Usage: cpanel list mail accounts
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/list_pops/
 
+---
+
+Usage: cpanel get mail settings ACCOUNT
+
+Get an ACCOUNT’s email settings.
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+EXAMPLE
+    \033[1;34mcpanel get mail settings scott@example.com\033[00m
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_client_settings/
+
+---
+
+Usage: cpanel list mail boxes [ACCOUNT] [DIR]
+
+List the mailboxes (directories and files) for ACCOUNT.
+If no ACCOUNT is passed, list the mailboxes for all mail accounts.
+Optionally, you can restrict the listing to directory DIR.
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+EXAMPLES
+    \033[1;34mcpanel list mail boxes\033[00m
+    \033[1;34mcpanel list mail boxes scott@example.com\033[00m
+    \033[1;34mcpanel list mail boxes scott@example.com .Sent\033[00m
+    \033[1;34mcpanel list mail boxes scott@example.com .spam\033[00m
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/browse_mailbox/
+
+---
+
+Usage: cpanel list mail autoresponders DOMAIN
+    cpanel count mail autoresponders
+    cpanel get mail autoresponder ACCOUNT
+    cpanel set mail autoresponder ACCOUNT [FROM] [SUBJECT] [BODY] [START] [STOP]
+    cpanel delete mail autoresponder ACCOUNT
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mlist mail autoresponders DOMAIN\033[0m
+    List the autoresponders of all email accounts in DOMAIN.
+
+    EXAMPLE
+        \033[1;34mcpanel list mail autoresponders example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_auto_responders/
+
+\033[1mcount mail autoresponders\033[0m
+    Return the number of autoresponders for all email accounts.
+
+    EXAMPLE
+        \033[1;34mcount mail autoresponders\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/
+
+\033[1mcount get mail autoresponder ACCOUNT\033[0m
+    Retrieve autoresponder information corresponding to ACCOUNT.
+
+    EXAMPLE
+        \033[1;34mcount get mail autoresponder scott@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_auto_responder/
+
+\033[1mset mail autoresponder ACCOUNT [FROM] [SUBJECT] [BODY] [START] [STOP]\033[0m
+    Create an autoresponder for ACCOUNT.
+
+    FROM is the sender’s name; by default, the ACCOUNT email name is used.
+
+    SUBJECT is the subject of the autoresponse email; the default subject is
+      “This is an automatic message”
+
+    BODY is the text of the autoresponse email; the default body is
+      “I’m currently unavailable.”
+
+    START is when to enable the autoresponder; you can use a readable
+    expression parsable as a time and date, e.g., “now”, “tomorrow 9 AM”,
+    “December 20, 2022 19:00”, etc.
+    For more examples, see https://github.com/bear/parsedatetime
+    The default START time is “now”, meaning the autoresponder will be
+    immediately enabled.
+
+    STOP is when to disable the autoresponder; you can use a readable
+    expression as for START.
+    The default STOP time is a date far in the future, meaning the
+    autoresponder will be effectively enabled until you manually
+    disable it using ‘cpanel delete mail autoresponder’
+
+    EXAMPLES
+        \033[1;34mcpanel set mail autoresponder scott@example.com\033[00m
+
+        \033[1;34mcpanel set mail autoresponder \\ \033[00m
+        \033[1;34m    scott@example.com \\ \033[00m
+        \033[1;34m    "Bruce Scott" \\ \033[00m
+        \033[1;34m    "Auto-response"\033[00m
+
+        \033[1;34mcpanel set mail autoresponder \\ \033[00m
+        \033[1;34m    scott@example.com \\ \033[00m
+        \033[1;34m    "Bruce Scott" \\ \033[00m
+        \033[1;34m    "This is an automatic message" \\ \033[00m
+        \033[1;34m    "I’m currently unavailable, please contact my boss." \\ \033[00m
+        \033[1;34m    "Tomorrow 6 PM" \\ \033[00m
+        \033[1;34m    "December 15, 8:00 AM"\033[00m
+
+\033[1mdelete mail autoresponder ACCOUNT\033[0m
+    Delete an autoresponder for ACCOUNT.
+
+    EXAMPLE
+        \033[1;34mcpanel delete mail autoresponder scott@example.com\033[00m
+
+---
+
+Usage: cpanel list mail filters ACCOUNT
+    cpanel get mail filter ACCOUNT FILTERNAME
+    cpanel set mail filter ACCOUNT FILE
+    cpanel delete mail filter ACCOUNT FILTERNAME
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+\033[1mCOMMANDS\033[0m
+
 \033[1mlist mail filters ACCOUNT\033[0m
-    List mail filters associated to ACCOUNT. Output is a JSON-formatted
-    array of filter names.
-    ACCOUNT is the name of a cPanel email account, usually user@domain
+    List mail filters associated to ACCOUNT.
 
     EXAMPLE
         \033[1;34mcpanel list mail filters scott@example.com\033[00m
@@ -825,5 +977,35 @@ Usage: cpanel list mail accounts
 
     EXAMPLE
          \033[1;34mcpanel delete mail filter scott@example.com spamkiller\033[00m
+
+---
+
+Usage: cpanel get webmail settings [ACCOUNT]
+    cpanel list webmail apps
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mget webmail settings [ACCOUNT]\033[0m
+    Return the settings for the Web Mail app used for ACCOUNT.
+    If no ACCOUNT is provided, the default mail account is used.
+
+    EXAMPLES
+        \033[1;34mcpanel get webmail settings\033[00m
+        \033[1;34mcpanel get webmail settings scott@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_webmail_settings/
+
+\033[1mlist webmail apps\033[0m
+    Return a list of available Web Mail apps.
+
+    EXAMPLE
+        \033[1;34mcpanel list webmail apps\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/listwebmailapps/
 
 ---

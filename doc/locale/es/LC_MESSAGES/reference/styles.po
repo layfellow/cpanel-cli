@@ -1,0 +1,110 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/styles.rst:7
+msgid "Module: ``styles``"
+msgstr "Módulo: ``styles``"
+
+#: ../../reference/styles.rst:9
+msgid "`Leer en español </es/latest/reference/styles.html>`_"
+msgstr "`Read in English </en/latest/reference/styles.html>`_"
+
+#: ../../reference/styles.rst:11 ../../reference/styles.rst:22
+msgid "**list styles**"
+msgstr "**list styles**"
+
+#: ../../reference/styles.rst:12 ../../reference/styles.rst:35
+msgid "**get style**"
+msgstr "**get style**"
+
+#: ../../reference/styles.rst:13 ../../reference/styles.rst:48
+msgid "**set style NAME**"
+msgstr "**get style NAME**"
+
+#: ../../reference/styles.rst:14 ../../reference/styles.rst:59
+msgid "**default style NAME**"
+msgstr "**default style NAME**"
+
+#: ../../reference/styles.rst:16
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/styles.rst:19
+msgid ""
+"A style is a variation of a user interface theme for cPanel. For example,"
+" the ‘paper lantern’ theme has four styles: ‘basic’, ‘dark’, ‘light’ and "
+"‘glass’."
+msgstr ""
+"Un estilo es una variación de un"
+" tema de interfaz de usuario para "
+"cPanel. Por ejemplo, el tema ‘paper "
+"lantern’ tiene cuatro estilos: ‘basic’, "
+"‘dark’, ‘light’ y ‘glass’."
+
+#: ../../reference/styles.rst:24
+msgid "Return all the available user interface styles."
+msgstr "Devuelve todos los estilos de interfaz de usuario disponibles."
+
+#: ../../reference/styles.rst:26 ../../reference/styles.rst:39
+#: ../../reference/styles.rst:53 ../../reference/styles.rst:64
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/styles.rst:32
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list/"
+
+#: ../../reference/styles.rst:37
+msgid "Return the current user interface style."
+msgstr "Devuelve el estilo de interfaz de usuario actual."
+
+#: ../../reference/styles.rst:45
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/current/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/current/"
+
+#: ../../reference/styles.rst:50
+msgid ""
+"Set the current user interface style to NAME. NAME must be one of "
+"‘basic’, ‘dark’, ‘light’ or ‘glass’"
+msgstr ""
+"Establece el estilo actual de la "
+"interfaz de usuario a NAME. NAME "
+"debe ser uno de los siguientes: "
+"‘basic’, ‘dark’, ‘light’ o ‘glass’."
+
+#: ../../reference/styles.rst:61
+msgid ""
+"Set the default user interface style to NAME. NAME must be one of "
+"‘basic’, ‘dark’, ‘light’ or ‘glass’"
+msgstr ""
+"Establece el estilo por defecto de "
+"la interfaz de usuario a NAME. "
+"NAME debe ser uno de los "
+"siguientes: ‘basic’, ‘dark’, ‘light’ o "
+"‘glass’."
+

@@ -3,6 +3,9 @@ import sys
 import json
 import logging
 import requests
+import time
+import parsedatetime
+from datetime import datetime, timezone, timedelta
 from urllib.parse import urljoin
 from logging import Logger
 from json import JSONDecodeError
@@ -175,7 +178,7 @@ class CPanelEndpoint:
 	def get_file_contents(self, filepath: str) -> bytes:
 		"""Return the contents of remote filepath encoded using UTF-8.
 
-		filepath    path to file.
+		filepath    path to remote file
 		"""
 		dirname: str = os.path.dirname(filepath)
 		if len(dirname) == 0:
@@ -191,7 +194,12 @@ class CPanelEndpoint:
 
 
 	def write_file(self, filepath: str, content: str) -> str:
-		""".
+		"""Write a remote filepath with provided content.
+
+		filepath    path to remote file
+		content     content string encoded using UTF-8
+
+		Returns "OK" or prints error
 		"""
 		dirname: str = os.path.dirname(filepath)
 		if len(dirname) == 0:
@@ -205,8 +213,72 @@ class CPanelEndpoint:
 			dir = dirname, file = basename, content = content, fallback = 0))
 
 
+	def set_mail_autoresponder(self, *args: str) -> str:
+		"""Create an autoresponder for an email account.
+
+		args      variable argument list with email, and optional
+		          from, subject, body, start time and stop time
+
+		Returns "OK" or prints error
+		"""
+		log.debug(str(args))
+
+		# kwargs for CPanelAPI call to Email.add_auto_responder().
+		parameters: Mapping[str, str|int] = {}
+
+		default_subject: str = "This is an automatic message"
+		default_body: str = "I’m currently unavailable."
+
+		try:
+			email: str = args[0]
+			parameters['email'] = email
+			parameters['domain'] = email[email.find("@") + 1:]
+			parameters['from'] = len(args) > 1 and args[1] or email
+			parameters['subject'] = len(args) > 2 and args[2] or default_subject
+			parameters['body'] = len(args) > 3 and args[3] or default_body
+			parameters['interval'] = 24
+			parameters['is_html'] = 1
+		except IndexError:
+			raise CPanelError("missing arguments for create mail autoresponder")
+
+		cal: parsedatetime.Calendar = parsedatetime.Calendar()
+
+		s: str
+		t: time.struct_time
+		parsed: int
+		starttime: datetime
+		endtime: datetime
+
+		s = len(args) > 4 and args[4] or "now"
+		t, parsed = cal.parse(s)
+		if parsed > 0:
+			log.debug(str(t))
+			starttime = datetime(*t[:6],tzinfo = timezone(timedelta(seconds = -time.timezone)))
+		else:
+			raise CPanelError("error parsing start time")
+
+		s = len(args) > 5 and args[5] or "December 24, 2099 11:59 PM"
+		t, parsed = cal.parse(s)
+		if parsed > 0:
+			log.debug(str(t))
+			endtime = datetime(*t[:6], tzinfo = timezone(timedelta(seconds = -time.timezone)))
+		else:
+			raise CPanelError("error parsing end time")
+
+		parameters['start'] = int(starttime.timestamp())
+		parameters['stop'] = int(endtime.timestamp())
+
+		log.debug(str(parameters))
+		return self.check(lambda: self.client.uapi.Email.add_auto_responder(**parameters))
+
+
 	def upload_file(self, directory: str, filename: str) -> str:
-		""".
+		"""Upload a local file to a remote directory.
+
+		directory   remote path to directory
+		filename    local file name
+
+		Returns "OK" or prints error
 		"""
 		if not os.path.isfile(filename):
 			raise CPanelError("missing file {}".format(filename))

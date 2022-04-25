@@ -1,0 +1,93 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/themes.rst:7
+msgid "Module: ``themes``"
+msgstr "Módulo: ``themes``"
+
+#: ../../reference/themes.rst:9
+msgid "`Leer en español </es/latest/reference/themes.html>`_"
+msgstr "`Read in English </en/latest/reference/themes.html>`_"
+
+#: ../../reference/themes.rst:11 ../../reference/themes.rst:21
+msgid "**list themes**"
+msgstr "**list themes**"
+
+#: ../../reference/themes.rst:12 ../../reference/themes.rst:34
+msgid "**get theme**"
+msgstr "**get theme**"
+
+#: ../../reference/themes.rst:13 ../../reference/themes.rst:47
+msgid "**set theme NAME**"
+msgstr "**set theme NAME**"
+
+#: ../../reference/themes.rst:15
+msgid ""
+"A theme is a customized look and feel for the cPanel user interface. The "
+"default cPanel theme is ‘jupiter’; another popular theme is ‘paper "
+"lantern’."
+msgstr ""
+"Un tema es una apariencia personalizada "
+"para la interfaz de usuario de "
+"cPanel. El tema por defecto de "
+"cPanel es ‘jupiter’; otro tema popular "
+"es ‘paper lantern’."
+
+#: ../../reference/themes.rst:18
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/themes.rst:23
+msgid "Return all the available themes."
+msgstr "Devuelve todos los temas disponibles."
+
+#: ../../reference/themes.rst:25 ../../reference/themes.rst:38
+#: ../../reference/themes.rst:52
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/themes.rst:31
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Themes::list/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Themes::list/"
+
+#: ../../reference/themes.rst:36
+msgid "Return the current theme."
+msgstr "Devuelve el tema actual."
+
+#: ../../reference/themes.rst:44
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_theme_base/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_theme_base/"
+
+#: ../../reference/themes.rst:49
+msgid ""
+"Set the current theme to NAME. NAME must be one the available themes "
+"reported by ‘cpanel list themes’."
+msgstr ""
+"Establece el tema actual a NAME. "
+"NAME debe ser uno de los temas "
+"disponibles según lo reporta ‘cpanel "
+"list themes’."
+

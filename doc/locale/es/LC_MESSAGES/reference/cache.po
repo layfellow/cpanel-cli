@@ -1,0 +1,69 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/cache.rst:7
+msgid "Module: ``cache``"
+msgstr "Módulo: ``cache``"
+
+#: ../../reference/cache.rst:9
+msgid "`Leer en español </es/latest/reference/cache.html>`_"
+msgstr "`Read in English </en/latest/reference/cache.html>`_"
+
+#: ../../reference/cache.rst:11 ../../reference/cache.rst:17
+msgid "**update cache**"
+msgstr "**update cache**"
+
+#: ../../reference/cache.rst:12 ../../reference/cache.rst:30
+msgid "**read cache**"
+msgstr "**read cache**"
+
+#: ../../reference/cache.rst:14
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/cache.rst:19
+msgid "Create web browser cached file override ID."
+msgstr "Crea un  ID de anulación de caché del navegador web."
+
+#: ../../reference/cache.rst:21 ../../reference/cache.rst:34
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/cache.rst:27
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/update/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/update/"
+
+#: ../../reference/cache.rst:32
+msgid "Return web browser cached file override ID."
+msgstr "Devuelve el ID de anulación de caché del navegador web."
+
+#: ../../reference/cache.rst:40
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-read/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/CacheBuster-"
+"read/"
+

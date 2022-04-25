@@ -1,0 +1,142 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/backup.rst:7
+msgid "Module: ``backup``"
+msgstr "Módulo: ``backup``"
+
+#: ../../reference/backup.rst:9
+msgid "`Leer en español </es/latest/reference/backup.html>`_"
+msgstr "`Read in English </en/latest/reference/backup.html>`_"
+
+#: ../../reference/backup.rst:11 ../../reference/backup.rst:27
+msgid "**create backup home [EMAIL]**"
+msgstr "**cpanel backup home [EMAIL]**"
+
+#: ../../reference/backup.rst:12 ../../reference/backup.rst:31
+msgid "**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
+msgstr "**create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
+
+
+#: ../../reference/backup.rst:13 ../../reference/backup.rst:42
+msgid "**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
+msgstr "**create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**"
+
+#: ../../reference/backup.rst:14 ../../reference/backup.rst:58
+msgid "**list backups**"
+msgstr "**list backups**"
+
+#: ../../reference/backup.rst:16
+msgid "**COMMANDS**"
+msgstr "*COMANDOS*"
+
+#: ../../reference/backup.rst:19
+msgid ""
+"All ‘create backup’ commands create a backup tarball (a .tar.gz file) of "
+"the user’s home directory along with other account data, such as the "
+"crontab, API tokens, log files and DB data. The backup tarball’s name is "
+"backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz."
+msgstr ""
+"Todos los comandos ``create backup`` "
+"crean un tarball de respaldo (un "
+"archivo ``tar.gz``) del directorio home "
+"del usuario junto con otros datos "
+"de la cuenta, como el crontab, "
+"tokens de API, archivos de log y"
+" bases de datos. El nombre del "
+"tarball de respaldo es ``backup-MM.DD"
+".YYY_HH-MM-SS_USERNAME.tar.gz``."
+
+#: ../../reference/backup.rst:24
+msgid ""
+"If you pass an optional EMAIL argument, the backup engine will send a "
+"confirmation email after it completes the backup."
+msgstr ""
+"Si se pasa el argumento opcional "
+"EMAIL, el motor de respaldo envia "
+"un correo electrónico de confirmación "
+"después de que complete el respaldo."
+
+#: ../../reference/backup.rst:29
+msgid "Create a backup tarball and store it in the user’s home directory itself."
+msgstr ""
+"Crea un tarball de respaldo y lo"
+" almacena en el mismo directorio home"
+" del usuario."
+
+#: ../../reference/backup.rst:33
+msgid "Create a backup tarball and store it on a remote FTP server."
+msgstr "Crea un tarball de respaldo y lo almacena en un servidor FTP remoto."
+
+#: ../../reference/backup.rst:35
+msgid ""
+"HOST is the hostname of the remote FTP server. USERNAME and PASSWORD are "
+"the credentials to log in to it. Optional DIRECTORY is the destination "
+"directory on the remote server; by default use the remote user’s login "
+"directory. Note that DIRECTORY is not an absolute path, but a path "
+"relative to the login directory, i.e., /public corresponds to <remote "
+"login directory>/public."
+msgstr ""
+"HOST es el nombre de host del "
+"servidor FTP remoto. USERNAME y PASSWORD"
+" son las credenciales para acceder a"
+" éste. DIRECTORY (opcional) es el "
+"directorio de destino en el servidor "
+"remoto; por defecto se usa el "
+"directorio de inicio de sesión del "
+"usuario remoto. Tenga en cuenta que "
+"DIRECTORY no es una ruta absoluta, "
+"sino una ruta relativa al directorio "
+"de inicio de sesión, es decir, "
+"/public corresponde a <directorio de "
+"inicio remoto>/public."
+
+#: ../../reference/backup.rst:44
+msgid "Create a backup tarball and store it on a remote SCP server."
+msgstr "Crea un tarball de respaldo y lo almacena en un servidor SCP remoto."
+
+#: ../../reference/backup.rst:46
+msgid ""
+"USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ‘create backup"
+" ftp’."
+msgstr ""
+"USERNAME, PASSWORD, HOST y DIRECTORY son"
+" los mismos que para ‘create backup"
+" ftp’."
+
+#: ../../reference/backup.rst:48
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/backup.rst:60
+msgid "List the account’s backup files."
+msgstr "Lista los archivos de respaldo de la cuenta."
+
+#: ../../reference/backup.rst:62
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/backup.rst:68
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/"
+

@@ -1,0 +1,82 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/bandwidth.rst:7
+msgid "Module: ``bandwidth``"
+msgstr "Módulo: ``bandwidth``"
+
+#: ../../reference/bandwidth.rst:9
+msgid "`Leer en español </es/latest/reference/bandwidth.html>`_"
+msgstr "`Read in English </en/latest/reference/bandwidth.html>`_"
+
+#: ../../reference/bandwidth.rst:11 ../../reference/bandwidth.rst:20
+msgid "**get bandwidth services**"
+msgstr "**get bandwidth services**"
+
+#: ../../reference/bandwidth.rst:12 ../../reference/bandwidth.rst:33
+msgid "**get bandwidth retention**"
+msgstr "**get bandwidth retention**"
+
+#: ../../reference/bandwidth.rst:14
+msgid ""
+"For further information see: "
+"https://docs.cpanel.net/cpanel/metrics/bandwidth/"
+msgstr ""
+"Para más información véase: "
+"https://docs.cpanel.net/cpanel/metrics/bandwidth/"
+
+#: ../../reference/bandwidth.rst:17
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/bandwidth.rst:22
+msgid "Return a list of services (by protocol) being monitored in bandwidth data."
+msgstr ""
+"Devuelve una lista de servicios (por "
+"protocolo) cuyo uso de ancho de "
+"banda es monitoreado."
+
+#: ../../reference/bandwidth.rst:24 ../../reference/bandwidth.rst:37
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/bandwidth.rst:30
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_enabled_protocols/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_enabled_protocols/"
+
+#: ../../reference/bandwidth.rst:35
+msgid "Get the collection interval and retention periods for bandwidth data."
+msgstr ""
+"Obtiene el intervalo de recolección y"
+" los períodos de retención para datos"
+" de ancho de banda."
+
+#: ../../reference/bandwidth.rst:43
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_retention_periods/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_retention_periods/"
+

@@ -225,8 +225,37 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "delete file trash", "rm file trash", "remove file trash"):
 			r = host.check(lambda: uapi.Fileman.empty_trash(older_than = int(args[3]) if len(args) > 3 else 0))
 
+		elif cmd_is(cmd, "count mail account"):
+			r = host.dump(lambda: uapi.Email.count_pops())
+
+		elif cmd_is(cmd, "get mail setting"):
+			r = host.dump(lambda: uapi.Email.get_client_settings(account = args[3]))
+
 		elif cmd_is(cmd, "list mail account"):
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
+
+		elif cmd_is(cmd, "list mail boxes"):
+			if(len(args) > 4):
+				r = host.dump(lambda: uapi.Email.browse_mailbox(account = args[3], dir = args[4], show_hidden_files = 1))
+			if(len(args) > 3):
+				r = host.dump(lambda: uapi.Email.browse_mailbox(account = args[3], show_hidden_files = 1))
+			else:
+				r = host.dump(lambda: uapi.Email.browse_mailbox(show_hidden_files = 1))
+
+		elif cmd_is(cmd, "list mail autoresponder"):
+			r = host.dump(lambda: uapi.Email.list_auto_responders(domain = args[3]))
+
+		elif cmd_is(cmd, "count mail autoresponder"):
+			r = host.dump(lambda: uapi.Email.count_auto_responders())
+
+		elif cmd_is(cmd, "get mail autoresponder"):
+			r = host.dump(lambda: uapi.Email.get_auto_responder(email = args[3]))
+
+		elif cmd_is(cmd, "set mail autoresponder"):
+			r = host.set_mail_autoresponder(*args[3:])
+
+		elif cmd_is(cmd, "delete mail autoresponder", "rm mail autoresponder", "remove mail autoresponder"):
+			r = host.check(lambda: uapi.Email.delete_auto_responder(email = args[3]))
 
 		elif cmd_is(cmd, "list mail filter"):
 			r = host.dump_extracted('filtername', lambda: uapi.Email.list_filters(account = args[3]))
@@ -239,6 +268,15 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 
 		elif cmd_is(cmd, "delete mail filter", "rm mail filter", "remove mail filter"):
 			r = host.check(lambda: uapi.Email.delete_filter(account = args[3], filtername = args[4]))
+
+		elif cmd_is(cmd, "get webmail setting"):
+			if len(args) > 3:
+				r = host.dump(lambda: uapi.Email.get_webmail_settings(account = args[3]))
+			else:
+				r = host.dump(lambda: uapi.Email.get_webmail_settings())
+
+		elif cmd_is(cmd, "list webmail app"):
+			r = host.dump(lambda: uapi.WebmailApps.list_webmail_apps())
 
 		else:
 			die("unrecognized command, {}".format(cmd))
@@ -270,16 +308,14 @@ def main() -> None:
 		elif len(args) < 1:
 			print(usage())
 		elif _help:
-			print(usage(args[0]))
+			print(usage(*args[1:]))
 		elif args[0] == 'version':
 			print(version())
 		elif args[0] == 'help':
 			if len(args) < 2:
 				print(usage())
 			else:
-				if 'dir' in args[1]:
-					args[1] = 'dir'
-				print(usage(args[1]))
+				print(usage(*args[1:]))
 		else:
 			args, hostname, username, utoken = configuration(args, os.environ, RCFILE)
 			if hostname is None: die("missing cPanel hostname, use cpanel --help")

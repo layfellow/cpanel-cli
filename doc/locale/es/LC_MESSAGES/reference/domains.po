@@ -1,0 +1,115 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/domains.rst:7
+msgid "Module: ``domains``"
+msgstr "Módulo: ``domains``"
+
+#: ../../reference/domains.rst:9
+msgid "`Leer en español </es/latest/reference/domains.html>`_"
+msgstr "`Read in English </en/latest/reference/domains.html>`_"
+
+#: ../../reference/domains.rst:11 ../../reference/domains.rst:19
+msgid "**list domains**"
+msgstr "**list domains**"
+
+#: ../../reference/domains.rst:12 ../../reference/domains.rst:32
+msgid "**list domain data**"
+msgstr "**list domain data**"
+
+#: ../../reference/domains.rst:13 ../../reference/domains.rst:45
+msgid "**get domain data DOMAIN**"
+msgstr "**get domain data DOMAIN**"
+
+#: ../../reference/domains.rst:14 ../../reference/domains.rst:59
+msgid "**get domain aliases**"
+msgstr "**get domain aliases**"
+
+#: ../../reference/domains.rst:16
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/domains.rst:21
+msgid "List domains for the cPanel account’s."
+msgstr "Lista los dominios de esta cuenta de cPanel."
+
+#: ../../reference/domains.rst:23 ../../reference/domains.rst:36
+#: ../../reference/domains.rst:50 ../../reference/domains.rst:63
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/domains.rst:29
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_domains/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_domains/"
+
+#: ../../reference/domains.rst:34
+msgid "Get hosting data for all the cPanel account’s domains."
+msgstr ""
+"Obtiene los datos de hosting para "
+"todos los dominios de esta cuenta "
+"de cPanel."
+
+#: ../../reference/domains.rst:42
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/domains_data/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/domains_data/"
+
+#: ../../reference/domains.rst:47
+msgid ""
+"Get hosting data for DOMAIN. Use ‘cpanel list domains’ to get a list of "
+"domains."
+msgstr ""
+"Obtiene los datos de hosting para "
+"el dominio DOMAIN. Use ‘cpanel list "
+"domains’ para obtener una lista de "
+"dominios."
+
+#: ../../reference/domains.rst:56
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/single_domain_data/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/single_domain_data/"
+
+#: ../../reference/domains.rst:61
+msgid "List the built-in subdomain aliases for an account’s main domain."
+msgstr ""
+"Lista los alias de los subdominios "
+"incorporados para el dominio principal "
+"de esta cuenta."
+
+#: ../../reference/domains.rst:69
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/main_domain_builtin_subdomain_aliases/"
+msgstr ""
+"Vea una muestra del resultado en "
+"formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/main_domain_builtin_subdomain_aliases/"
+
