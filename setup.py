@@ -24,7 +24,8 @@ setup(
 	packages = ['cpanel'],
 	python_requires = '>=3.8',
 	install_requires = [
-		'cpanel-api>=0.3.0'
+		'cpanel-api>=0.3.0',
+		'parsedatetime>=2.6'
 	],
 	entry_points = {
 		'console_scripts': [
