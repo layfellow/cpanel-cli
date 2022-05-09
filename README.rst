@@ -10,9 +10,11 @@
     :alt: Documentation Status
     :target: https://cpanel-cli.readthedocs.io/en/latest/?badge=latest
 
-===============================================
-|cpanel_cli_icon| cPanel Command Line Interface
-===============================================
+=============================
+cPanel Command Line Interface
+=============================
+
+|cpanel_cli_icon|
 
 `LÉAME en español <#interfaz-de-linea-de-comandos-para-cpanel>`_
 
@@ -149,9 +151,11 @@ See `CONTRIBUTING <https://github.com/layfellow/cpanel-cli/blob/main/CONTRIBUTIN
     :alt: Status de la documentación
     :target: https://cpanel-cli.readthedocs.io/es/latest/?badge=latest
 
-============================================================
-|cpanel_cli_icon|  Interfaz de línea de comandos para cPanel
-============================================================
+=========================================
+Interfaz de línea de comandos para cPanel
+=========================================
+
+|cpanel_cli_icon|
 
 `README in English <#cpanel-command-line-interface>`_
 
