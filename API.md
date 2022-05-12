@@ -118,7 +118,7 @@
 - [ ] Email::change_mx
 - [ ] Email::check_fastmail
 - [x] Email::count_auto_responders
-- [ ] Email::count_filters
+- [x] Email::count_filters
 - [ ] Email::count_forwarders
 - [ ] Email::count_lists
 - [x] Email::count_pops
@@ -130,14 +130,14 @@
 - [ ] Email::delete_list
 - [ ] Email::delete_mx
 - [ ] Email::delete_pop
-- [ ] Email::disable_filter
+- [x] Email::disable_filter
 - [ ] Email::disable_mailbox_autocreate
 - [ ] Email::disable_spam_assassin
 - [ ] Email::disable_spam_autodelete
 - [ ] Email::disable_spam_box
 - [ ] Email::dispatch_client_settings
-- [ ] Email::edit_pop_quota
-- [ ] Email::enable_filter
+- [x] Email::edit_pop_quota
+- [x] Email::enable_filter
 - [ ] Email::enable_mailbox_autocreate
 - [ ] Email::enable_spam_assassin
 - [ ] Email::enable_spam_box
@@ -147,19 +147,19 @@
 - [x] Email::get_auto_responder
 - [ ] Email::get_charsets
 - [x] Email::get_client_settings
-- [ ] Email::get_default_email_quota
-- [ ] Email::get_default_email_quota_mib
-- [ ] Email::get_disk_usage
+- [-] Email::get_default_email_quota
+- [x] Email::get_default_email_quota_mib
+- [x] Email::get_disk_usage
 - [x] Email::get_filter
 - [ ] Email::get_held_message_count
 - [ ] Email::get_lists_total_disk_usage
 - [ ] Email::get_mailbox_autocreate
 - [ ] Email::get_mailman_delegates
-- [ ] Email::get_main_account_disk_usage
-- [ ] Email::get_main_account_disk_usage_bytes
-- [ ] Email::get_max_email_quota
-- [ ] Email::get_max_email_quota_mib
-- [ ] Email::get_pop_quota
+- [-] Email::get_main_account_disk_usage
+- [-] Email::get_main_account_disk_usage_bytes
+- [-] Email::get_max_email_quota
+- [x] Email::get_max_email_quota_mib
+- [x] Email::get_pop_quota
 - [ ] Email::get_spam_settings
 - [x] Email::get_webmail_settings
 - [ ] Email::has_delegated_mailman_lists
@@ -211,8 +211,8 @@
 - [ ] ExternalAuthentication::get_authn_links
 - [ ] ExternalAuthentication::has_external_auth_modules_configured
 - [ ] ExternalAuthentication::remove_authn_link
-- [ ] Features::get_feature_metadata
-- [ ] Features::has_feature
+- [x] Features::get_feature_metadata
+- [x] Features::has_feature
 - [x] Features::list_features
 - [x] Fileman::autocompletedir
 - [x] Fileman::empty_trash

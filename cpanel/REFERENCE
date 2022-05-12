@@ -1,12 +1,35 @@
 Usage: cpanel list features
+    cpanel get feature details
+    cpanel has feature FEATURE
 
-List a cPanel account’s features.
+\033[1mCOMMANDS\033[0m
 
-EXAMPLE
-    \033[1;34mcpanel list features\033[00m
+\033[1mlist features\033[0m
+    List a cPanel account’s features.
 
-See a sample of the JSON result data at:
-https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/
+    EXAMPLE
+        \033[1;34mcpanel list features\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/
+
+\033[1mget feature details\033[0m
+    Get details for all available features. Details include whether the
+    feature is a plug-in or an add-on, and a long name.
+
+    EXAMPLE
+        \033[1;34mcpanel get feature details\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_feature_metadata/
+
+\033[1mhas feature FEATURE\033[0m
+    Return ‘1’ if a cPanel account has FEATURE, ‘0’ if it doesn’t.
+    If FEATURE is an invalid name, return ‘null’.
+    For a list of valid FEATURE names, see ‘cpanel list features’.
+
+    EXAMPLE
+        \033[1;34mcpanel has feature autossl\033[00m
 
 ---
 
@@ -927,8 +950,11 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
 ---
 
 Usage: cpanel list mail filters ACCOUNT
+    cpanel count mail filters
     cpanel get mail filter ACCOUNT FILTERNAME
     cpanel set mail filter ACCOUNT FILE
+    cpanel enable mail filter ACCOUNT FILTERNAME
+    cpanel disable mail filter ACCOUNT FILTERNAME
     cpanel delete mail filter ACCOUNT FILTERNAME
 
 ACCOUNT is the name of a cPanel email account, usually in the
@@ -946,6 +972,12 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/
+
+\033[1mcount mail filters\033[0m
+    Return the total number of mail filters for all accounts.
+
+    EXAMPLE
+        \033[1;34mcpanel count mail filters\033[00m
 
 \033[1mget mail filter ACCOUNT FILTERNAME\033[0m
     Return a JSON-formatted description of email filter FILTERNAME associated
@@ -971,12 +1003,81 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
         \033[1;34mcpanel get mail filter scott@example.com spamkiller > filter.json\033[00m
         \033[1;34mcpanel set mail filter scott@example.com filter.json\033[00m
 
+\033[1menable mail filter ACCOUNT FILTERNAME\033[0m
+    Enable FILTERNAME associated to ACCOUNT. To get a list of current
+    filter names, use ‘cpanel list mail filters ACCOUNT’
+
+    EXAMPLE
+        \033[1;34mcpanel enable mail filter scott@example.com spamkiller\033[00m
+
+\033[1mdisable mail filter ACCOUNT FILTERNAME\033[0m
+    Disable FILTERNAME associated to ACCOUNT. To get a list of current
+    filter names, use ‘cpanel list mail filters ACCOUNT’
+
+    EXAMPLE
+        \033[1;34mcpanel disable mail filter scott@example.com spamkiller\033[00m
+
 \033[1mdelete mail filter ACCOUNT FILTERNAME\033[0m
     Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
     filter names, use ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
          \033[1;34mcpanel delete mail filter scott@example.com spamkiller\033[00m
+
+---
+
+Usage: cpanel get mail quota ACCOUNT
+    cpanel set mail quota ACCOUNT QUOTA
+    cpanel get mail quota default
+    cpanel get mail quota max
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mget mail quota ACCOUNT\033[0m
+    Return the email quota in megabytes allocated to ACCOUNT,
+    or "unlimited" if there’s no quota.
+
+    EXAMPLE
+        \033[1;34mcpanel get mail quota scott@example.com\033[00m
+
+\033[1mset mail quota ACCOUNT QUOTA\033[0m
+    Set the email QUOTA in megabytes allocated to ACCOUNT;
+    use ‘0’ or ‘unlimited’ to set an unlimited quota.
+
+    EXAMPLES
+        \033[1;34mcpanel set mail quota scott@example.com 1024\033[00m
+        \033[1;34mcpanel set mail quota scott@example.com 0\033[00m
+        \033[1;34mcpanel set mail quota scott@example.com unlimited\033[00m
+
+\033[1mget mail quota max\033[0m
+    Return the maximum email quota in megabytes allowed in cPanel.
+
+    EXAMPLE
+        \033[1;34mcpanel get mail quota max\033[00m
+
+\033[1mget mail quota default\033[0m
+    Return the default email quota in megabytes allocated in cPanel.
+
+    EXAMPLE
+        \033[1;34mcpanel get mail quota default\033[00m
+
+---
+
+Usage: cpanel get mail usage ACCOUNT
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Return the disk space in megabytes used by ACCOUNT.
+
+EXAMPLE
+   \033[1;34mcpanel get mail usage scott@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_disk_usage/
 
 ---
 

@@ -104,6 +104,8 @@ mail settings
 mail boxes
 mail autoresponders
 mail filters
+mail quota
+mail usage
 
 Use ‘cpanel help mail SUBMODULES’ to learn more about the functions implemented
 for SUBMODULE; for example, ‘cpanel help mail autoresponders’ to print detailed

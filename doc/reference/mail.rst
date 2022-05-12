@@ -213,8 +213,11 @@ Delete an autoresponder for ACCOUNT.
 ==================================================
 
 - **list mail filters ACCOUNT**
+- **count mail filters**
 - **get mail filter ACCOUNT FILTERNAME**
 - **set mail filter ACCOUNT FILE**
+- **enable mail filter ACCOUNT FILTERNAME**
+- **disable mail filter ACCOUNT FILTERNAME**
 - **delete mail filter ACCOUNT FILTERNAME**
 
 ACCOUNT is the name of a cPanel email account, usually in the
@@ -237,6 +240,16 @@ List mail filters associated to ACCOUNT.
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/
+
+**count mail filters**
+
+Return the total number of mail filters for all accounts.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel count mail filters
 
 **get mail filter ACCOUNT FILTERNAME**
 
@@ -270,6 +283,28 @@ See the EXAMPLE below.
     $ cpanel get mail filter scott@example.com spamkiller > filter.json
     $ cpanel set mail filter scott@example.com filter.json
 
+**enable mail filter ACCOUNT FILTERNAME**
+
+Enable FILTERNAME associated to ACCOUNT. To get a list of current
+filter names, use ‘cpanel list mail filters ACCOUNT’
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel enable mail filter scott@example.com spamkiller
+
+**disable mail filter ACCOUNT FILTERNAME**
+
+Disable FILTERNAME associated to ACCOUNT. To get a list of current
+filter names, use ‘cpanel list mail filters ACCOUNT’
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel disable mail filter scott@example.com spamkiller
+
 **delete mail filter ACCOUNT FILTERNAME**
 
 Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
@@ -280,5 +315,86 @@ filter names, use ‘cpanel list mail filters ACCOUNT’
 .. code:: sh
 
     $ cpanel delete mail filter scott@example.com spamkiller
+
+
+
+``quota``
+==================================================
+
+- **get mail quota ACCOUNT**
+- **set mail quota ACCOUNT QUOTA**
+- **get mail quota default**
+- **get mail quota max**
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+**COMMANDS**
+
+
+**get mail quota ACCOUNT**
+
+Return the email quota in megabytes allocated to ACCOUNT,
+or "unlimited" if there’s no quota.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get mail quota scott@example.com
+
+**set mail quota ACCOUNT QUOTA**
+
+Set the email QUOTA in megabytes allocated to ACCOUNT;
+use ‘0’ or ‘unlimited’ to set an unlimited quota.
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel set mail quota scott@example.com 1024
+    $ cpanel set mail quota scott@example.com 0
+    $ cpanel set mail quota scott@example.com unlimited
+
+**get mail quota max**
+
+Return the maximum email quota in megabytes allowed in cPanel.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get mail quota max
+
+**get mail quota default**
+
+Return the default email quota in megabytes allocated in cPanel.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get mail quota default
+
+
+
+``usage``
+==================================================
+
+- **get mail usage ACCOUNT**
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Return the disk space in megabytes used by ACCOUNT.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get mail usage scott@example.com
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_disk_usage/
 
 

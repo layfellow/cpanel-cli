@@ -19,6 +19,20 @@ log: Logger = logging.getLogger(__name__)
 logging.getLogger('cpanel_api').setLevel(log.getEffectiveLevel())
 
 
+def username(email: str) -> str:
+	n: int = email.find("@")
+	if n < 0:
+		raise CPanelError("invalid email, {}".format(email))
+	return email[:n]
+
+
+def domain(email: str) -> str:
+	n: int = email.find("@")
+	if n < 0:
+		raise CPanelError("invalid email, {}".format(email))
+	return email[n + 1:]
+
+
 def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 	"""Make a cPanel API call corresponding to the args.
 
@@ -42,6 +56,12 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 	try:
 		if cmd_is(cmd, "list feature"):
 			r = host.dump(lambda: uapi.Features.list_features())
+
+		elif cmd_is(cmd, "get feature detail"):
+			r = host.dump(lambda: uapi.Features.get_feature_metadata())
+
+		elif cmd_is(cmd, "has feature"):
+			r = host.dump(lambda: uapi.Features.has_feature(name = args[2]))
 
 		elif cmd_is(cmd, "get quota"):
 			r = host.dump(lambda: uapi.Quota.get_quota_info())
@@ -260,14 +280,38 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "list mail filter"):
 			r = host.dump_extracted('filtername', lambda: uapi.Email.list_filters(account = args[3]))
 
+		elif cmd_is(cmd, "count mail filter"):
+			r = host.dump(lambda: uapi.Email.count_filters())
+
 		elif cmd_is(cmd, "get mail filter"):
 			r = host.dump(lambda: uapi.Email.get_filter(account = args[3], filtername = args[4]))
 
 		elif cmd_is(cmd, "set mail filter"):
 			r = host.set_mail_filter(args[3], args[4])
 
+		elif cmd_is(cmd, "enable mail filter"):
+			r = host.check(lambda: uapi.Email.enable_filter(account = args[3], filtername = args[4]))
+
+		elif cmd_is(cmd, "disable mail filter"):
+			r = host.check(lambda: uapi.Email.disable_filter(account = args[3], filtername = args[4]))
+
 		elif cmd_is(cmd, "delete mail filter", "rm mail filter", "remove mail filter"):
 			r = host.check(lambda: uapi.Email.delete_filter(account = args[3], filtername = args[4]))
+
+		elif cmd_is(cmd, "get mail quota"):
+			if args[3].lower() == "default":
+				r = host.dump(lambda: uapi.Email.get_default_email_quota_mib())
+			elif args[3].lower() == "max":
+				r = host.dump(lambda: uapi.Email.get_max_email_quota_mib())
+			else:
+				r = host.dump(lambda: uapi.Email.get_pop_quota(email = args[3]))
+
+		elif cmd_is(cmd, "set mail quota"):
+			r = host.check(lambda: uapi.Email.edit_pop_quota(
+				email = username(args[3]), domain = domain(args[3]), quota = args[4]))
+
+		elif cmd_is(cmd, "get mail usage"):
+			r = host.dump(lambda: uapi.Email.get_disk_usage(user = username(args[3]), domain = domain(args[3])))
 
 		elif cmd_is(cmd, "get webmail setting"):
 			if len(args) > 3:

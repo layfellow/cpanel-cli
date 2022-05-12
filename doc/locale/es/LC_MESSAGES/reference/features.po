@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Creation-Date: 2022-04-10 22:10-0400\n"
-"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"POT-Creation-Date: 2022-05-11 15:03-0400\n"
+"PO-Revision-Date: 2020-05-11 14:16-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,28 +24,63 @@ msgstr "Módulo: ``features``"
 msgid "`Leer en español </es/latest/reference/features.html>`_"
 msgstr "`Read in English </en/latest/reference/features.html>`_"
 
-#: ../../reference/features.rst:11
+#: ../../reference/features.rst:11 ../../reference/features.rst:18
 msgid "**list features**"
 msgstr "**list features**"
 
-#: ../../reference/features.rst:13
-msgid "List a cPanel account’s features."
+#: ../../reference/features.rst:12 ../../reference/features.rst:31
+msgid "**get feature details**"
+msgstr "**get feature details**"
 
-msgstr ""
-"Lista las características de una cuenta"
-" de cPanel. La salida está en "
-"formato JSON."
+#: ../../reference/features.rst:13 ../../reference/features.rst:45
+msgid "**has feature FEATURE**"
+msgstr "**has feature FEATURE**"
 
 #: ../../reference/features.rst:15
+msgid "**COMMANDS**"
+msgstr "**COMMANDS**"
+
+#: ../../reference/features.rst:20
+msgid "List a cPanel account’s features."
+msgstr "Lista las características de una cuenta de cPanel."
+
+#: ../../reference/features.rst:22 ../../reference/features.rst:36
+#: ../../reference/features.rst:51
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
-#: ../../reference/features.rst:21
+#: ../../reference/features.rst:28
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/"
 msgstr ""
-"Vea una muestra del resultado en "
-"formato JSON en: "
+"Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_features/"
+
+#: ../../reference/features.rst:33
+msgid ""
+"Get details for all available features. Details include whether the "
+"feature is a plug-in or an add-on, and a long name."
+msgstr ""
+"Obtiene los detalles de todas las características disponibles. Los "
+"detalles incluyen si la función es un plug-in o un add-on, y un nombre "
+"largo."
+
+#: ../../reference/features.rst:42
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_feature_metadata/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_feature_metadata/"
+
+#: ../../reference/features.rst:47
+msgid ""
+"Return ‘1’ if a cPanel account has FEATURE, ‘0’ if it doesn’t. If FEATURE"
+" is an invalid name, return ‘null’. For a list of valid FEATURE names, "
+"see ‘cpanel list features’."
+msgstr ""
+"Devuelve ‘1’ si una cuenta de cPanel tiene la característica FEATURE, ‘0’"
+" si no la tiene. Si FEATURE es un nombre no válido, devuelve ‘null’. Para"
+" una lista de nombres válidos para FEATURE, vea ‘cpanel list features’."
 
