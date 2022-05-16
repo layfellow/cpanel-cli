@@ -64,7 +64,23 @@ class CPanelEndpoint:
 			data.append({ key: datum[key] })
 		return json.dumps(data, indent = 4, sort_keys = True)
 
+	
+	def select(self, r: Result, key: str, value: str) -> str:
+		"""Get a single element from array r['data'] which has a key == value.
 
+		r          API call result
+		key        key name
+		value      key value to select
+
+		Returns stringified JSON array with selected key: value pairs
+		"""
+		data: Result = {}
+		for datum in r.data:
+			if datum[key] == value:
+				data = datum
+		return json.dumps(data, indent = 4, sort_keys = True)
+
+	
 	def check(self, apicall: Callable) -> str:
 		"""Call API and check if request was OK, do not print results.
 
@@ -99,6 +115,17 @@ class CPanelEndpoint:
 		return self.safely(r, lambda: self.extract(r, key))
 
 
+	def dump_selected(self, key: str, value: str, apicall: Callable) -> str:
+		"""Call API and get a stringified JSON result whose key == value.
+
+		key        key name to select result
+		value      key value to select result
+		apicall    deferred API call
+		"""
+		r: Result = apicall()
+		return self.safely(r, lambda: self.select(r, key, value))
+
+	
 	def dump_null(self, apicall: Callable, replace: str) -> str:
 		"""Call API and get stringified JSON result, but replaces nulls.
 
