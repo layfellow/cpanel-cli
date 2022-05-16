@@ -33,6 +33,7 @@ module=""
 while read line; do
 	line="${line//‘\\n’/\`\`\\n\`\`}"
 	line="${line//‘\\t’/\`\`\\t\`\`}"
+	line="${line//USER@DOMAIN/USER\\@DOMAIN}"
 
 	if [[ $line =~ ^Usage:\ cpanel\ ([a-z]+)\ ([a-z]+) ]]; then
 		if [ "${BASH_REMATCH[2]}" != "$module" ]; then
