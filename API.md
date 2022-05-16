@@ -220,28 +220,28 @@
 - [x] Fileman::get_file_information
 - [x] Fileman::list_files
 - [x] Fileman::save_file_content
-- [ ] Fileman::transcode
+- [-] Fileman::transcode
 - [x] Fileman::upload_files
-- [ ] Ftp::add_ftp
-- [ ] Ftp::allows_anonymous_ftp
-- [ ] Ftp::allows_anonymous_ftp_incoming
-- [ ] Ftp::delete_ftp
-- [ ] Ftp::ftp_exists
-- [ ] Ftp::get_ftp_daemon_info
-- [ ] Ftp::get_port
-- [ ] Ftp::get_quota
-- [ ] Ftp::get_welcome_message
-- [ ] Ftp::kill_session
-- [ ] Ftp::list_ftp
-- [ ] Ftp::list_ftp_with_disk
-- [ ] Ftp::list_sessions
-- [ ] Ftp::passwd
-- [ ] Ftp::server_name
-- [ ] Ftp::set_anonymous_ftp
-- [ ] Ftp::set_anonymous_ftp_incoming
-- [ ] Ftp::set_homedir
-- [ ] Ftp::set_quota
-- [ ] Ftp::set_welcome_message
+- [x] Ftp::add_ftp
+- [x] Ftp::allows_anonymous_ftp
+- [x] Ftp::allows_anonymous_ftp_incoming
+- [x] Ftp::delete_ftp
+- [x] Ftp::ftp_exists
+- [x] Ftp::get_ftp_daemon_info
+- [x] Ftp::get_port
+- [x] Ftp::get_quota
+- [x] Ftp::get_welcome_message
+- [x] Ftp::kill_session
+- [-] Ftp::list_ftp
+- [x] Ftp::list_ftp_with_disk
+- [x] Ftp::list_sessions
+- [x] Ftp::passwd
+- [-] Ftp::server_name
+- [x] Ftp::set_anonymous_ftp
+- [x] Ftp::set_anonymous_ftp_incoming
+- [x] Ftp::set_homedir
+- [x] Ftp::set_quota
+- [x] Ftp::set_welcome_message
 - [ ] GPG::delete_keypair
 - [ ] GPG::export_public_key
 - [ ] GPG::export_secret_key

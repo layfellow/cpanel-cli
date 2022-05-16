@@ -1,0 +1,378 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: A command line interface for the cPanel Unrestricted "
+"API. \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-16 19:18-0400\n"
+"PO-Revision-Date: 2022-05-16 17:40-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/ftp.rst:7
+msgid "Module: ``ftp``"
+msgstr "Módulo: ``ftp``"
+
+#: ../../reference/ftp.rst:9
+msgid "`Leer en español </es/latest/reference/ftp.html>`_"
+msgstr "`Read in English </en/latest/reference/ftp.html>`_"
+
+#: ../../reference/ftp.rst:11 ../../reference/ftp.rst:33
+msgid "**create ftp USER\\@DOMAIN PASSWORD QUOTA [DIRECTORY]**"
+msgstr "**create ftp USER\\@DOMAIN PASSWORD QUOTA [DIRECTORY]**"
+
+#: ../../reference/ftp.rst:12 ../../reference/ftp.rst:61
+msgid "**check ftp USER\\@DOMAIN**"
+msgstr "**check ftp USER\\@DOMAIN**"
+
+#: ../../reference/ftp.rst:13 ../../reference/ftp.rst:72
+msgid "**get ftp USER\\@DOMAIN**"
+msgstr "**get ftp USER\\@DOMAIN**"
+
+#: ../../reference/ftp.rst:14 ../../reference/ftp.rst:85
+msgid "**get ftp quota USER\\@DOMAIN**"
+msgstr "**get ftp quota USER\\@DOMAIN**"
+
+#: ../../reference/ftp.rst:15 ../../reference/ftp.rst:96
+msgid "**set ftp quota USER\\@DOMAIN QUOTA**"
+msgstr "**set ftp quota USER\\@DOMAIN QUOTA**"
+
+#: ../../reference/ftp.rst:16
+msgid "**set ftp dir USER\\@DOMAIN DIR**"
+msgstr "**set ftp dir USER\\@DOMAIN DIR**"
+
+#: ../../reference/ftp.rst:17 ../../reference/ftp.rst:129
+msgid "**set ftp password USER\\@DOMAIN PASSWORD**"
+msgstr "**set ftp password USER\\@DOMAIN PASSWORD**"
+
+#: ../../reference/ftp.rst:18 ../../reference/ftp.rst:139
+msgid "**list ftp accounts**"
+msgstr "**list ftp accounts**"
+
+#: ../../reference/ftp.rst:19 ../../reference/ftp.rst:153
+msgid "**list ftp sessions**"
+msgstr "**list ftp sessions**"
+
+#: ../../reference/ftp.rst:20 ../../reference/ftp.rst:166
+msgid "**kill ftp session USER\\@DOMAIN**"
+msgstr "**kill ftp session USER\\@DOMAIN**"
+
+#: ../../reference/ftp.rst:21 ../../reference/ftp.rst:179
+msgid "**delete ftp USER\\@DOMAIN**"
+msgstr "**delete ftp USER\\@DOMAIN**"
+
+#: ../../reference/ftp.rst:22 ../../reference/ftp.rst:191
+msgid "**get ftp port**"
+msgstr "**get ftp port**"
+
+#: ../../reference/ftp.rst:23 ../../reference/ftp.rst:204
+msgid "**get ftp server**"
+msgstr "**get ftp server**"
+
+#: ../../reference/ftp.rst:24 ../../reference/ftp.rst:217
+msgid "**enable ftp anon [incoming]**"
+msgstr "**enable ftp anon [incoming]**"
+
+#: ../../reference/ftp.rst:25 ../../reference/ftp.rst:241
+msgid "**disable ftp anon [incoming]**"
+msgstr "**disable ftp anon [incoming]**"
+
+#: ../../reference/ftp.rst:26 ../../reference/ftp.rst:255
+msgid "**get ftp anon [incoming]**"
+msgstr "**get ftp anon [incoming]**"
+
+#: ../../reference/ftp.rst:27 ../../reference/ftp.rst:272
+msgid "**get ftp welcome**"
+msgstr "**get ftp welcome**"
+
+#: ../../reference/ftp.rst:28
+msgid "**set ftp welcome MESSAGE**"
+msgstr "**set ftp welcome MESSAGE**"
+
+#: ../../reference/ftp.rst:30
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/ftp.rst:35
+msgid ""
+"Create a new FTP account using USER\\@DOMAIN and PASSWORD. The DOMAIN "
+"must be a domain owned by your cPanel user. The newly created user will "
+"be allocated QUOTA megabytes of space; use ‘0’ for QUOTA to set an "
+"unlimited quota."
+msgstr ""
+"Crea una nueva cuenta FTP para el usuario USER\\@DOMAIN y con contraseña PASSWORD. El dominio DOMAIN "
+"debe ser propiedad del usuario de cPanel. Al usuario recién creado se le asignan QUOTA megabytes de espacio "
+"en disco; utilice ‘0’ para QUOTA para establecer una cuota ilimitada."
+
+#: ../../reference/ftp.rst:40
+msgid ""
+"Optionally, you can provide the FTP account’s home DIRECTORY to create. "
+"If you don’t provide a DIRECTORY, <DOMAIN>_ftp will be used. You can "
+"later change this using ‘cpanel set ftp dir’ (see below)."
+msgstr ""
+"Opcionalmente, puede proporcionar el directorio inicial DIRECTORY de la "
+"cuenta FTP para crear. Si no se proporciona DIRECTORY, se usa uno de la "
+"forma <DOMAIN>_ftp.Posteriormente se puede cambiar este directorio "
+"inicial con ‘cpanel set ftp dir’ (vea más abajo)."
+
+#: ../../reference/ftp.rst:44 ../../reference/ftp.rst:113
+msgid ""
+"Note that DIRECTORY is not an absolute path, but a path relative to the "
+"cPanel user’s remote login directory, i.e., /my_ftp corresponds to "
+"<remote login directory>/my_ftp."
+msgstr ""
+"Tenga en cuenta que DIRECTORY no es una ruta absoluta, sino que es "
+"relativa al directorio de inicio de sesión del usuario de cPanel, es "
+"decir, /my_ftp corresponde a <directorio de inicio de sesión>/my_ftp."
+
+#: ../../reference/ftp.rst:48 ../../reference/ftp.rst:66
+#: ../../reference/ftp.rst:76 ../../reference/ftp.rst:90
+#: ../../reference/ftp.rst:123 ../../reference/ftp.rst:144
+#: ../../reference/ftp.rst:157 ../../reference/ftp.rst:185
+#: ../../reference/ftp.rst:195 ../../reference/ftp.rst:208
+#: ../../reference/ftp.rst:276 ../../reference/ftp.rst:286
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/ftp.rst:55
+msgid "Access the account using an FTP client:"
+msgstr "Puede acceder a la cuenta usando un cliente FTP:"
+
+#: ../../reference/ftp.rst:57 ../../reference/ftp.rst:232
+msgid "FTP host:     ftp.example.com"
+msgstr "Servidor FTP:     ftp.example.com"
+
+#: ../../reference/ftp.rst:58
+msgid "FTP username: scott@example.com"
+msgstr "Usuario FTP: scott@example.com"
+
+#: ../../reference/ftp.rst:59
+msgid "FTP password: tiger"
+msgstr "Contraseña FTP: tiger"
+
+#: ../../reference/ftp.rst:63
+msgid ""
+"Check whether the FTP account identified by USER\\@DOMAIN exists. Return "
+"‘OK’ if it exists, or an error if it doesn’t."
+msgstr ""
+"Comprueba si existe la cuenta FTP identificada por USER\\@DOMAIN. "
+"Devuelve ‘OK’ si existe, o un error si no existe."
+
+#: ../../reference/ftp.rst:74
+msgid "Get information about FTP account USER\\@DOMAIN."
+msgstr "Obtiene información de la cuenta FTP USER\\@DOMAIN."
+
+#: ../../reference/ftp.rst:82 ../../reference/ftp.rst:150
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_ftp_with_disk/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON "
+"en:https://api.docs.cpanel.net/openapi/cpanel/operation/list_ftp_with_disk/"
+
+#: ../../reference/ftp.rst:87
+msgid ""
+"Return the disk quota in megabytes allocated to FTP USER\\@DOMAIN, or "
+"‘unlimited’ if it has no quota."
+msgstr ""
+"Devuelve la cuota de disco en megabytes asignados al usuario FTP "
+"USER\\@DOMAIN, o ‘unlimited’ si no tiene cuota."
+
+#: ../../reference/ftp.rst:98
+msgid ""
+"Set the disk quota in megabytes allocated to FTP USER\\@DOMAIN; use ‘0’ "
+"for QUOTA to set an unlimited quota."
+msgstr ""
+"Establece la cuota de disco en megabytes para el usuario FTP "
+"USER\\@DOMAIN; utilice ‘0’ para QUOTA para establecer una cuota "
+"ilimitada."
+
+#: ../../reference/ftp.rst:101 ../../reference/ftp.rst:133
+#: ../../reference/ftp.rst:172 ../../reference/ftp.rst:222
+#: ../../reference/ftp.rst:248 ../../reference/ftp.rst:262
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/ftp.rst:108
+msgid "**set ftp dir USER\\@DOMAIN DIRECTORY**"
+msgstr "**set ftp dir USER\\@DOMAIN DIRECTORY**"
+
+#: ../../reference/ftp.rst:110
+msgid ""
+"Set the home DIRECTORY for FTP account USER\\@DOMAIN. If DIRECTORY "
+"doesn’t exist, it is created."
+msgstr ""
+"Establece el directorio DIRECTORY inicial para la cuenta FTP "
+"USER\\@DOMAIN. Si el directorio DIRECTORY no existe, se crea."
+
+#: ../../reference/ftp.rst:117
+msgid ""
+"To get the current home directory for USER\\@DOMAIN, use ‘cpanel get ftp’"
+" (see above)."
+msgstr ""
+"Para obtener el directorio de inicio actual de USER\\@DOMAIN, utilice "
+"'cpanel get ftp' (vea más arriba)."
+
+#: ../../reference/ftp.rst:120
+msgid ""
+"To list all the directories in cPanel user’s remote login directory, use "
+"‘cpanel list files / | jq .[].fullpath’"
+msgstr ""
+"Para listar todos los subdirectorios en el directorio de inicio de sesión"
+" remoto del usuario de cPanel, utilice ‘cpanel list files / | jq "
+".[].fullpath’"
+
+#: ../../reference/ftp.rst:131
+msgid "Change the PASSWORD of FTP USER\\@DOMAIN."
+msgstr "Cambia a PASSWORD la contraseña de usuario FTP USER\\@DOMAIN."
+
+#: ../../reference/ftp.rst:141
+msgid ""
+"List all the FTP accounts on the cPanel server, along with disk usage "
+"information and other data."
+msgstr ""
+"Lista todas las cuentas FTP en el servidor cPanel, junto con información "
+"del uso de disco y otros datos."
+
+#: ../../reference/ftp.rst:155
+msgid "List the active FTP sessions."
+msgstr "Lista las sesiones de FTP activas."
+
+#: ../../reference/ftp.rst:163
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_sessions/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_sessions"
+
+#: ../../reference/ftp.rst:168
+msgid ""
+"Kill the active FTP session associated to USER\\@DOMAIN. Use ‘cpanel list"
+" ftp sessions’ to list all active sessions. Use ‘all’ to kill all active "
+"sessions."
+msgstr ""
+"Elimina la sesión FTP activa asociada a USER\\@DOMAIN. Utilice ‘cpanel "
+"list ftp sessions’ para listar todas las sesiones activas. Use ‘all’ para"
+" eliminar todas las sesiones activas."
+
+#: ../../reference/ftp.rst:181
+msgid ""
+"Delete the FTP account identified by USER\\@DOMAIN. Be advised that the "
+"USER’s FTP directory on the cPanel will also be deleted."
+msgstr ""
+"Eliminar la cuenta FTP identificada por USER\\@DOMAIN. Tenga en cuenta "
+"que el directorio inicial del usuario FTP USER en cPanel también se "
+"elimina."
+
+#: ../../reference/ftp.rst:193
+msgid "Return the FTP port open on the server."
+msgstr "Devuelve el puerto FTP abierto en el servidor."
+
+#: ../../reference/ftp.rst:201
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_port/"
+msgstr ""
+"Véase una muestra de los datos de resultados de JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_port"
+
+#: ../../reference/ftp.rst:206
+msgid "Return information about the FTP server software."
+msgstr "Devuelve información sobre el software del servidor FTP."
+
+#: ../../reference/ftp.rst:214
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_ftp_daemon_info/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_ftp_daemon_info/"
+
+#: ../../reference/ftp.rst:219
+msgid ""
+"Enable anonymous FTP users to download files. If ‘incoming’ is passed, "
+"also enable the anonymous user to upload files."
+msgstr ""
+"Habilita la descarga de archivos para usuarios FTP anónimos. Si se pasa "
+"‘incoming’, también permite a los usuarios anónimos subir archivos."
+
+#: ../../reference/ftp.rst:229
+msgid ""
+"Assuming your cPanel domain is ‘example.com’, then an anonymous user can "
+"access your FTP server using the following (no password required):"
+msgstr ""
+"Asumiendo que su dominio cPanel es ‘example.com’, entonces un usuario "
+"anónimo puede acceder a su servidor FTP utilizando lo siguiente (no se "
+"requiere contraseña):"
+
+#: ../../reference/ftp.rst:233
+msgid "FTP username: anonymous@example.com"
+msgstr "Usuario FTP: anonymous@example.com"
+
+#: ../../reference/ftp.rst:235
+msgid ""
+"If ‘incoming’ is enabled, the anonymous user can also upload files to the"
+" /incoming directory."
+msgstr ""
+"Si ‘incoming’ está habilitado, un usuario anónimo también puede subir "
+"archivos al directorio /incoming."
+
+#: ../../reference/ftp.rst:238
+msgid ""
+"For further information, see: https://docs.cpanel.net/cpanel/files"
+"/anonymous-ftp/"
+msgstr ""
+"Para más información, vea: https://docs.cpanel.net/cpanel/files"
+"/anonymous-ftp/"
+
+#: ../../reference/ftp.rst:243
+msgid ""
+"Disable anonymous FTP users to download files. If ‘incoming’ is passed, "
+"also disable the anonymous user to upload files."
+msgstr ""
+"Deshabilita la descarga de archivos para usuarios anónimos de FTP. Si se "
+"pasa ‘incoming’, también deshabilita a los usuarios anónimos para subir "
+"archivos."
+
+#: ../../reference/ftp.rst:246 ../../reference/ftp.rst:260
+msgid "See ‘cpanel enable ftp anon’ above for further details."
+msgstr "Vea ‘cpanel enable ftp anon’ arriba para más detalles."
+
+#: ../../reference/ftp.rst:257
+msgid ""
+"Return whether anonymous FTP users are allowed. If ‘incoming’ is passed, "
+"return whether the anonymous FTP user is allowed to upload files."
+msgstr ""
+"Devuelve si se permiten usuarios FTP anónimos. Si se pasa ‘incoming’, "
+"devuelve si se permite a los usuarios anónimos de FTP subir archivos."
+
+#: ../../reference/ftp.rst:269
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/allows_anonymous_ftp/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/allows_anonymous_ftp/"
+
+#: ../../reference/ftp.rst:274
+msgid "Return the FTP welcome message for anonymous users."
+msgstr "Devuelve el mensaje de bienvenida de FTP para usuarios anónimos."
+
+#: ../../reference/ftp.rst:282
+msgid "**get ftp welcome MESSAGE**"
+msgstr "**get ftp welcome MESSAGE**"
+
+#: ../../reference/ftp.rst:284
+msgid "Set the FTP welcome message for anonymous users."
+msgstr "Establece el mensaje de bienvenida de FTP para usuarios anónimos."
+
+

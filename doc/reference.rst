@@ -30,3 +30,4 @@ Command Reference
    reference/files
    reference/mail
    reference/webmail
+   reference/ftp
