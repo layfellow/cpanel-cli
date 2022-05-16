@@ -39,8 +39,13 @@ class CPanelEndpoint:
 
 		Returns processed r or empty string
 		"""
-		if r.status == 1 and r.errors is None:
-			return method()
+		if r.status == 1:
+			if r.errors is None:
+				return method()
+			elif isinstance(r.errors, str) and r.errors.lower().find("no error") > -1:
+				return method()
+			elif isinstance(r.errors, List) and r.errors[0].lower().find("no error") > -1:
+				return method()
 		else:
 			raise CPanelError(r.errors[0])
 		return ""
