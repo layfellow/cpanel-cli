@@ -1,6 +1,7 @@
 __pycache__
 .py[co]
 /dist
+.idea
 *.egg-info
 .venv
 venv
