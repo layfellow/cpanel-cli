@@ -1,10 +1,10 @@
-import sys
-import os
 import logging
+import os
+import sys
 from logging import Logger
-import cpanel
+from typing import List
 from cpanel_api import Api
-from typing import cast, List, Dict, Callable
+import cpanel
 from .cli import eatflag, configuration, version, die, usage
 from .core import NullableStr, CPanelEndpoint, CPanelError, endpoint
 
@@ -45,9 +45,9 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 	cmd: str = " ".join(args[0:3])  # Ignore everything beyond the 3rd arg.
 	uapi: Api = host.client.uapi
 
-	def cmd_is(cmd: str, *args: str) -> bool:
-		for arg in args:
-			if cmd[0:len(arg)] == arg:
+	def cmd_is(command: str, *arglist: str) -> bool:
+		for arg in arglist:
+			if command[0:len(arg)] == arg:
 				return True
 		return False
 
@@ -255,9 +255,9 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 			r = host.dump_extracted('email', lambda: uapi.Email.list_pops())
 
 		elif cmd_is(cmd, "list mail boxes"):
-			if(len(args) > 4):
+			if len(args) > 4:
 				r = host.dump(lambda: uapi.Email.browse_mailbox(account = args[3], dir = args[4], show_hidden_files = 1))
-			if(len(args) > 3):
+			if len(args) > 3:
 				r = host.dump(lambda: uapi.Email.browse_mailbox(account = args[3], show_hidden_files = 1))
 			else:
 				r = host.dump(lambda: uapi.Email.browse_mailbox(show_hidden_files = 1))
@@ -412,7 +412,7 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 
 def main() -> None:
 	hostname: NullableStr
-	username: NullableStr
+	user: NullableStr
 	utoken: NullableStr
 
 	_help: bool
@@ -439,13 +439,17 @@ def main() -> None:
 			else:
 				print(usage(*args[1:]))
 		else:
-			args, hostname, username, utoken = configuration(args, os.environ, RCFILE)
-			if hostname is None: die("missing cPanel hostname, use cpanel --help")
-			if username is None: die("missing cPanel username, use cpanel --help")
-			if utoken is None: die("missing cPanel UAPI token, use cpanel --help")
-			log.debug("hostname: {}, username: {}, utoken: {}".format(hostname, username, utoken))
+			args, hostname, user, utoken = configuration(args, os.environ, RCFILE)
+			if hostname is None:
+				die("missing cPanel hostname, use cpanel --help")
+			if user is None:
+				die("missing cPanel username, use cpanel --help")
+			if utoken is None:
+				die("missing cPanel UAPI token, use cpanel --help")
 
-			r: str = dispatch(endpoint(hostname, username, utoken), args)
+			log.debug("hostname: {}, username: {}, utoken: {}".format(hostname, user, utoken))
+
+			r: str = dispatch(endpoint(hostname, user, utoken), args)
 			if len(r) > 0:
 				print(r)
 

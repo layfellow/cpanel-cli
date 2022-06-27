@@ -1,5 +1,4 @@
 import os
-import sys
 import json
 import logging
 import requests
@@ -9,13 +8,14 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import urljoin
 from logging import Logger
 from json import JSONDecodeError
-import cpanel
-from cpanel_api import CPanelApi, Result, ClientError
-from typing import cast, Any, Union, Dict, List, Mapping, Callable
+from cpanel_api import CPanelApi, Result
+from typing import Any, Union, Dict, List, Mapping, Callable
 
 NullableStr = Union[str, None]
+NullableResult = Union[Result, None]
 NullableBytes = Union[bytes, None]
 JSONType = Dict[str, Any]
+StringOrInteger = Union[str, int]
 
 log: Logger = logging.getLogger(__name__)
 
@@ -64,7 +64,7 @@ class CPanelEndpoint:
 			data.append({ key: datum[key] })
 		return json.dumps(data, indent = 4, sort_keys = True)
 
-	
+
 	def select(self, r: Result, key: str, value: str) -> str:
 		"""Get a single element from array r['data'] which has a key == value.
 
@@ -74,13 +74,13 @@ class CPanelEndpoint:
 
 		Returns stringified JSON array with selected key: value pairs
 		"""
-		data: Result = {}
+		data: Result = Result({})
 		for datum in r.data:
 			if datum[key] == value:
 				data = datum
 		return json.dumps(data, indent = 4, sort_keys = True)
 
-	
+
 	def check(self, apicall: Callable) -> str:
 		"""Call API and check if request was OK, do not print results.
 
@@ -125,7 +125,7 @@ class CPanelEndpoint:
 		r: Result = apicall()
 		return self.safely(r, lambda: self.select(r, key, value))
 
-	
+
 	def dump_null(self, apicall: Callable, replace: str) -> str:
 		"""Call API and get stringified JSON result, but replaces nulls.
 
@@ -147,13 +147,13 @@ class CPanelEndpoint:
 	def create_backup(self, *args: str) -> str:
 		"""Create a backup tarball and store it on a remote server.
 
-		args      variable argument list with username, password, host,
-		          optional directory and optional confirmation email
+		args	variable argument list with username, password, host,
+				optional directory and optional confirmation email
 
 		Returns "OK" or prints error
 		"""
 		# kwargs for CPanelAPi call to Backup.fullbackup_to_*().
-		parameters: Mapping[str, NullableStr] = {}
+		parameters: Dict[str, NullableStr] = {}
 
 		try:
 			if args[0] == 'ftp' or args[0] == 'scp':
@@ -191,7 +191,7 @@ class CPanelEndpoint:
 
 		Returns "OK" or prints error
 		"""
-		parameters: Mapping[str, NullableStr] = {}
+		parameters: Dict[str, NullableStr] = {}
 
 		log.debug(str(args))
 
@@ -248,15 +248,15 @@ class CPanelEndpoint:
 	def set_mail_autoresponder(self, *args: str) -> str:
 		"""Create an autoresponder for an email account.
 
-		args      variable argument list with email, and optional
-		          from, subject, body, start time and stop time
+		args	variable argument list with email, and optional
+				from, subject, body, start time and stop time
 
 		Returns "OK" or prints error
 		"""
 		log.debug(str(args))
 
 		# kwargs for CPanelAPI call to Email.add_auto_responder().
-		parameters: Mapping[str, str|int] = {}
+		parameters: Dict[str, StringOrInteger] = {}
 
 		default_subject: str = "This is an automatic message"
 		default_body: str = "I’m currently unavailable."
@@ -285,7 +285,7 @@ class CPanelEndpoint:
 		t, parsed = cal.parse(s)
 		if parsed > 0:
 			log.debug(str(t))
-			starttime = datetime(*t[:6],tzinfo = timezone(timedelta(seconds = -time.timezone)))
+			starttime = datetime(*t[:6], tzinfo = timezone(timedelta(seconds = -time.timezone)))
 		else:
 			raise CPanelError("error parsing start time")
 
@@ -321,11 +321,12 @@ class CPanelEndpoint:
 		# Upload the actual file contents as multipart-encoded form data.
 		with open(filename, 'rb') as stream:
 			response: requests.Response = self.client.session.post(
-				url,
-				{ 'dir': directory,
-				  'file': filename,
-				  'overwrite': 1,
-				  'permissions': permissions },
+				url, {
+					'dir': directory,
+					'file': filename,
+					'overwrite': 1,
+					'permissions': permissions
+				},
 				files = { filename: stream },
 				allow_redirects = False,
 				headers = { 'Authorization': self.client.auth },
@@ -335,12 +336,13 @@ class CPanelEndpoint:
 		if response.status_code == 401:
 			raise CPanelError("Unauthorized")
 
-		r: Result = None
+		r: NullableResult = None
 		try:
 			r = response.json(object_hook = Result)
 		except ValueError:
 			raise CPanelError("Bad response")
-		return self.safely(r, lambda: "OK")
+		finally:
+			return self.safely(r, lambda: "OK")
 
 
 	def set_mail_filter(self, account: str, filterfile: str) -> str:
@@ -362,7 +364,7 @@ class CPanelEndpoint:
 			raise CPanelError("error parsing JSON filter file {}, {}".format(filterfile, str(e)))
 
 		# kwargs for CPanelAPi call to Email.store_filter().
-		parameters: Mapping[str, NullableStr] = {}
+		parameters: Dict[str, NullableStr] = {}
 
 		try:
 			parameters['filtername'] = filters['filtername']
