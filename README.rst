@@ -77,14 +77,14 @@ Requirements
 ============
 
 - Linux or macOS; it might work `on Windows`_
-- Python 3.8 or later
+- Python 3.9 or later
 
 .. _`on Windows`: #what-about-installing-on-windows
 
 Installation on Linux
 =====================
 
-Install Python 3.8 or later using your distro’s package manager.
+Install Python 3.9 or later using your distro’s package manager.
 
 Then run:
 
@@ -99,12 +99,12 @@ Test the installation using:
     $ cpanel --version
 
 Tested on Ubuntu 21.10 “Impish Indri”, but it has no specific Ubuntu requirements, so any
-Linux distro with Python 3.8 or later should work.
+Linux distro with Python 3.9 or later should work.
 
 Installation on macOS
 =====================
 
-Install Python 3.8 or later using Homebrew_.
+Install Python 3.9 or later using Homebrew_.
 
 .. _Homebrew: https://brew.sh/
 
@@ -209,14 +209,14 @@ Requisitos
 ==========
 
 - Linux o macOS; tal vez podría funcionar `en Windows`_
-- Python 3.8 o superior
+- Python 3.9 o superior
 
 .. _`en Windows`: #se-puede-instalar-en-windows
 
 Instalación en Linux
 ====================
 
-Instale Python 3.8 o superior usando el gestor de paquetes de su distribución.
+Instale Python 3.9 o superior usando el gestor de paquetes de su distribución.
 
 Luego ejecute:
 
@@ -231,12 +231,12 @@ Pruebe la instalación con:
     $ cpanel --version
 
 Probado en Ubuntu 21.10 “Impish Indri”, pero no tiene requisitos específicos de Ubuntu,
-por lo que cualquier distribución de Linux con Python 3.8 o posterior debería funcionar.
+por lo que cualquier distribución de Linux con Python 3.9 o posterior debería funcionar.
 
 Instalación en macOS
 ====================
 
-Instale Python 3.8 o posterior usando Homebrew_.
+Instale Python 3.9 o posterior usando Homebrew_.
 
 Luego ejecute:
 

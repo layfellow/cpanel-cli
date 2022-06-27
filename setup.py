@@ -22,7 +22,7 @@ setup(
 	],
 	include_package_data = True,
 	packages = ['cpanel'],
-	python_requires = '>=3.8',
+	python_requires = '>=3.9',
 	install_requires = [
 		'cpanel-api>=0.3.0',
 		'parsedatetime>=2.6'
@@ -30,5 +30,6 @@ setup(
 	entry_points = {
 		'console_scripts': [
 			'cpanel = cpanel.__main__:main'
-	]}
+		]
+	}
 )

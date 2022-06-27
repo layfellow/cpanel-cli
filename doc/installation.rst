@@ -8,14 +8,14 @@ Requirements
 ============
 
 - Linux or macOS; it might work `on Windows`_
-- Python 3.8 or later
+- Python 3.9 or later
 
 .. _`on Windows`: #what-about-installing-on-windows
 
 Installation on Linux
 =====================
 
-Install Python 3.8 or later using your distro’s package manager.
+Install Python 3.9 or later using your distro’s package manager.
 
 Then run:
 
@@ -30,12 +30,12 @@ Test the installation using:
     $ cpanel --version
 
 Tested on Ubuntu 21.10 “Impish Indri”, but it has no specific Ubuntu requirements, so any
-Linux distro with Python 3.8 or later should work.
+Linux distro with Python 3.9 or later should work.
 
 Installation on macOS
 =====================
 
-Install Python 3.8 or later using `Homebrew <https://brew.sh/>`_.
+Install Python 3.9 or later using `Homebrew <https://brew.sh/>`_.
 
 Then run:
 
