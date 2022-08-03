@@ -332,11 +332,11 @@
 - [ ] Mysql::add_host
 - [ ] Mysql::add_host_note
 - [ ] Mysql::check_database
-- [ ] Mysql::create_database
-- [ ] Mysql::create_user
+- [x] Mysql::create_database
+- [x] Mysql::create_user
 - [ ] Mysql::delete_database
 - [ ] Mysql::delete_host
-- [ ] Mysql::delete_user
+- [x] Mysql::delete_user
 - [ ] Mysql::dump_database_schema
 - [ ] Mysql::get_host_notes
 - [ ] Mysql::get_privileges_on_database
@@ -344,13 +344,13 @@
 - [ ] Mysql::get_server_information
 - [ ] Mysql::list_databases
 - [ ] Mysql::list_routines
-- [ ] Mysql::list_users
+- [x] Mysql::list_users
 - [ ] Mysql::locate_server
 - [ ] Mysql::rename_database
-- [ ] Mysql::rename_user
+- [x] Mysql::rename_user
 - [ ] Mysql::repair_database
 - [ ] Mysql::revoke_access_to_database
-- [ ] Mysql::set_password
+- [x] Mysql::set_password
 - [ ] Mysql::set_privileges_on_database
 - [ ] Mysql::update_privileges
 - [ ] NVData::get

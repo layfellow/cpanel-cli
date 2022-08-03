@@ -400,10 +400,30 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 			else:
 				r = host.check(lambda: uapi.Ftp.set_anonymous_ftp(set = 0))
 
+		elif cmd_is(cmd, "create mysql user"):
+			r = host.check(lambda: uapi.Mysql.create_user(name = args[3], password = args[4]))
+
+		elif cmd_is(cmd, "list mysql user"):
+			r = host.dump(lambda: uapi.Mysql.list_users())
+
+		elif cmd_is(cmd, "rename mysql user"):
+			r = host.check(lambda: uapi.Mysql.rename_user(oldname = args[3], newname = args[4]))
+
+		elif cmd_is(cmd, "set mysql password"):
+			r = host.check(lambda: uapi.Mysql.set_password(user = args[3], password = args[4]))
+
+		elif cmd_is(cmd, "delete mysql user", "rm delete mysql user", "remove mysql user"):
+			r = host.check(lambda: uapi.Mysql.delete_user(name = args[3]))
+
 		else:
 			die("unrecognized command, {}".format(cmd))
+
 	except IndexError:
-		die("missing arguments for {}".format(cmd))
+		if len(args) > 1:
+			die("missing arguments for {}, please use ‘cpanel help {}’".format(cmd, args[1]))
+		else:
+			die("missing arguments for {}, please use ‘cpanel --help’".format(cmd))
+			
 	except Exception as e:
 		# Re-throw exception raised during API call.
 		raise e

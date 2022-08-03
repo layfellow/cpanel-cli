@@ -31,3 +31,4 @@ Command Reference
    reference/mail
    reference/webmail
    reference/ftp
+   reference/mysql

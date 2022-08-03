@@ -66,6 +66,7 @@ themes
 usage
 webmail
 ftp
+mysql
 
 Use ‘cpanel help MODULE’ to learn more about the functions implemented
 for MODULE; for example, ‘cpanel help mail’ to print detailed help on all

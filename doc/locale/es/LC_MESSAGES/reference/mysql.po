@@ -1,0 +1,91 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: A command line interface for the cPanel Unrestricted "
+"API. \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-03 19:39-0400\n"
+"PO-Revision-Date: 2022-08-03 18:19-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../reference/mysql.rst:7
+msgid "Module: ``mysql``"
+msgstr "Módulo: ``mysql``"
+
+#: ../../reference/mysql.rst:9
+msgid "`Leer en español </es/latest/reference/mysql.html>`_"
+msgstr "`Read in English </en/latest/reference/mysql.html>`_"
+
+#: ../../reference/mysql.rst:11 ../../reference/mysql.rst:20
+msgid "**create mysql user USERNAME PASSWORD**"
+msgstr "**create mysql user USERNAME PASSWORD**"
+
+#: ../../reference/mysql.rst:12 ../../reference/mysql.rst:30
+msgid "**list mysql users**"
+msgstr "**list mysql users**"
+
+#: ../../reference/mysql.rst:13
+msgid "**rename mysql user OLDUSERNAME NEWUSERNAME**"
+msgstr "**rename mysql user OLDUSERNAME NEWUSERNAME**"
+
+#: ../../reference/mysql.rst:14 ../../reference/mysql.rst:53
+msgid "**set mysql password USERNAME NEWPASSWORD**"
+msgstr "**set mysql password USERNAME NEWPASSWORD**"
+
+#: ../../reference/mysql.rst:15 ../../reference/mysql.rst:63
+msgid "**delete mysql user USERNAME**"
+msgstr "**delete mysql user USERNAME**"
+
+#: ../../reference/mysql.rst:17
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/mysql.rst:22
+msgid "Create a new MySQL user with USERNAME and PASSWORD."
+msgstr ""
+"Crea un nuevo usuario de MySQL con nombre de usuario USERNAME y "
+"contraseña PASSWORD."
+
+#: ../../reference/mysql.rst:24 ../../reference/mysql.rst:34
+#: ../../reference/mysql.rst:47 ../../reference/mysql.rst:57
+#: ../../reference/mysql.rst:67
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/mysql.rst:32
+msgid "List all MySQL users associated to the cPanel account."
+msgstr "Lista todos los usuarios MySQL asociados a esta cuenta de cPanel."
+
+#: ../../reference/mysql.rst:40
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-list_users/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-list_users/"
+
+#: ../../reference/mysql.rst:43
+msgid "**rename mysql user OLDUSERNAME**"
+msgstr "**rename mysql user OLDUSERNAME**"
+
+#: ../../reference/mysql.rst:45
+msgid "Rename MySQL user from OLDUSERNAME to NEWUSERNAME."
+msgstr "Cambia el nombre de usuario de MySQL de OLDUSERNAME a NEWUSERNAME."
+
+#: ../../reference/mysql.rst:55
+msgid "Change the password for MySQL user USERNAME to NEWPASSWORD."
+msgstr "Cambia la contraseña a NEWPASSWORD para el usuario de MySQL USERNAME."
+
+#: ../../reference/mysql.rst:65
+msgid "Delete MySQL user USERNAME."
+msgstr "Elimina el usuario de MySQL USERNAME."
+

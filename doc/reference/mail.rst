@@ -135,7 +135,7 @@ Return the number of autoresponders for all email accounts.
 
 .. code:: sh
 
-    $ count mail autoresponders
+    $ cpanel count mail autoresponders
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/
@@ -148,7 +148,7 @@ Retrieve autoresponder information corresponding to ACCOUNT.
 
 .. code:: sh
 
-    $ count get mail autoresponder scott@example.com
+    $ cpanel count get mail autoresponder scott@example.com
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/get_auto_responder/

@@ -92,7 +92,7 @@ Return the contents of FILE. Note that only UTF-8 encoded files are supported.
 
 Write CONTENTS as a remote text FILE.
 Note that only UTF-8 encoded content is supported.
-Escape codes, such as ``\n``, ``\t`` and others, are supported.
+Escape codes, such as ‘\n’, ‘\t’ and others, are supported.
 
 *Examples*
 

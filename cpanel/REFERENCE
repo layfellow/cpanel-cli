@@ -887,7 +887,7 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
     Return the number of autoresponders for all email accounts.
 
     EXAMPLE
-        \033[1;34mcount mail autoresponders\033[00m
+        \033[1;34mcpanel count mail autoresponders\033[00m
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/
@@ -896,7 +896,7 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
     Retrieve autoresponder information corresponding to ACCOUNT.
 
     EXAMPLE
-        \033[1;34mcount get mail autoresponder scott@example.com\033[00m
+        \033[1;34mcpanel count get mail autoresponder scott@example.com\033[00m
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/get_auto_responder/
@@ -1318,5 +1318,47 @@ Usage: cpanel create ftp USER@DOMAIN PASSWORD QUOTA [DIRECTORY]
 
     EXAMPLE
         \033[1;34mcpanel set ftp welcome 'Welcome to the FTP server!'\033[00m
+---
+
+Usage: cpanel create mysql user USERNAME PASSWORD
+    cpanel list mysql users
+    cpanel rename mysql user OLDUSERNAME NEWUSERNAME
+    cpanel set mysql password USERNAME NEWPASSWORD
+    cpanel delete mysql user USERNAME
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mcreate mysql user USERNAME PASSWORD\033[0m
+    Create a new MySQL user with USERNAME and PASSWORD.
+
+    EXAMPLE
+        \033[1;34mcpanel create mysql user "scott" \'tiger\'\033[00m
+
+\033[1mlist mysql users\033[0m
+    List all MySQL users associated to the cPanel account.
+
+    EXAMPLE
+        \033[1;34mcpanel list mysql users\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-list_users/
+
+\033[1mrename mysql user OLDUSERNAME\033[0m
+    Rename MySQL user from OLDUSERNAME to NEWUSERNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel rename mysql user "scott" "larry"\033[00m
+
+\033[1mset mysql password USERNAME NEWPASSWORD\033[0m
+    Change the password for MySQL user USERNAME to NEWPASSWORD.
+
+    EXAMPLE
+        \033[1;34mcpanel set mysql password "scott" 'panther'\033[00m
+
+\033[1mdelete mysql user USERNAME\033[0m
+    Delete MySQL user USERNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel delete mysql user "scott"\033[00m
 
 ---
