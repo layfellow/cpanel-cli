@@ -31,8 +31,9 @@ mkdir -p "./${2}"
 module=""
 
 while read -r line; do
-	line="${line//‘\\n’/\`\`\\n\`\`}"
-	line="${line//‘\\t’/\`\`\\t\`\`}"
+	line="${line//\\\\n/\\n}"
+	line="${line//\\\\t/\\t}"
+	line="${line//\\\'/\'}"
 	line="${line//USER@DOMAIN/USER\\@DOMAIN}"
 
 	if [[ $line =~ ^Usage:\ cpanel\ ([a-z]+)\ ([a-z]+) ]]; then
@@ -54,6 +55,7 @@ while read -r line; do
 		# HACK  Print subtitles for mail and dir modules only
 		[[ $line =~ ^Usage:\ cpanel\ ([a-z]+)\ ([a-z]+)\ ([a-z]+) ]]
 		if [ -n "${BASH_REMATCH[3]}" ] &&
+
 			[[ "$module" == "dir" || "$module" == "mail" ]]
 		then
 			cat <<- EOS >> "${2}/${module}.rst"
@@ -76,17 +78,20 @@ while read -r line; do
 	elif [[ $line =~ ^\ *EXAMPLE ]]; then
 		echo -e "*Example*\n\n.. code:: sh\n" >> "${2}/${module}.rst"
 
-	elif [[ $line =~ ^\ *033\[1m(.+)033\[0m ]]; then
-		echo -e "**${BASH_REMATCH[1]}**\n" >> "${2}/${module}.rst"
+	elif [[ $line =~ ^\ *\\033\[1\;34mcpanel\ (.+)\ \\\\\ \\033\[00m ]]; then
+		echo "    \$ cpanel ${BASH_REMATCH[1]} \\ " >> "${2}/${module}.rst"
 
-	elif [[ $line =~ ^\ *033\[1\;34m\ \ \ \ (.+)033\[00m ]]; then
+	elif [[ $line =~ ^\ *\\033\[1\;34mcpanel\ (.+)\\033\[00m ]]; then
+		echo "    \$ cpanel ${BASH_REMATCH[1]}" >> "${2}/${module}.rst"
+
+	elif [[ $line =~ ^\ *\\033\[1\;34m\ +(.+)\ \\\\\ \\033\[00m ]]; then
+		echo "          ${BASH_REMATCH[1]} \\ " >> "${2}/${module}.rst"
+
+	elif [[ $line =~ ^\ *\\033\[1\;34m\ +(.+)\\033\[00m ]]; then
 		echo "          ${BASH_REMATCH[1]}" >> "${2}/${module}.rst"
 
-	elif [[ $line =~ ^\ *033\[1\;34m(.+)033\[00m ]]; then
-		echo "    \$ ${BASH_REMATCH[1]}" >> "${2}/${module}.rst"
-
-	elif [[ $line =~ ^\ *033\[1\;34m(.+)032\[00m ]]; then
-		echo "    \$ ${BASH_REMATCH[1]}" >> "${2}/${module}.rst"
+	elif [[ $line =~ ^\ *\\033\[1m(.+)\\033\[0m ]]; then
+		echo -e "**${BASH_REMATCH[1]}**\n" >> "${2}/${module}.rst"
 
 	elif [[ $line =~ ^--- ]]; then
 		echo -n "" >> "${2}/${module}.rst"
