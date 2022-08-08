@@ -329,30 +329,30 @@
 - [ ] ModSecurity::enable_domains
 - [ ] ModSecurity::has_modsecurity_installed
 - [ ] ModSecurity::list_domains
-- [ ] Mysql::add_host
-- [ ] Mysql::add_host_note
-- [ ] Mysql::check_database
+- [x] Mysql::add_host
+- [x] Mysql::add_host_note
+- [x] Mysql::check_database
 - [x] Mysql::create_database
 - [x] Mysql::create_user
-- [ ] Mysql::delete_database
-- [ ] Mysql::delete_host
+- [x] Mysql::delete_database
+- [x] Mysql::delete_host
 - [x] Mysql::delete_user
-- [ ] Mysql::dump_database_schema
-- [ ] Mysql::get_host_notes
-- [ ] Mysql::get_privileges_on_database
-- [ ] Mysql::get_restrictions
-- [ ] Mysql::get_server_information
-- [ ] Mysql::list_databases
-- [ ] Mysql::list_routines
+- [x] Mysql::dump_database_schema
+- [x] Mysql::get_host_notes
+- [x] Mysql::get_privileges_on_database
+- [x] Mysql::get_restrictions
+- [x] Mysql::get_server_information
+- [x] Mysql::list_databases
+- [x] Mysql::list_routines
 - [x] Mysql::list_users
-- [ ] Mysql::locate_server
-- [ ] Mysql::rename_database
+- [-] Mysql::locate_server
+- [x] Mysql::rename_database
 - [x] Mysql::rename_user
-- [ ] Mysql::repair_database
-- [ ] Mysql::revoke_access_to_database
+- [x] Mysql::repair_database
+- [x] Mysql::revoke_access_to_database
 - [x] Mysql::set_password
-- [ ] Mysql::set_privileges_on_database
-- [ ] Mysql::update_privileges
+- [x] Mysql::set_privileges_on_database
+- [-] Mysql::update_privileges
 - [ ] NVData::get
 - [ ] NVData::set
 - [ ] Notifications::get_notifications_count

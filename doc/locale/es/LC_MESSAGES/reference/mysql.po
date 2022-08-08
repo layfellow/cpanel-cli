@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: A command line interface for the cPanel Unrestricted "
 "API. \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-03 19:39-0400\n"
+"POT-Creation-Date: 2022-08-08 19:43-0400\n"
 "PO-Revision-Date: 2022-08-03 18:19-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -25,47 +25,122 @@ msgstr "Módulo: ``mysql``"
 msgid "`Leer en español </es/latest/reference/mysql.html>`_"
 msgstr "`Read in English </en/latest/reference/mysql.html>`_"
 
-#: ../../reference/mysql.rst:11 ../../reference/mysql.rst:20
+#: ../../reference/mysql.rst:11 ../../reference/mysql.rst:37
 msgid "**create mysql user USERNAME PASSWORD**"
 msgstr "**create mysql user USERNAME PASSWORD**"
 
-#: ../../reference/mysql.rst:12 ../../reference/mysql.rst:30
+#: ../../reference/mysql.rst:12 ../../reference/mysql.rst:47
 msgid "**list mysql users**"
 msgstr "**list mysql users**"
 
-#: ../../reference/mysql.rst:13
+#: ../../reference/mysql.rst:13 ../../reference/mysql.rst:60
 msgid "**rename mysql user OLDUSERNAME NEWUSERNAME**"
 msgstr "**rename mysql user OLDUSERNAME NEWUSERNAME**"
 
-#: ../../reference/mysql.rst:14 ../../reference/mysql.rst:53
+#: ../../reference/mysql.rst:14 ../../reference/mysql.rst:70
 msgid "**set mysql password USERNAME NEWPASSWORD**"
 msgstr "**set mysql password USERNAME NEWPASSWORD**"
 
-#: ../../reference/mysql.rst:15 ../../reference/mysql.rst:63
+#: ../../reference/mysql.rst:15 ../../reference/mysql.rst:80
 msgid "**delete mysql user USERNAME**"
 msgstr "**delete mysql user USERNAME**"
 
-#: ../../reference/mysql.rst:17
+#: ../../reference/mysql.rst:16 ../../reference/mysql.rst:90
+msgid "**create mysql database DBNAME**"
+msgstr "**create mysql database DBNAME**"
+
+#: ../../reference/mysql.rst:17 ../../reference/mysql.rst:100
+msgid "**list mysql databases**"
+msgstr "**list mysql databases**"
+
+#: ../../reference/mysql.rst:18 ../../reference/mysql.rst:113
+msgid "**rename mysql database OLDDBNAME NEWDBNAME**"
+msgstr "**rename mysql database OLDDBNAME NEWDBNAME**"
+
+#: ../../reference/mysql.rst:19 ../../reference/mysql.rst:123
+msgid "**delete mysql database DBNAME**"
+msgstr "**delete mysql database DBNAME**"
+
+#: ../../reference/mysql.rst:20 ../../reference/mysql.rst:133
+msgid "**check mysql database DBNAME**"
+msgstr "**check mysql database DBNAME**"
+
+#: ../../reference/mysql.rst:21 ../../reference/mysql.rst:146
+msgid "**repair mysql database DBNAME**"
+msgstr "**repair mysql database DBNAME**"
+
+#: ../../reference/mysql.rst:22 ../../reference/mysql.rst:160
+msgid "**set mysql privileges USERNAME DBNAME PRIVILEGES**"
+msgstr "**set mysql privileges USERNAME DBNAME PRIVILEGES**"
+
+#: ../../reference/mysql.rst:23 ../../reference/mysql.rst:183
+msgid "**list mysql privileges USERNAME DBNAME**"
+msgstr "**list mysql privileges USERNAME DBNAME**"
+
+#: ../../reference/mysql.rst:24 ../../reference/mysql.rst:196
+msgid "**delete mysql privileges USERNAME DBNAME**"
+msgstr "**delete mysql privileges USERNAME DBNAME**"
+
+#: ../../reference/mysql.rst:25 ../../reference/mysql.rst:206
+msgid "**list mysql routines [USERNAME]**"
+msgstr "**list mysql routines [USERNAME]**"
+
+#: ../../reference/mysql.rst:26 ../../reference/mysql.rst:221
+msgid "**get mysql schema DBNAME**"
+msgstr "**get mysql schema DBNAME**"
+
+#: ../../reference/mysql.rst:27 ../../reference/mysql.rst:233
+msgid "**add mysql host HOST**"
+msgstr "**add mysql host HOST**"
+
+#: ../../reference/mysql.rst:28
+msgid "**annotate mysql host HOST**"
+msgstr "**annotate mysql host HOST**"
+
+#: ../../reference/mysql.rst:29 ../../reference/mysql.rst:258
+msgid "**list mysql hosts**"
+msgstr "**list mysql hosts**"
+
+#: ../../reference/mysql.rst:30 ../../reference/mysql.rst:272
+msgid "**delete mysql host HOST**"
+msgstr "**delete mysql host HOST**"
+
+#: ../../reference/mysql.rst:31 ../../reference/mysql.rst:283
+msgid "**get mysql server**"
+msgstr "**get mysql server**"
+
+#: ../../reference/mysql.rst:32 ../../reference/mysql.rst:296
+msgid "**get mysql restrictions**"
+msgstr "**get mysql restrictions**"
+
+#: ../../reference/mysql.rst:34
 msgid "**COMMANDS**"
 msgstr "**COMANDOS**"
 
-#: ../../reference/mysql.rst:22
+#: ../../reference/mysql.rst:39
 msgid "Create a new MySQL user with USERNAME and PASSWORD."
 msgstr ""
 "Crea un nuevo usuario de MySQL con nombre de usuario USERNAME y "
 "contraseña PASSWORD."
 
-#: ../../reference/mysql.rst:24 ../../reference/mysql.rst:34
-#: ../../reference/mysql.rst:47 ../../reference/mysql.rst:57
-#: ../../reference/mysql.rst:67
+#: ../../reference/mysql.rst:41 ../../reference/mysql.rst:51
+#: ../../reference/mysql.rst:64 ../../reference/mysql.rst:74
+#: ../../reference/mysql.rst:84 ../../reference/mysql.rst:94
+#: ../../reference/mysql.rst:104 ../../reference/mysql.rst:117
+#: ../../reference/mysql.rst:127 ../../reference/mysql.rst:137
+#: ../../reference/mysql.rst:151 ../../reference/mysql.rst:187
+#: ../../reference/mysql.rst:200 ../../reference/mysql.rst:227
+#: ../../reference/mysql.rst:252 ../../reference/mysql.rst:263
+#: ../../reference/mysql.rst:277 ../../reference/mysql.rst:287
+#: ../../reference/mysql.rst:300
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
-#: ../../reference/mysql.rst:32
+#: ../../reference/mysql.rst:49
 msgid "List all MySQL users associated to the cPanel account."
 msgstr "Lista todos los usuarios MySQL asociados a esta cuenta de cPanel."
 
-#: ../../reference/mysql.rst:40
+#: ../../reference/mysql.rst:57
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-list_users/"
@@ -73,19 +148,223 @@ msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-list_users/"
 
-#: ../../reference/mysql.rst:43
-msgid "**rename mysql user OLDUSERNAME**"
-msgstr "**rename mysql user OLDUSERNAME**"
-
-#: ../../reference/mysql.rst:45
+#: ../../reference/mysql.rst:62
 msgid "Rename MySQL user from OLDUSERNAME to NEWUSERNAME."
 msgstr "Cambia el nombre de usuario de MySQL de OLDUSERNAME a NEWUSERNAME."
 
-#: ../../reference/mysql.rst:55
+#: ../../reference/mysql.rst:72
 msgid "Change the password for MySQL user USERNAME to NEWPASSWORD."
 msgstr "Cambia la contraseña a NEWPASSWORD para el usuario de MySQL USERNAME."
 
-#: ../../reference/mysql.rst:65
+#: ../../reference/mysql.rst:82
 msgid "Delete MySQL user USERNAME."
 msgstr "Elimina el usuario de MySQL USERNAME."
+
+#: ../../reference/mysql.rst:92
+msgid "Create a new MySQL database with name DBNAME."
+msgstr "Crea una nueva base de datos MySQL con nombre DBNAME."
+
+#: ../../reference/mysql.rst:102
+msgid "List existing MySQL databases."
+msgstr "Lista las bases de datos MySQL existentes."
+
+#: ../../reference/mysql.rst:110
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_databases/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_databases/"
+
+#: ../../reference/mysql.rst:115
+msgid "Rename MySQL database from OLDDBNAME to NEWDBNAME."
+msgstr "Cambia el nombre de la base de datos MySQL de OLDDBNAME a NEWDBNAME."
+
+#: ../../reference/mysql.rst:125
+msgid "Delete MySQL database named DBNAME."
+msgstr "Elimina la base de datos MySQL DBNAME."
+
+#: ../../reference/mysql.rst:135
+msgid "Check the integrity of MySQL database DBNAME."
+msgstr "Verifica la integridad de la base de datos de MySQL DBNAME."
+
+#: ../../reference/mysql.rst:143
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-"
+"check_database/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-"
+"check_database/"
+
+#: ../../reference/mysql.rst:148
+msgid ""
+"Try to repair MySQL database DBNAME. See ‘cpanel check mysql database’ "
+"above."
+msgstr ""
+"Trata de reparar la base de datos de MySQL DBNAME. Vea ‘cpanel check "
+"mysql database’ arriba."
+
+#: ../../reference/mysql.rst:157
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/repair_database/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/repair_database/"
+
+#: ../../reference/mysql.rst:162
+msgid ""
+"Set the privileges of MySQL user USERNAME on database DBNAME to "
+"PRIVILEGES."
+msgstr ""
+"Establece los privilegios del usuario de MySQL USERNAME en la base de "
+"datos DBNAME a PRIVILEGES."
+
+#: ../../reference/mysql.rst:165
+msgid ""
+"To add full privileges, use 'ALL PRIVILEGES'. To add individual "
+"privileges, use a comma-separated list."
+msgstr ""
+"Para añadir privilegios completos, utilice 'ALL PRIVILEGES.' Para añadir "
+"privilegios individuales, utilice una lista separada por comas."
+
+#: ../../reference/mysql.rst:168
+msgid ""
+"For a list of individual privileges see: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/set_privileges_on_database/"
+msgstr ""
+"Vea la lista de privilegios individuales en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/set_privileges_on_database/"
+
+#: ../../reference/mysql.rst:171
+msgid ""
+"For a description of the scope of individual privileges see: "
+"https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html"
+msgstr ""
+"Para una descripción del alcance de los privilegios individuales vea: "
+"https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html"
+
+#: ../../reference/mysql.rst:174 ../../reference/mysql.rst:211
+#: ../../reference/mysql.rst:239
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/mysql.rst:185
+msgid "List privileges granted to MySQL user USERNAME on database DBNAME."
+msgstr ""
+"Lista los privilegios concedidos al usuario de MySQL USERNAME en la base "
+"de datos DBNAME."
+
+#: ../../reference/mysql.rst:193
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-"
+"get_privileges_on_database/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-"
+"get_privileges_on_database/"
+
+#: ../../reference/mysql.rst:198
+msgid "Revoke all privileges granted to MySQL user USERNAME on database DBNAME."
+msgstr ""
+"Revoca todos los privilegios otorgados al usuario de MySQL USERNAME en la"
+" base de datos DBNAME."
+
+#: ../../reference/mysql.rst:208
+msgid ""
+"List routines (stored procedures and functions) associated to MySQL user "
+"USERNAME. If not provided, list routines from all users."
+msgstr ""
+"Lista las rutinas (procedimientos y funciones almacenadas) asociadas al "
+"usuario de MySQL USERNAME. Si no se proporciona el usuario, lista rutinas"
+" de todos los usuarios."
+
+#: ../../reference/mysql.rst:218
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_routines/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_routines/"
+
+#: ../../reference/mysql.rst:223
+msgid ""
+"Dump schema of MySQL database DBNAME. The schema is a SQL script that can"
+" later be used to recreate the database."
+msgstr ""
+"Descargas el esquema de la base de datos de MySQL DBNAME. El esquema es "
+"un script SQL que se puede utilizar para volver a crear la base de datos."
+
+#: ../../reference/mysql.rst:235
+msgid "Add HOST to the list of authorized hosts that can connect to MySQL."
+msgstr "Añade HOST a la lista de hosts autorizados que pueden conectarse a MySQL."
+
+#: ../../reference/mysql.rst:237
+msgid "HOST can be a hostname, an IP address, or a range with ‘%’ wildcards."
+msgstr ""
+"HOST puede ser un nombre de host, una dirección IP, o un rango con "
+"comodines ‘%’."
+
+#: ../../reference/mysql.rst:247
+msgid "**annotate mysql host HOST NOTE**"
+msgstr "**annotate mysql host HOST NOTE**"
+
+#: ../../reference/mysql.rst:249
+msgid ""
+"Add a short description NOTE to existing authorized host HOST. See "
+"‘cpanel add mysql host’ above."
+msgstr ""
+"Añade una breve descripción NOTA al host autorizado HOST. Vea ‘cpanel add"
+" mysql host’ arriba."
+
+#: ../../reference/mysql.rst:260
+msgid ""
+"List authorized hosts that can connect to MySQL. See ‘cpanel add mysql "
+"host’ above."
+msgstr ""
+"Lista los hosts autorizados que pueden conectarse a MySQL. Vea ‘cpanel "
+"add mysql host’ arriba."
+
+#: ../../reference/mysql.rst:269
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_host_notes/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_host_notes/"
+
+#: ../../reference/mysql.rst:274
+msgid "Delete HOST from list of authorized. See ‘cpanel add mysql host’ above."
+msgstr ""
+"Elimina HOST de la lista de hosts autorizados. Vea ‘cpanel add mysql "
+"host’ arriba."
+
+#: ../../reference/mysql.rst:285
+msgid "Return server information and version from MySQL."
+msgstr "Devuelve información del servidor y versión de MySQL."
+
+#: ../../reference/mysql.rst:293
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_server_information/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_server_information/"
+
+#: ../../reference/mysql.rst:298
+msgid "Return MySQL object name length and prefix restrictions."
+msgstr ""
+"Devuelve las restricciones de longitud de nombre y prefijos para los "
+"objetos de MySQL."
+
+#: ../../reference/mysql.rst:306
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_restrictions/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_restrictions/"
 

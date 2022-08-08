@@ -1325,6 +1325,23 @@ Usage: cpanel create mysql user USERNAME PASSWORD
     cpanel rename mysql user OLDUSERNAME NEWUSERNAME
     cpanel set mysql password USERNAME NEWPASSWORD
     cpanel delete mysql user USERNAME
+    cpanel create mysql database DBNAME
+    cpanel list mysql databases
+    cpanel rename mysql database OLDDBNAME NEWDBNAME
+    cpanel delete mysql database DBNAME
+    cpanel check mysql database DBNAME
+    cpanel repair mysql database DBNAME
+    cpanel set mysql privileges USERNAME DBNAME PRIVILEGES
+    cpanel list mysql privileges USERNAME DBNAME
+    cpanel delete mysql privileges USERNAME DBNAME
+    cpanel list mysql routines [USERNAME]
+    cpanel get mysql schema DBNAME
+    cpanel add mysql host HOST
+    cpanel annotate mysql host HOST
+    cpanel list mysql hosts
+    cpanel delete mysql host HOST
+    cpanel get mysql server
+    cpanel get mysql restrictions
 
 \033[1mCOMMANDS\033[0m
 
@@ -1360,5 +1377,156 @@ Usage: cpanel create mysql user USERNAME PASSWORD
 
     EXAMPLE
         \033[1;34mcpanel delete mysql user "scott"\033[00m
+
+\033[1mcreate mysql database DBNAME\033[0m
+    Create a new MySQL database with name DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel create mysql database 'northwind'\033[00m
+
+\033[1mlist mysql databases\033[0m
+    List existing MySQL databases.
+
+    EXAMPLE
+        \033[1;34mcpanel list mysql databases\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_databases/
+
+\033[1mrename mysql database OLDDBNAME NEWDBNAME\033[0m
+    Rename MySQL database from OLDDBNAME to NEWDBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel rename database 'northwind' 'southgale'\033[00m
+
+\033[1mdelete mysql database DBNAME\033[0m
+    Delete MySQL database named DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel delete database 'northwind'\033[00m
+
+\033[1mcheck mysql database DBNAME\033[0m
+    Check the integrity of MySQL database DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel check mysql database 'northwind'\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-check_database/
+
+\033[1mrepair mysql database DBNAME\033[0m
+    Try to repair MySQL database DBNAME.
+    See ‘cpanel check mysql database’ above.
+
+    EXAMPLE
+        \033[1;34mcpanel repair mysql database 'northwind'\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/repair_database/
+
+\033[1mset mysql privileges USERNAME DBNAME PRIVILEGES\033[0m
+    Set the privileges of MySQL user USERNAME on database DBNAME
+    to PRIVILEGES.
+
+    To add full privileges, use 'ALL PRIVILEGES'.
+    To add individual privileges, use a comma-separated list.
+
+    For a list of individual privileges see:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/set_privileges_on_database/
+
+    For a description of the scope of individual privileges see:
+    https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html
+
+    EXAMPLES
+        \033[1;34mcpanel set mysql privileges 'scott' 'northwind' 'ALL PRIVILEGES'\033[00m
+
+        \033[1;34mcpanel set mysql privileges 'scott' 'northwind' \\ \033[00m
+        \033[1;34m    'DELETE, INSERT, REFERENCES, SELECT, SHOW VIEW'\033[00m
+
+\033[1mlist mysql privileges USERNAME DBNAME\033[0m
+    List privileges granted to MySQL user USERNAME on database DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel list mysql privileges 'scott' 'northwind'\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-get_privileges_on_database/
+
+\033[1mdelete mysql privileges USERNAME DBNAME\033[0m
+    Revoke all privileges granted to MySQL user USERNAME on database DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel delete mysql privileges 'scott' 'northwind'\033[00m
+
+\033[1mlist mysql routines [USERNAME]\033[0m
+    List routines (stored procedures and functions) associated to MySQL
+    user USERNAME. If not provided, list routines from all users.
+
+    EXAMPLES
+        \033[1;34mcpanel list mysql routines\033[00m
+        \033[1;34mcpanel list mysql routines 'scott'\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_routines/
+
+\033[1mget mysql schema DBNAME\033[0m
+    Dump schema of MySQL database DBNAME.
+    The schema is a SQL script that can later be used to recreate the
+    database.
+
+    EXAMPLE
+        \033[1;34mcpanel get mysql schema 'northwind'\033[00m
+
+\033[1madd mysql host HOST\033[0m
+    Add HOST to the list of authorized hosts that can connect to MySQL.
+
+    HOST can be a hostname, an IP address, or a range with ‘%’ wildcards.
+
+    EXAMPLES
+        \033[1;34mcpanel add mysql host client.example.com\033[00m
+        \033[1;34mcpanel add mysql host '192.168.0.1'\033[00m
+        \033[1;34mcpanel add mysql host '192.168.%.%'\033[00m
+
+\033[1mannotate mysql host HOST NOTE\033[0m
+    Add a short description NOTE to existing authorized host HOST.
+    See ‘cpanel add mysql host’ above.
+
+    EXAMPLE
+        \033[1;34mcpanel annotate mysql host '192.168.0.1' 'My home PC'\033[00m
+
+\033[1mlist mysql hosts\033[0m
+    List authorized hosts that can connect to MySQL.
+    See ‘cpanel add mysql host’ above.
+
+    EXAMPLE
+        \033[1;34mcpanel list mysql hosts\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_host_notes/
+
+\033[1mdelete mysql host HOST\033[0m
+    Delete HOST from list of authorized.
+    See ‘cpanel add mysql host’ above.
+
+    EXAMPLE
+        \033[1;34mcpanel delete mysql host '192.168.0.1'\033[00m
+
+\033[1mget mysql server\033[0m
+    Return server information and version from MySQL.
+
+    EXAMPLE
+        \033[1;34mcpanel get mysql server\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_server_information/
+
+\033[1mget mysql restrictions\033[0m
+    Return MySQL object name length and prefix restrictions.
+
+    EXAMPLE
+        \033[1;34mcpanel get mysql restrictions\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_restrictions/
 
 ---
