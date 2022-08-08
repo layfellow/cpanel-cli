@@ -1343,7 +1343,7 @@ Usage: cpanel create mysql user USERNAME PASSWORD
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/Mysql-list_users/
 
-\033[1mrename mysql user OLDUSERNAME\033[0m
+\033[1mrename mysql user OLDUSERNAME NEWUSERNAME\033[0m
     Rename MySQL user from OLDUSERNAME to NEWUSERNAME.
 
     EXAMPLE
