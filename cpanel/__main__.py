@@ -412,7 +412,7 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "set mysql password"):
 			r = host.check(lambda: uapi.Mysql.set_password(user = args[3], password = args[4]))
 
-		elif cmd_is(cmd, "delete mysql user", "rm delete mysql user", "remove mysql user"):
+		elif cmd_is(cmd, "delete mysql user", "rm mysql user", "remove mysql user"):
 			r = host.check(lambda: uapi.Mysql.delete_user(name = args[3]))
 
 		else:
