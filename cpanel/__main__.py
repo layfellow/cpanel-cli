@@ -11,7 +11,7 @@ from .core import NullableStr, CPanelEndpoint, CPanelError, endpoint
 HOME: NullableStr = os.environ.get('HOME')
 RCFILE: str = (HOME + '/' if HOME else '') + '.' + cpanel.__name__ + 'rc'
 
-#  Switch on debugging information if enviroment variable DEBUG is set to 1.
+#  Switch on debugging information if environment variable DEBUG is set to 1.
 logging.basicConfig(stream = sys.stderr, level = logging.DEBUG if os.environ.get('DEBUG') else logging.INFO)
 log: Logger = logging.getLogger(__name__)
 
