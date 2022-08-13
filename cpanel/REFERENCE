@@ -1397,13 +1397,13 @@ Usage: cpanel create mysql user USERNAME PASSWORD
     Rename MySQL database from OLDDBNAME to NEWDBNAME.
 
     EXAMPLE
-        \033[1;34mcpanel rename database 'northwind' 'southgale'\033[00m
+        \033[1;34mcpanel rename mysql database 'northwind' 'southgale'\033[00m
 
 \033[1mdelete mysql database DBNAME\033[0m
     Delete MySQL database named DBNAME.
 
     EXAMPLE
-        \033[1;34mcpanel delete database 'northwind'\033[00m
+        \033[1;34mcpanel delete mysql database 'northwind'\033[00m
 
 \033[1mcheck mysql database DBNAME\033[0m
     Check the integrity of MySQL database DBNAME.

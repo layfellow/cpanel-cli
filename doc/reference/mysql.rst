@@ -118,7 +118,7 @@ Rename MySQL database from OLDDBNAME to NEWDBNAME.
 
 .. code:: sh
 
-    $ cpanel rename database 'northwind' 'southgale'
+    $ cpanel rename mysql database 'northwind' 'southgale'
 
 **delete mysql database DBNAME**
 
@@ -128,7 +128,7 @@ Delete MySQL database named DBNAME.
 
 .. code:: sh
 
-    $ cpanel delete database 'northwind'
+    $ cpanel delete mysql database 'northwind'
 
 **check mysql database DBNAME**
 
@@ -305,4 +305,5 @@ Return MySQL object name length and prefix restrictions.
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/get_restrictions/
+
 
