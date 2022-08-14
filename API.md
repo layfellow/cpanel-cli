@@ -367,20 +367,20 @@
 - [ ] PasswdStrength::get_required_strength
 - [ ] Personalization::get
 - [ ] Personalization::set
-- [ ] Postgresql::create_database
-- [ ] Postgresql::create_user
-- [ ] Postgresql::delete_database
-- [ ] Postgresql::delete_user
-- [ ] Postgresql::get_restrictions
-- [ ] Postgresql::grant_all_privileges
-- [ ] Postgresql::list_databases
-- [ ] Postgresql::list_users
-- [ ] Postgresql::rename_database
-- [ ] Postgresql::rename_user
-- [ ] Postgresql::rename_user_no_password
-- [ ] Postgresql::revoke_all_privileges
-- [ ] Postgresql::set_password
-- [ ] Postgresql::update_privileges
+- [x] Postgresql::create_database
+- [x] Postgresql::create_user
+- [x] Postgresql::delete_database
+- [x] Postgresql::delete_user
+- [x] Postgresql::get_restrictions
+- [x] Postgresql::grant_all_privileges
+- [x] Postgresql::list_databases
+- [x] Postgresql::list_users
+- [x] Postgresql::rename_database
+- [x] Postgresql::rename_user
+- [-] Postgresql::rename_user_no_password
+- [x] Postgresql::revoke_all_privileges
+- [x] Postgresql::set_password
+- [x] Postgresql::update_privileges
 - [ ] Pushbullet::send_test_message
 - [ ] Quota::get_local_quota_info
 - [x] Quota::get_quota_info

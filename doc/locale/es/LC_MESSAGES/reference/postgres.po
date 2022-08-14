@@ -1,0 +1,197 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: A command line interface for the cPanel Unrestricted "
+"API. \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-14 17:51-0400\n"
+"PO-Revision-Date: 2022-08-09 12:56-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../reference/postgres.rst:7
+msgid "Module: ``postgres``"
+msgstr "Módulo: ``postgres``"
+
+#: ../../reference/postgres.rst:9
+msgid "`Leer en español </es/latest/reference/postgres.html>`_"
+msgstr "`Read in English </en/latest/reference/postgres.html>`_"
+
+#: ../../reference/postgres.rst:11 ../../reference/postgres.rst:28
+msgid "**create postgres user USERNAME PASSWORD**"
+msgstr "**create postgres user USERNAME PASSWORD**"
+
+#: ../../reference/postgres.rst:12 ../../reference/postgres.rst:38
+msgid "**list postgres users**"
+msgstr "**list postgres users**"
+
+#: ../../reference/postgres.rst:13 ../../reference/postgres.rst:51
+msgid "**rename postgres user OLDUSERNAME NEWUSERNAME NEWPASSWORD**"
+msgstr "**rename postgres user OLDUSERNAME NEWUSERNAME NEWPASSWORD**"
+
+#: ../../reference/postgres.rst:14 ../../reference/postgres.rst:61
+msgid "**set postgres password USERNAME NEWPASSWORD**"
+msgstr "**set postgres password USERNAME NEWPASSWORD**"
+
+#: ../../reference/postgres.rst:15 ../../reference/postgres.rst:71
+msgid "**delete postgres user USERNAME**"
+msgstr "**delete postgres user USERNAME**"
+
+#: ../../reference/postgres.rst:16 ../../reference/postgres.rst:81
+msgid "**create postgres database DBNAME**"
+msgstr "**create postgres database DBNAME**"
+
+#: ../../reference/postgres.rst:17 ../../reference/postgres.rst:91
+msgid "**list postgres databases**"
+msgstr "**list postgres databases**"
+
+#: ../../reference/postgres.rst:18 ../../reference/postgres.rst:104
+msgid "**rename postgres database OLDDBNAME NEWDBNAME**"
+msgstr "**rename postgres database OLDDBNAME NEWDBNAME**"
+
+#: ../../reference/postgres.rst:19 ../../reference/postgres.rst:114
+msgid "**delete postgres database DBNAME**"
+msgstr "**delete postgres database DBNAME**"
+
+#: ../../reference/postgres.rst:20 ../../reference/postgres.rst:124
+msgid "**set postgres privileges USERNAME DBNAME**"
+msgstr "**set postgres privileges USERNAME DBNAME**"
+
+#: ../../reference/postgres.rst:21 ../../reference/postgres.rst:137
+msgid "**delete postgres privileges USERNAME DBNAME**"
+msgstr "**delete postgres privileges USERNAME DBNAME**"
+
+#: ../../reference/postgres.rst:22 ../../reference/postgres.rst:147
+msgid "**sync postgres grants**"
+msgstr "**sync postgres grants**"
+
+#: ../../reference/postgres.rst:23 ../../reference/postgres.rst:160
+msgid "**get postgres restrictions**"
+msgstr "**get postgres restrictions**"
+
+#: ../../reference/postgres.rst:25
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/postgres.rst:30
+msgid "Create a new PostgreSQL user with USERNAME and PASSWORD."
+msgstr ""
+"Crea un nuevo usuario de PostgreSQL con nombre de usuario USERNAME y "
+"contraseña PASSWORD."
+
+#: ../../reference/postgres.rst:32 ../../reference/postgres.rst:42
+#: ../../reference/postgres.rst:55 ../../reference/postgres.rst:65
+#: ../../reference/postgres.rst:75 ../../reference/postgres.rst:85
+#: ../../reference/postgres.rst:95 ../../reference/postgres.rst:108
+#: ../../reference/postgres.rst:118 ../../reference/postgres.rst:131
+#: ../../reference/postgres.rst:141 ../../reference/postgres.rst:154
+#: ../../reference/postgres.rst:164
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/postgres.rst:40
+msgid "List all PostgreSQL users associated to the cPanel account."
+msgstr "Lista los usuarios de PostgreSQL asociados a la cuenta de cPanel."
+
+#: ../../reference/postgres.rst:48
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql::list_users/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql::list_users/"
+
+#: ../../reference/postgres.rst:53
+msgid "Rename PostgreSQL user from OLDUSERNAME to NEWUSERNAME with NEWPASSWORD."
+msgstr ""
+"Camba el nombre de usuario PostgreSQL de OLDUSERNAME a NEWUSERNAME, con "
+"una nueva contraseña NEWPASSWORD."
+
+#: ../../reference/postgres.rst:63
+msgid "Change the password for PostgreSQL user USERNAME to NEWPASSWORD."
+msgstr "Cambia la contraseña a NEWPASSWORD para el usuario de PostgreSQL USERNAME"
+
+#: ../../reference/postgres.rst:73
+msgid "Delete PostgreSQL user USERNAME."
+msgstr "Elimina el usuario de PostgreSQL USERNAME."
+
+#: ../../reference/postgres.rst:83
+msgid "Create a new PostgreSQL database with name DBNAME."
+msgstr "Crea una nueva base de datos PostgreSQL con nombre DBNAME."
+
+#: ../../reference/postgres.rst:93
+msgid "List existing PostgreSQL databases."
+msgstr "Lista las bases de datos PostgreSQL existentes."
+
+#: ../../reference/postgres.rst:101
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql-"
+"list_databases/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql-"
+"list_databases/"
+
+#: ../../reference/postgres.rst:106
+msgid "Rename PostgreSQL database from OLDDBNAME to NEWDBNAME."
+msgstr "Cambia el nombre de la base de datos PostgreSQL de OLDDBNAME a NEWDBNAME."
+
+#: ../../reference/postgres.rst:116
+msgid "Delete PostgreSQL database named DBNAME."
+msgstr "Elimina la base de datos PostgreSQL DBNAME."
+
+#: ../../reference/postgres.rst:126
+msgid ""
+"Grant to PostgreSQL user USERNAME all privileges on database DBNAME. To "
+"manage user privileges, use GRANT/REVOKE statements. See: "
+"https://www.postgresql.org/docs/current/sql-grant.htm and "
+"https://www.postgresql.org/docs/current/sql-revoke.htm"
+msgstr ""
+"Otorga todos los privilegios al usuario de PostgreSQL USERNAME en la base"
+" de datos DBNAME. Para gestionar los privilegios individuales, use "
+"GRANT/REVOKE. Vea: https://www.postgresql.org/docs/current/sql-grant.htm "
+"y https://www.postgresql.org/docs/current/sql-revoke.htm"
+
+#: ../../reference/postgres.rst:139
+msgid ""
+"Revoke all privileges granted to PostgreSQL user USERNAME on database "
+"DBNAME."
+msgstr ""
+"Revoca todos los privilegios otorgados al usuario de PostgreSQL USERNAME "
+"en la base de datos DBNAME."
+
+#: ../../reference/postgres.rst:149
+msgid ""
+"Manually synchronize the user grants after adding users or tables to a "
+"PostgreSQL database. See ‘Add a PostgreSQL user’ at: "
+"https://docs.cpanel.net/cpanel/databases/postgresql-databases/ for "
+"further information."
+msgstr ""
+"Sincroniza manualmente los privilegios de usuarios de la base datos "
+"después de agregar usuarios o tablas a una base de datos PostgreSQL. Vea "
+"‘Add a PostgreSQL user’ en: https://docs.cpanel.net/cpanel/databases"
+"/postgresql-databases/ para mayor información."
+
+#: ../../reference/postgres.rst:162
+msgid "Return PostgreSQL object name length and prefix restrictions."
+msgstr ""
+"Devuelve las restricciones de longitud de nombre y prefijos para los "
+"objetos de PostgreSQL."
+
+#: ../../reference/postgres.rst:170
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql::get_restrictions/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql::get_restrictions/"
+

@@ -1530,3 +1530,114 @@ Usage: cpanel create mysql user USERNAME PASSWORD
     https://api.docs.cpanel.net/openapi/cpanel/operation/get_restrictions/
 
 ---
+
+Usage: cpanel create postgres user USERNAME PASSWORD
+    cpanel list postgres users
+    cpanel rename postgres user OLDUSERNAME NEWUSERNAME NEWPASSWORD
+    cpanel set postgres password USERNAME NEWPASSWORD
+    cpanel delete postgres user USERNAME
+    cpanel create postgres database DBNAME
+    cpanel list postgres databases
+    cpanel rename postgres database OLDDBNAME NEWDBNAME
+    cpanel delete postgres database DBNAME
+    cpanel set postgres privileges USERNAME DBNAME
+    cpanel delete postgres privileges USERNAME DBNAME
+    cpanel sync postgres grants
+    cpanel get postgres restrictions
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mcreate postgres user USERNAME PASSWORD\033[0m
+    Create a new PostgreSQL user with USERNAME and PASSWORD.
+
+    EXAMPLE
+        \033[1;34mcpanel create postgres user "scott" \'tiger\'\033[00m
+
+\033[1mlist postgres users\033[0m
+    List all PostgreSQL users associated to the cPanel account.
+
+    EXAMPLE
+        \033[1;34mcpanel list postgres users\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql::list_users/
+
+\033[1mrename postgres user OLDUSERNAME NEWUSERNAME NEWPASSWORD\033[0m
+    Rename PostgreSQL user from OLDUSERNAME to NEWUSERNAME with NEWPASSWORD.
+
+    EXAMPLE
+        \033[1;34mcpanel rename postgres user "scott" "larry" \'tiger\'\033[00m
+
+\033[1mset postgres password USERNAME NEWPASSWORD\033[0m
+    Change the password for PostgreSQL user USERNAME to NEWPASSWORD.
+
+    EXAMPLE
+        \033[1;34mcpanel set postgres password "scott" 'panther'\033[00m
+
+\033[1mdelete postgres user USERNAME\033[0m
+    Delete PostgreSQL user USERNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel delete postgres user "scott"\033[00m
+
+\033[1mcreate postgres database DBNAME\033[0m
+    Create a new PostgreSQL database with name DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel create postgres database 'northwind'\033[00m
+
+\033[1mlist postgres databases\033[0m
+    List existing PostgreSQL databases.
+
+    EXAMPLE
+        \033[1;34mcpanel list postgres databases\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql-list_databases/
+
+\033[1mrename postgres database OLDDBNAME NEWDBNAME\033[0m
+    Rename PostgreSQL database from OLDDBNAME to NEWDBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel rename postgres database 'northwind' 'southgale'\033[00m
+
+\033[1mdelete postgres database DBNAME\033[0m
+    Delete PostgreSQL database named DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel delete postgres database 'northwind'\033[00m
+
+\033[1mset postgres privileges USERNAME DBNAME\033[0m
+    Grant to PostgreSQL user USERNAME all privileges on database DBNAME.
+    To manage user privileges, use GRANT/REVOKE statements. See:
+    https://www.postgresql.org/docs/current/sql-grant.htm and
+    https://www.postgresql.org/docs/current/sql-revoke.htm
+
+    EXAMPLE
+        \033[1;34mcpanel set postgres privileges 'scott' 'northwind'\033[00m
+
+\033[1mdelete postgres privileges USERNAME DBNAME\033[0m
+    Revoke all privileges granted to PostgreSQL user USERNAME on database DBNAME.
+
+    EXAMPLE
+        \033[1;34mcpanel delete postgres privileges 'scott' 'northwind'\033[00m
+
+\033[1msync postgres grants\033[0m
+    Manually synchronize the user grants after adding users or tables to a
+    PostgreSQL database. See ‘Add a PostgreSQL user’ at:
+    https://docs.cpanel.net/cpanel/databases/postgresql-databases/
+    for further information.
+
+    EXAMPLE
+        \033[1;34mcpanel sync postgres grants\033[00m
+
+\033[1mget postgres restrictions\033[0m
+    Return PostgreSQL object name length and prefix restrictions.
+
+    EXAMPLE
+        \033[1;34mcpanel get postgres restrictions\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/Postgresql::get_restrictions/
+
+---

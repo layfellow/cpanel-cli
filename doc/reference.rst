@@ -32,3 +32,4 @@ Command Reference
    reference/webmail
    reference/ftp
    reference/mysql
+   reference/postgres
