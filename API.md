@@ -109,8 +109,8 @@
 - [x] Email::add_auto_responder
 - [ ] Email::add_domain_forwarder
 - [ ] Email::add_forwarder
-- [ ] Email::add_list
-- [ ] Email::add_mailman_delegates
+- [x] Email::add_list
+- [x] Email::add_mailman_delegates
 - [ ] Email::add_mx
 - [ ] Email::add_pop
 - [ ] Email::add_spam_filter
@@ -120,14 +120,14 @@
 - [x] Email::count_auto_responders
 - [x] Email::count_filters
 - [ ] Email::count_forwarders
-- [ ] Email::count_lists
+- [x] Email::count_lists
 - [x] Email::count_pops
 - [x] Email::delete_auto_responder
 - [ ] Email::delete_domain_forwarder
 - [x] Email::delete_filter
 - [ ] Email::delete_forwarder
 - [ ] Email::delete_held_messages
-- [ ] Email::delete_list
+- [x] Email::delete_list
 - [ ] Email::delete_mx
 - [ ] Email::delete_pop
 - [x] Email::disable_filter
@@ -143,7 +143,7 @@
 - [ ] Email::enable_spam_box
 - [ ] Email::fetch_charmaps
 - [ ] Email::fts_rescan_mailbox
-- [ ] Email::generate_mailman_otp
+- [x] Email::generate_mailman_otp
 - [x] Email::get_auto_responder
 - [ ] Email::get_charsets
 - [x] Email::get_client_settings
@@ -152,9 +152,9 @@
 - [x] Email::get_disk_usage
 - [x] Email::get_filter
 - [ ] Email::get_held_message_count
-- [ ] Email::get_lists_total_disk_usage
+- [x] Email::get_lists_total_disk_usage
 - [ ] Email::get_mailbox_autocreate
-- [ ] Email::get_mailman_delegates
+- [x] Email::get_mailman_delegates
 - [-] Email::get_main_account_disk_usage
 - [-] Email::get_main_account_disk_usage_bytes
 - [-] Email::get_max_email_quota
@@ -162,7 +162,7 @@
 - [x] Email::get_pop_quota
 - [ ] Email::get_spam_settings
 - [x] Email::get_webmail_settings
-- [ ] Email::has_delegated_mailman_lists
+- [x] Email::has_delegated_mailman_lists
 - [ ] Email::has_plaintext_authentication
 - [ ] Email::hold_outgoing
 - [x] Email::list_auto_responders
@@ -172,20 +172,20 @@
 - [ ] Email::list_filters_backups
 - [ ] Email::list_forwarders
 - [ ] Email::list_forwarders_backups
-- [ ] Email::list_lists
+- [x] Email::list_lists
 - [ ] Email::list_mail_domains
 - [ ] Email::list_mxs
 - [x] Email::list_pops
 - [ ] Email::list_pops_with_disk
 - [ ] Email::list_system_filter_info
-- [ ] Email::passwd_list
+- [x] Email::passwd_list
 - [ ] Email::passwd_pop
 - [ ] Email::release_outgoing
-- [ ] Email::remove_mailman_delegates
+- [x] Email::remove_mailman_delegates
 - [ ] Email::reorder_filters
 - [ ] Email::set_always_accept
 - [ ] Email::set_default_address
-- [ ] Email::set_list_privacy_options
+- [x] Email::set_list_privacy_options
 - [ ] Email::stats_db_status
 - [x] Email::store_filter
 - [ ] Email::suspend_incoming

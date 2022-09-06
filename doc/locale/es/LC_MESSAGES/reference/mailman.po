@@ -1,0 +1,273 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-06 13:50-0400\n"
+"PO-Revision-Date: 2022-09-06 13:50-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/mailman.rst:7
+msgid "Module: ``mailman``"
+msgstr "Módulo: ``mailman``"
+
+#: ../../reference/mailman.rst:9
+msgid "`Leer en español </es/latest/reference/mailman.html>`_"
+msgstr "`Read in English </en/latest/reference/mailman.html>`_"
+
+#: ../../reference/mailman.rst:11 ../../reference/mailman.rst:28
+msgid "**add mailman list LISTNAME@DOMAIN PASSWORD [private]**"
+msgstr "**add mailman list LISTNAME@DOMAIN PASSWORD [private]**"
+
+#: ../../reference/mailman.rst:12 ../../reference/mailman.rst:46
+msgid "**delete mailman list LISTNAME@DOMAIN**"
+msgstr "**delete mailman list LISTNAME@DOMAIN**"
+
+#: ../../reference/mailman.rst:13 ../../reference/mailman.rst:59
+msgid "**count mailman lists**"
+msgstr "**count mailman lists**"
+
+#: ../../reference/mailman.rst:14 ../../reference/mailman.rst:75
+msgid "**list mailman lists**"
+msgstr "**list mailman lists**"
+
+#: ../../reference/mailman.rst:15 ../../reference/mailman.rst:89
+msgid "**add mailman delegates LISTNAME@DOMAIN EMAIL...**"
+msgstr "**add mailman delegates LISTNAME@DOMAIN EMAIL...**"
+
+#: ../../reference/mailman.rst:16
+msgid "**delete mailman delegate LISTNAME@DOMAIN EMAIL...**"
+msgstr "**delete mailman delegate LISTNAME@DOMAIN EMAIL...**"
+
+#: ../../reference/mailman.rst:17 ../../reference/mailman.rst:107
+msgid "**list mailman delegates LISTNAME@DOMAIN**"
+msgstr "**list mailman delegates LISTNAME@DOMAIN**"
+
+#: ../../reference/mailman.rst:18 ../../reference/mailman.rst:144
+msgid "**check mailman delegate EMAIL**"
+msgstr "**check mailman delegate EMAIL**"
+
+#: ../../reference/mailman.rst:19 ../../reference/mailman.rst:163
+msgid "**generate mailman password LISTNAME@DOMAIN**"
+msgstr "**generate mailman password LISTNAME@DOMAIN**"
+
+#: ../../reference/mailman.rst:20 ../../reference/mailman.rst:180
+msgid "**set mailman password LISTNAME@DOMAIN PASSWORD**"
+msgstr "**set mailman password LISTNAME@DOMAIN PASSWORD**"
+
+#: ../../reference/mailman.rst:21 ../../reference/mailman.rst:193
+msgid "**get mailman usage**"
+msgstr "**get mailman usage**"
+
+#: ../../reference/mailman.rst:22 ../../reference/mailman.rst:210
+msgid "**set mailman private LISTNAME@DOMAIN**"
+msgstr "**set mailman private LISTNAME@DOMAIN**"
+
+#: ../../reference/mailman.rst:23 ../../reference/mailman.rst:225
+msgid "**set mailman public LISTNAME@DOMAIN**"
+msgstr "**set mailman public LISTNAME@DOMAIN**"
+
+#: ../../reference/mailman.rst:25
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/mailman.rst:30
+msgid ""
+"Create a new mailing list named LISTNAME for DOMAIN, using PASSWORD. By "
+"default, a mailing list is public, i.e, anyone can subscribe and read the"
+" archives. If ‘private’ is passed as an option, then make the mailing "
+"list private, so that subscriptions need to be approved by an "
+"administrator and only subscribed members can access the archives."
+msgstr ""
+"Crea una nueva lista de correos llamada LISTNAME para el dominio DOMAIN,"
+" con la contraseña PASSWORD. Por defecto, una lista de correo es pública,"
+" es decir, cualquiera puede suscribirse y leer los archivos."
+" Si se pasa la opción ‘private’, entonces la lista de correos"
+" es privada, de modo que las suscripciones deben ser aprobadas"
+" por un administrador y sólo los miembros suscritos pueden"
+" acceder a los archivos."
+
+#: ../../reference/mailman.rst:36 ../../reference/mailman.rst:50
+#: ../../reference/mailman.rst:63 ../../reference/mailman.rst:97
+#: ../../reference/mailman.rst:114 ../../reference/mailman.rst:134
+#: ../../reference/mailman.rst:151 ../../reference/mailman.rst:168
+#: ../../reference/mailman.rst:184 ../../reference/mailman.rst:198
+#: ../../reference/mailman.rst:216 ../../reference/mailman.rst:231
+msgid ""
+"Mailing lists are managed using the Mailman application. For further "
+"information on Mailman see https://wiki.list.org/DOC/Home"
+msgstr ""
+"Las listas de correo se gestionan utilizando la aplicación"
+" Mailman. Para más información sobre Mailman véase"
+" https://wiki.list.org/DOC/Home"
+
+#: ../../reference/mailman.rst:39
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/mailman.rst:48
+msgid "Delete the mailing list identified by LISTNAME@DOMAIN."
+msgstr "Elimina la lista de correo identificada por LISTNAME@DOMAIN."
+
+#: ../../reference/mailman.rst:53 ../../reference/mailman.rst:66
+#: ../../reference/mailman.rst:80 ../../reference/mailman.rst:100
+#: ../../reference/mailman.rst:117 ../../reference/mailman.rst:137
+#: ../../reference/mailman.rst:154 ../../reference/mailman.rst:171
+#: ../../reference/mailman.rst:187 ../../reference/mailman.rst:201
+#: ../../reference/mailman.rst:219 ../../reference/mailman.rst:234
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/mailman.rst:61
+msgid "Count the number of mailing lists associated to your cPanel account."
+msgstr ""
+"Cuenta el número de listas de correo asociadas a la cuenta de"
+" cPanel."
+
+#: ../../reference/mailman.rst:72
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_lists/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en:"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/count_lists"
+
+#: ../../reference/mailman.rst:77
+msgid ""
+"List the mailing lists of your cPanel account, along with detailed "
+"information of each mailing list."
+msgstr ""
+"Enumera las listas de correo de la cuenta de cPanel, junto con"
+" información detallada de cada lista."
+
+#: ../../reference/mailman.rst:86
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_lists/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en:"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/list_lists"
+
+#: ../../reference/mailman.rst:91
+msgid ""
+"Add one or more delegate EMAILS to the mailing list identified by "
+"LISTNAME@DOMAIN."
+msgstr ""
+"Agrega uno o más EMAILS de delegados a la lista de correo"
+" identificada por LISTNAME@DOMAIN."
+
+#: ../../reference/mailman.rst:94 ../../reference/mailman.rst:111
+#: ../../reference/mailman.rst:131 ../../reference/mailman.rst:148
+msgid ""
+"A delegate is a subscriber to the mailing list with administrative "
+"privileges."
+msgstr ""
+"Un delegado es un suscriptor de la lista de correo con privilegios"
+" administrativos."
+
+#: ../../reference/mailman.rst:109
+msgid "List the delegates of the mailing list identified by LISTNAME@DOMAIN."
+msgstr ""
+"Lista los delegados de la lista de correo identificada por"
+" LISTNAME@DOMAIN."
+
+#: ../../reference/mailman.rst:123
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_mailman_delegates/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en:"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/get_mailman_delegates"
+
+#: ../../reference/mailman.rst:126
+msgid "**delete mailman delegates LISTNAME@DOMAIN EMAIL...**"
+msgstr "**delete mailman delegates LISTNAME@DOMAIN EMAIL...**"
+
+#: ../../reference/mailman.rst:128
+msgid ""
+"Delete one or more delegate EMAILS from the mailing list identified by "
+"LISTNAME@DOMAIN."
+msgstr ""
+"Elimina uno o más EMAILS de delegados de la lista de correo"
+" identificada por LISTNAME@DOMAIN."
+
+#: ../../reference/mailman.rst:146
+msgid "Return 1 if EMAIL is a delegate in any mailing list."
+msgstr "Devuelve 1 si EMAIL es un delegado en cualquier lista de correo."
+
+#: ../../reference/mailman.rst:160
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/has_delegated_mailman_lists/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en:"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/has_delegated_mailman_lists"
+
+#: ../../reference/mailman.rst:165
+msgid ""
+"Generate a one-time password for the mailing list identified by "
+"LISTNAME@DOMAIN. This password will expire after one use."
+msgstr ""
+"Genera una contraseña única para la lista de correo identificada"
+" por LISTNAME@DOMAIN. Esta contraseña expira después de un uso."
+
+#: ../../reference/mailman.rst:177
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/generate_mailman_otp/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en:"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/generate_mailman_otp"
+
+#: ../../reference/mailman.rst:182
+msgid "Set a new PASSWORD for the mailing list identified by LISTNAME@DOMAIN."
+msgstr ""
+"Establece un nueva contraseña PASSWORD para la lista de correo identificada"
+" por LISTNAME@DOMAIN."
+
+#: ../../reference/mailman.rst:195
+msgid ""
+"Return the total disk usage of all mailing lists associated to your "
+"cPanel account."
+msgstr ""
+"Devuelve el uso total del disco de todas las listas de correo"
+" asociadas a la cuenta de cPanel."
+
+#: ../../reference/mailman.rst:207
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_lists_total_disk_usage/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en:"
+" https://api.docs.cpanel.net/openapi/cpanel/operation/get_lists_total_disk_usage"
+
+#: ../../reference/mailman.rst:212
+msgid ""
+"Make a mailing list identified by LISTNAME@DOMAIN private. In a a private"
+" mailing list subscriptions need to be approved by an administrator and "
+"only subscribed members can access the archives."
+msgstr ""
+"Vuelve privada la lista de correo identificada por LISTNAME@DOMAIN."
+" En una lista de correo privada las suscripciones deben ser aprobadas"
+" por un administrador y sólo los miembros suscritos pueden acceder"
+"a los archivos."
+
+#: ../../reference/mailman.rst:227
+msgid ""
+"Make a mailing list identified by LISTNAME@DOMAIN public. In a public "
+"mailing list anyone can subscribe and archives are publicly accesible, "
+"even to non-subscribers."
+msgstr ""
+"Vuelve pública la lista de correo identificada por LISTNAME@DOMAIN."
+" En una lista de correo pública cualquiera puede suscribirse y los"
+" archivos son accesibles públicamente, incluso a los no suscriptores."
+

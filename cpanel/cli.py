@@ -142,7 +142,7 @@ def usage(*args: str) -> str:
 		if len(arglist) == 1:
 			# HACK  Redirect to USAGE to get help for mail and dir submodules
 			if arglist[0][:3].lower() == "mod" or \
-				arglist[0][:4].lower() == "mail" or \
+				(arglist[0][:4].lower() == "mail" and arglist[0][:7].lower() != "mailman") or \
 				arglist[0][:3].lower() == "dir":
 				return True
 		return False 

@@ -30,6 +30,7 @@ Command Reference
    reference/files
    reference/mail
    reference/webmail
+   reference/mailman
    reference/ftp
    reference/mysql
    reference/postgres

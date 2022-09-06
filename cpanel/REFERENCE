@@ -892,11 +892,11 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/
 
-\033[1mcount get mail autoresponder ACCOUNT\033[0m
+\033[1mget mail autoresponder ACCOUNT\033[0m
     Retrieve autoresponder information corresponding to ACCOUNT.
 
     EXAMPLE
-        \033[1;34mcpanel count get mail autoresponder scott@example.com\033[00m
+        \033[1;34mcpanel get mail autoresponder scott@example.com\033[00m
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/get_auto_responder/
@@ -1108,6 +1108,184 @@ form user@domain.com
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/listwebmailapps/
+
+---
+
+Usage: cpanel add mailman list LISTNAME@DOMAIN PASSWORD [private]
+    cpanel delete mailman list LISTNAME@DOMAIN
+    cpanel count mailman lists
+    cpanel list mailman lists
+    cpanel add mailman delegates LISTNAME@DOMAIN EMAIL...
+    cpanel delete mailman delegate LISTNAME@DOMAIN EMAIL...
+    cpanel list mailman delegates LISTNAME@DOMAIN
+    cpanel check mailman delegate EMAIL
+    cpanel generate mailman password LISTNAME@DOMAIN
+    cpanel set mailman password LISTNAME@DOMAIN PASSWORD
+    cpanel get mailman usage
+    cpanel set mailman private LISTNAME@DOMAIN
+    cpanel set mailman public LISTNAME@DOMAIN
+
+\033[1mCOMMANDS\033[0m
+
+\033[1madd mailman list LISTNAME@DOMAIN PASSWORD [private]\033[0m
+    Create a new mailing list named LISTNAME for DOMAIN, using PASSWORD.
+    By default, a mailing list is public, i.e, anyone can subscribe and
+    read the archives. If ‘private’ is passed as an option, then make
+    the mailing list private, so that subscriptions need to be approved
+    by an administrator and only subscribed members can access the archives.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLES
+        \033[1;34mcpanel add mailman list private-list@example.com tiger private\033[00m
+        \033[1;34mcpanel add mailman list public-list@example.com tiger\033[00m
+
+\033[1mdelete mailman list LISTNAME@DOMAIN\033[0m
+    Delete the mailing list identified by LISTNAME@DOMAIN.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel delete mailman list private-list@example.com\033[00m
+
+\033[1mcount mailman lists\033[0m
+    Count the number of mailing lists associated to your cPanel account.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel count mailman lists\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/count_lists/
+
+\033[1mlist mailman lists\033[0m
+    List the mailing lists of your cPanel account, along with detailed
+    information of each mailing list.
+
+    EXAMPLE
+        \033[1;34mcpanel list mailman lists\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_lists/
+
+\033[1madd mailman delegates LISTNAME@DOMAIN EMAIL...\033[0m
+    Add one or more delegate EMAILS to the mailing list identified by
+    LISTNAME@DOMAIN.
+
+    A delegate is a subscriber to the mailing list with administrative
+    privileges.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel add mailman delegates private-list@example.com \\ \033[00m
+        \033[1;34m    scott@example.com larry@example.com\033[00m
+
+\033[1mlist mailman delegates LISTNAME@DOMAIN\033[0m
+    List the delegates of the mailing list identified by LISTNAME@DOMAIN.
+
+    A delegate is a subscriber to the mailing list with administrative
+    privileges.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel list mailman delegates private-list@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_mailman_delegates/
+
+\033[1mdelete mailman delegates LISTNAME@DOMAIN EMAIL...\033[0m
+    Delete one or more delegate EMAILS from the mailing list identified by
+    LISTNAME@DOMAIN.
+
+    A delegate is a subscriber to the mailing list with administrative
+    privileges.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel delete mailman delegates private-list@example.com \\ \033[00m
+        \033[1;34m    scott@example.com larry@example.com\033[00m
+
+\033[1mcheck mailman delegate EMAIL\033[0m
+    Return 1 if EMAIL is a delegate in any mailing list.
+
+    A delegate is a subscriber to the mailing list with administrative
+    privileges.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel check mailman delegate scott@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/has_delegated_mailman_lists/
+
+\033[1mgenerate mailman password LISTNAME@DOMAIN\033[0m
+    Generate a one-time password for the mailing list identified by
+    LISTNAME@DOMAIN. This password will expire after one use.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel generate mailman password private-list@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/generate_mailman_otp/
+
+\033[1mset mailman password LISTNAME@DOMAIN PASSWORD\033[0m
+    Set a new PASSWORD for the mailing list identified by LISTNAME@DOMAIN.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel set mailman password private-list@example.com tiger\033[00m
+
+\033[1mget mailman usage\033[0m
+    Return the total disk usage of all mailing lists associated to your
+    cPanel account.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel get mailman usage\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_lists_total_disk_usage/
+
+\033[1mset mailman private LISTNAME@DOMAIN\033[0m
+    Make a mailing list identified by LISTNAME@DOMAIN private.
+    In a a private mailing list subscriptions need to be approved by an
+    administrator and only subscribed members can access the archives.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel set mailman private private-list@example.com\033[00m
+
+\033[1mset mailman public LISTNAME@DOMAIN\033[0m
+    Make a mailing list identified by LISTNAME@DOMAIN public.
+    In a public mailing list anyone can subscribe and archives are
+    publicly accesible, even to non-subscribers.
+
+    Mailing lists are managed using the Mailman application. For further
+    information on Mailman see https://wiki.list.org/DOC/Home
+
+    EXAMPLE
+        \033[1;34mcpanel set mailman public public-list@example.com\033[00m
 
 ---
 

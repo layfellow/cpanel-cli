@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-11 23:56-0400\n"
+"POT-Creation-Date: 2022-09-06 13:20-0400\n"
 "PO-Revision-Date: 2022-05-11 15:38-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: ../../reference/mail.rst:7
 msgid "Module: ``mail``"
@@ -157,7 +157,7 @@ msgstr "**list mail autoresponders DOMAIN**"
 msgid "**count mail autoresponders**"
 msgstr "**count mail autoresponders**"
 
-#: ../../reference/mail.rst:105
+#: ../../reference/mail.rst:105 ../../reference/mail.rst:143
 msgid "**get mail autoresponder ACCOUNT**"
 msgstr "**get mail autoresponder ACCOUNT**"
 
@@ -194,10 +194,6 @@ msgid ""
 msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/count_auto_responders/"
-
-#: ../../reference/mail.rst:143
-msgid "**count get mail autoresponder ACCOUNT**"
-msgstr "**count get mail autoresponder ACCOUNT**"
 
 #: ../../reference/mail.rst:145
 msgid "Retrieve autoresponder information corresponding to ACCOUNT."
@@ -416,8 +412,8 @@ msgid ""
 "Set the email QUOTA in megabytes allocated to ACCOUNT; use ‘0’ or "
 "‘unlimited’ to set an unlimited quota."
 msgstr ""
-"Establece la cuota QUOTA en megabytes signada a la cuenta ACCOUNT; use ‘0’ o "
-"‘unlimited’ para establecer una cuota ilimitada."
+"Establece la cuota QUOTA en megabytes signada a la cuenta ACCOUNT; use "
+"‘0’ o ‘unlimited’ para establecer una cuota ilimitada."
 
 #: ../../reference/mail.rst:361
 msgid "Return the maximum email quota in megabytes allowed in cPanel."
@@ -450,4 +446,7 @@ msgid ""
 msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_disk_usage/"
+
+#~ msgid "**count get mail autoresponder ACCOUNT**"
+#~ msgstr "**count get mail autoresponder ACCOUNT**"
 
