@@ -12,11 +12,12 @@ Module: ``backup``
 - **create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
 - **create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]**
 - **list backups**
+- **restore backup TARBALL**
 
 **COMMANDS**
 
 
-All ‘create backup’ commands create a backup tarball (a .tar.gz file) of
+All ‘create backup’ commands create a backup TARBALL (a .tar.gz file) of
 the user’s home directory along with other account data, such as the crontab,
 API tokens, log files and DB data. The backup tarball’s name is
 backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz.
@@ -67,5 +68,17 @@ List the account’s backup files.
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/
+
+**restore backup TARBALL**
+
+Restore a full backup of the user’s home directory in TARBALL.
+This TARBALL must have been previously created with a ‘cpanel create backup ...’ command
+and *it must be already placed in the user’s home directory*.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel restore backup backup-3.6.2022_11-35-42_scott.tar.gz
 
 

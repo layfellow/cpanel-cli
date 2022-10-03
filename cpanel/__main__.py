@@ -73,6 +73,15 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "get stat"):
 			r = host.dump(lambda: uapi.StatsBar.get_stats(display = "|".join(args[2:])))
 
+		elif cmd_is(cmd, "get ssh port"):
+			r = host.dump(lambda: uapi.SSH.get_port())
+
+		elif cmd_is(cmd, "block ip"):
+			r = host.check(lambda: uapi.BlockIP.add_ip(ip = args[2]))
+
+		elif cmd_is(cmd, "unblock ip"):
+			r = host.check(lambda: uapi.BlockIP.remove_ip(ip = args[2]))
+
 		elif cmd_is(cmd, "list account"):
 			r = host.dump(lambda: uapi.Resellers.list_accounts())
 
@@ -90,6 +99,9 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 
 		elif cmd_is(cmd, "list backup"):
 			r = host.dump(lambda: uapi.Backup.list_backups())
+
+		elif cmd_is(cmd, "restore backup"):
+			r = host.check(lambda: uapi.Backup.restore_files(backup = args[2]))
 
 		elif cmd_is(cmd, "update cache"):
 			r = host.dump(lambda: uapi.CacheBuster.update())

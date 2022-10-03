@@ -1,18 +1,18 @@
 - [x] Backup::fullbackup_to_ftp
 - [x] Backup::fullbackup_to_homedir
-- [ ] Backup::fullbackup_to_scp_with_key
+- [-] Backup::fullbackup_to_scp_with_key
 - [x] Backup::fullbackup_to_scp_with_password
 - [x] Backup::list_backups
-- [ ] Backup::restore_databases
-- [ ] Backup::restore_email_filters
-- [ ] Backup::restore_email_forwarders
-- [ ] Backup::restore_files
+- [-] Backup::restore_databases
+- [-] Backup::restore_email_filters
+- [-] Backup::restore_email_forwarders
+- [x] Backup::restore_files
 - [x] Bandwidth::get_enabled_protocols
 - [x] Bandwidth::get_retention_periods
 - [ ] Bandwidth::query
 - [ ] Batch::strict
-- [ ] BlockIP::add_ip
-- [ ] BlockIP::remove_ip
+- [x] BlockIP::add_ip
+- [x] BlockIP::remove_ip
 - [ ] BoxTrapper::blacklist_messages
 - [ ] BoxTrapper::delete_messages
 - [ ] BoxTrapper::deliver_messages
@@ -386,11 +386,11 @@
 - [x] Quota::get_quota_info
 - [x] Resellers::list_accounts
 - [x] ResourceUsage::get_usages
-- [ ] Restore::directory_listing
-- [ ] Restore::get_users
-- [ ] Restore::query_file_info
-- [ ] Restore::restore_file
-- [ ] SSH::get_port
+- [-] Restore::directory_listing
+- [-] Restore::get_users
+- [-] Restore::query_file_info
+- [-] Restore::restore_file
+- [x] SSH::get_port
 - [ ] SSL::add_autossl_excluded_domains
 - [ ] SSL::can_ssl_redirect
 - [ ] SSL::delete_cert

@@ -59,6 +59,8 @@ locales
 log
 mail
 quota
+ssh
+ip
 stats
 styles
 subaccounts

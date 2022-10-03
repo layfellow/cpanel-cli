@@ -76,6 +76,45 @@ https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
 
 ---
 
+Usage: cpanel get ssh port
+
+Return the cPanel server SSH port.
+
+EXAMPLE
+    \033[1;34mcpanel get ssh port\033[00m
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/SSH-get_port/
+
+---
+
+Usage: cpanel block ip IPRANGE
+    cpanel unblock ip IPRANGE
+
+IPRANGE can be a single address, a CDIR, or a hostname. See:
+https://api.docs.cpanel.net/openapi/cpanel/operation/blockip-add-ip/
+for a list of supported formats.
+
+For a list of currently blocked IP ranges, you can use:
+
+\033[1;34mcpanel cat file /public_html/.htaccess | grep 'deny from'\033[00m
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mblock ip IPRANGE\033[0m
+    Block a range of IP addresses from accessing your account’s hosts.
+
+    EXAMPLE
+        \033[1;34mcpanel block ip 192.168.0.1-192.168.0.58\033[00m
+
+\033[1munblock ip IPRANGE\033[0m
+    Allow a range of IP addresses access to your account’s hosts.
+
+    EXAMPLE
+        \033[1;34mcpanel unblock ip 192.168.0.1-192.168.0.58\033[00m
+
+---
+
 Usage: cpanel list accounts
     cpanel get account
 
@@ -133,10 +172,11 @@ Usage: cpanel create backup home [EMAIL]
     cpanel create backup ftp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
     cpanel create backup scp USERNAME PASSWORD HOST [DIRECTORY] [EMAIL]
     cpanel list backups
+    cpanel restore backup TARBALL
 
 \033[1mCOMMANDS\033[0m
 
-All ‘create backup’ commands create a backup tarball (a .tar.gz file) of
+All ‘create backup’ commands create a backup TARBALL (a .tar.gz file) of
 the user’s home directory along with other account data, such as the crontab,
 API tokens, log files and DB data. The backup tarball’s name is
 backup-MM.DD.YYYY_HH-MM-SS_USERNAME.tar.gz.
@@ -177,6 +217,14 @@ confirmation email after it completes the backup.
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/list_backups/
+
+\033[1mrestore backup TARBALL\033[0m
+    Restore a full backup of the user’s home directory in TARBALL.
+    This TARBALL must have been previously created with a ‘cpanel create backup ...’ command
+    and *it must be already placed in the user’s home directory*.
+
+    EXAMPLE
+        \033[1;34mcpanel restore backup backup-3.6.2022_11-35-42_scott.tar.gz\033[00m
 
 ---
 
