@@ -49,11 +49,11 @@ USERNAME, PASSWORD, HOST and DIRECTORY are the same as for â€˜create backup ftpâ
 
 .. code:: sh
 
-    $ cpanel backup home
-    $ cpanel backup home scott@example.com
-    $ cpanel backup ftp scott tiger ftp.example.com
-    $ cpanel backup ftp scott tiger ftp.example.com /backup
-    $ cpanel backup scp scott tiger ssh.example.com /backup scott@example.com
+    $ cpanel create backup home
+    $ cpanel create backup home scott@example.com
+    $ cpanel create backup ftp scott tiger ftp.example.com
+    $ cpanel create backup ftp scott tiger ftp.example.com /backup
+    $ cpanel create backup scp scott tiger ssh.example.com /backup scott@example.com
 
 **list backups**
 

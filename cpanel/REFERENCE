@@ -163,11 +163,11 @@ confirmation email after it completes the backup.
     USERNAME, PASSWORD, HOST and DIRECTORY are the same as for ‘create backup ftp’.
 
     EXAMPLES
-        \033[1;34mcpanel backup home\033[00m
-        \033[1;34mcpanel backup home scott@example.com\033[00m
-        \033[1;34mcpanel backup ftp scott tiger ftp.example.com\033[00m
-        \033[1;34mcpanel backup ftp scott tiger ftp.example.com /backup\033[00m
-        \033[1;34mcpanel backup scp scott tiger ssh.example.com /backup scott@example.com\033[00m
+        \033[1;34mcpanel create backup home\033[00m
+        \033[1;34mcpanel create backup home scott@example.com\033[00m
+        \033[1;34mcpanel create backup ftp scott tiger ftp.example.com\033[00m
+        \033[1;34mcpanel create backup ftp scott tiger ftp.example.com /backup\033[00m
+        \033[1;34mcpanel create backup scp scott tiger ssh.example.com /backup scott@example.com\033[00m
 
 \033[1mlist backups\033[0m
     List the account’s backup files.
