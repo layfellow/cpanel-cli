@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-06 13:20-0400\n"
+"POT-Creation-Date: 2022-10-03 21:03-0300\n"
 "PO-Revision-Date: 2022-05-11 15:38-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
@@ -37,7 +37,8 @@ msgid "**list mail accounts**"
 msgstr "**list mail accounts**"
 
 #: ../../reference/mail.rst:18 ../../reference/mail.rst:114
-#: ../../reference/mail.rst:228 ../../reference/mail.rst:332
+#: ../../reference/mail.rst:222 ../../reference/mail.rst:314
+#: ../../reference/mail.rst:418
 msgid "**COMMANDS**"
 msgstr "**COMANDOS**"
 
@@ -48,12 +49,15 @@ msgstr "Devuelve el número de cuentas de correo de cPanel."
 #: ../../reference/mail.rst:25 ../../reference/mail.rst:38
 #: ../../reference/mail.rst:61 ../../reference/mail.rst:121
 #: ../../reference/mail.rst:134 ../../reference/mail.rst:147
-#: ../../reference/mail.rst:204 ../../reference/mail.rst:235
-#: ../../reference/mail.rst:248 ../../reference/mail.rst:260
-#: ../../reference/mail.rst:279 ../../reference/mail.rst:291
-#: ../../reference/mail.rst:302 ../../reference/mail.rst:313
-#: ../../reference/mail.rst:340 ../../reference/mail.rst:363
-#: ../../reference/mail.rst:373 ../../reference/mail.rst:391
+#: ../../reference/mail.rst:204 ../../reference/mail.rst:229
+#: ../../reference/mail.rst:239 ../../reference/mail.rst:250
+#: ../../reference/mail.rst:267 ../../reference/mail.rst:280
+#: ../../reference/mail.rst:290 ../../reference/mail.rst:321
+#: ../../reference/mail.rst:334 ../../reference/mail.rst:346
+#: ../../reference/mail.rst:365 ../../reference/mail.rst:377
+#: ../../reference/mail.rst:388 ../../reference/mail.rst:399
+#: ../../reference/mail.rst:426 ../../reference/mail.rst:449
+#: ../../reference/mail.rst:459 ../../reference/mail.rst:477
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
@@ -90,8 +94,8 @@ msgid "Get an ACCOUNT’s email settings."
 msgstr "Obtiene la configuración del correo ACCOUNT."
 
 #: ../../reference/mail.rst:56 ../../reference/mail.rst:81
-#: ../../reference/mail.rst:109 ../../reference/mail.rst:223
-#: ../../reference/mail.rst:329 ../../reference/mail.rst:386
+#: ../../reference/mail.rst:109 ../../reference/mail.rst:309
+#: ../../reference/mail.rst:415 ../../reference/mail.rst:472
 msgid ""
 "ACCOUNT is the name of a cPanel email account, usually in the form "
 "user@domain.com"
@@ -100,7 +104,7 @@ msgstr ""
 "la forma user@domain.com"
 
 #: ../../reference/mail.rst:59 ../../reference/mail.rst:84
-#: ../../reference/mail.rst:112 ../../reference/mail.rst:226
+#: ../../reference/mail.rst:112 ../../reference/mail.rst:312
 msgid "Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS."
 msgstr ""
 "Utilice ‘cpanel list mail accounts’ para obtener una lista de cuentas "
@@ -133,7 +137,7 @@ msgstr ""
 "de correo. Opcionalmente, puede restringir el listado al directorio DIR."
 
 #: ../../reference/mail.rst:86 ../../reference/mail.rst:181
-#: ../../reference/mail.rst:351
+#: ../../reference/mail.rst:437
 msgid "*Examples*"
 msgstr "*Ejemplos*"
 
@@ -268,42 +272,122 @@ msgid "Delete an autoresponder for ACCOUNT."
 msgstr "Elimina la respuesta automática para ACCOUNT."
 
 #: ../../reference/mail.rst:213
+msgid "``forwarder``"
+msgstr "``forwarder``"
+
+#: ../../reference/mail.rst:215 ../../reference/mail.rst:225
+msgid "**add mail forwarder DOMAIN FORWARDHERE**"
+msgstr "**add mail forwarder DOMAIN FORWARDHERE**"
+
+#: ../../reference/mail.rst:216 ../../reference/mail.rst:235
+msgid "**add mail forwarder EMAIL FORWARDHERE**"
+msgstr "**add mail forwarder EMAIL FORWARDHERE**"
+
+#: ../../reference/mail.rst:217 ../../reference/mail.rst:245
+msgid "**list mail forwarders [DOMAIN]**"
+msgstr "**list mail forwarders [DOMAIN]**"
+
+#: ../../reference/mail.rst:218 ../../reference/mail.rst:263
+msgid "**count mail forwarders**"
+msgstr "**count mail forwarders**"
+
+#: ../../reference/mail.rst:219 ../../reference/mail.rst:276
+msgid "**delete mail forwarder DOMAIN**"
+msgstr "**delete mail forwarder DOMAIN**"
+
+#: ../../reference/mail.rst:220 ../../reference/mail.rst:286
+msgid "**delete mail forwarder EMAIL**"
+msgstr "**delete mail forwarder EMAIL**"
+
+#: ../../reference/mail.rst:227
+msgid "Forward all email sent to all accounts in DOMAIN to FORWARDHERE domain."
+msgstr "Reenvía todo el correo recibido en las cuentas del dominio DOMAIN al dominio FORWARDHERE."
+
+#: ../../reference/mail.rst:237
+msgid "Forward all mail sent to EMAIL address to FORWARDHERE email address."
+msgstr "Reenvía todo el correo recibido en EMAIL a la dirección de correo FORWARDHERE."
+
+#: ../../reference/mail.rst:247
+msgid ""
+"List all current mail forwarders. If optional argument DOMAIN is passed, "
+"list only the forwarders for DOMAIN."
+msgstr ""
+"Lista todos los reenviadores activos de correo. Si se proporciona el argumento opcional "
+"DOMAIN, sólo se listan los reenviadores para el dominio DOMAIN."
+
+#: ../../reference/mail.rst:257
+msgid ""
+"See a sample of the JSON result for all forwarders data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_forwarders/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON para todos los reenviadores en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_forwarders/"
+
+#: ../../reference/mail.rst:260
+msgid ""
+"See a sample of the JSON result for DOMAIN forwarders data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_domain_forwarders/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON para los reenviadores de DOMAIN en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_domain_forwarders/"
+
+#: ../../reference/mail.rst:265
+msgid "Return the total number of mail forwarders for all accounts."
+msgstr "Devuelve el número total de reenviadores de correo para todas las cuentas."
+
+#: ../../reference/mail.rst:273
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_forwarders/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/count_forwarders/"
+
+#: ../../reference/mail.rst:278
+msgid "Delete email forwarder for DOMAIN."
+msgstr "Elimina el reenviador del dominio DOMAIN."
+
+#: ../../reference/mail.rst:288
+msgid "Delete email forwarder for EMAIL address."
+msgstr "Elimina el reenviador de la dirección de correo EMAIL."
+
+#: ../../reference/mail.rst:299
 msgid "``filters``"
 msgstr "``filters``"
 
-#: ../../reference/mail.rst:215 ../../reference/mail.rst:231
+#: ../../reference/mail.rst:301 ../../reference/mail.rst:317
 msgid "**list mail filters ACCOUNT**"
 msgstr "**list mail filters ACCOUNT**"
 
-#: ../../reference/mail.rst:216 ../../reference/mail.rst:244
+#: ../../reference/mail.rst:302 ../../reference/mail.rst:330
 msgid "**count mail filters**"
 msgstr "**count mail filters**"
 
-#: ../../reference/mail.rst:217 ../../reference/mail.rst:254
+#: ../../reference/mail.rst:303 ../../reference/mail.rst:340
 msgid "**get mail filter ACCOUNT FILTERNAME**"
 msgstr "**get mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference/mail.rst:218 ../../reference/mail.rst:269
+#: ../../reference/mail.rst:304 ../../reference/mail.rst:355
 msgid "**set mail filter ACCOUNT FILE**"
 msgstr "**set mail filter ACCOUNT FILE**"
 
-#: ../../reference/mail.rst:219 ../../reference/mail.rst:286
+#: ../../reference/mail.rst:305 ../../reference/mail.rst:372
 msgid "**enable mail filter ACCOUNT FILTERNAME**"
 msgstr "**enable mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference/mail.rst:220 ../../reference/mail.rst:297
+#: ../../reference/mail.rst:306 ../../reference/mail.rst:383
 msgid "**disable mail filter ACCOUNT FILTERNAME**"
 msgstr "**disable mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference/mail.rst:221 ../../reference/mail.rst:308
+#: ../../reference/mail.rst:307 ../../reference/mail.rst:394
 msgid "**delete mail filter ACCOUNT FILTERNAME**"
 msgstr "**delete mail filter ACCOUNT FILTERNAME**"
 
-#: ../../reference/mail.rst:233
+#: ../../reference/mail.rst:319
 msgid "List mail filters associated to ACCOUNT."
 msgstr "Lista los filtros de correo asociados a ACCOUNT."
 
-#: ../../reference/mail.rst:241
+#: ../../reference/mail.rst:327
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/"
@@ -311,11 +395,11 @@ msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters/"
 
-#: ../../reference/mail.rst:246
+#: ../../reference/mail.rst:332
 msgid "Return the total number of mail filters for all accounts."
 msgstr "Devuelve el número total de filtros de correo para todas las cuentas."
 
-#: ../../reference/mail.rst:256
+#: ../../reference/mail.rst:342
 msgid ""
 "Return a JSON-formatted description of email filter FILTERNAME associated"
 " to email ACCOUNT. To get a list of current filter names, use ‘cpanel "
@@ -325,7 +409,7 @@ msgstr ""
 " FILTERNAME asociado al correo ACCOUNT. Para obtener una lista de nombres"
 " de filtros actuales, use ‘cpanel list mail filters ACCOUNT’"
 
-#: ../../reference/mail.rst:266
+#: ../../reference/mail.rst:352
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/"
@@ -333,7 +417,7 @@ msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_filter/"
 
-#: ../../reference/mail.rst:271
+#: ../../reference/mail.rst:357
 msgid ""
 "Create or update an email filter associated with email ACCOUNT. If the "
 "filter already exists, it updates it; otherwise, it creates a new filter."
@@ -352,7 +436,7 @@ msgstr ""
 "luego cargarlo con ‘cpanel set mail filter’. Vea el ejemplo a "
 "continuación."
 
-#: ../../reference/mail.rst:288
+#: ../../reference/mail.rst:374
 msgid ""
 "Enable FILTERNAME associated to ACCOUNT. To get a list of current filter "
 "names, use ‘cpanel list mail filters ACCOUNT’"
@@ -361,7 +445,7 @@ msgstr ""
 "una lista de nombres de filtros actuales, utilice ‘cpanel list mail "
 "filters ACCOUNT’"
 
-#: ../../reference/mail.rst:299
+#: ../../reference/mail.rst:385
 msgid ""
 "Disable FILTERNAME associated to ACCOUNT. To get a list of current filter"
 " names, use ‘cpanel list mail filters ACCOUNT’"
@@ -370,7 +454,7 @@ msgstr ""
 " una lista de nombres de filtros actuales, utilice ‘cpanel list mail "
 "filters ACCOUNT’"
 
-#: ../../reference/mail.rst:310
+#: ../../reference/mail.rst:396
 msgid ""
 "Delete email filter FILTERNAME associated to ACCOUNT. To get a list of "
 "current filter names, use ‘cpanel list mail filters ACCOUNT’"
@@ -379,27 +463,27 @@ msgstr ""
 "una lista de nombres de filtros actuales, utilice ‘cpanel list mail "
 "filters ACCOUNT’"
 
-#: ../../reference/mail.rst:322
+#: ../../reference/mail.rst:408
 msgid "``quota``"
 msgstr "``quota``"
 
-#: ../../reference/mail.rst:324 ../../reference/mail.rst:335
+#: ../../reference/mail.rst:410 ../../reference/mail.rst:421
 msgid "**get mail quota ACCOUNT**"
 msgstr "**get mail quota ACCOUNT**"
 
-#: ../../reference/mail.rst:325 ../../reference/mail.rst:346
+#: ../../reference/mail.rst:411 ../../reference/mail.rst:432
 msgid "**set mail quota ACCOUNT QUOTA**"
 msgstr "**set mail quota ACCOUNT QUOTA**"
 
-#: ../../reference/mail.rst:326 ../../reference/mail.rst:369
+#: ../../reference/mail.rst:412 ../../reference/mail.rst:455
 msgid "**get mail quota default**"
 msgstr "**get mail quota default**"
 
-#: ../../reference/mail.rst:327 ../../reference/mail.rst:359
+#: ../../reference/mail.rst:413 ../../reference/mail.rst:445
 msgid "**get mail quota max**"
 msgstr "**get mail quota max**"
 
-#: ../../reference/mail.rst:337
+#: ../../reference/mail.rst:423
 msgid ""
 "Return the email quota in megabytes allocated to ACCOUNT, or "
 "\"unlimited\" if there’s no quota."
@@ -407,7 +491,7 @@ msgstr ""
 "Devuelve la cuota de espacio de correo en megabytes asignada a la cuenta "
 "ACCOUNT, o \"unlimited\" si no tiene cuota."
 
-#: ../../reference/mail.rst:348
+#: ../../reference/mail.rst:434
 msgid ""
 "Set the email QUOTA in megabytes allocated to ACCOUNT; use ‘0’ or "
 "‘unlimited’ to set an unlimited quota."
@@ -415,38 +499,35 @@ msgstr ""
 "Establece la cuota QUOTA en megabytes signada a la cuenta ACCOUNT; use "
 "‘0’ o ‘unlimited’ para establecer una cuota ilimitada."
 
-#: ../../reference/mail.rst:361
+#: ../../reference/mail.rst:447
 msgid "Return the maximum email quota in megabytes allowed in cPanel."
 msgstr ""
 "Devuelve la cuota máxima en megabytes de espacio de correo permitida en "
 "cPanel."
 
-#: ../../reference/mail.rst:371
+#: ../../reference/mail.rst:457
 msgid "Return the default email quota in megabytes allocated in cPanel."
 msgstr ""
 "Devuelve la cuota por defecto en megabytes de espacio de correo permitida"
 " en cPanel."
 
-#: ../../reference/mail.rst:382
+#: ../../reference/mail.rst:468
 msgid "``usage``"
 msgstr "``usage``"
 
-#: ../../reference/mail.rst:384
+#: ../../reference/mail.rst:470
 msgid "**get mail usage ACCOUNT**"
 msgstr "**get mail usage ACCOUNT**"
 
-#: ../../reference/mail.rst:389
+#: ../../reference/mail.rst:475
 msgid "Return the disk space in megabytes used by ACCOUNT."
 msgstr "Devuelve el espacio en disco en megabytes usado por la cuenta ACCOUNT."
 
-#: ../../reference/mail.rst:397
+#: ../../reference/mail.rst:483
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_disk_usage/"
 msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_disk_usage/"
-
-#~ msgid "**count get mail autoresponder ACCOUNT**"
-#~ msgstr "**count get mail autoresponder ACCOUNT**"
 

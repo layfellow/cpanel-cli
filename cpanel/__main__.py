@@ -290,6 +290,29 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		elif cmd_is(cmd, "delete mail autoresponder", "rm mail autoresponder", "remove mail autoresponder"):
 			r = host.check(lambda: uapi.Email.delete_auto_responder(email = args[3]))
 
+		elif cmd_is(cmd, "add mail forwarder"):
+			if args[3].find("@") < 0:
+				r = host.check(lambda: uapi.Email.add_domain_forwarder(domain = args[3], destdomain = args[4]))
+			else:
+				r = host.check(lambda: uapi.Email.add_forwarder(
+					domain = domain(args[3]), email = args[3], fwdopt = 'fwd', fwdemail = ','.join(args[4:])))
+
+		elif cmd_is(cmd, "list mail forwarder"):
+			if len(args) > 3:
+				r = host.dump(lambda: uapi.Email.list_forwarders(domain = args[3]))
+			else:
+				r = host.dump(lambda: uapi.Email.list_domain_forwarders())
+
+		elif cmd_is(cmd, "count mail forwarder"):
+			r = host.dump(lambda: uapi.Email.count_forwarders())
+
+		elif cmd_is(cmd, "delete mail forwarder", "rm mail forwarder", "remove mail forwarder"):
+			if args[3].find("@") < 0:
+				r = host.check(lambda: uapi.Email.delete_domain_forwarder(domain = args[3]))
+			else:
+				r = host.check(lambda: uapi.Email.delete_forwarder(
+					address = args[3], forwarder = host.get_mail_forwarder(args[3], domain(args[3]))))
+
 		elif cmd_is(cmd, "list mail filter"):
 			r = host.dump_extracted('filtername', lambda: uapi.Email.list_filters(account = args[3]))
 

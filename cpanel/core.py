@@ -393,6 +393,20 @@ class CPanelEndpoint:
 		return self.check(lambda: self.client.uapi.Email.store_filter(**parameters))
 
 
+	def get_mail_forwarder(self, email: str, domain: str) -> NullableStr:
+		"""Return the forwarder address for email, or None if mail has no forwarders."""
+
+		r: Result = self.client.uapi.Email.list_forwarders(domain = domain)
+
+		log.debug(str(r['data']))
+
+		for forwarder in r['data']:
+			if forwarder['dest'] == email:
+				return forwarder['forward']
+
+		return None
+
+
 def endpoint(hostname: NullableStr, username: NullableStr, utoken: NullableStr) -> CPanelEndpoint:
 	"""CPanelEndpoint factory."""
 	return CPanelEndpoint(CPanelApi(hostname, username, utoken, auth_type = 'utoken'))

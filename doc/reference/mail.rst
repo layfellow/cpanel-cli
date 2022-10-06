@@ -209,6 +209,92 @@ Delete an autoresponder for ACCOUNT.
 
 
 
+``forwarders``
+==================================================
+
+- **list mail forwarders [DOMAIN]**
+- **add mail forwarder DOMAIN FORWARDHERE**
+- **add mail forwarder EMAIL FORWARDHERE**
+- **count mail forwarders**
+- **delete mail forwarder DOMAIN**
+- **delete mail forwarder EMAIL**
+
+**COMMANDS**
+
+
+**list mail forwarders [DOMAIN]**
+
+List all current mail forwarders. If optional argument DOMAIN is passed, list only
+the forwarders for DOMAIN.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list mail forwarders
+    $ cpanel list mail forwarders example.com
+
+See a sample of the JSON result for all forwarders data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/list_forwarders/
+
+See a sample of the JSON result for DOMAIN forwarders data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/list_domain_forwarders/
+
+**add mail forwarder DOMAIN FORWARDHERE**
+
+Forward all email sent to all accounts in DOMAIN to FORWARDHERE domain.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel add mail forwarder example.com forwarded.com
+
+**add mail forwarder EMAIL FORWARDHERE**
+
+Forward all mail sent to EMAIL address to FORWARDHERE email address.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel add mail forwarder scott@example.com larry@example.com
+
+**count mail forwarders**
+
+Return the total number of mail forwarders for all accounts.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel count mail forwarders
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/count_forwarders/
+
+**delete mail forwarder DOMAIN**
+
+Delete email forwarder for DOMAIN.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel delete mail forwarder example.com
+
+**delete mail forwarder EMAIL**
+
+Delete email forwarder for EMAIL address.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel delete mail forwarder scott@example.com
+
+
+
 ``filters``
 ==================================================
 

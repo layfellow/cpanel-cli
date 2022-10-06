@@ -997,6 +997,64 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
 
 ---
 
+Usage: cpanel list mail forwarders [DOMAIN]
+    cpanel add mail forwarder DOMAIN FORWARDHERE
+    cpanel add mail forwarder EMAIL FORWARDHERE
+    cpanel count mail forwarders
+    cpanel delete mail forwarder DOMAIN
+    cpanel delete mail forwarder EMAIL
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mlist mail forwarders [DOMAIN]\033[0m
+    List all current mail forwarders. If optional argument DOMAIN is passed, list only
+    the forwarders for DOMAIN.
+
+    EXAMPLE
+        \033[1;34mcpanel list mail forwarders\033[00m
+        \033[1;34mcpanel list mail forwarders example.com\033[00m
+
+    See a sample of the JSON result for all forwarders data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_forwarders/
+
+    See a sample of the JSON result for DOMAIN forwarders data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_domain_forwarders/
+
+\033[1madd mail forwarder DOMAIN FORWARDHERE\033[0m
+    Forward all email sent to all accounts in DOMAIN to FORWARDHERE domain.
+
+    EXAMPLE
+        \033[1;34mcpanel add mail forwarder example.com forwarded.com\033[00m
+
+\033[1madd mail forwarder EMAIL FORWARDHERE\033[0m
+    Forward all mail sent to EMAIL address to FORWARDHERE email address.
+
+    EXAMPLE
+        \033[1;34mcpanel add mail forwarder scott@example.com larry@example.com\033[00m
+
+\033[1mcount mail forwarders\033[0m
+    Return the total number of mail forwarders for all accounts.
+
+    EXAMPLE
+        \033[1;34mcpanel count mail forwarders\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/count_forwarders/
+
+\033[1mdelete mail forwarder DOMAIN\033[0m
+    Delete email forwarder for DOMAIN.
+
+    EXAMPLE
+        \033[1;34mcpanel delete mail forwarder example.com\033[00m
+
+\033[1mdelete mail forwarder EMAIL\033[0m
+    Delete email forwarder for EMAIL address.
+
+    EXAMPLE
+        \033[1;34mcpanel delete mail forwarder scott@example.com\033[00m
+
+---
+
 Usage: cpanel list mail filters ACCOUNT
     cpanel count mail filters
     cpanel get mail filter ACCOUNT FILTERNAME

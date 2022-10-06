@@ -107,8 +107,8 @@
 - [ ] EA4::get_recommendations
 - [-] Email::account_name
 - [x] Email::add_auto_responder
-- [ ] Email::add_domain_forwarder
-- [ ] Email::add_forwarder
+- [x] Email::add_domain_forwarder
+- [x] Email::add_forwarder
 - [x] Email::add_list
 - [x] Email::add_mailman_delegates
 - [ ] Email::add_mx
@@ -119,13 +119,13 @@
 - [ ] Email::check_fastmail
 - [x] Email::count_auto_responders
 - [x] Email::count_filters
-- [ ] Email::count_forwarders
+- [x] Email::count_forwarders
 - [x] Email::count_lists
 - [x] Email::count_pops
 - [x] Email::delete_auto_responder
-- [ ] Email::delete_domain_forwarder
+- [x] Email::delete_domain_forwarder
 - [x] Email::delete_filter
-- [ ] Email::delete_forwarder
+- [x] Email::delete_forwarder
 - [ ] Email::delete_held_messages
 - [x] Email::delete_list
 - [ ] Email::delete_mx
@@ -167,11 +167,11 @@
 - [ ] Email::hold_outgoing
 - [x] Email::list_auto_responders
 - [ ] Email::list_default_address
-- [ ] Email::list_domain_forwarders
+- [x] Email::list_domain_forwarders
 - [x] Email::list_filters
 - [ ] Email::list_filters_backups
-- [ ] Email::list_forwarders
-- [ ] Email::list_forwarders_backups
+- [x] Email::list_forwarders
+- [-] Email::list_forwarders_backups
 - [x] Email::list_lists
 - [ ] Email::list_mail_domains
 - [ ] Email::list_mxs
