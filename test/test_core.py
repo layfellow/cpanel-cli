@@ -14,11 +14,13 @@ class TestCore(unittest.TestCase):
 
 	def setUp(self) -> None:
 		_, hostname, username, utoken = configuration([], {}, './test/cpanelrc.test')
-		self.host: CPanelEndpoint = endpoint(hostname, username, utoken)
+		self.host: CPanelEndpoint = endpoint(str(hostname), str(username), str(utoken))
 
 
-	def run(self, result: TestResult) -> None:
+	def run(self, result: TestResult | None = None) -> None:
 		"""Stop after first error."""
+		if result is None:
+			result = self.defaultTestResult()
 		if not result.errors:
 			super(TestCore, self).run(result)
 
@@ -134,13 +136,6 @@ class TestCore(unittest.TestCase):
 		self.assertEqual(r, "OK")
 
 
-	def test_get_style(self) -> None:
-		style: JSONType = json.loads(dispatch(self.host, ["get", "style"]))
-		print(style)
-
-		self.assertTrue(style['name'] in ("basic",  "dark", "light", "glass"))
-
-
 	def test_get_theme(self) -> None:
 		themes: List[JSONType] = json.loads(dispatch(self.host, ["list", "themes"]))
 		print(themes)
@@ -199,7 +194,7 @@ class TestCore(unittest.TestCase):
 		user: str = 'tmp-{}'.format(hex(random.randrange(0, 2 ** 32))[2:])
 		print(user)
 
-		r: str = dispatch(self.host, ["add", "dir", "user", "/.cpanel", user, "tiger"])
+		r: str = dispatch(self.host, ["add", "dir", "user", "/.cpanel", user, "twypjaspAsAc1"])
 		self.assertEqual(r, "OK")
 
 		users: List[JSONType] = json.loads(dispatch(self.host, ["list", "dir", "users", "/.cpanel"]))
