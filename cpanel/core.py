@@ -47,7 +47,7 @@ class CPanelEndpoint:
 			elif isinstance(r.errors, List) and r.errors[0].lower().find("no error") > -1:
 				return method()
 		else:
-			raise CPanelError(r.errors[0])
+			raise CPanelError(r['errors'][0])
 		return ""
 
 
@@ -60,7 +60,7 @@ class CPanelEndpoint:
 		Returns stringified JSON array with key: value pairs
 		"""
 		data: List[Mapping[str, str]] = []
-		for datum in r.data:
+		for datum in r['data']:
 			data.append({ key: datum[key] })
 		return json.dumps(data, indent = 4, sort_keys = True)
 
@@ -75,7 +75,7 @@ class CPanelEndpoint:
 		Returns stringified JSON array with selected key: value pairs
 		"""
 		data: Result = Result({})
-		for datum in r.data:
+		for datum in r['data']:
 			if datum[key] == value:
 				data = datum
 		return json.dumps(data, indent = 4, sort_keys = True)
@@ -155,6 +155,9 @@ class CPanelEndpoint:
 		# kwargs for CPanelAPi call to Backup.fullbackup_to_*().
 		parameters: Dict[str, NullableStr] = {}
 
+		if len(args) < 1:
+			raise CPanelError("missing arguments for create backup")
+
 		try:
 			if args[0] == 'ftp' or args[0] == 'scp':
 				parameters['username'] = args[1]
@@ -173,11 +176,14 @@ class CPanelEndpoint:
 			log.debug(str(args))
 
 			if args[0] == 'ftp':
-				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_ftp(**parameters))
+				return self.check(
+					lambda: self.client.uapi.Backup.fullbackup_to_ftp(**parameters))  # type: ignore [reportCallIssue]
 			elif args[0] == 'scp':
-				return self.check(lambda: self.client.uapi.Backup.fullbackup_to_scp_with_password(**parameters))
+				return self.check(
+					lambda: self.client.uapi.Backup.fullbackup_to_scp_with_password(**parameters))  # type: ignore [reportCallIssue]
 
-			return self.check(lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters))
+			return self.check(
+				lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters)) # type: ignore [reportCallIssue]
 
 		except IndexError:
 			raise CPanelError("missing arguments for create backup")
@@ -204,7 +210,8 @@ class CPanelEndpoint:
 		if len(parameters) == 0:
 			raise CPanelError("unrecognized arguments for set log settings")
 
-		return self.check(lambda: self.client.uapi.LogManager.set_settings(**parameters))
+		return self.check(
+			lambda: self.client.uapi.LogManager.set_settings(**parameters))  # type: ignore [reportCallIssue]
 
 
 	def get_file_contents(self, filepath: str) -> bytes:
@@ -218,11 +225,11 @@ class CPanelEndpoint:
 		basename: str = os.path.basename(filepath)
 
 		r: Result = self.client.uapi.Fileman.get_file_content(
-			dir = dirname, file = basename, to_charset = 'utf-8')
+			dir = dirname, file = basename, to_charset = 'utf-8')  # type: ignore [reportCallIssue]
 		if r.status != 1 or r.errors is not None:
-			raise CPanelError(r.errors[0])
+			raise CPanelError(r['errors'][0])
 
-		return r.data.content.encode('utf-8')
+		return r['data'].content.encode('utf-8')
 
 
 	def write_file(self, filepath: str, content: str) -> str:
@@ -242,7 +249,7 @@ class CPanelEndpoint:
 		content = content.encode('raw_unicode_escape').decode('unicode_escape')
 
 		return self.check(lambda: self.client.uapi.Fileman.save_file_content(
-			dir = dirname, file = basename, content = content, fallback = 0))
+			dir = dirname, file = basename, content = content, fallback = 0))  # type: ignore [reportCallIssue]
 
 
 	def set_mail_autoresponder(self, *args: str) -> str:
@@ -282,7 +289,8 @@ class CPanelEndpoint:
 		endtime: datetime
 
 		s = len(args) > 4 and args[4] or "now"
-		t, parsed = cal.parse(s)
+		# parsed is an int, because of the VERSION_FLAG_STYLE flag.
+		t, parsed = cal.parse(s, version = parsedatetime.VERSION_FLAG_STYLE)  # type: ignore [reportAssignmentType]
 		if parsed > 0:
 			log.debug(str(t))
 			starttime = datetime(*t[:6], tzinfo = timezone(timedelta(seconds = -time.timezone)))
@@ -290,7 +298,8 @@ class CPanelEndpoint:
 			raise CPanelError("error parsing start time")
 
 		s = len(args) > 5 and args[5] or "December 24, 2099 11:59 PM"
-		t, parsed = cal.parse(s)
+		# parsed is an int, because of the VERSION_FLAG_STYLE flag.
+		t, parsed = cal.parse(s, version = parsedatetime.VERSION_FLAG_STYLE)  # type: ignore [reportAssignmentType]
 		if parsed > 0:
 			log.debug(str(t))
 			endtime = datetime(*t[:6], tzinfo = timezone(timedelta(seconds = -time.timezone)))
@@ -301,7 +310,8 @@ class CPanelEndpoint:
 		parameters['stop'] = int(endtime.timestamp())
 
 		log.debug(str(parameters))
-		return self.check(lambda: self.client.uapi.Email.add_auto_responder(**parameters))
+		return self.check(
+			lambda: self.client.uapi.Email.add_auto_responder(**parameters))  # type: ignore [reportCallIssue]
 
 
 	def upload_file(self, directory: str, filename: str) -> str:
@@ -336,7 +346,7 @@ class CPanelEndpoint:
 		if response.status_code == 401:
 			raise CPanelError("Unauthorized")
 
-		r: NullableResult = None
+		r: Result = Result({})
 		try:
 			r = response.json(object_hook = Result)
 		except ValueError:
@@ -390,13 +400,14 @@ class CPanelEndpoint:
 			raise CPanelError("missing key in JSON filter file {}, {}".format(filterfile, str(e)))
 
 		log.debug(str(parameters))
-		return self.check(lambda: self.client.uapi.Email.store_filter(**parameters))
+		return self.check(
+			lambda: self.client.uapi.Email.store_filter(**parameters))  # type: ignore [reportCallIssue]
 
 
 	def get_mail_forwarder(self, email: str, domain: str) -> NullableStr:
 		"""Return the forwarder address for email, or None if mail has no forwarders."""
 
-		r: Result = self.client.uapi.Email.list_forwarders(domain = domain)
+		r: Result = self.client.uapi.Email.list_forwarders(domain = domain)  # type: ignore [reportCallIssue]
 
 		log.debug(str(r['data']))
 
@@ -407,6 +418,6 @@ class CPanelEndpoint:
 		return None
 
 
-def endpoint(hostname: NullableStr, username: NullableStr, utoken: NullableStr) -> CPanelEndpoint:
+def endpoint(hostname: str, username: str, utoken: str) -> CPanelEndpoint:
 	"""CPanelEndpoint factory."""
 	return CPanelEndpoint(CPanelApi(hostname, username, utoken, auth_type = 'utoken'))

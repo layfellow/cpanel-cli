@@ -34,7 +34,7 @@ def domain(email: str) -> str:
 	return email[n + 1:]
 
 
-def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
+def dispatch(host: CPanelEndpoint, args: List[str]) -> str:  # type: ignore [reportGeneralTypeIssues]
 	"""Make a cPanel API call corresponding to the args.
 
 	host       reference to API endpoint
@@ -649,7 +649,7 @@ def main() -> None:
 
 			log.debug("hostname: {}, username: {}, utoken: {}".format(hostname, user, utoken))
 
-			r: str = dispatch(endpoint(hostname, user, utoken), args)
+			r: str = dispatch(endpoint(str(hostname), str(user), str(utoken)), args)
 			if len(r) > 0:
 				print(r)
 
