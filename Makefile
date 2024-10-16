@@ -7,20 +7,23 @@ UNITTESTER = tox
 PUBLISHER = twine
 LOCALES = $(shell ls -1 doc/locale )
 
-install: venv
-	$(BIN)/pip3 install .
+install: venv dist
+	$(BIN)/pip3 install dist/cpanel*.whl
 
 typecheck: venv
 	. $(BIN)/activate && $(TYPECHECKER) cpanel/*.py test/*.py
 
-test: venv
+test: venv dist
 	@test -f test/cpanelrc.test || ( echo "Missing test configuration file test/cpanelrc.test" && exit 1 )
 	$(BIN)/cpanel version
 	$(BIN)/$(UNITTESTER)
 
 package: venv
 	rm -f dist/*
-	$(BIN)/python3 -m build
+	PYTHONPATH=. $(BIN)/python3 -m build --wheel --sdist
+
+dist:
+	$(MAKE) package
 
 doc: venv doc/build/gettext doc/reference.rst
 	$(BIN)/$(DOCBUILDER) -b html doc doc/build/html/en
