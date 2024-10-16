@@ -20,7 +20,7 @@ test: venv dist
 
 package: venv
 	rm -f dist/*
-	PYTHONPATH=. $(BIN)/python3 -m build --wheel --sdist
+	. $(BIN)/activate && $(BIN)/python3 -m build --wheel --sdist
 
 dist:
 	$(MAKE) package
@@ -34,7 +34,7 @@ publish: venv
 
 venv:
 	python3 -m venv venv
-	$(BIN)/pip3 install -r requirements-dev.txt
+	$(BIN)/pip3 install .[dev]
 
 doc/build/gettext: venv install
 	$(BIN)/$(DOCBUILDER) -b gettext doc doc/build/gettext

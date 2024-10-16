@@ -9,11 +9,21 @@ readme = "README.rst"
 requires-python = ">=3.11"
 license = { text = "GNU General Public License v3 (GPLv3)" }
 keywords = ["cpanel", "cli", "command-line", "hosting"]
-dependencies = ["cpanel-api>=0.3.0", "parsedatetime>=2.6"]
 classifiers = [
-	"Programming Language :: Python :: 3",
-	"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-	"Operating System :: OS Independent"
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+dependencies = ["cpanel-api>=0.3.0", "parsedatetime>=2.6"]
+
+[project.optional-dependencies]
+dev = [
+    "cpanel-api>=0.3.0",
+    "parsedatetime>=2.6",
+    "build>=1.2.2",
+    "tox>=4.22",
+    "twine>=5.1.1",
 ]
 
 [project.scripts]
@@ -23,43 +33,34 @@ cpanel = "cpanel.__main__:main"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-include = [
-	"cpanel/*.py",
-	"cpanel/USAGE",
-	"cpanel/REFERENCE"
-]
+include = ["cpanel/*.py", "cpanel/USAGE", "cpanel/REFERENCE"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-	"cpanel/*.py",
-	"Makefile",
-	"requirements.txt",
-	"requirements.dev.txt",
-	"pyproject.toml",
-	"pyrightconfig.json",
-	"hatch.py",
-	"README.rst",
-	"CONTRIBUTING.rst",
-	"LICENSE",
-	"API.md",
-	"tox.ini",
-	"cpanel/USAGE",
-	"cpanel/REFERENCE",
-	"test/*.py",
-	"test/cpanelrc.test.example",
-	".readthedocs.yaml",
-	"doc/*.rst",
-	"doc/conf.py",
-	"doc/requirements.txt",
-	"doc/*.po",
-	"doc/*.sh",
-	"doc/*.svg",
-	"doc/*.css"
+    "cpanel/*.py",
+    "cpanel/USAGE",
+    "cpanel/REFERENCE",
+    "Makefile",
+    "pyproject.toml",
+    "pyrightconfig.json",
+    "hatch.py",
+    "README.rst",
+    "CONTRIBUTING.rst",
+    "LICENSE",
+    "API.md",
+    "tox.ini",
+    "test/*.py",
+    "test/cpanelrc.test.example",
+    ".readthedocs.yaml",
+    "doc/*.rst",
+    "doc/conf.py",
+    "doc/requirements.txt",
+    "doc/*.po",
+    "doc/*.sh",
+    "doc/*.svg",
+    "doc/*.css",
 ]
-exclude = [
-	"**/__pycache__",
-	"doc/build/*"
-]
+exclude = ["**/__pycache__", "doc/build/*"]
 
 [tool.hatch.metadata.hooks.custom]
 path = "./hatch.py"

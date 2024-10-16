@@ -8,12 +8,14 @@ from cpanel.cli import configuration
 from cpanel.core import JSONType, CPanelEndpoint, endpoint
 from cpanel.__main__ import dispatch
 from cpanel_api import Api
-
+import urllib3
+from urllib3.exceptions import InsecureRequestWarning
 
 class TestCore(unittest.TestCase):
 
 	def setUp(self) -> None:
 		_, hostname, username, utoken = configuration([], {}, './test/cpanelrc.test')
+		urllib3.disable_warnings(category = InsecureRequestWarning)
 		self.host: CPanelEndpoint = endpoint(str(hostname), str(username), str(utoken))
 
 
