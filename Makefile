@@ -46,6 +46,6 @@ locale: doc/build/gettext
 	$(BIN)/$(LOCALIZER) -c doc/conf.py update -p doc/build/gettext -l $(iso)
 
 clean:
-	rm -rf venv build doc/build $$( find doc/locale/ -name *.mo ) *.egg-info .tox dist */__pycache__
+	rm -rf venv build doc/build $$( find doc/locale/ -name *.mo ) *.egg-info .tox dist */__pycache__ ./__pycache__
 
 .PHONY: install doc typecheck test package publish locale clean
