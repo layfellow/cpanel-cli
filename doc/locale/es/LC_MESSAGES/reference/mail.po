@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-03 21:03-0300\n"
+"POT-Creation-Date: 2024-10-17 22:46-0300\n"
 "PO-Revision-Date: 2022-05-11 15:38-0400\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../../reference/mail.rst:7
 msgid "Module: ``mail``"
@@ -49,8 +49,8 @@ msgstr "Devuelve el número de cuentas de correo de cPanel."
 #: ../../reference/mail.rst:25 ../../reference/mail.rst:38
 #: ../../reference/mail.rst:61 ../../reference/mail.rst:121
 #: ../../reference/mail.rst:134 ../../reference/mail.rst:147
-#: ../../reference/mail.rst:204 ../../reference/mail.rst:229
-#: ../../reference/mail.rst:239 ../../reference/mail.rst:250
+#: ../../reference/mail.rst:204 ../../reference/mail.rst:230
+#: ../../reference/mail.rst:247 ../../reference/mail.rst:257
 #: ../../reference/mail.rst:267 ../../reference/mail.rst:280
 #: ../../reference/mail.rst:290 ../../reference/mail.rst:321
 #: ../../reference/mail.rst:334 ../../reference/mail.rst:346
@@ -272,20 +272,20 @@ msgid "Delete an autoresponder for ACCOUNT."
 msgstr "Elimina la respuesta automática para ACCOUNT."
 
 #: ../../reference/mail.rst:213
-msgid "``forwarder``"
-msgstr "``forwarder``"
+msgid "``forwarders``"
+msgstr "``forwarders``"
 
 #: ../../reference/mail.rst:215 ../../reference/mail.rst:225
+msgid "**list mail forwarders [DOMAIN]**"
+msgstr "**list mail forwarders [DOMAIN]**"
+
+#: ../../reference/mail.rst:216 ../../reference/mail.rst:243
 msgid "**add mail forwarder DOMAIN FORWARDHERE**"
 msgstr "**add mail forwarder DOMAIN FORWARDHERE**"
 
-#: ../../reference/mail.rst:216 ../../reference/mail.rst:235
+#: ../../reference/mail.rst:217 ../../reference/mail.rst:253
 msgid "**add mail forwarder EMAIL FORWARDHERE**"
 msgstr "**add mail forwarder EMAIL FORWARDHERE**"
-
-#: ../../reference/mail.rst:217 ../../reference/mail.rst:245
-msgid "**list mail forwarders [DOMAIN]**"
-msgstr "**list mail forwarders [DOMAIN]**"
 
 #: ../../reference/mail.rst:218 ../../reference/mail.rst:263
 msgid "**count mail forwarders**"
@@ -300,36 +300,43 @@ msgid "**delete mail forwarder EMAIL**"
 msgstr "**delete mail forwarder EMAIL**"
 
 #: ../../reference/mail.rst:227
-msgid "Forward all email sent to all accounts in DOMAIN to FORWARDHERE domain."
-msgstr "Reenvía todo el correo recibido en las cuentas del dominio DOMAIN al dominio FORWARDHERE."
-
-#: ../../reference/mail.rst:237
-msgid "Forward all mail sent to EMAIL address to FORWARDHERE email address."
-msgstr "Reenvía todo el correo recibido en EMAIL a la dirección de correo FORWARDHERE."
-
-#: ../../reference/mail.rst:247
 msgid ""
 "List all current mail forwarders. If optional argument DOMAIN is passed, "
 "list only the forwarders for DOMAIN."
 msgstr ""
-"Lista todos los reenviadores activos de correo. Si se proporciona el argumento opcional "
-"DOMAIN, sólo se listan los reenviadores para el dominio DOMAIN."
+"Lista todos los reenviadores activos de correo. Si se proporciona el "
+"argumento opcional DOMAIN, sólo se listan los reenviadores para el "
+"dominio DOMAIN."
 
-#: ../../reference/mail.rst:257
+#: ../../reference/mail.rst:237
 msgid ""
 "See a sample of the JSON result for all forwarders data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_forwarders/"
 msgstr ""
-"Vea una muestra del resultado en formato JSON para todos los reenviadores en: "
+"Vea una muestra del resultado en formato JSON para todos los reenviadores"
+" en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_forwarders/"
 
-#: ../../reference/mail.rst:260
+#: ../../reference/mail.rst:240
 msgid ""
 "See a sample of the JSON result for DOMAIN forwarders data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_domain_forwarders/"
 msgstr ""
-"Vea una muestra del resultado en formato JSON para los reenviadores de DOMAIN en: "
+"Vea una muestra del resultado en formato JSON para los reenviadores de "
+"DOMAIN en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/list_domain_forwarders/"
+
+#: ../../reference/mail.rst:245
+msgid "Forward all email sent to all accounts in DOMAIN to FORWARDHERE domain."
+msgstr ""
+"Reenvía todo el correo recibido en las cuentas del dominio DOMAIN al "
+"dominio FORWARDHERE."
+
+#: ../../reference/mail.rst:255
+msgid "Forward all mail sent to EMAIL address to FORWARDHERE email address."
+msgstr ""
+"Reenvía todo el correo recibido en EMAIL a la dirección de correo "
+"FORWARDHERE."
 
 #: ../../reference/mail.rst:265
 msgid "Return the total number of mail forwarders for all accounts."
@@ -530,4 +537,3 @@ msgid ""
 msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/get_disk_usage/"
-

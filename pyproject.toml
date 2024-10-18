@@ -24,6 +24,7 @@ dev = [
     "build>=1.2",
     "tox>=4.22",
     "Sphinx>=5.0",
+    "sphinx-intl>=2.2.0",
     "sphinx-book-theme>=1.1.3",
     "twine>=5.1.1",
 ]
