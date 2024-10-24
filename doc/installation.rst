@@ -2,20 +2,32 @@
 Installation
 ============
 
-`Leer en español </es/latest/installation.html>`_
+`Leer en español </es/stable/installation.html>`_
 
 Requirements
 ============
 
 - Linux or macOS; it might work `on Windows`_
-- Python 3.9 or later
+- Python 3.11 or later
 
-.. _`on Windows`: #what-about-installing-on-windows
+.. _`on Windows`: #what-about-windows
 
 Installation on Linux
 =====================
 
-Install Python 3.9 or later using your distro’s package manager.
+On a Debian-based distro (Ubuntu, Mint), install Python 3.11 using:
+
+.. code:: sh
+
+    $ sudo apt install python3.11
+
+On a RPM-based distro (RHEL, Fedora), install Python 3.11 using:
+
+.. code:: sh
+
+    $ sudo dnf install python3.11
+
+(You can replace ``3.11`` with a higher version.)
 
 Then run:
 
@@ -29,13 +41,26 @@ Test the installation using:
 
     $ cpanel --version
 
-Tested on Ubuntu 21.10 “Impish Indri”, but it has no specific Ubuntu requirements, so any
-Linux distro with Python 3.9 or later should work.
+Tested on Ubuntu Linux 23.10 “Mantic”, but it has no specific Ubuntu requirements,
+so any Linux distro with Python 3.11 or later should work.
 
 Installation on macOS
 =====================
 
-Install Python 3.9 or later using `Homebrew <https://brew.sh/>`_.
+Install Python 3.11 or later using `Homebrew <https://brew.sh/>`_.
+
+.. code:: sh
+
+    $ brew install python@3.11
+
+Add the following to your ``PATH``:
+
+.. code:: sh
+
+    PATH="$PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
+    export $PATH
+
+(You can replace ``3.11`` with a higher version.)
 
 Then run:
 
@@ -49,17 +74,16 @@ Test the installation using:
 
     $ cpanel --version
 
-Tested on macOS 10.15.7 “Catalina”; should also work on “Big Sur” or later.
+Tested on macOS “Ventura”; should also work on any later release.
 
-What about installing on Windows?
-=================================
+What about Windows?
+===================
 
-I suspect this should work on Windows 10/11 using `WSL 2`_ (Windows Subsystem for Linux).
+**cpanel-cli** should work on Windows 10/11 using `WSL 2`_ (Windows Subsystem for Linux).
 
 .. _`WSL 2`: https://docs.microsoft.com/en-us/windows/wsl/about
 
-Unfortunately, I don’t have access to a Windows system, so I can’t confirm this.
-Pull requests are very much welcome in case anyone wants to try out it and contribute.
+Unfortunately I don’t have access to a Windows system, so I can’t confirm this.
 
 Authentication
 ==============
@@ -94,7 +118,7 @@ For example:
     $ export CPANEL_USERNAME=scott
     $ export CPANEL_UTOKEN=ABCDEFGHIJKLMNOPQSRTUVWXYZ012345
     $ cpanel list features
-  
+
 Or you can pass the credentials directly on the command line using the ``-H``, ``-U`` and
 ``-T`` options. For example:
 

@@ -4,71 +4,70 @@ How to contribute
 
 `LÉAME en español <#como-contribuir>`_
 
-To contribute, just fork this repository, start a new branch and open a `pull request`_.
+To contribute, just fork this repository, make a new branch and open a `pull request`_.
 
 .. _`pull request`: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
-``cpanel-cli`` is written in Python 3.9. I organized the code into a standard tree::
+**cpanel-cli** is written in Python (version 3.11 or later required). I organized the code into a standard tree::
 
     cpanel-cli
+    ├── API.md
     ├── CONTRIBUTING.rst
     ├── cpanel
     │   ├── cli.py
     │   ├── core.py
     │   ├── __init__.py
-    │   └── __main__.py
+    │   ├── __main__.py
+    │   ├── REFERENCE
+    │   └── USAGE
     ├── doc
     │   ├── conf.py
+    │   ├── contributing.rst
     │   ├── index.rst
     │   ├── locale
     │   │   └── es
     │   │       └── LC_MESSAGES
-    │   │           └── index.po
-    │   └── requirements.txt
+    │   │           ├── contributing.po
+    │   │           ├── index.po
+    │   │           ├── installation.po
+    │   │           ├── reference.po
+    │   │           └── reference
+    │   │               └─── *.po
+    │   ├── reference.sh
+    │   ├── requirements.txt
+    │   └── _static
+    │       ├─── *.svg
+    │       └─── *.png
+    ├── hatch.py
     ├── LICENSE
     ├── Makefile
+    ├── pyproject.toml
+    ├── pyrightconfig.json
     ├── README.rst
     ├── .readthedocs.yaml
-    ├── requirements-dev.txt
-    ├── requirements.txt
-    ├── setup.py
     ├── test
     │   ├── cpanelrc.test.example
     │   └── test_core.py
     └── tox.ini
 
-``cpanel-cli`` contains the main source code.
+``cpanel`` contains the main source code. Files ``REFERENCE`` and ``USAGE`` contain the actual
+text for the ``--help`` and ``--version`` flags and the ``help`` command. (I keep them in
+external files to make them easier to change. Also, I can automatically parse ``REFERENCE`` to
+generate ``*.rst`` files for the Sphinx documentation builder.
+See the ``reference.sh`` script below.)
 
-``doc`` contains the documentation sources, written in `reStructuredText`_ and processed using `Sphinx`_.
-The main configuration file for Sphinx is ``doc/conf.py``. The Sphinx version and theme used
-to build the documentation are in ``doc/requirements.txt``.
+Standard ``pyproject.toml`` contains the project metadata, development and release dependencies,
+and build backend definitions. (See `Writing your pyproject.toml`_ for further info.)
 
-``.readthedocs.yaml`` is a `configuration file for Read the Docs`_. The remote Sphinx build system
-uses this file.
+.. _`Writing your pyproject.toml`: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
 
-.. _`configuration file for Read the Docs`: https://docs.readthedocs.io/en/stable/config-file/index.html
-.. _`reStructuredText`: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
-.. _Sphinx: https://www.sphinx-doc.org/
+I’m using the `Hatchling`_ build backend, with a small custom ``hatch.py`` script to get the
+``dynamic`` metadata properties in ``pyproject.toml``. The custom ``hatch.py`` script works by parsing the
+``cpanel/__init__.py`` source file.
 
-I maintain a Spanish translation of the documentation, generated using strings from a
-catalog file ``locale/es/LC_MESSAGES/index.po``.
+.. _`Hatchling`: https://pypi.org/project/hatchling/
 
-I’m using a ``Makefile`` to automate all phases of the development life cycle. (`Make and Makefiles are awesome`_.)
-
-.. _`Make and Makefiles are awesome`: https://mplanchard.com/posts/make-and-makefiles-are-awesome.html
-
-``requirements-dev.txt`` contains the required packages for the Python `Development environment`_,
-while ``requirements.txt`` contains the runtime dependencies.
-
-``setup.py`` is the main script for `setuptools`_, used for packaging and distributing this project.
-I know that the use of ``setup.py`` is currently discouraged, so I will probably replace it
-with a more modern packaging system like `Poetry`_, but I’m being conservative here and sticking
-with ``setup.py`` for now. (But notice I’m calling it indirectly using ``python -m build``,
-as `recommended`_.)
-
-.. _setuptools: https://setuptools.pypa.io/en/latest/userguide/quickstart.html
-.. _Poetry: https://python-poetry.org/
-.. _recommended: https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html
+``pyrightconfig.json`` is the configuration file for the `Pyright`_ static type checker.
 
 ``test`` contains a set of unit API tests. They’re written using the `tox automation framework`_.
 The code driving the tests is in ``test/test_core.py``; the main tox configuration file is ``tox.ini``.
@@ -77,27 +76,63 @@ a *live* cPanel instance. See `Running tests`_ below for further details.
 
 .. _`tox automation framework`: https://tox.wiki/en/latest/index.html
 
+``doc`` contains the documentation sources, written in `reStructuredText`_ and processed using `Sphinx`_.
+The main configuration file for Sphinx is ``doc/conf.py``. The Sphinx version and theme used
+to build the documentation are in ``doc/requirements.txt``.
+
+.. _`reStructuredText`: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+.. _Sphinx: https://www.sphinx-doc.org/
+
+The source files for the documentation are in ``doc/*.rst``. The ``index.rst`` file is the main
+page. You will notice a ``doc/reference`` folder and a series of ``*.rst`` files on it.
+These are programmatically generated by the ``reference.sh`` script and need *not* be edited manually.
+(I’m committing them to the source tree because they serve as the actual source files for Sphinx.)
+
+The ``reference.sh`` script generates ``doc/reference.rst`` and the files inside ``doc/reference/``
+by parsing the ``REFERENCE`` text file, splitting it into sections and converting them to restructuredText.
+This allows me to keep ``REFERENCE`` as a single source of truth for the documentation
+and keep the Sphinx documents up to date.
+
+``_static`` contains the images and SVG files used in the documentation.
+
+``.readthedocs.yaml`` is a `configuration file for Read the Docs`_. The remote Sphinx build system
+uses this file.
+
+.. _`configuration file for Read the Docs`: https://docs.readthedocs.io/en/stable/config-file/index.html
+
+I maintain a Spanish translation of the documentation, generated using strings from a series of
+catalog files (``*.po``) inside ``locale/es/LC_MESSAGES/``. See `Translations`_ for further information.
+
+Finally, I’m using a ``Makefile`` to automate all phases of the development life cycle.
+(`Make and Makefiles are awesome`_.)
+
+.. _`Make and Makefiles are awesome`: https://mplanchard.com/posts/make-and-makefiles-are-awesome.html
+
+
 Development environment
 =======================
 
-I developed ``cpanel-cli`` on Ubuntu Linux 21.10 “Impish Indri”. There are no
-special requirements, so any Linux distro or macOS version supporting at least
-Python 3.9 should work.
+I developed **cpanel-cli** on Ubuntu Linux 23.10 “Mantic” with Python 3.11.
+**cpanel-cli**, however, has no special requirements, so any Linux distro
+supporting at least Python 3.11 should work. You can also use macOS “Ventura”
+or a later macOS release.
 
-*On macOS “Catalina” or higher*
+*To create a development environment on macOS*:
 
-Install Python 3.9:
-
-.. code:: sh
-
-    $ brew install python@3.9
-
-Then add the following to your ``PATH``:
+Install Python 3.11:
 
 .. code:: sh
 
-    PATH="$PATH:/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
+    $ brew install python@3.11
+
+Add the following to your ``PATH``:
+
+.. code:: sh
+
+    PATH="$PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
     export $PATH
+
+(You can replace ``3.11`` with a higher version.)
 
 Install GNU Make:
 
@@ -105,28 +140,32 @@ Install GNU Make:
 
     $ brew install make
 
-*On Ubuntu Linux 21.04 or higher*
+*To create a development environment on Linux:*
 
-Install Python 3.9:
+On a Debian-based distro (Ubuntu, Mint), install Python 3.11 using:
 
 .. code:: sh
 
-    $ sudo apt install python3.9 python3-pip python3.9-venv
+    $ sudo apt install python3.11 python3-pip python3.11-venv
 
-GNU Make is installed by default on Ubuntu. Check its availability using:
+On a RPM-based distro (RHEL, Fedora), install Python 3.11 using:
+
+.. code:: sh
+
+    $ sudo dnf install python3.11 python3-pip
+
+(You can replace ``3.11`` with a higher version.)
+
+GNU Make is installed by default on most Linux distros. Check its availability using:
 
 .. code:: sh
 
     $ make --version
 
-*Other Linux distros*
-
-Use your distro’s package manager to install Python 3.9 (or higher) and GNU Make.
-
 Building a local ``cpanel-cli`` package from source
 ===================================================
 
-You can build and install a local ``cpanel-cli`` package using:
+Build and install a local ``cpanel-cli`` package:
 
 .. code:: sh
 
@@ -136,56 +175,62 @@ This will:
 
 1. Create a new virtual Python 3 environment in a ``venv`` directory
 
-2. Install on it the required development packages listed in ``requirements-dev.txt``
+2. Locally install in ``venv`` the development packages listed on the ``[project.optional-dependencies]`` section of ``pyproject.toml``
 
 3. Build a local Python package ``cpanel-cli``
 
 Running the local executable
 ============================
 
-To run the executable from the locally installed package, first activate the virtual environment
+To run the executable, first activate the virtual environment
 (you need to run this only once per session):
 
 .. code:: sh
 
     $ source venv/bin/activate
 
-Then you can execute the ``cpanel`` utility:
+Then run the ``cpanel`` utility:
 
 .. code:: sh
 
     $ cpanel --help
 
-If you edit the sources, simply run ``make install`` to build and reinstall the local package.
+If you edit the sources, just re-run ``make install`` to build and reinstall
+the local package.
 
 Running the (optional) type checker
 ===================================
 
-The Python sources are in the ``cpanel`` directory. You will notice they’re annotated using type
-hints. I use them because IMHO they add clarity and robustness to Python
-code. Read the `Python Type Checking Guide`_ for a good introduction to type checking in Python.
+*Running the type checker is optional — you can ignore this step if you want.*
+
+The Python source code is annotated using type hints. I use them
+to add clarity and robustness to Python code. Read the `Python Type Checking Guide`_ for an
+excelente introduction.
 
 .. _`Python Type Checking Guide`: https://realpython.com/python-type-checking/
 
-Since type hints are not actually checked by Python itself, you need an additional utility: a
-*type checker*. (You can think of the type checker as another kind of linter.) My type checker
-of choice for Python is Pyright_.
+Type hints are not actually checked by the Python runtime — you need a
+third party *type checker* utility.
+For this project I use Pyright_, which is my Python type checker of choice.
 
-Running the type checker is optional — you can ignore this step.
+.. _Pyright: https://github.com/Microsoft/pyright
 
-To run Pyright, install it first:
+To install Pyright:
 
 .. code:: sh
 
     $ pip3 install --user pyright
 
-Then run it using:
+Run it using:
 
 .. code:: sh
 
     $ make typecheck
 
-.. _Pyright: https://github.com/Microsoft/pyright
+The type checker configuration is in the ``pyrightconfig.json`` file.
+
+Note that Pyright is based on Node.js, so that pip will indirectly install it and pull a
+lot of JavaScript dependencies.
 
 Running tests
 =============
@@ -222,17 +267,17 @@ To run the tests, use:
     $ make test
 
 The above command will hit the `cPanel UAPI REST interface`_ with most of the functions
-implemented in ``cpanel-cli``. The remote state of cPanel is left unchanged, i.e.,
-the tests are strictly non-destructive.
+implemented in **cpanel-cli**.
+
+**The remote state of cPanel is left unchanged, i.e., the tests are strictly non-destructive.**
 
 .. _`cPanel UAPI REST interface`: https://api.docs.cpanel.net/cpanel/introduction/
 
 Packaging
 =========
 
-Packaging is done via good old ``setup.py``, which is the main script used as a backend for `setuptools`_.
-This script is called indirectly via ``python -m build``. (I will probably replace it with
-a more modern ``pyproject.toml`` soon.)
+Packaging is done via the `Hatchling`_ build backend, as specified on the ``[build-system]``
+section of ``pyproject.toml``.
 
 To run the packager, use:
 
@@ -240,7 +285,8 @@ To run the packager, use:
 
     $ make package
 
-The above command should generate the following two distribution files in the temporary ``dist`` directory:
+The above command should generate the following two distribution files in the
+temporary ``dist`` directory:
 
 .. code:: sh
 
@@ -249,8 +295,11 @@ The above command should generate the following two distribution files in the te
 
 where ``<version>`` is the release number set in ``cpanel/__init__.py``.
 
-The tarball is the source archive; the wheel file is the built distribution archive. These files
-are ready to be uploaded to the `Python Package Index`_.
+The tarball is the source archive; the wheel file is the built distribution archive. The
+included files for these distribution packages are listed on the ``[tool.hatch.build.targets.sdist]`` and
+``[tool.hatch.build.targets.wheel]`` sections of ``pyproject.toml`` respectively.
+
+These packages are ready to be uploaded to the `Python Package Index`_.
 
 .. _`Python Package Index`: https://pypi.org/
 
@@ -272,11 +321,10 @@ the start page is a conventional ``index.html`` file.
 
 This GitHub repository is currently connected to my `Read the Docs`_ account, so that
 any committed (or merged) change that updates the documentation sources will automatically
-trigger a remote Sphinx rebuild. The resulting updated HTML documentation will always be available at
-`https://cpanel-cli.readthedocs.io/en/latest/`_
+trigger a remote Sphinx rebuild. The resulting updated HTML documentation will always be
+available at https://cpanel-cli.readthedocs.io/en/stable/
 
 .. _`Read the Docs`: https://readthedocs.org/
-.. _`https://cpanel-cli.readthedocs.io/en/latest/`: https://cpanel-cli.readthedocs.io/en/latest/
 
 The main configuration file for Sphinx is ``doc/conf.py``. The Sphinx version and theme used
 to build the documentation are in ``doc/requirements.txt``.
@@ -297,7 +345,7 @@ string as a value (``msgstr``). For example, for Spanish:
 These ``msgid`` and ``msgstr`` pairs are kept in a *catalog* file (``*.po``), which is a
 simple text file. These catalog files are stored in the ``doc/locale`` subdirectory.
 
-I personally maintain a Spanish translation of the documentation in catalog files 
+I personally maintain a Spanish translation of the documentation in catalog files
 ``doc/locale/es/LC_MESSAGES/*.po``.
 
 Catalog ``.po`` files are compiled into ``.mo`` files using the Sphinx internationalization
@@ -385,93 +433,130 @@ Cómo contribuir
 
 `README in English <#how-to-contribute>`_
 
-Para contribuir, simplemente haga un fork de este repositorio, inicie una nueva rama y abra un `pull request`_.
+Para contribuir, haga un fork de este repositorio, cree una nueva rama y abra un `pull request`_.
 
-``cpanel-cli`` está escrito en Python 3.9. He organizado el código en un árbol estándar::
+**cpanel-cli** está escrito en Python (versión 3.11 o posterior). El código está organizado en este árbol::
 
     cpanel-cli
+    ├── API.md
     ├── CONTRIBUTING.rst
     ├── cpanel
     │   ├── cli.py
     │   ├── core.py
     │   ├── __init__.py
-    │   └── __main__.py
+    │   ├── __main__.py
+    │   ├── REFERENCE
+    │   └── USAGE
     ├── doc
     │   ├── conf.py
+    │   ├── contributing.rst
     │   ├── index.rst
     │   ├── locale
     │   │   └── es
     │   │       └── LC_MESSAGES
-    │   │           └── index.po
-    │   └── requirements.txt
+    │   │           ├── contributing.po
+    │   │           ├── index.po
+    │   │           ├── installation.po
+    │   │           ├── reference.po
+    │   │           └── reference
+    │   │               └─── *.po
+    │   ├── reference.sh
+    │   ├── requirements.txt
+    │   └── _static
+    │       ├─── *.svg
+    │       └─── *.png
+    ├── hatch.py
     ├── LICENSE
     ├── Makefile
+    ├── pyproject.toml
+    ├── pyrightconfig.json
     ├── README.rst
     ├── .readthedocs.yaml
-    ├── requirements-dev.txt
-    ├── requirements.txt
-    ├── setup.py
     ├── test
     │   ├── cpanelrc.test.example
     │   └── test_core.py
     └── tox.ini
 
-``cpanel-cli`` contiene el código fuente principal.
+``cpanel`` contiene el código fuente principal. Los archivos ``REFERENCE`` y ``USAGE`` contienen
+el texto para las opciones ``--help`` y ``--version`` y el comando ``help``. (Los mantengo en
+archivos externos para que sea más fácil editarlos. Además, puedo analizar programáticamente
+``REFERENCE`` para generar los archivos ``*.rst`` para el constructor de documentación Sphinx.
+Vea el script ``reference.sh`` más abajo).
 
-``doc`` contiene las fuentes de la documentación, escritas en `reStructuredText`_ y procesadas con
-`Sphinx`_. El archivo de configuración principal de Sphinx es ``doc/conf.py``.
-La versión de Sphinx y el tema utilizado para construir la documentación están en ``doc/requirements.txt``.
+El archivo ``pyproject.toml`` estándar contiene los metadatos del proyecto, las dependencias de
+desarrollo y publicación, y las definiciones del backend de compilación.
+(Vea `Writing your pyproject.toml`_ para más información.)
 
-``.readthedocs.yaml`` es un `archivo de configuración para Read the Docs`_. El sistema remoto
-de construcción de Sphinx utiliza este archivo.
+Uso el backend de construcción `Hatchling`_, con un pequeño script personalizado ``hatch.py`` para
+obtener las propiedades de metadatos ``dynamic`` en ``pyproject.toml``. El script ``hatch.py`` funciona
+analizando el archivo fuente ``cpanel/__init__.py``.
+
+``pyrightconfig.json`` es el archivo de configuración para el verificador de tipos
+estáticos `Pyright`_.
+
+``test`` contiene un conjunto de pruebas unitarias de la API. Están escritas usando el
+`framework de automatización tox`_. El código que controla las pruebas está en
+``test/test_core.py``; el archivo de configuración principal de tox es ``tox.ini``.
+Nótese que *no* son simples pruebas unitarias independientes, sino pruebas de API que se ejecutan
+en una instancia de cPanel *activa*. Vea `Ejecución de pruebas`_ más abajo para más detalles.
+
+.. _`framework de automatización tox`: https://tox.wiki/en/latest/index.html
+
+``doc`` contiene las fuentes de la documentación, escritas en `reStructuredText`_ y procesadas
+usando `Sphinx`_. El archivo de configuración principal de Sphinx es ``doc/conf.py``. La versión
+de Sphinx y el tema para construir la documentación están en ``doc/requirements.txt``.
+
+Las fuentes de la documentación están en ``doc/*.rst``. El archivo ``index.rst`` es la página
+principal. Nótese una carpeta ``doc/reference`` y una serie de archivos ``*.rst`` en ésta.
+Éstos son generados programáticamente por el script ``reference.sh`` y *no* necesitan ser editados
+manualmente. (Los subo al repositorio porque Sphinx los usa como sus archivos fuentes).
+
+El script ``reference.sh`` genera ``doc/reference.rst`` y los archivos dentro de ``doc/reference/``
+analizando el archivo de texto ``REFERENCE``, dividiéndolo en secciones y convirtiéndolas a
+restructuredText. Esto me permite mantener ``REFERENCE`` como una única fuente de verdad para
+la documentación y mantener los archivos de Sphinx actualizados.
+
+``_static`` contiene las imágenes y archivos SVG utilizados en la documentación.
+
+``.readthedocs.yaml`` es un `archivo de configuración para Read the Docs`_. El sistema remoto de Sphinx
+utiliza este archivo.
 
 .. _`archivo de configuración para Read the Docs`: https://docs.readthedocs.io/en/stable/config-file/index.html
 
-La traducción al español de la documentación se genera usando cadenas de un archivo de catálogo
-``locale/es/LC_MESSAGES/index.po``.
+También mantengo una traducción al español de la documentación, generada usando cadenas de una serie
+de archivos de catálogo (``*.po``) dentro de ``locale/es/LC_MESSAGES/``.
+Vea `Traducciones`_ para más información.
 
-Uso un ``Makefile`` para automatizar las fases del ciclo de vida del desarrollo. (`Make y los Makefiles son increíbles`_.)
+Finalmente, uso un ``Makefile`` para automatizar todas las fases del ciclo de vida del desarrollo.
+(`Make y los Makefiles son increíbles`_.)
 
 .. _`Make y los Makefiles son increíbles`: https://mplanchard.com/posts/make-and-makefiles-are-awesome.html
 
-``requirements-dev.txt`` contiene los paquetes necesarios para el `Entorno de desarrollo`_ de Python;
-``requirements.txt`` contiene las dependencias de ejecución.
-
-``setup.py`` es el script principal de `setuptools`_, utilizado para empaquetar y distribuir este proyecto.
-Sé que actualmente se desaconseja el uso de ``setup.py``, así que probablemente lo reemplace con un sistema
-de empaquetado más moderno como `Poetry`_, pero por ahora sigo usando ``setup.py``.
-(Aunque sigo la `recomendación`_ de llamarlo indirectamente usando ``python -m build``.)
-
-.. _recomendación: https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html
-
-``test`` contiene un conjunto de pruebas unitarias de la API. Están escritas usando el `framework de automatización tox`_.
-El código que realiza las pruebas está en ``test/test_core.py``; el archivo de configuración principal de tox es ``tox.ini``.
-Nótese que *no* se trata de pruebas unitarias independientes simples, sino de pruebas de API que se ejecutan
-contra una instancia *activa* de cPanel. Vea `Ejecución de pruebas`_ más abajo para más detalles.
-
-.. _`framework de automatización tox`: https://tox.wiki/en/latest/index.html
 
 Entorno de desarrollo
 =====================
 
-``cpanel-cli`` se desarrolló en Ubuntu Linux 21.10 “Impish Indri”. No hay
-requisitos especiales, así que cualquier distribución de Linux o versión de macOS que soporte al
-menos Python 3.9 debería funcionar.
+**cpanel-cli** fue desarrollado en Ubuntu Linux 23.10 “Mantic” con Python 3.11.
+Sin embargo **cpanel-cli** no tiene ningún requerimiento especial, por lo que
+cualquier distribución de Linux que soporte al menos Python 3.11 debería funcionar.
+También puede utilizar macOS “Ventura” o posterior.
 
-*En macOS “Catalina” o superior*
+*Para crear un entorno de desarrollo en macOS*:
 
-Instale Python 3.9:
-
-.. code:: sh
-
-    $ brew install python@3.9
-
-Luego agregue lo siguiente al ``PATH``:
+Instale Python 3.11:
 
 .. code:: sh
 
-    PATH="$PATH:/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/bin"
-    export $PATH
+    $ brew install python@3.11
+
+Agregue lo siguiente al ``PATH``:
+
+.. code:: sh
+
+    PATH="PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
+    export PATH
+
+(Puede reemplazar ``3.11`` con una versión superior.)
 
 Instale GNU Make:
 
@@ -479,151 +564,171 @@ Instale GNU Make:
 
     $ brew install make
 
-*En Ubuntu Linux 21.04 o superior*
+*Para crear un entorno de desarrollo en Linux:*
 
-Instale Python 3.9:
+Para distros basadas en Debian (Ubuntu, Mint), instale Python 3.11 con:
 
 .. code:: sh
 
-    $ sudo apt install python3.9 python3-pip python3.9-venv
+    $ sudo apt install python3.11 python3-pip python3.11-venv
 
-GNU Make está instalado por defecto en Ubuntu. Compruebe su disponibilidad utilizando:
+Para distros basadas en RPM (RHEL, Fedora), instale Python 3.11 con:
+
+.. code:: sh
+
+    $ sudo dnf install python3.11 python3-pip
+
+(Puede reemplazar ``3.11`` con una versión superior.)
+
+GNU Make está instalado por defecto en la mayoría de las distros de Linux.
+Verifique su disponibilidad usando:
 
 .. code:: sh
 
     $ make --version
 
-*Otras distribuciones de Linux*
-
-Use el gestor de paquetes de su distribución para instalar Python 3.9 (o superior) y GNU Make.
-
 Construcción del paquete ``cpanel-cli`` a partir del código fuente
 ==================================================================
 
-Para construir e instalar localmente el paquete ``cpanel-cli`` use:
+Para construir e instalar un paquete local ``cpanel-cli`` use:
 
 .. code:: sh
 
     $ make install
 
-Esto hace lo siguiente:
+Lo anterior ejecuta lo siguiente:
 
 1. Crea un nuevo entorno virtual de Python 3 en un directorio ``venv``
 
-2. Instala en éste los paquetes de desarrollo listados en ``requirements-dev.txt``
+2. Instala en ``venv`` los paquetes de desarrollo listados en la sección ``[project.optional-dependencies]`` de ``pyproject.toml``
 
-3. Construye un paquete local de ``cpanel-cli``
+3. Construye un paquete local de Python ``cpanel-cli``
+
 
 Ejecución local
 ===============
 
-Para ejecutar el utilitario desde el paquete instalado localmente, primero active el entorno
-virtual (sólo hay que hacerlo una vez por sesión):
+Para ejecutar el paquete instalado localmente, primero active el entorno virtual
+(necesita ejecutar esto sólo una vez por sesión):
 
 .. code:: sh
 
     $ source venv/bin/activate
 
-Luego puede ejecutar el utilitario ``cpanel``:
+Luego ejecute el utilitario ``cpanel``:
 
 .. code:: sh
 
     $ cpanel --help
 
-Si edita las fuentes, simplemente ejecute ``make install`` para construir y reinstalar el paquete local.
+Si edita las fuentes, simplemente ejecute de nuevo ``make install`` para construir y
+reinstalar el paquete local.
+
 
 Ejecución (opcional) del verificador de tipos
 =============================================
 
-Las fuentes de Python están en el directorio ``cpanel``. Nótese que tienen anotaciones de sugerencias de tipos,
-las cuales uso porque, en mi opinión, añaden claridad y robustez al código Python. Lea la
-`Guía de verificación de tipos de Python`_ para una buena introducción.
+*El verificador de tipos es opcional; puede ignorar este paso si lo desea.*
 
-.. _`Guía de verificación de tipos de Python`: https://realpython.com/python-type-checking/
+El código fuente de Python está anotado usando sugerencias de tipos (*type hints*).
+Las uso para añadir claridad y robustez al código. Lea la `Guía de verificación de tipos en Python`_
+para una excelente introducción.
 
-Dado que las sugerencias de tipo no son verificadas por el propio Python, se necesita un
-utilitario especial: un *verificador de tipos*. (Éste es como otra clase de *linter*.)
-Mi verificador de tipos preferido para Python es Pyright_.
+.. _`Guía de verificación de tipos en Python`: https://realpython.com/python-type-checking/
 
-La ejecución del verificador de tipos es opcional; se puede ignorar este paso.
+Las sugerencias de tipos no son realmente verificadas por el runtime de Python;
+necesita un utilitario de un tercero.
+Para este proyecto uso Pyright_, que es mi verificador de tipos preferido para Python.
 
-Para ejecutar Pyright, primero instálelo:
+Para instalar Pyright:
 
 .. code:: sh
 
     $ pip3 install --user pyright
 
-Luego ejecútelo usando:
+Ejecútelo con:
 
 .. code:: sh
 
     $ make typecheck
 
+La configuración del verificador de tipos están en el archivo `pyrightconfig.json``.
+
+Tenga en cuenta que Pyright está basado en Node.js, por lo que pip instalará indirectamente
+este y un montón de dependencias de JavaScript.
+
 Ejecución de pruebas
 ====================
 
-Uso el `framework de automatización tox`_ para una serie de pruebas unitarias de la API.
-El código principal de las pruebas está en ``test/test_core.py``; el archivo de configuración
-principal de tox es ``tox.ini``.
+Para las pruebas unitarias del API uso el `framework de automatización tox`_. El código que
+controla las pruebas está en ``test/test_core.py``; el archivo de configuración principal de
+tox es ``tox.ini``.
 
 Éstas *no* son pruebas unitarias simples, sino pruebas unitarias de API que se ejecutan contra
-una instancia *activa* de cPanel. Para ejecutar las pruebas necesita conectarse a una instancia de
-cPanel instalada en otro host accesible desde el host donde ejecuta las pruebas.
+una instancia `en vivo` de cPanel. Por esto, tox necesita acceso a una instancia de cPanel
+activa en algún host remoto accesible desde el host local.
 
-Para establecer las credenciales del host remoto, haga una copia del archivo
-``cpanelrc.test.example`` y llámelo ``cpanelrc.test`` (guárdelo en el directorio ``test``):
+Para establecer las credenciales del host remoto, haga una copia del archivo proporcionado
+``cpanelrc.test.example`` y cámbiele el nombre a ``cpanelrc.test`` (manténgalo en el directorio
+``test``):
 
 .. code:: sh
 
     $ cp test/cpanelrc.test.example test/cpanelrc.test
 
-Luego edite ``cpanelrc.test`` y establezca:
 
-- El nombre de host de su instancia de cPanel
-- El nombre de usuario de su cuenta de cPanel
-- Un `token de API`_ asociado a ese nombre de usuario.
+Luego edite ``cpanelrc.test`` y proporcione los siguientes datos:
+
+- ``hostname``: El nombre del host remoto de la instancia de cPanel
+- ``username``: El nombre de usuario de su cuenta de cPanel
+- ``utoken``: Un `token de API`_ asociado a ese nombre de usuario
 
 **La autenticación basada en tokens es el único método de autenticación soportado.**
 
 .. _`token de API`: https://docs.cpanel.net/knowledge-base/security/how-to-use-cpanel-api-tokens/
 
-Para ejecutar las pruebas utilice:
+Para ejecutar las pruebas, use:
 
 .. code:: sh
 
     $ make test
 
-El comando anterior acceda a la `interfaz REST UAPI de cPanel`_ con la mayoría de las funciones
-implementadas en ``cpanel-cli``. El estado remoto de cPanel se deja sin cambios, es decir,
-las pruebas son estrictamente no destructivas.
+El comando anterior accede a un subconjunto de la `interfaz REST de cPanel UAPI`_ con las funciones
+implementadas en **cpanel-cli**.
 
-.. _`interfaz REST UAPI de cPanel`: https://api.docs.cpanel.net/cpanel/introduction/
+**El estado remoto de cPanel se deja sin cambios, es decir, las pruebas son estrictamente no
+destructivas.**
+
+.. _`interfaz REST de cPanel UAPI`: https://api.docs.cpanel.net/cpanel/introduction/
 
 Empaquetado
 ===========
 
-El empaquetado se realiza a través del tradicional ``setup.py``, que es el script principal
-utilizado como backend para `setuptools`_.
-Este script se invoca indirectamente a través de ``python -m build``. (Probablemente lo sustituya por
-un ``pyproject.toml`` más moderno en un futuro cercano).
+El empaquetado se realiza a través del backend de construcción `Hatchling`_, como se
+especifica en la sección ``[build-system]`` de ``pyproject.toml``.
 
-Para ejecutar el empaquetador utilice:
+Para ejecutar el empaquetador, use:
 
 .. code:: sh
 
     $ make package
 
-El comando anterior debería generar los siguientes dos archivos de distribución en el directorio temporal ``dist``:
+El comando anterior debería generar los siguientes dos archivos de distribución
+en el directorio temporal ``dist``:
 
 .. code:: sh
 
-    cpanel_cli-<versión>-py3-none-any.whl
-    cpanel-cli-<versión>.tar.gz
+    cpanel_cli-<version>-py3-none-any.whl
+    cpanel-cli-<version>.tar.gz
 
-donde ``<versión>` es el número de versión establecido en ``cpanel/__init__.py``.
+donde ``<version>`` es el número de versión establecido en ``cpanel/__init__.py``.
 
-El tarball es el archivo de fuentes; el archivo wheel es el archivo de distribución. Estos archivos
-generados se pueden subir al `Python Package Index`_.
+El archivo tar contiene el código fuente; el archivo wheel es el archivo de distribución
+binaria para instalación. Los archivos incluidos para estos paquetes de distribución
+están listados en las secciones ``[tool.hatch.build.targets.sdist]`` y
+``[tool.hatch.build.targets.wheel]`` de ``pyproject.toml`` respectivamente.
+
+Estos paquetes están listos para ser subidos al `Python Package Index`_.
 
 Construcción de la documentación
 ================================
@@ -644,9 +749,7 @@ la página de inicio es un archivo convencional ``index.html``.
 Este repositorio de GitHub está actualmente conectado a mi cuenta de `Read the Docs`_, de modo que
 cualquier cambio en un ``commit`` (o ``merge``) que actualice las fuentes de documentación
 dispara automáticamente una reconstrucción remota de Sphinx. La documentación HTML resultante está siempre disponible en
-`https://cpanel-cli.readthedocs.io/es/latest/`_
-
-.. _`https://cpanel-cli.readthedocs.io/es/latest/`: https://cpanel-cli.readthedocs.io/es/latest/
+https://cpanel-cli.readthedocs.io/es/stable/
 
 El archivo de configuración principal para Sphinx es ``doc/conf.py``. La versión de Sphinx y el tema
 usado para construir la documentación están en ``doc/requirements.txt``.
@@ -667,7 +770,7 @@ valor (``msgstr``). Por ejemplo, para español:
 Estos pares ``msgid`` y ``msgstr`` se guardan en un archivo de catálogo (``.*po``), que es un
 archivo de texto simple. Estos archivos de catálogo se almacenan en el subdirectorio ``doc/locale``.
 
-Personalmente mantengo una traducción al español de la documentación en los archivos de
+La traducción al español de la documentación la mantengo personalmente en los archivos de
 catálogo ``.doc/locale/es/LC_MESSAGES/*.po``.
 
 Los archivos ``.po`` de catálogo se compilan en archivos ``.mo`` con el utilitario de

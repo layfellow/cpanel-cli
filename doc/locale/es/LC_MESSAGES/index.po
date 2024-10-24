@@ -7,22 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-16 02:34-0400\n"
-"PO-Revision-Date: 2021-10-10 16:14-0300\n"
+"POT-Creation-Date: 2024-10-24 20:10-0300\n"
+"PO-Revision-Date: 2024-10-24 20:15-0300\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language: en\n"
 "Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../../index.rst:3
 msgid "cPanel Command Line Interface"
 msgstr "Interfaz de línea de comandos para cPanel"
 
 #: ../../index.rst:5
-msgid "`Leer en español </es/latest/index.html>`_"
-msgstr "`Read in English </en/latest/index.html>`_"
+msgid "`Leer en español </es/stable/index.html>`_"
+msgstr "`Read in English </en/stable/index.html>`_"
 
 #: ../../index.rst:7
 msgid "A command line interface for the cPanel Unrestricted API."
@@ -30,69 +32,165 @@ msgstr "Una interfaz de línea de comandos para la Unrestricted API de cPanel."
 
 #: ../../index.rst:9
 msgid ""
-"Quickly execute commands in a terminal to manage a website instead of "
-"logging into `cPanel`_ and clicking your way around the web interface. "
-"You can also use this utility in scripting jobs."
+"Swiftly execute commands in a terminal to manage a website, bypassing the"
+" need to log into `cPanel`_ and navigate through its web interface. This "
+"utility can also be seamlessly integrated into scripting tasks."
 msgstr ""
-"Ejecute rápidamente comandos en un terminal en lugar de iniciar sesión en"
-" la interfaz web de `cPanel`_. También puede usar este utilitario para "
-"trabajos de *scripting*."
+"Ejecute comandos rápidamente en una terminal para gestionar un sitio web,"
+" evitando la necesidad de iniciar sesión en `cPanel`_ y navegar por su "
+"interfaz web. Este utilitario también se puede integrar sin problemas en "
+"tareas de scripting."
 
-#: ../../index.rst:16
-msgid "Some examples"
-msgstr "Algunos ejemplos"
+#: ../../index.rst:15
+msgid ""
+"A portion of the cPanel UAPI (Unrestricted API) is implemented, enabling "
+"you to perform a wide array of functions with ease."
+msgstr ""
+"Se implementa una parte de la UAPI (API sin restricciones) de cPanel, lo "
+"que le permite realizar una amplia gama de funciones con facilidad."
 
 #: ../../index.rst:18
-msgid "Print help:"
-msgstr "Imprime la ayuda:"
+msgid "Some examples:"
+msgstr "Algunos ejemplos:"
 
-#: ../../index.rst:24
-msgid "Print help on implemented modules:"
-msgstr "Imprime la ayuda de los módulos implementados:"
+#: ../../index.rst:20
+msgid ""
+"Create a backup of the account and store it in the remote user's home "
+"directory:"
+msgstr ""
+"Crear una copia de seguridad de la cuenta y almacenarla en el directorio "
+"home del usuario remoto:"
 
-#: ../../index.rst:30
-msgid "Print help on module ``mail``:"
-msgstr "Imprime la ayuda del módulo ``mail``:"
+#: ../../index.rst:26
+msgid "Directly write files to the remote user's home directory:"
+msgstr "Escribir directamente archivos en el directorio home del usuario remoto:"
 
-#: ../../index.rst:36
+#: ../../index.rst:32
+msgid "Create a new FTP user with a quota and personal directory:"
+msgstr "Crear un nuevo usuario FTP con una cuota y un directorio personal:"
+
+#: ../../index.rst:38
+msgid "Create an email autoresponder:"
+msgstr "Crear una respuesta automática de correo electrónico:"
+
+#: ../../index.rst:50
+msgid "Set the cPanel user interface language to French:"
+msgstr "Cambair a francés el idioma de la interfaz de usuario de cPanel:"
+
+#: ../../index.rst:56
+msgid "List cPanel available features:"
+msgstr "Listar las características disponibles de cPanel:"
+
+#: ../../index.rst:72
 msgid "List cPanel email accounts:"
 msgstr "Lista las cuentas de correo de cPanel:"
 
-#: ../../index.rst:42
+#: ../../index.rst:85
 msgid ""
-"Get a description of email filter ``spamkiller`` associated to email "
-"account ``scott@example.com``:"
+"And many more things. I intend to eventually fully cover the 500+ API "
+"functions available."
 msgstr ""
-"Obtiene la description del filtro de correo ``spamkiller`` asociado a la "
-"cuenta de de correo ``scott@example.com``:"
+"Y muchas cosas más. Con el tiempo espero cubrir completamente las más de "
+"500 funciones disponibles en el API"
 
-#: ../../index.rst:49
-msgid "The output is generally JSON, so it’s easily parsable using, e.g., `jq`_"
+#: ../../index.rst:88
+msgid ""
+"The output is JSON, so it’s easily parsable using a `CLI JSON processor, "
+"like jq`_"
 msgstr ""
-"La salida es generalmente JSON, por lo que es fácilmente analizable "
-"utilizando, por ejemplo, `jq`_"
+"La salida es JSON, por lo que es fácilmente analizable utilizando un "
+"`procesador CLI de JSON, como por ejemplo, jq`_"
 
-#: ../../index.rst:54
+#: ../../index.rst:92
+msgid ""
+"See the User’s `Guide`_ for a complete reference of the implemented API "
+"functions."
+msgstr ""
+"Consulte la `Guía del usuario`_ para una referencia completa de las "
+"funciones implementadas de la API."
+
+#: ../../index.rst:98
+msgid "Quick Start Guide"
+msgstr "Guía rápida"
+
+#: ../../index.rst:100
+msgid ""
+"**cpanel-cli** works on Linux and macOS (it might work on `Windows`_) and"
+" requires Python 3.11 or later."
+msgstr ""
+"**cpanel-cli** funciona en Linux y macOS (podría funcionar en `Windows`_)"
+" y requiere Python 3.11 o posterior."
+
+#: ../../index.rst:103
+msgid ""
+"For Linux, install Python 3.11 or later using your distro’s package "
+"manager."
+msgstr ""
+"Para Linux, instale Python 3.11 o posterior usando el gestor de paquetes "
+"de su distro."
+
+#: ../../index.rst:105
+msgid "For macOS, install Python 3.11 or later using Homebrew_."
+msgstr "Para macOS, instale Python 3.11 o posterior usando Homebrew_."
+
+#: ../../index.rst:111
+msgid ""
+"Create a ``.cpanelrc`` file in your ``$HOME`` directory with the "
+"following contents:"
+msgstr ""
+"Cree un archivo ``.cpanelrc`` en su directorio ``$HOME`` con el siguiente"
+" contenido:"
+
+#: ../../index.rst:119
+msgid "``hostname`` is the hostname of your cPanel instance"
+msgstr "``hostname`` es el nombre de host de su instancia de cPanel"
+
+#: ../../index.rst:120
+msgid "``username`` is your username in your instance"
+msgstr "``username`` es su nombre de usuario en la instancia"
+
+#: ../../index.rst:121
+msgid ""
+"``utoken`` is an API token associated with ``username``. See `How to "
+"create an API token`_."
+msgstr ""
+"``utoken`` es un token de API asociado con el ``username``. Lea `Cómo "
+"crear un token de API`_."
+
+#: ../../index.rst:125
+msgid "Then run:"
+msgstr "Luego ejecute:"
+
+#: ../../index.rst:132
+msgid "Test the installation using:"
+msgstr "Pruebe la instalación usando:"
+
+#: ../../index.rst:138
+msgid ""
+"For further instructions, see the `Installation`_ "
+"section of the User’s Guide."
+msgstr "Para mayores detalles, vea la sección de `Instalación`_ de la Guía del usuario."
+
+#: ../../index.rst:144
 msgid "User’s Guide"
 msgstr "Guía del usuario"
 
-#: ../../index.rst:63
+#: ../../index.rst:153
 msgid "For developers"
 msgstr "Para desarrolladores"
 
-#: ../../index.rst:71
+#: ../../index.rst:161
 msgid "License"
 msgstr "Licencia"
 
-#: ../../index.rst:73
+#: ../../index.rst:163
 msgid "cPanel CLI"
 msgstr "CLI para cPanel"
 
-#: ../../index.rst:75
+#: ../../index.rst:165
 msgid ""
 "`GNU General Public License v3 "
 "<https://www.gnu.org/licenses/gpl-3.0.en.html>`_"
 msgstr ""
 "`GNU General Public License v3 "
-"<https://www.gnu.org/licenses/gpl-3.0.en.html>`_"
-
+"<https://www.gnu.org/licenses/gpl-4.0.en.html>`_"
