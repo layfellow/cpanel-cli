@@ -9,9 +9,6 @@ import cpanel
 from .cli import eatflag, configuration, version, die, usage
 from .core import NullableStr, CPanelEndpoint, CPanelError, endpoint
 
-HOME: NullableStr = os.environ.get('HOME')
-RCFILE: str = (HOME + '/' if HOME else '') + '.' + cpanel.__name__ + 'rc'
-
 #  Switch on debugging information if environment variable DEBUG is set to 1.
 logging.basicConfig(stream = sys.stderr, level = logging.DEBUG if os.environ.get('DEBUG') else logging.INFO)
 log: Logger = logging.getLogger(__name__)
@@ -639,7 +636,7 @@ def main() -> None:
 			else:
 				print(usage(*args[1:]))
 		else:
-			args, hostname, user, utoken = configuration(args, os.environ, RCFILE)
+			args, hostname, user, utoken = configuration(args, os.environ)
 			if hostname is None:
 				die("missing cPanel hostname, use cpanel --help")
 			if user is None:

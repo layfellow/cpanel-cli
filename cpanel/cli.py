@@ -73,13 +73,13 @@ def eatflag(args: List[str], shortopt: str, longopt: str) -> Tuple[List[str], bo
 	return reargs, flag
 
 
-def configuration(args: List[str], env: Mapping[str, str], rcfile: str) \
+def configuration(args: List[str], env: Mapping[str, str], conf: NullableStr = None) \
 		-> Tuple[List[str], NullableStr, NullableStr, NullableStr]:
 	"""Return a tuple with credentials to hit the cPanel API.
 
 	args       list of arguments passed to the command line
 	env        dict of current environment variables
-	rcfile     an .rc properties file, with name=value lines
+	conf       an optional properties file, with name=value lines
 
 	Returns tuple:
 		args with option values possibly removed,
@@ -91,13 +91,13 @@ def configuration(args: List[str], env: Mapping[str, str], rcfile: str) \
 	username: NullableStr
 	utoken: NullableStr
 
-	# Parse optional CLI values (they override both environment variables and the .rc file).
+	# Parse optional CLI values (they override both environment variables and the config file).
 	# I don’t like argparse, manual parsing is much simpler and readable.
 	args, hostname = eatvalue(args, '-H', '--hostname')
 	args, username = eatvalue(args, '-U', '--username')
 	args, utoken = eatvalue(args, '-T', '--utoken')
 
-	# Check environment variables (they override the .rc file).
+	# Check environment variables (they override the config file).
 	if hostname is None:
 		hostname = env.get('CPANEL_HOSTNAME')
 	if username is None:
@@ -105,10 +105,27 @@ def configuration(args: List[str], env: Mapping[str, str], rcfile: str) \
 	if utoken is None:
 		utoken = env.get('CPANEL_UTOKEN')
 
-	# Finally, parse the .rc file.
-	if os.path.isfile(rcfile):
+	# Determine the config file path
+	if conf is None:
+		home: str = os.path.expanduser('~')
+		xdg_config_home: NullableStr = env.get('XDG_CONFIG_HOME')
+		if xdg_config_home is None:
+			xdg_config_home = os.path.join(home, '.config')
+
+		config_home: str = os.path.join(xdg_config_home, 'cpanel')
+
+		if xdg_config_home and not os.path.isdir(config_home):
+			os.makedirs(config_home)
+
+		if os.path.isfile(os.path.join(config_home, 'cpanel.conf')):
+			conf = os.path.join(config_home, 'cpanel.conf')
+		else:
+			conf = os.path.join(home, '.cpanelrc')
+
+	# Parse the config file.
+	if os.path.isfile(conf):
 		config: ConfigParser = ConfigParser()
-		with open(rcfile, 'r') as stream:
+		with open(conf, 'r') as stream:
 			config.read_string('[cpanel]\n' + stream.read())
 		try:
 			if hostname is None:
@@ -118,7 +135,8 @@ def configuration(args: List[str], env: Mapping[str, str], rcfile: str) \
 			if utoken is None:
 				utoken = config['cpanel']['utoken']
 		except KeyError as e:
-			raise CPanelError("missing property in {}, {}".format(rcfile, str(e)))
+			raise CPanelError("missing property in {}, {}".format(conf, str(e)))
+
 
 	return args, hostname, username, utoken
 
@@ -145,8 +163,8 @@ def usage(*args: str) -> str:
 				(arglist[0][:4].lower() == "mail" and arglist[0][:7].lower() != "mailman") or \
 				arglist[0][:3].lower() == "dir":
 				return True
-		return False 
-		
+		return False
+
 	# Read USAGE or REFERENCE data file.
 	stream: NullableBytes = pkgutil.get_data(__name__, 'USAGE' if is_usage(*args) else 'REFERENCE')
 
