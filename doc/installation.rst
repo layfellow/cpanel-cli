@@ -89,7 +89,12 @@ Authentication
 ==============
 
 To authenticate against your cPanel instance, the recommended way is to create a
-``.cpanelrc`` file in your ``$HOME`` directory with the following contents:
+``$HOME/.config/cpanel/cpanel.conf`` configuration file.
+
+If you don’t want to use the XDG-compliant ``$HOME/.config/cpanel`` location,
+you can use a traditional ``$HOME/.cpanelrc`` file.
+
+The configuration file must contain the following:
 
 .. code:: sh
 
@@ -126,5 +131,5 @@ Or you can pass the credentials directly on the command line using the ``-H``, `
 
     $ cpanel -H example.com -U scott -T ABCDEFGHIJKLMNOPQSRTUVWXYZ012345 list features
 
-Options passed on the command line override environmental variables, which in turn override
-``.cpanelrc`` values.
+Options passed on the command line override environmental variables, which in turn
+override ``cpanel.conf`` or ``.cpanelrc`` values.
