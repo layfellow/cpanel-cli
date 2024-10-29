@@ -119,21 +119,15 @@ or a later macOS release.
 
 *To create a development environment on macOS*:
 
-Install Python 3.11:
+Install Python 3:
 
 .. code:: sh
 
-    $ brew install python@3.11
+    $ brew install python
 
-Add the following to your ``PATH``:
-
-.. code:: sh
-
-    PATH="$PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
-    export $PATH
-
-- You can replace ``3.11`` with a higher version.
-- Use the excellent `Pyenv`_ utility if you want to manage different versions of Python globally.
+Homebrew will install the latest Python version available. If you want to install a specific
+version, you can use the excellent `Pyenv`_ utility to manage different releases of Python
+side by side.
 
 .. _`Pyenv`: https://github.com/pyenv/pyenv
 
@@ -145,20 +139,21 @@ Install GNU Make:
 
 *To create a development environment on Linux:*
 
-On a Debian-based distro, install Python 3.11 using:
+On a Debian-based distro (Ubuntu, Mint), install Python 3 using:
 
 .. code:: sh
 
-    $ sudo apt install python3.11 python3-pip python3.11-venv
+    $ sudo apt install python3 python3-pip python3-venv
 
-On a RPM-based distro, install Python 3.11 using:
+On a RPM-based distro (RHEL, Fedora), install Python 3 using:
 
 .. code:: sh
 
-    $ sudo dnf install python3.11 python3-pip
+    $ sudo dnf install python3 python3-pip
 
-- You can replace ``3.11`` with a higher version.
-- Use the excellent `Pyenv`_ utility if you want to manage different versions of Python globally.
+``apt`` and ``dnf`` will install the latest Python version available. If you want to
+install a specific version, you can use the excellent `Pyenv`_ utility to manage
+different releases of Python side by side.
 
 GNU Make is installed by default on most Linux distros. Check its availability using:
 
@@ -208,8 +203,8 @@ Running the (optional) type checker
 *Running the type checker is optional — you can ignore this step if you want.*
 
 The Python source code is annotated using type hints. I use them
-to add clarity and robustness to Python code. Read the `Python Type Checking Guide`_ for an
-excellent introduction.
+to improve the readability of Python code. Read the `Python Type Checking Guide`_ for
+an excellent introduction to the use of type hints in Python.
 
 .. _`Python Type Checking Guide`: https://realpython.com/python-type-checking/
 
@@ -234,7 +229,7 @@ Run it using:
 The type checker configuration is in ``pyrightconfig.json``.
 
 Note that Pyright is based on Node.js, so that pip will indirectly install it and pull a
-lot of JavaScript dependencies.
+lot of JavaScript dependencies required by Pyright.
 
 Running tests
 =============

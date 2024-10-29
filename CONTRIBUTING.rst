@@ -119,20 +119,17 @@ or a later macOS release.
 
 *To create a development environment on macOS*:
 
-Install Python 3.11:
+Install Python 3:
 
 .. code:: sh
 
-    $ brew install python@3.11
+    $ brew install python
 
-Add the following to your ``PATH``:
+Homebrew will install the latest Python version available. If you want to install a specific
+version, you can use the excellent `Pyenv`_ utility to manage different releases of Python
+side by side.
 
-.. code:: sh
-
-    PATH="$PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
-    export $PATH
-
-(You can replace ``3.11`` with a higher version.)
+.. _`Pyenv`: https://github.com/pyenv/pyenv
 
 Install GNU Make:
 
@@ -142,19 +139,21 @@ Install GNU Make:
 
 *To create a development environment on Linux:*
 
-On a Debian-based distro (Ubuntu, Mint), install Python 3.11 using:
+On a Debian-based distro (Ubuntu, Mint), install Python 3 using:
 
 .. code:: sh
 
-    $ sudo apt install python3.11 python3-pip python3.11-venv
+    $ sudo apt install python3 python3-pip python3-venv
 
-On a RPM-based distro (RHEL, Fedora), install Python 3.11 using:
+On a RPM-based distro (RHEL, Fedora), install Python 3 using:
 
 .. code:: sh
 
-    $ sudo dnf install python3.11 python3-pip
+    $ sudo dnf install python3 python3-pip
 
-(You can replace ``3.11`` with a higher version.)
+``apt`` and ``dnf`` will install the latest Python version available. If you want to
+install a specific version, you can use the excellent `Pyenv`_ utility to manage
+different releases of Python side by side.
 
 GNU Make is installed by default on most Linux distros. Check its availability using:
 
@@ -195,7 +194,7 @@ Then run the ``cpanel`` utility:
 
     $ cpanel --help
 
-If you edit the sources, just re-run ``make install`` to build and reinstall
+If you edit the sources, just run ``pip3 install .`` (note the dot ``.``) to rebuild
 the local package.
 
 Running the (optional) type checker
@@ -204,8 +203,8 @@ Running the (optional) type checker
 *Running the type checker is optional — you can ignore this step if you want.*
 
 The Python source code is annotated using type hints. I use them
-to add clarity and robustness to Python code. Read the `Python Type Checking Guide`_ for an
-excelente introduction.
+to improve the readability of Python code. Read the `Python Type Checking Guide`_ for
+an excellent introduction to the use of type hints in Python.
 
 .. _`Python Type Checking Guide`: https://realpython.com/python-type-checking/
 
@@ -230,7 +229,7 @@ Run it using:
 The type checker configuration is in the ``pyrightconfig.json`` file.
 
 Note that Pyright is based on Node.js, so that pip will indirectly install it and pull a
-lot of JavaScript dependencies.
+lot of JavaScript dependencies required by Pyright.
 
 Running tests
 =============
@@ -543,20 +542,15 @@ También puede utilizar macOS “Ventura” o posterior.
 
 *Para crear un entorno de desarrollo en macOS*:
 
-Instale Python 3.11:
+Instale Python 3:
 
 .. code:: sh
 
-    $ brew install python@3.11
+    $ brew install python
 
-Agregue lo siguiente al ``PATH``:
-
-.. code:: sh
-
-    PATH="PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
-    export PATH
-
-(Puede reemplazar ``3.11`` con una versión superior.)
+Homebrew instala la última versión de Python disponible. Si desea instalar una versión
+específica, puede usar el excelente utilitario `Pyenv`_ para gestionar diferentes versiones
+de Python en paralelo.
 
 Instale GNU Make:
 
@@ -566,19 +560,21 @@ Instale GNU Make:
 
 *Para crear un entorno de desarrollo en Linux:*
 
-Para distros basadas en Debian (Ubuntu, Mint), instale Python 3.11 con:
+Para distros basadas en Debian (Ubuntu, Mint), instale Python 3 con:
 
 .. code:: sh
 
-    $ sudo apt install python3.11 python3-pip python3.11-venv
+    $ sudo apt install python3 python3-pip python3-venv
 
-Para distros basadas en RPM (RHEL, Fedora), instale Python 3.11 con:
+Para distros basadas en RPM (RHEL, Fedora), instale Python 3 con:
 
 .. code:: sh
 
-    $ sudo dnf install python3.11 python3-pip
+    $ sudo dnf install python3 python3-pip
 
-(Puede reemplazar ``3.11`` con una versión superior.)
+``apt`` y ``dnf`` instalan la última versión de Python disponible. Si quiere
+instalar una versión específica, puede usar el excelente utilitario `Pyenv`_
+para gestionar diferentes versiones de Python.
 
 GNU Make está instalado por defecto en la mayoría de las distros de Linux.
 Verifique su disponibilidad usando:
@@ -621,8 +617,8 @@ Luego ejecute el utilitario ``cpanel``:
 
     $ cpanel --help
 
-Si edita las fuentes, simplemente ejecute de nuevo ``make install`` para construir y
-reinstalar el paquete local.
+Si edita las fuentes, simplemente ejecute ``pip3 install .`` (nótese el punto ``.``)
+para reconstruir el paquete local.
 
 
 Ejecución (opcional) del verificador de tipos
@@ -630,9 +626,9 @@ Ejecución (opcional) del verificador de tipos
 
 *El verificador de tipos es opcional; puede ignorar este paso si lo desea.*
 
-El código fuente de Python está anotado usando sugerencias de tipos (*type hints*).
-Las uso para añadir claridad y robustez al código. Lea la `Guía de verificación de tipos en Python`_
-para una excelente introducción.
+El código fuente de Python está anotado con sugerencias de tipos (*type hints*).
+Las uso para hacer más legible el código. Lea la `Guía de verificación de tipos en Python`_
+para una excelente introducción al uso de sugerencias de tipos en Python.
 
 .. _`Guía de verificación de tipos en Python`: https://realpython.com/python-type-checking/
 
@@ -652,10 +648,10 @@ Ejecútelo con:
 
     $ make typecheck
 
-La configuración del verificador de tipos están en el archivo `pyrightconfig.json``.
+La configuración del verificador de tipos están en el archivo ``pyrightconfig.json``.
 
 Tenga en cuenta que Pyright está basado en Node.js, por lo que pip instalará indirectamente
-este y un montón de dependencias de JavaScript.
+Node.js y un montón de dependencias de JavaScript necesarias para Pyright.
 
 Ejecución de pruebas
 ====================
