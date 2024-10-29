@@ -132,7 +132,10 @@ Add the following to your ``PATH``:
     PATH="$PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
     export $PATH
 
-(You can replace ``3.11`` with a higher version.)
+- You can replace ``3.11`` with a higher version.
+- Use the excellent `Pyenv`_ utility if you want to manage different versions of Python globally.
+
+.. _`Pyenv`: https://github.com/pyenv/pyenv
 
 Install GNU Make:
 
@@ -154,7 +157,8 @@ On a RPM-based distro, install Python 3.11 using:
 
     $ sudo dnf install python3.11 python3-pip
 
-(You can replace ``3.11`` with a higher version.)
+- You can replace ``3.11`` with a higher version.
+- Use the excellent `Pyenv`_ utility if you want to manage different versions of Python globally.
 
 GNU Make is installed by default on most Linux distros. Check its availability using:
 
@@ -195,7 +199,7 @@ Then run the ``cpanel`` utility:
 
     $ cpanel --help
 
-If you edit the sources, just re-run ``make install`` to build and reinstall
+If you edit the sources, just run ``pip3 install .`` (note the dot ``.``) to rebuild
 the local package.
 
 Running the (optional) type checker

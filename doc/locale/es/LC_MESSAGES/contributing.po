@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 20:10-0300\n"
-"PO-Revision-Date: 2024-10-24 20:21-0300\n"
+"POT-Creation-Date: 2024-10-28 22:35-0300\n"
+"PO-Revision-Date: 2024-10-28 22:37-0300\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
 "Language: en\n"
 "Language-Team: \n"
@@ -86,7 +86,9 @@ msgstr ""
 msgid ""
 "``pyrightconfig.json`` is the configuration file for the `Pyright`_ "
 "static type checker."
-msgstr "``pyrightconfig.json`` es el archivo de configuración para el verificador de tipos estáticos `Pyright`_"
+msgstr ""
+"``pyrightconfig.json`` es el archivo de configuración para el verificador"
+" de tipos estáticos `Pyright`_"
 
 #: ../../contributing.rst:72
 msgid ""
@@ -210,27 +212,35 @@ msgstr "Instale Python 3.11:"
 msgid "Add the following to your ``PATH``:"
 msgstr "Agregue lo siguiente al ``PATH``:"
 
-#: ../../contributing.rst:135 ../../contributing.rst:157
-msgid "(You can replace ``3.11`` with a higher version.)"
-msgstr "(Puede reemplazar ``3.11`` con una versión superior.)"
+#: ../../contributing.rst:135 ../../contributing.rst:160
+msgid "You can replace ``3.11`` with a higher version."
+msgstr "Puede reemplazar ``3.11`` con una versión superior."
 
-#: ../../contributing.rst:137
+#: ../../contributing.rst:136 ../../contributing.rst:161
+msgid ""
+"Use the excellent `Pyenv`_ utility if you want to manage different "
+"versions of Python globally."
+msgstr ""
+"Use el excelente utilitario `Pyenv`_ si quiere gestionar diferentes "
+"versiones simultáneas de Python en forma global."
+
+#: ../../contributing.rst:140
 msgid "Install GNU Make:"
 msgstr "Instale GNU Make:"
 
-#: ../../contributing.rst:143
+#: ../../contributing.rst:146
 msgid "*To create a development environment on Linux:*"
 msgstr "*Para crear un entorno de desarrollo en Linux:*"
 
-#: ../../contributing.rst:145
+#: ../../contributing.rst:148
 msgid "On a Debian-based distro, install Python 3.11 using:"
 msgstr "Para distros basadas en Debian, instale Python 3.11 con:"
 
-#: ../../contributing.rst:151
+#: ../../contributing.rst:154
 msgid "On a RPM-based distro, install Python 3.11 using:"
 msgstr "Para distros basadas en RPM, instale Python 3.11 con:"
 
-#: ../../contributing.rst:159
+#: ../../contributing.rst:163
 msgid ""
 "GNU Make is installed by default on most Linux distros. Check its "
 "availability using:"
@@ -238,23 +248,23 @@ msgstr ""
 "GNU Make está instalado por defecto en la mayoría de las distros de "
 "Linux. Verifique su disponibilidad usando:"
 
-#: ../../contributing.rst:166
+#: ../../contributing.rst:170
 msgid "Building a local ``cpanel-cli`` package from source"
 msgstr "Construcción del paquete ``cpanel-cli`` a partir del código fuente"
 
-#: ../../contributing.rst:168
+#: ../../contributing.rst:172
 msgid "Build and install a local ``cpanel-cli`` package:"
 msgstr "Para construir e instalar un paquete local ``cpanel-cli`` use:"
 
-#: ../../contributing.rst:174
+#: ../../contributing.rst:178
 msgid "This will:"
 msgstr "Lo anterior ejecuta lo siguiente:"
 
-#: ../../contributing.rst:176
+#: ../../contributing.rst:180
 msgid "Create a new virtual Python 3 environment in a ``venv`` directory"
 msgstr "Crea un nuevo entorno virtual de Python 3 en un directorio ``venv``"
 
-#: ../../contributing.rst:178
+#: ../../contributing.rst:182
 msgid ""
 "Locally install in ``venv`` the development packages listed on the "
 "``[project.optional-dependencies]`` section of ``pyproject.toml``"
@@ -262,15 +272,15 @@ msgstr ""
 "Instala en ``venv`` los paquetes de desarrollo listados en la sección "
 "``[project.optional-dependencies]`` de ``pyproject.toml``"
 
-#: ../../contributing.rst:180
+#: ../../contributing.rst:184
 msgid "Build a local Python package ``cpanel-cli``"
 msgstr "Construye un paquete local de ``cpanel-cli``"
 
-#: ../../contributing.rst:183
+#: ../../contributing.rst:187
 msgid "Running the local executable"
 msgstr "Ejecución local"
 
-#: ../../contributing.rst:185
+#: ../../contributing.rst:189
 msgid ""
 "To run the executable, first activate the virtual environment (you need "
 "to run this only once per session):"
@@ -278,23 +288,21 @@ msgstr ""
 "Para ejecutar el paquete instalado localmente, primero active el entorno "
 "virtual (necesita ejecutar esto sólo una vez por sesión):"
 
-#: ../../contributing.rst:192
+#: ../../contributing.rst:196
 msgid "Then run the ``cpanel`` utility:"
 msgstr "Luego ejecute el utilitario ``cpanel``:"
 
-#: ../../contributing.rst:198
-msgid ""
-"If you edit the sources, just re-run ``make install`` to build and "
-"reinstall the local package."
-msgstr ""
-"Si edita las fuentes, simplemente ejecute de nuevo ``make install`` para "
-"construir y reinstalar el paquete local."
-
 #: ../../contributing.rst:202
+msgid ""
+"If you edit the sources, just run ``pip3 install .`` (note the dot ``.``)"
+" to rebuild the local package."
+msgstr "Si edita las fuentes, simplemente ejecute ``pip3 install .`` (nótese el punto ``.``) para reconstruir el paquete local."
+
+#: ../../contributing.rst:206
 msgid "Running the (optional) type checker"
 msgstr "Ejecución (opcional) del verificador de tipos"
 
-#: ../../contributing.rst:204
+#: ../../contributing.rst:208
 msgid ""
 "*Running the type checker is optional — you can ignore this step if you "
 "want.*"
@@ -302,7 +310,7 @@ msgstr ""
 "*El verificador de tipos es opcional; puede ignorar este paso si lo "
 "desea.*"
 
-#: ../../contributing.rst:206
+#: ../../contributing.rst:210
 msgid ""
 "The Python source code is annotated using type hints. I use them to add "
 "clarity and robustness to Python code. Read the `Python Type Checking "
@@ -313,7 +321,7 @@ msgstr ""
 " `Guía de verificación de tipos en Python`_ para una excelente "
 "introducción."
 
-#: ../../contributing.rst:212
+#: ../../contributing.rst:216
 msgid ""
 "Type hints are not actually checked by the Python runtime — you need a "
 "third party *type checker* utility. For this project I use Pyright_, "
@@ -323,19 +331,19 @@ msgstr ""
 "Python; necesita un utilitario de un tercero. Para este proyecto uso "
 "Pyright_, que es mi verificador de tipos preferido para Python.."
 
-#: ../../contributing.rst:218
+#: ../../contributing.rst:222
 msgid "To install Pyright:"
 msgstr "Para instalar Pyright:"
 
-#: ../../contributing.rst:224
+#: ../../contributing.rst:228
 msgid "Run it using:"
 msgstr "Ejecútelo con:"
 
-#: ../../contributing.rst:230
+#: ../../contributing.rst:234
 msgid "The type checker configuration is in ``pyrightconfig.json``."
 msgstr "La configuración del verificador está en ``pyrightconfig.json``."
 
-#: ../../contributing.rst:232
+#: ../../contributing.rst:236
 msgid ""
 "Note that Pyright is based on Node.js, so that pip will indirectly "
 "install it and pull a lot of JavaScript dependencies."
@@ -343,11 +351,11 @@ msgstr ""
 "Tenga en cuenta que Pyright está basado en Node.js, por lo que pip "
 "instalará indirectamente este y un montón de dependencias de JavaScript."
 
-#: ../../contributing.rst:236
+#: ../../contributing.rst:240
 msgid "Running tests"
 msgstr "Ejecución de pruebas"
 
-#: ../../contributing.rst:238
+#: ../../contributing.rst:242
 msgid ""
 "I’m using the `tox automation framework`_ for a series of unit API tests."
 " The main code driving the tests is in ``test/test_core.py``; the main "
@@ -357,7 +365,7 @@ msgstr ""
 "tox`_. El código que controla las pruebas está en ``test/test_core.py``; "
 "el archivo de configuración principal de tox es ``tox.ini``."
 
-#: ../../contributing.rst:242
+#: ../../contributing.rst:246
 msgid ""
 "These are *not* simple unit tests, but unit API tests running against a "
 "*live* cPanel instance. To run the tests, you need access to a cPanel "
@@ -369,7 +377,7 @@ msgstr ""
 "necesita acceso a una instancia de cPanel activa en algún host remoto "
 "accesible desde el host local"
 
-#: ../../contributing.rst:246
+#: ../../contributing.rst:250
 msgid ""
 "To set the remote hosts credentials, make a copy of the provided "
 "``cpanelrc.test.example`` file and name it ``cpanelrc.test`` (keep in the"
@@ -379,23 +387,23 @@ msgstr ""
 "archivo proporcionado ``cpanelrc.test.example`` y cámbiele el nombre a "
 "``cpanelrc.test`` (manténgalo en el directorio ``test``):"
 
-#: ../../contributing.rst:253
+#: ../../contributing.rst:257
 msgid "Then edit ``cpanelrc.test`` and set:"
 msgstr "Luego edite ``cpanelrc.test`` y proporcione los siguientes datos:"
 
-#: ../../contributing.rst:255
+#: ../../contributing.rst:259
 msgid "The hostname of your cPanel instance"
 msgstr "El nombre del host remoto de la instancia de cPanel"
 
-#: ../../contributing.rst:256
+#: ../../contributing.rst:260
 msgid "The username of your cPanel account"
 msgstr "El nombre de usuario de su cuenta de cPanel"
 
-#: ../../contributing.rst:257
+#: ../../contributing.rst:261
 msgid "An `API token`_ associated to that username"
 msgstr "Un `token de API`_ asociado a ese nombre de usuario."
 
-#: ../../contributing.rst:259
+#: ../../contributing.rst:263
 msgid ""
 "**Token-based authentication is the only supported authentication "
 "method.**"
@@ -403,11 +411,11 @@ msgstr ""
 "**La autenticación basada en tokens es el único método de autenticación "
 "soportado.**"
 
-#: ../../contributing.rst:263
+#: ../../contributing.rst:267
 msgid "To run the tests, use:"
 msgstr "Para ejecutar las pruebas, use:"
 
-#: ../../contributing.rst:269
+#: ../../contributing.rst:273
 msgid ""
 "The above command will hit the `cPanel UAPI REST interface`_ with most of"
 " the functions implemented in **cpanel-cli**."
@@ -416,7 +424,7 @@ msgstr ""
 "cPanel UAPI`_ con las funciones\n"
 "implementadas en **cpanel-cli**."
 
-#: ../../contributing.rst:272
+#: ../../contributing.rst:276
 msgid ""
 "**The remote state of cPanel is left unchanged, i.e., the tests are "
 "strictly non-destructive.**"
@@ -424,11 +432,11 @@ msgstr ""
 "**El estado remoto de cPanel se deja sin cambios, es decir, las pruebas "
 "son estrictamente no destructivas.**"
 
-#: ../../contributing.rst:277
+#: ../../contributing.rst:281
 msgid "Packaging"
 msgstr "Empaquetado"
 
-#: ../../contributing.rst:279
+#: ../../contributing.rst:283
 msgid ""
 "Packaging is done via the `Hatchling`_ build backend, as specified on the"
 " ``[build-system]`` section of ``pyproject.toml``."
@@ -437,11 +445,11 @@ msgstr ""
 "`Hatchling`_, como se especifica en la sección ``[build-system]`` de "
 "``pyproject.toml``."
 
-#: ../../contributing.rst:282
+#: ../../contributing.rst:286
 msgid "To run the packager, use:"
 msgstr "Para ejecutar el empaquetador, use:"
 
-#: ../../contributing.rst:288
+#: ../../contributing.rst:292
 msgid ""
 "The above command should generate the following two distribution files in"
 " the temporary ``dist`` directory:"
@@ -449,13 +457,13 @@ msgstr ""
 "El comando anterior debería generar los siguientes dos archivos de "
 "distribución en el directorio temporal ``dist``:"
 
-#: ../../contributing.rst:296
+#: ../../contributing.rst:300
 msgid "where ``<version>`` is the release number set in ``cpanel/__init__.py``."
 msgstr ""
 "donde ``<versión>`` es el número de versión establecido en "
 "``cpanel/__init__.py``."
 
-#: ../../contributing.rst:298
+#: ../../contributing.rst:302
 msgid ""
 "The tarball is the source archive; the wheel file is the built "
 "distribution archive. The included files for these distribution packages "
@@ -470,15 +478,15 @@ msgstr ""
 "``[tool.hatch.build.targets.wheel]`` de ``pyproject.toml`` "
 "respectivamente."
 
-#: ../../contributing.rst:302
+#: ../../contributing.rst:306
 msgid "These packages are ready to be uploaded to the `Python Package Index`_."
 msgstr "Estos paquetes están listos para ser subidos al `Python Package Index`_."
 
-#: ../../contributing.rst:307
+#: ../../contributing.rst:311
 msgid "Building the documentation"
 msgstr "Construcción de la documentación"
 
-#: ../../contributing.rst:309
+#: ../../contributing.rst:313
 msgid ""
 "The API documentation source files are in the ``doc`` directory. These "
 "comprise `reStructuredText`_ (``.rst``) files which are processed using "
@@ -488,11 +496,11 @@ msgstr ""
 "``doc``. Estos comprenden archivos `reStructuredText`_ (``.rst``) que se "
 "procesan con `Sphinx`_ para generar árboles HTML estáticos."
 
-#: ../../contributing.rst:312
+#: ../../contributing.rst:316
 msgid "To build the documentation, use:"
 msgstr "Para construir la documentación utilice:"
 
-#: ../../contributing.rst:318
+#: ../../contributing.rst:322
 msgid ""
 "The above command will generate several static HTML trees in "
 "``doc/build/html``. For example, it generates the default English "
@@ -504,7 +512,7 @@ msgstr ""
 "se genera en ``doc/build/html/en``; la página de inicio es un archivo "
 "convencional ``index.html``."
 
-#: ../../contributing.rst:322
+#: ../../contributing.rst:326
 msgid ""
 "This GitHub repository is currently connected to my `Read the Docs`_ "
 "account, so that any committed (or merged) change that updates the "
@@ -519,7 +527,7 @@ msgstr ""
 "HTML resultante está siempre disponible en https://cpanel-"
 "cli.readthedocs.io/es/stable/"
 
-#: ../../contributing.rst:329
+#: ../../contributing.rst:333
 msgid ""
 "The main configuration file for Sphinx is ``doc/conf.py``. The Sphinx "
 "version and theme used to build the documentation are in "
@@ -529,11 +537,11 @@ msgstr ""
 "versión de Sphinx y el tema usado para construir la documentación están "
 "en ``doc/requirements.txt``."
 
-#: ../../contributing.rst:333
+#: ../../contributing.rst:337
 msgid "Translations"
 msgstr "Traducciones"
 
-#: ../../contributing.rst:335
+#: ../../contributing.rst:339
 msgid ""
 "The English language ``*.rst`` files in ``doc`` are the source "
 "documentation files. Any translation is based on these documents. "
@@ -547,7 +555,7 @@ msgstr ""
 " inglés como clave (``.msgid``), y la correspondiente cadena traducida "
 "como valor (``msgstr``). Por ejemplo, para español:"
 
-#: ../../contributing.rst:345
+#: ../../contributing.rst:349
 msgid ""
 "These ``msgid`` and ``msgstr`` pairs are kept in a *catalog* file "
 "(``*.po``), which is a simple text file. These catalog files are stored "
@@ -557,7 +565,7 @@ msgstr ""
 " (``.*po``), que es un archivo de texto simple. Estos archivos de "
 "catálogo se almacenan en el subdirectorio ``doc/locale.``"
 
-#: ../../contributing.rst:348
+#: ../../contributing.rst:352
 msgid ""
 "I personally maintain a Spanish translation of the documentation in "
 "catalog files ``doc/locale/es/LC_MESSAGES/*.po``."
@@ -565,7 +573,7 @@ msgstr ""
 "La traducción al español de la documentación la mantengo personalmente en"
 " los archivos de catálogo ``.doc/locale/es/LC_MESSAGES/*.po``."
 
-#: ../../contributing.rst:351
+#: ../../contributing.rst:355
 msgid ""
 "Catalog ``.po`` files are compiled into ``.mo`` files using the Sphinx "
 "internationalization utility. These compiled ``.mo`` files are later used"
@@ -576,19 +584,19 @@ msgstr ""
 "compilados se utilizan luego para componer las versiones traducidas "
 "durante la `Construcción de la documentación`_."
 
-#: ../../contributing.rst:356
+#: ../../contributing.rst:360
 msgid "Adding a translation"
 msgstr "Cómo añadir una traducción"
 
-#: ../../contributing.rst:358
+#: ../../contributing.rst:362
 msgid "To add a new translation:"
 msgstr "Para añadir una nueva traducción:"
 
-#: ../../contributing.rst:360
+#: ../../contributing.rst:364
 msgid "Create a new catalog using:"
 msgstr "Cree un nuevo catálogo:"
 
-#: ../../contributing.rst:366
+#: ../../contributing.rst:370
 msgid ""
 "where ``<language code>`` is the `ISO 639-1 code`_ corresponding to the "
 "new language. For example, to add a French translation you would use:"
@@ -597,7 +605,7 @@ msgstr ""
 " nuevo idioma. Por ejemplo, para añadir una traducción al francés se "
 "utilizaría:"
 
-#: ../../contributing.rst:373
+#: ../../contributing.rst:377
 msgid ""
 "This would add a new ``locale/fr/LC_MESSAGES/index.po`` directory with "
 "several ``.po`` files in it."
@@ -605,7 +613,7 @@ msgstr ""
 "Este añadiría un nuevo directorio ``locale/fr/LC_MESSAGES`` con varios "
 "archivos ``.po``."
 
-#: ../../contributing.rst:376
+#: ../../contributing.rst:380
 msgid ""
 "Edit the ``.po`` files created in step 1 and insert the translated "
 "strings as ``msgstr`` fields. For example:"
@@ -613,11 +621,11 @@ msgstr ""
 "Edite los archivos ``.po`` creado en el paso 1 e inserte las cadenas "
 "traducidas como campos ``msgstr``. Por ejemplo:"
 
-#: ../../contributing.rst:384
+#: ../../contributing.rst:388
 msgid "Rebuild the documentation:"
 msgstr "Reconstruya la documentación:"
 
-#: ../../contributing.rst:390
+#: ../../contributing.rst:394
 msgid ""
 "The above command will create a new static HTML tree in "
 "``doc/build/html/<language code>``. For example, for French, it will "
@@ -627,11 +635,11 @@ msgstr ""
 "``doc/build/html/<código de idioma>``. Por ejemplo, para el francés, "
 "crearía un nuevo árbol en ``doc/build/html/fr``."
 
-#: ../../contributing.rst:394
+#: ../../contributing.rst:398
 msgid "Correcting and expanding an existing translation"
 msgstr "Cómo corregir y ampliar una traducción existente"
 
-#: ../../contributing.rst:396
+#: ../../contributing.rst:400
 msgid ""
 "if you edit the original ``doc/*.rst`` source documentation files, you "
 "need to update the translations as well:"
@@ -639,11 +647,11 @@ msgstr ""
 "Si se edita el texto de los archivos de documentación originales "
 "``doc/*.rst``, también hay que actualizar las traducciones:"
 
-#: ../../contributing.rst:399
+#: ../../contributing.rst:403
 msgid "Run the following to update the catalog files:"
 msgstr "Ejecute lo siguiente para actualizar los catálogos:"
 
-#: ../../contributing.rst:405
+#: ../../contributing.rst:409
 msgid ""
 "where ``<language code>`` is the `ISO 639-1 code`_. You need to run it "
 "for every translated language."
@@ -651,7 +659,7 @@ msgstr ""
 "donde ``<language code>`` es el código `ISO 639-1`_.  Tiene que "
 "ejecutarlo para cada lenguaje traducido."
 
-#: ../../contributing.rst:408
+#: ../../contributing.rst:412
 msgid ""
 "The previous step will emit a report telling you which ``.po`` files need"
 " to be updated, for example:"
@@ -659,7 +667,7 @@ msgstr ""
 "El paso anterior emite un informe con los archivos ``.po`` que necesitan "
 "ser actualizados, por ejemplo:"
 
-#: ../../contributing.rst:416
+#: ../../contributing.rst:420
 msgid ""
 "Open the mentioned ``.po`` files and edit or add new ``msgstr`` strings. "
 "Be advised that some entries might get annotated as ``#, fuzzy``, which "
@@ -674,6 +682,7 @@ msgstr ""
 "similitudes con otra entrada. Sólo se necesita editar el texto de "
 "``msgstr`` y eliminar la línea ``fuzzy``."
 
-#: ../../contributing.rst:421
+#: ../../contributing.rst:425
 msgid "For further information, see the `Internationalization Guide`_"
 msgstr "Para más información consulte la `Guía de internacionalización`_."
+
