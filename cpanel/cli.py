@@ -143,7 +143,7 @@ def configuration(args: List[str], env: Mapping[str, str], conf: NullableStr = N
 
 def version() -> str:
 	"""Return package version."""
-	return "{} client version {}".format(cpanel.__description__, cpanel.__version__)
+	return "{} Client version {}.".format(cpanel.__description__, cpanel.__version__)
 
 
 def usage(*args: str) -> str:
