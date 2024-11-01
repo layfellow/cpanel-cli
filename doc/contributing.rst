@@ -47,7 +47,7 @@ To contribute, just fork this repository, make a new branch and open a `pull req
     ├── .readthedocs.yaml
     ├── test
     │   ├── cpanelrc.test.example
-    │   └── test_core.py
+    │   └── test_uapi.py
     └── tox.ini
 
 ``cpanel`` contains the main source code. Files ``REFERENCE`` and ``USAGE`` contain the actual
@@ -70,7 +70,7 @@ I’m using the `Hatchling`_ build backend, with a small custom ``hatch.py`` scr
 ``pyrightconfig.json`` is the configuration file for the `Pyright`_ static type checker.
 
 ``test`` contains a set of unit API tests. They’re written using the `tox automation framework`_.
-The code driving the tests is in ``test/test_core.py``; the main tox configuration file is ``tox.ini``.
+The code driving the tests is in ``test/test_uapi.py``; the main tox configuration file is ``tox.ini``.
 These are *not* simple standalone unit tests, but API tests running against
 a *live* cPanel instance. See `Running tests`_ below for further details.
 
@@ -235,7 +235,7 @@ Running tests
 =============
 
 I’m using the `tox automation framework`_ for a series of unit API tests.
-The main code driving the tests is in ``test/test_core.py``; the main tox configuration file is
+The main code driving the tests is in ``test/test_uapi.py``; the main tox configuration file is
 ``tox.ini``.
 
 These are *not* simple unit tests, but unit API tests running against a *live* cPanel instance.

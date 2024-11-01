@@ -47,7 +47,7 @@ To contribute, just fork this repository, make a new branch and open a `pull req
     ├── .readthedocs.yaml
     ├── test
     │   ├── cpanelrc.test.example
-    │   └── test_core.py
+    │   └── test_uapi.py
     └── tox.ini
 
 ``cpanel`` contains the main source code. Files ``REFERENCE`` and ``USAGE`` contain the actual
@@ -70,7 +70,7 @@ I’m using the `Hatchling`_ build backend, with a small custom ``hatch.py`` scr
 ``pyrightconfig.json`` is the configuration file for the `Pyright`_ static type checker.
 
 ``test`` contains a set of unit API tests. They’re written using the `tox automation framework`_.
-The code driving the tests is in ``test/test_core.py``; the main tox configuration file is ``tox.ini``.
+The code driving the tests is in ``test/test_uapi.py``; the main tox configuration file is ``tox.ini``.
 These are *not* simple standalone unit tests, but API tests running against
 a *live* cPanel instance. See `Running tests`_ below for further details.
 
@@ -235,7 +235,7 @@ Running tests
 =============
 
 I’m using the `tox automation framework`_ for a series of unit API tests.
-The main code driving the tests is in ``test/test_core.py``; the main tox configuration file is
+The main code driving the tests is in ``test/test_uapi.py``; the main tox configuration file is
 ``tox.ini``.
 
 These are *not* simple unit tests, but unit API tests running against a *live* cPanel instance.
@@ -473,7 +473,7 @@ Para contribuir, haga un fork de este repositorio, cree una nueva rama y abra un
     ├── .readthedocs.yaml
     ├── test
     │   ├── cpanelrc.test.example
-    │   └── test_core.py
+    │   └── test_uapi.py
     └── tox.ini
 
 ``cpanel`` contiene el código fuente principal. Los archivos ``REFERENCE`` y ``USAGE`` contienen
@@ -495,7 +495,7 @@ estáticos `Pyright`_.
 
 ``test`` contiene un conjunto de pruebas unitarias de la API. Están escritas usando el
 `framework de automatización tox`_. El código que controla las pruebas está en
-``test/test_core.py``; el archivo de configuración principal de tox es ``tox.ini``.
+``test/test_uapi.py``; el archivo de configuración principal de tox es ``tox.ini``.
 Nótese que *no* son simples pruebas unitarias independientes, sino pruebas de API que se ejecutan
 en una instancia de cPanel *activa*. Vea `Ejecución de pruebas`_ más abajo para más detalles.
 
@@ -657,7 +657,7 @@ Ejecución de pruebas
 ====================
 
 Para las pruebas unitarias del API uso el `framework de automatización tox`_. El código que
-controla las pruebas está en ``test/test_core.py``; el archivo de configuración principal de
+controla las pruebas está en ``test/test_uapi.py``; el archivo de configuración principal de
 tox es ``tox.ini``.
 
 Éstas *no* son pruebas unitarias simples, sino pruebas unitarias de API que se ejecutan contra
