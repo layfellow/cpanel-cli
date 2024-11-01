@@ -17,6 +17,10 @@ for a list of supported formats.
 
 For a list of currently blocked IP ranges, you can use:
 
+*Example*
+
+.. code:: sh
+
     $ cpanel cat file /public_html/.htaccess | grep 'deny from'
 
 **COMMANDS**

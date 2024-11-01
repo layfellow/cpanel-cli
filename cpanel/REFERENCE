@@ -97,7 +97,8 @@ for a list of supported formats.
 
 For a list of currently blocked IP ranges, you can use:
 
-\033[1;34mcpanel cat file /public_html/.htaccess | grep 'deny from'\033[00m
+    EXAMPLE
+        \033[1;34mcpanel cat file /public_html/.htaccess | grep 'deny from'\033[00m
 
 \033[1mCOMMANDS\033[0m
 
