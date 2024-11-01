@@ -1,5 +1,4 @@
 import re
-import sys
 import json
 import logging
 from logging import Logger
@@ -353,7 +352,7 @@ def uapi_files(host: CPanelEndpoint, cmd: str, args: List[str]) -> str:
 			path = args[3], include_mime = 1, include_permissions = 1, show_hidden = 1))
 
 	elif _cmd_is(cmd, "cat file"):
-		sys.stdout.write(host.get_file_contents(args[2]).decode('utf-8'))
+		r = host.get_file_contents(args[2]).decode('utf-8')
 
 	elif _cmd_is(cmd, "write file"):
 		r = host.write_file(args[2], args[3])
