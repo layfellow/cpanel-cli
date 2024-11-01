@@ -177,13 +177,13 @@ class CPanelEndpoint:
 
 			if args[0] == 'ftp':
 				return self.check(
-					lambda: self.client.uapi.Backup.fullbackup_to_ftp(**parameters))  # type: ignore [reportCallIssue]
+					lambda: self.client.uapi.Backup.fullbackup_to_ftp(**parameters))
 			elif args[0] == 'scp':
 				return self.check(
-					lambda: self.client.uapi.Backup.fullbackup_to_scp_with_password(**parameters))  # type: ignore [reportCallIssue]
+					lambda: self.client.uapi.Backup.fullbackup_to_scp_with_password(**parameters))
 
 			return self.check(
-				lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters)) # type: ignore [reportCallIssue]
+				lambda: self.client.uapi.Backup.fullbackup_to_homedir(**parameters))
 
 		except IndexError:
 			raise CPanelError("missing arguments for create backup")
@@ -211,7 +211,7 @@ class CPanelEndpoint:
 			raise CPanelError("unrecognized arguments for set log settings")
 
 		return self.check(
-			lambda: self.client.uapi.LogManager.set_settings(**parameters))  # type: ignore [reportCallIssue]
+			lambda: self.client.uapi.LogManager.set_settings(**parameters))
 
 
 	def get_file_contents(self, filepath: str) -> bytes:
@@ -225,7 +225,7 @@ class CPanelEndpoint:
 		basename: str = os.path.basename(filepath)
 
 		r: Result = self.client.uapi.Fileman.get_file_content(
-			dir = dirname, file = basename, to_charset = 'utf-8')  # type: ignore [reportCallIssue]
+			dir = dirname, file = basename, to_charset = 'utf-8')
 		if r.status != 1 or r.errors is not None:
 			raise CPanelError(r['errors'][0])
 
@@ -249,7 +249,7 @@ class CPanelEndpoint:
 		content = content.encode('raw_unicode_escape').decode('unicode_escape')
 
 		return self.check(lambda: self.client.uapi.Fileman.save_file_content(
-			dir = dirname, file = basename, content = content, fallback = 0))  # type: ignore [reportCallIssue]
+			dir = dirname, file = basename, content = content, fallback = 0))
 
 
 	def set_mail_autoresponder(self, *args: str) -> str:
@@ -311,7 +311,7 @@ class CPanelEndpoint:
 
 		log.debug(str(parameters))
 		return self.check(
-			lambda: self.client.uapi.Email.add_auto_responder(**parameters))  # type: ignore [reportCallIssue]
+			lambda: self.client.uapi.Email.add_auto_responder(**parameters))
 
 
 	def upload_file(self, directory: str, filename: str) -> str:
@@ -401,13 +401,13 @@ class CPanelEndpoint:
 
 		log.debug(str(parameters))
 		return self.check(
-			lambda: self.client.uapi.Email.store_filter(**parameters))  # type: ignore [reportCallIssue]
+			lambda: self.client.uapi.Email.store_filter(**parameters))
 
 
 	def get_mail_forwarder(self, email: str, domain: str) -> NullableStr:
 		"""Return the forwarder address for email, or None if mail has no forwarders."""
 
-		r: Result = self.client.uapi.Email.list_forwarders(domain = domain)  # type: ignore [reportCallIssue]
+		r: Result = self.client.uapi.Email.list_forwarders(domain = domain)
 
 		log.debug(str(r['data']))
 
@@ -432,7 +432,7 @@ class CPanelEndpoint:
 			raise CPanelError("missing arguments for move mail filter")
 
 		# Get filter list as data
-		data: list = self.client.uapi.Email.list_filters(account = args[0])['data']  # type: ignore [ReportCallIssue]
+		data: list = self.client.uapi.Email.list_filters(account = args[0])['data']
 		n: int = len(data)
 
 		try:
@@ -487,7 +487,7 @@ class CPanelEndpoint:
 
 		log.debug(str(filters))
 
-		return self.check(lambda: self.client.uapi.Email.reorder_filters(filters))  # type: ignore [reportCallIssue]
+		return self.check(lambda: self.client.uapi.Email.reorder_filters(filters))
 
 
 	def update_spam_list(self, add: bool, spam_list: str, *args: str) -> str:
@@ -500,7 +500,7 @@ class CPanelEndpoint:
 		Returns "OK" or prints error
 		"""
 
-		preferences: Result = self.client.uapi.SpamAssassin.get_user_preferences()  # type: ignore [reportCallIssue]
+		preferences: Result = self.client.uapi.SpamAssassin.get_user_preferences()
 		current: list[str] = preferences['data'][spam_list] if spam_list in preferences['data'] else []
 
 		log.debug(str(current))
@@ -519,7 +519,7 @@ class CPanelEndpoint:
 		log.debug(str(current))
 
 		return self.check(
-			lambda: self.client.uapi.SpamAssassin.update_user_preference(**kwargs)) # type: ignore [reportCallIssue]
+			lambda: self.client.uapi.SpamAssassin.update_user_preference(**kwargs))
 
 
 def endpoint(hostname: str, username: str, utoken: str) -> CPanelEndpoint:
