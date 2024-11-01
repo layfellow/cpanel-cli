@@ -15,19 +15,17 @@ Requirements
 Installation on Linux
 =====================
 
-On a Debian-based distro (Ubuntu, Mint), install Python 3.11 using:
+On a Debian-based distro (Ubuntu, Mint), install Python 3 using:
 
 .. code:: sh
 
-    $ sudo apt install python3.11
+    $ sudo apt install python3
 
-On a RPM-based distro (RHEL, Fedora), install Python 3.11 using:
+On a RPM-based distro (RHEL, Fedora), install Python 3 using:
 
 .. code:: sh
 
-    $ sudo dnf install python3.11
-
-(You can replace ``3.11`` with a higher version.)
+    $ sudo dnf install python3
 
 Then run:
 
@@ -47,20 +45,11 @@ so any Linux distro with Python 3.11 or later should work.
 Installation on macOS
 =====================
 
-Install Python 3.11 or later using `Homebrew <https://brew.sh/>`_.
+Install Python 3 using `Homebrew <https://brew.sh/>`_.
 
 .. code:: sh
 
-    $ brew install python@3.11
-
-Add the following to your ``PATH``:
-
-.. code:: sh
-
-    PATH="$PATH:/usr/local/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin"
-    export $PATH
-
-(You can replace ``3.11`` with a higher version.)
+    $ brew install python
 
 Then run:
 
