@@ -227,7 +227,7 @@ Delete an autoresponder for ACCOUNT.
 List all current mail forwarders. If optional argument DOMAIN is passed, list only
 the forwarders for DOMAIN.
 
-*Example*
+*Examples*
 
 .. code:: sh
 
@@ -305,6 +305,11 @@ Delete email forwarder for EMAIL address.
 - **enable mail filter ACCOUNT FILTERNAME**
 - **disable mail filter ACCOUNT FILTERNAME**
 - **delete mail filter ACCOUNT FILTERNAME**
+- **move mail filter ACCOUNT FILTERNAME up|down [N]**
+- **move mail filter ACCOUNT FILTERNAME top|bottom**
+- **move mail filter ACCOUNT FILTERNAME N**
+- **trace mail filter ACCOUNT TESTMESSAGE**
+- **list filter domains**
 
 ACCOUNT is the name of a cPanel email account, usually in the
 form user@domain.com
@@ -340,7 +345,7 @@ Return the total number of mail filters for all accounts.
 **get mail filter ACCOUNT FILTERNAME**
 
 Return a JSON-formatted description of email filter FILTERNAME associated
-to email ACCOUNT. To get a list of current filter names, use
+to email ACCOUNT. To get a list of filters, use
 ‘cpanel list mail filters ACCOUNT’
 
 *Example*
@@ -371,8 +376,8 @@ See the EXAMPLE below.
 
 **enable mail filter ACCOUNT FILTERNAME**
 
-Enable FILTERNAME associated to ACCOUNT. To get a list of current
-filter names, use ‘cpanel list mail filters ACCOUNT’
+Enable FILTERNAME associated to ACCOUNT. To get a list of filters, use
+‘cpanel list mail filters ACCOUNT’
 
 *Example*
 
@@ -382,8 +387,8 @@ filter names, use ‘cpanel list mail filters ACCOUNT’
 
 **disable mail filter ACCOUNT FILTERNAME**
 
-Disable FILTERNAME associated to ACCOUNT. To get a list of current
-filter names, use ‘cpanel list mail filters ACCOUNT’
+Disable FILTERNAME associated to ACCOUNT. To get a list of filters, use
+‘cpanel list mail filters ACCOUNT’
 
 *Example*
 
@@ -393,14 +398,85 @@ filter names, use ‘cpanel list mail filters ACCOUNT’
 
 **delete mail filter ACCOUNT FILTERNAME**
 
-Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
-filter names, use ‘cpanel list mail filters ACCOUNT’
+Delete the email filter FILTERNAME associated to ACCOUNT. To get a list of filters,
+use ‘cpanel list mail filters ACCOUNT’
 
 *Example*
 
 .. code:: sh
 
     $ cpanel delete mail filter scott@example.com spamkiller
+
+**move mail filter ACCOUNT FILTERNAME up|down [N]**
+
+Move the email filter FILTERNAME associated to ACCOUNT up or down the filter list.
+(Filters are executed in order from top to bottom.)
+To get a list of filters, use ‘cpanel list mail filters ACCOUNT’.
+If N is specified, move the filter N positions up or down.
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel move mail filter scott@example.com spamkiller up
+    $ cpanel move mail filter scott@example.com spamkiller down
+    $ cpanel move mail filter scott@example.com spamkiller up 5
+    $ cpanel move mail filter scott@example.com spamkiller down 5
+
+**move mail filter ACCOUNT FILTERNAME top|bottom**
+
+Move the email filter FILTERNAME associated to ACCOUNT to the top or bottom
+position on the filter list.
+(Filters are executed in order from top to bottom.)
+To get a list of filters, use ‘cpanel list mail filters ACCOUNT’
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel move mail filter scott@example.com spamkiller top
+    $ cpanel move mail filter scott@example.com spamkiller bottom
+
+**move mail filter ACCOUNT FILTERNAME N**
+
+Move the email filter FILTERNAME associated to ACCOUNT to the N-th position on the
+filter list.
+(Filters are executed in order from top to bottom.)
+To get a list of filters, use ‘cpanel list mail filters ACCOUNT’
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel move mail filter scott@example.com spamkiller 2
+    $ cpanel move mail filter scott@example.com spamkiller 4
+
+**trace mail filter ACCOUNT TESTMESSAGE**
+
+Run a TESTMESSAGE email body against all filters and report what filters
+would be triggered. This command is useful to test the effect of a new filter.
+(Filters are executed in order from top to bottom.)
+To get a list of filters, use ‘cpanel list mail filters ACCOUNT’
+This command does not output JSON, but a trace run.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel trace mail filter scott@example.com "Spam and eggs!"
+
+**list filter domains**
+
+List all the domains with email filters.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel list filter domains
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters_backups/
 
 
 

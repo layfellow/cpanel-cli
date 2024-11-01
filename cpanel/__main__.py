@@ -2,12 +2,13 @@ import logging
 import os
 import re
 import sys
+import json
 from logging import Logger
 from typing import List
-from cpanel_api import Api
+from cpanel_api import Api, Result
 import cpanel
 from .cli import eatflag, configuration, version, die, usage
-from .core import NullableStr, CPanelEndpoint, CPanelError, endpoint
+from .core import JSONType, NullableStr, CPanelEndpoint, CPanelError, endpoint
 
 #  Switch on debugging information if environment variable DEBUG is set to 1.
 logging.basicConfig(stream = sys.stderr, level = logging.DEBUG if os.environ.get('DEBUG') else logging.INFO)
@@ -40,7 +41,7 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:  # type: ignore [rep
 	Returns    result data (usually a JSON string)
 	"""
 	log.debug(str(args))
-	cmd: str = " ".join(args[0:3])  # Ignore everything beyond the 3rd arg.
+	cmd: str = " ".join(args[0:4])  # Ignore everything beyond the 4th arg.
 	uapi: Api = host.client.uapi
 
 	def cmd_is(command: str, *arglist: str) -> bool:
@@ -330,6 +331,65 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:  # type: ignore [rep
 
 		elif cmd_is(cmd, "delete mail filter", "rm mail filter", "remove mail filter"):
 			r = host.check(lambda: uapi.Email.delete_filter(account = args[3], filtername = args[4]))
+
+		elif cmd_is(cmd, "move mail filter"):
+			r = host.move_mail_filter(*args[3:])
+
+		elif cmd_is(cmd, "trace mail filter"):
+			result: Result = uapi.Email.trace_filter(account = args[3], msg = args[4])
+			r = result['data']['trace']
+
+		elif cmd_is(cmd, "list filter domain"):
+			r = host.dump(lambda: uapi.Email.list_filters_backups())
+
+		elif cmd_is(cmd, "enable spam assassin"):
+			r = host.check(lambda: uapi.Email.enable_spam_assassin())
+
+		elif cmd_is(cmd, "disable spam assassin"):
+			r = host.check(lambda: uapi.Email.disable_spam_assassin())
+
+		elif cmd_is(cmd, "enable spam box"):
+			r = host.check(lambda: uapi.Email.enable_spam_box())
+
+		elif cmd_is(cmd, "clear spam box"):
+			r = host.check(lambda: uapi.SpamAssassin.clear_spam_box())
+
+		elif cmd_is(cmd, "disable spam box"):
+			r = host.check(lambda: uapi.Email.disable_spam_box())
+
+		elif cmd_is(cmd, "get spam settings"):
+			settings: Result = uapi.Email.get_spam_settings()
+			preferences: Result = uapi.SpamAssassin.get_user_preferences()
+			r = json.dumps({**settings['data'], **preferences['data']}, indent = 4, sort_keys = False)
+
+		elif cmd_is(cmd, "set spam score"):
+			r = host.check(lambda: uapi.SpamAssassin.update_user_preference(
+				preference = 'required_score', value = args[3]))
+
+		elif cmd_is(cmd, "add spam denylist"):
+			r = host.update_spam_list(True, 'blacklist_from', *args[3:])
+
+		elif cmd_is(cmd, "delete spam denylist", "rm spam denylist", "remove spam denylist"):
+			r = host.update_spam_list(False, 'blacklist_from', *args[3:])
+
+		elif cmd_is(cmd, "add spam allowlist"):
+			r = host.update_spam_list(True, 'whitelist_from', *args[3:])
+
+		elif cmd_is(cmd, "delete spam allowlist", "rm spam allowlist", "remove spam allowlist"):
+			r = host.update_spam_list(False, 'whitelist_from', *args[3:])
+
+		elif cmd_is(cmd, "set spam autodelete score"):
+			r = host.check(lambda: uapi.Email.add_spam_filter(required_score = args[4]))
+
+		elif cmd_is(cmd, "disable spam autodelete"):
+			r = host.check(lambda: uapi.Email.disable_spam_autodelete())
+
+		elif cmd_is(cmd, "list spam rules"):
+			r = host.dump(lambda: uapi.SpamAssassin.get_symbolic_test_names())
+
+		elif cmd_is(cmd, "set spam rule score"):
+			r = host.check(lambda: uapi.SpamAssassin.update_user_preference(
+				preference = 'score', value = f'{args[4]} {args[5]}'))
 
 		elif cmd_is(cmd, "get mail quota"):
 			if args[3].lower() == "default":

@@ -32,6 +32,7 @@ Command Reference
    reference/files
    reference/mail
    reference/webmail
+   reference/spam
    reference/mailman
    reference/ftp
    reference/mysql

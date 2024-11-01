@@ -113,7 +113,7 @@
 - [x] Email::add_mailman_delegates
 - [ ] Email::add_mx
 - [ ] Email::add_pop
-- [ ] Email::add_spam_filter
+- [x] Email::add_spam_filter
 - [x] Email::browse_mailbox
 - [ ] Email::change_mx
 - [ ] Email::check_fastmail
@@ -132,15 +132,15 @@
 - [ ] Email::delete_pop
 - [x] Email::disable_filter
 - [ ] Email::disable_mailbox_autocreate
-- [ ] Email::disable_spam_assassin
-- [ ] Email::disable_spam_autodelete
-- [ ] Email::disable_spam_box
+- [x] Email::disable_spam_assassin
+- [x] Email::disable_spam_autodelete
+- [x] Email::disable_spam_box
 - [ ] Email::dispatch_client_settings
 - [x] Email::edit_pop_quota
 - [x] Email::enable_filter
 - [ ] Email::enable_mailbox_autocreate
-- [ ] Email::enable_spam_assassin
-- [ ] Email::enable_spam_box
+- [x] Email::enable_spam_assassin
+- [x] Email::enable_spam_box
 - [ ] Email::fetch_charmaps
 - [ ] Email::fts_rescan_mailbox
 - [x] Email::generate_mailman_otp
@@ -160,7 +160,7 @@
 - [-] Email::get_max_email_quota
 - [x] Email::get_max_email_quota_mib
 - [x] Email::get_pop_quota
-- [ ] Email::get_spam_settings
+- [x] Email::get_spam_settings
 - [x] Email::get_webmail_settings
 - [x] Email::has_delegated_mailman_lists
 - [ ] Email::has_plaintext_authentication
@@ -169,7 +169,7 @@
 - [ ] Email::list_default_address
 - [x] Email::list_domain_forwarders
 - [x] Email::list_filters
-- [ ] Email::list_filters_backups
+- [x] Email::list_filters_backups
 - [x] Email::list_forwarders
 - [-] Email::list_forwarders_backups
 - [x] Email::list_lists
@@ -177,12 +177,12 @@
 - [ ] Email::list_mxs
 - [x] Email::list_pops
 - [ ] Email::list_pops_with_disk
-- [ ] Email::list_system_filter_info
+- [-] Email::list_system_filter_info
 - [x] Email::passwd_list
 - [ ] Email::passwd_pop
 - [ ] Email::release_outgoing
 - [x] Email::remove_mailman_delegates
-- [ ] Email::reorder_filters
+- [x] Email::reorder_filters
 - [ ] Email::set_always_accept
 - [ ] Email::set_default_address
 - [x] Email::set_list_privacy_options
@@ -192,7 +192,7 @@
 - [ ] Email::suspend_login
 - [ ] Email::suspend_outgoing
 - [ ] Email::trace_delivery
-- [ ] Email::trace_filter
+- [x] Email::trace_filter
 - [ ] Email::unsuspend_incoming
 - [ ] Email::unsuspend_login
 - [ ] Email::unsuspend_outgoing
@@ -448,10 +448,10 @@
 - [ ] SiteTemplates::list_site_templates
 - [ ] SiteTemplates::list_user_settings
 - [ ] SiteTemplates::publish
-- [ ] SpamAssassin::clear_spam_box
-- [ ] SpamAssassin::get_symbolic_test_names
-- [ ] SpamAssassin::get_user_preferences
-- [ ] SpamAssassin::update_user_preference
+- [x] SpamAssassin::clear_spam_box
+- [x] SpamAssassin::get_symbolic_test_names
+- [x] SpamAssassin::get_user_preferences
+- [x] SpamAssassin::update_user_preference
 - [ ] Stats::get_bandwidth
 - [ ] Stats::get_site_errors
 - [ ] Stats::list_sites

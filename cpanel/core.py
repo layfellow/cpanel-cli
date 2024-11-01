@@ -418,6 +418,110 @@ class CPanelEndpoint:
 		return None
 
 
+	def move_mail_filter(self, *args: str) -> str:
+		"""Move a mail filter up, down, to the top, or to the bottom.
+		(Filters are executed in order from top to bottom.)
+
+		args	variable argument list with account name (arg[0]),
+				filter name (arg[1]), "up", "down", "top" or "bottom" (arg[2])
+				and optionally a numeric argument (arg[3])
+
+		Returns "OK" or prints error
+		"""
+		if len(args) < 1:
+			raise CPanelError("missing arguments for move mail filter")
+
+		# Get filter list as data
+		data: list = self.client.uapi.Email.list_filters(account = args[0])['data']  # type: ignore [ReportCallIssue]
+		n: int = len(data)
+
+		try:
+			# Find the index x of the filter to move
+			x: int | None  = next((i for i, kv in enumerate(data) if kv['filtername'] == args[1]), None)
+			if x is None:
+				raise CPanelError("filter not found, {}".format(args[1]))
+
+			# Find the index y of the destination
+			y: int
+			if args[2] in ("up", "down", "top", "bottom"):
+				m: int = 1
+				if len(args) > 3:
+					m = int(args[3])
+				y = x + { "up": -m, "down": m, "top": -x, "bottom": -x + n - 1}[args[2]]  # type: ignore [index]
+			else:
+				y = int(args[2]) - 1  # From 1-based to 0-based
+
+			if y < 0:
+				y = 0
+			elif y >= n:
+				y = n - 1
+
+		except IndexError:
+			raise CPanelError("missing arguments for move mail filter")
+
+		if x == y:
+			return "OK"
+
+		# Build a reordered filters dict, with the affected filter reinserted from index x to index y
+
+		i: int = 0
+		j: int = 0
+		filters: Dict[str, NullableStr] = {}
+
+		while j < n:
+			if x > y and i == y or x < y and i == y + 1:
+				filters[f'filter{j + 1}'] = data[x]['filtername']
+				if i < n:
+					filters[f'filter{j + 2}'] = data[i]['filtername']
+				i += 1
+				j += 2
+				continue
+			if i == x:
+				i += 1
+				continue
+			filters[f'filter{j + 1}'] = data[i]['filtername']
+			i += 1
+			j += 1
+
+		filters['mailbox'] = args[0]
+
+		log.debug(str(filters))
+
+		return self.check(lambda: self.client.uapi.Email.reorder_filters(filters))  # type: ignore [reportCallIssue]
+
+
+	def update_spam_list(self, add: bool, spam_list: str, *args: str) -> str:
+		"""Add/delete email addresses to/from a spam list.
+
+		add        True to add, False to delete
+		spam_list  'blacklist_from', 'whitelist_from'
+		args       variable argument list with email addresses
+
+		Returns "OK" or prints error
+		"""
+
+		preferences: Result = self.client.uapi.SpamAssassin.get_user_preferences()  # type: ignore [reportCallIssue]
+		current: list[str] = preferences['data'][spam_list] if spam_list in preferences['data'] else []
+
+		log.debug(str(current))
+
+		for email in args:
+			if add and email not in current or not add and email in current:
+				if add:
+					current.append(email)
+				else:
+					current.remove(email)
+
+		kwargs: dict = {'preference': spam_list}
+		for i, email in enumerate(current):
+			kwargs[f'value-{i}'] = email
+
+		log.debug(str(current))
+
+		return self.check(
+			lambda: self.client.uapi.SpamAssassin.update_user_preference(**kwargs)) # type: ignore [reportCallIssue]
+
+
 def endpoint(hostname: str, username: str, utoken: str) -> CPanelEndpoint:
 	"""CPanelEndpoint factory."""
 	return CPanelEndpoint(CPanelApi(hostname, username, utoken, auth_type = 'utoken'))

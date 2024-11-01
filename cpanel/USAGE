@@ -58,6 +58,7 @@ files
 locales
 log
 mail
+spam
 quota
 ssh
 ip
@@ -121,4 +122,3 @@ help on all the functions implemented for ‘mail autoresponders’.
 For a complete User’s Guide go to: https://cpanel-cli.readthedocs.io/en/latest/
 
 ---
-

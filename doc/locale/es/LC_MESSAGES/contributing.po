@@ -679,19 +679,3 @@ msgstr ""
 #: ../../contributing.rst:420
 msgid "For further information, see the `Internationalization Guide`_"
 msgstr "Para más información consulte la `Guía de internacionalización`_."
-
-#~ msgid "Add the following to your ``PATH``:"
-#~ msgstr "Agregue lo siguiente al ``PATH``:"
-
-#~ msgid "You can replace ``3.11`` with a higher version."
-#~ msgstr "Puede reemplazar ``3.11`` con una versión superior."
-
-#~ msgid ""
-#~ "Use the excellent `Pyenv`_ utility if"
-#~ " you want to manage different "
-#~ "versions of Python globally."
-#~ msgstr ""
-#~ "Use el excelente utilitario `Pyenv`_ si"
-#~ " quiere gestionar diferentes versiones "
-#~ "simultáneas de Python en forma global."
-

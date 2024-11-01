@@ -1010,7 +1010,7 @@ Usage: cpanel list mail forwarders [DOMAIN]
     List all current mail forwarders. If optional argument DOMAIN is passed, list only
     the forwarders for DOMAIN.
 
-    EXAMPLE
+    EXAMPLES
         \033[1;34mcpanel list mail forwarders\033[00m
         \033[1;34mcpanel list mail forwarders example.com\033[00m
 
@@ -1062,6 +1062,11 @@ Usage: cpanel list mail filters ACCOUNT
     cpanel enable mail filter ACCOUNT FILTERNAME
     cpanel disable mail filter ACCOUNT FILTERNAME
     cpanel delete mail filter ACCOUNT FILTERNAME
+    cpanel move mail filter ACCOUNT FILTERNAME up|down [N]
+    cpanel move mail filter ACCOUNT FILTERNAME top|bottom
+    cpanel move mail filter ACCOUNT FILTERNAME N
+    cpanel trace mail filter ACCOUNT TESTMESSAGE
+    cpanel list filter domains
 
 ACCOUNT is the name of a cPanel email account, usually in the
 form user@domain.com
@@ -1087,7 +1092,7 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
 
 \033[1mget mail filter ACCOUNT FILTERNAME\033[0m
     Return a JSON-formatted description of email filter FILTERNAME associated
-    to email ACCOUNT. To get a list of current filter names, use
+    to email ACCOUNT. To get a list of filters, use
     ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
@@ -1110,25 +1115,76 @@ Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
         \033[1;34mcpanel set mail filter scott@example.com filter.json\033[00m
 
 \033[1menable mail filter ACCOUNT FILTERNAME\033[0m
-    Enable FILTERNAME associated to ACCOUNT. To get a list of current
-    filter names, use ‘cpanel list mail filters ACCOUNT’
+    Enable FILTERNAME associated to ACCOUNT. To get a list of filters, use
+    ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
         \033[1;34mcpanel enable mail filter scott@example.com spamkiller\033[00m
 
 \033[1mdisable mail filter ACCOUNT FILTERNAME\033[0m
-    Disable FILTERNAME associated to ACCOUNT. To get a list of current
-    filter names, use ‘cpanel list mail filters ACCOUNT’
+    Disable FILTERNAME associated to ACCOUNT. To get a list of filters, use
+    ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
         \033[1;34mcpanel disable mail filter scott@example.com spamkiller\033[00m
 
 \033[1mdelete mail filter ACCOUNT FILTERNAME\033[0m
-    Delete email filter FILTERNAME associated to ACCOUNT. To get a list of current
-    filter names, use ‘cpanel list mail filters ACCOUNT’
+    Delete the email filter FILTERNAME associated to ACCOUNT. To get a list of filters,
+    use ‘cpanel list mail filters ACCOUNT’
 
     EXAMPLE
          \033[1;34mcpanel delete mail filter scott@example.com spamkiller\033[00m
+
+\033[1mmove mail filter ACCOUNT FILTERNAME up|down [N]\033[0m
+    Move the email filter FILTERNAME associated to ACCOUNT up or down the filter list.
+    (Filters are executed in order from top to bottom.)
+    To get a list of filters, use ‘cpanel list mail filters ACCOUNT’.
+    If N is specified, move the filter N positions up or down.
+
+    EXAMPLES
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller up\033[00m
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller down\033[00m
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller up 5\033[00m
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller down 5\033[00m
+
+\033[1mmove mail filter ACCOUNT FILTERNAME top|bottom\033[0m
+    Move the email filter FILTERNAME associated to ACCOUNT to the top or bottom
+    position on the filter list.
+    (Filters are executed in order from top to bottom.)
+    To get a list of filters, use ‘cpanel list mail filters ACCOUNT’
+
+    EXAMPLES
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller top\033[00m
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller bottom\033[00m
+
+\033[1mmove mail filter ACCOUNT FILTERNAME N\033[0m
+    Move the email filter FILTERNAME associated to ACCOUNT to the N-th position on the
+    filter list.
+    (Filters are executed in order from top to bottom.)
+    To get a list of filters, use ‘cpanel list mail filters ACCOUNT’
+
+    EXAMPLES
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller 2\033[00m
+         \033[1;34mcpanel move mail filter scott@example.com spamkiller 4\033[00m
+
+\033[1mtrace mail filter ACCOUNT TESTMESSAGE\033[0m
+    Run a TESTMESSAGE email body against all filters and report what filters
+    would be triggered. This command is useful to test the effect of a new filter.
+    (Filters are executed in order from top to bottom.)
+    To get a list of filters, use ‘cpanel list mail filters ACCOUNT’
+    This command does not output JSON, but a trace run.
+
+    EXAMPLE
+         \033[1;34mcpanel trace mail filter scott@example.com "Spam and eggs!"\033[00m
+
+\033[1mlist filter domains\033[0m
+    List all the domains with email filters.
+
+    EXAMPLE
+         \033[1;34mcpanel list filter domains\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_filters_backups/
 
 ---
 
@@ -1214,6 +1270,175 @@ form user@domain.com
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/listwebmailapps/
+
+---
+
+Usage: cpanel get spam settings
+    cpanel enable spam assassin
+    cpanel disable spam assassin
+    cpanel enable spam box
+    cpanel clear spam box
+    cpanel disable spam box
+    cpanel set spam score SCORE
+    cpanel add spam denylist EMAIL...
+    cpanel delete spam denylist EMAIL...
+    cpanel add spam allowlist EMAIL...
+    cpanel delete spam allowlist EMAIL...
+    cpanel set spam autodelete score SCORE
+    cpanel disable spam autodelete
+    cpanel list spam rules
+    cpanel set spam rule score RULE SCORE
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mget spam settings\033[0m
+    List the current SpamAssassin settings for all email accounts on the server.
+
+    EXAMPLE
+        \033[1;34mcpanel get spam settings\033[00m
+
+    This command shows a combined output of the JSON result data from the
+    following two API calls:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_spam_settings/
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_user_preferences/
+
+\033[1menable spam assassin\033[0m
+    Enable the SpamAssassin spam filter.
+    Use ‘cpanel get spam settings’ to see the current SpamAssassin settings.
+
+    EXAMPLE
+        \033[1;34mcpanel enable spam assassin\033[00m
+
+\033[1mdisable spam assassin\033[0m
+    Disable the SpamAssassin spam filter.
+    Use ‘cpanel get spam settings’ to see the current SpamAssassin settings.
+
+    EXAMPLE
+        \033[1;34mcpanel disable spam assassin\033[00m
+
+\033[1menable spam box\033[0m
+    Enable the spam mail boxes for every email account on the server;
+    messages marked by SpamAssassin will be sent to these boxes.
+    Use ‘cpanel get spam settings’ to see the current SpamAssassin settings.
+
+    EXAMPLE
+        \033[1;34mcpanel enable spam box\033[00m
+
+\033[1mclear spam box\033[0m
+    Clear the contents of the spam boxes for every email account on the server.
+
+    EXAMPLE
+        \033[1;34mcpanel clear spam box\033[00m
+
+\033[1mdisable spam box\033[0m
+    Disable the spam mail boxes for every email account on the server;
+    messages marked by SpamAssassin will still be flagged as such but sent
+    to the inboxes.
+    Use ‘cpanel get spam settings’ to see the current SpamAssassin settings.
+
+    EXAMPLE
+        \033[1;34mcpanel disable spam box\033[00m
+
+\033[1mset spam score SCORE\033[0m
+    Set the required SpamAssassin SCORE for a message to be marked as spam.
+    SCORE is a number between 1.0 and 15.0; the higher the number,
+    the less likely a message will be marked as spam.
+    A SCORE higher than 10.0 is considered very lenient, and many spam
+    messages might still get through, while a SCORE lower than 3.0 is
+    considered aggressive and legitimate messages might be marked as spam.
+    You may set it to 5.0 for a good starting point.
+    Use ‘cpanel get spam settings’ to get the current required score.
+
+    EXAMPLE
+        \033[1;34mcpanel set spam score 5.0\033[00m
+
+\033[1madd spam denylist EMAIL...\033[0m
+    Add one or more EMAIL addresses to the SpamAssassin deny list.
+    Messages from these addresses will always be marked as spam, regardless
+    of the content or calculated score.
+    Use ‘cpanel get spam settings’ to see the deny list (blacklist_from).
+
+    EXAMPLES
+        \033[1;34mcpanel add spam denylist scott@example.com\033[00m
+        \033[1;34mcpanel add spam denylist scott@example.com root@eruditorum.org\033[00m
+
+\033[1mdelete spam denylist EMAIL...\033[0m
+    Delete one or more EMAIL addresses from the SpamAssassin deny list.
+    Use ‘cpanel get spam settings’ to see the deny list (blacklist_from).
+    See also ‘cpanel add spam denylist’.
+
+    EXAMPLES
+        \033[1;34mcpanel delete spam denylist scott@example.com\033[00m
+        \033[1;34mcpanel delete spam denylist scott@example.com root@eruditorum.org\033[00m
+
+\033[1madd spam allowlist EMAIL...\033[0m
+    Add one or more EMAIL addresses to the SpamAssassin allow list.
+    Messages from these addresses will always get through, regardless
+    of the content or calculated score.
+    Use ‘cpanel get spam settings’ to see the allow list (whitelist_from).
+
+    EXAMPLES
+        \033[1;34mcpanel add spam allowlist scott@example.com\033[00m
+        \033[1;34mcpanel add spam allowlist scott@example.com root@eruditorum.org\033[00m
+
+\033[1mdelete spam allowlist EMAIL...\033[0m
+    Delete one or more EMAIL addresses from the SpamAssassin allow list.
+    Use ‘cpanel get spam settings’ to see the allow list (whitelist_from).
+    See also ‘cpanel add spam allowlist’.
+
+    EXAMPLES
+        \033[1;34mcpanel delete spam allowlist scott@example.com\033[00m
+        \033[1;34mcpanel delete spam allowlist scott@example.com root@eruditorum.org\033[00m
+
+\033[1mset spam autodelete score SCORE\033[0m
+    Set the threshold SCORE for SpamAssassin to automatically delete messages,
+    bypassing the spam mail boxes. SCORE is a number between 1.0 and 15.0;
+    the higher the number, the less likely a message will be deleted.
+    You should use a rather high and lenient score to avoid accidentally
+    deleting legitimate messages. You may set it to 10.0 for a good starting
+    point; or, better yet, disable it completely.
+    Use ‘cpanel get spam settings’ to check the current autodelete settings
+    (spam_auto_delete and spam_auto_delete_score).
+    Use ‘cpanel disable spam autodelete’ to disable autodelete.
+    See also ‘cpanel enable spam box’.
+
+    EXAMPLE
+        \033[1;34mcpanel set spam autodelete score 10.0\033[00m
+
+\033[1mdisable spam autodelete\033[0m
+    Disable the autodelete feature of SpamAssassin. When disabled, spam
+    messages marked by SpamAssassin will be sent to the spam mail boxes
+    instead of being automatically deleted.
+    Use ‘cpanel get spam settings’ to check the current autodelete settings
+    (spam_auto_delete and spam_auto_delete_score).
+
+    EXAMPLE
+        \033[1;34mcpanel disable spam autodelete\033[00m
+
+\033[1mlist spam rules\033[0m
+    List the rules (a.k.a. symbolic tests) and their partial scores used by
+    SpamAssassin to evaluate messages and calculate the aggregated spam score.
+    For a list of rules and their definitions, see the source code at:
+    https://github.com/apache/spamassassin/tree/trunk/rules
+    In general, you should not need to modify these rules.
+
+    EXAMPLE
+        \033[1;34mcpanel list spam rules\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_symbolic_test_names/
+
+\033[1mset spam rule score RULE SCORE\033[0m
+    Set the partial SCORE assigned to a RULE (a.k.a. a symbolic test) used
+    by SpamAssassin to calculate the aggregated spam score.
+    For a list of rules and their definitions, see the souce code at:
+    https://github.com/apache/spamassassin/tree/trunk/rules
+    To get a list of the current rules and their scores, use:
+    ‘cpanel list spam rules’.
+    In general, you should not need to modify these rules.
+
+    EXAMPLE
+        \033[1;34mcpanel set spam rule score MONEY_FREEMAIL 0.695\033[00m
 
 ---
 

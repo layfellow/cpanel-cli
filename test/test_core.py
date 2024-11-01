@@ -297,3 +297,78 @@ class TestCore(unittest.TestCase):
 		self.assertEqual(r, "OK")
 
 		os.remove(filterfile)
+
+
+	def test_move_mail_filter(self) -> None:
+		emails: List[JSONType] = self.list_mail_accounts()
+		if len(emails) == 0: return
+
+		filters: List[JSONType] = self.list_mail_filters(emails[0]['email'])
+		n: int = len(filters)
+		if n == 0: return
+
+		print(filters)
+
+		account: str = emails[0]['email']
+		first_filtername: str = filters[0]['filtername']
+
+		r: str = dispatch(self.host, ["move", "mail", "filter", account, first_filtername, "bottom"])
+		self.assertEqual(r, "OK")
+
+		filters = self.list_mail_filters(account)
+		m: int = len(filters)
+		self.assertTrue(m == n)
+
+		last_filtername: str = filters[m - 1]['filtername']
+		self.assertTrue(last_filtername == first_filtername)
+
+		r = dispatch(self.host, ["move", "mail", "filter", account, last_filtername, "top"])
+		self.assertEqual(r, "OK")
+
+		filters = self.list_mail_filters(account)
+		n = len(filters)
+		self.assertTrue(n == m)
+
+		first_filtername = filters[0]['filtername']
+		self.assertTrue(first_filtername == last_filtername)
+
+
+	def test_list_filter_domains(self) -> None:
+		domains: List[JSONType] = json.loads(dispatch(self.host, ["list", "filter", "domains"]))
+		if len(domains) == 0: return
+
+		print(domains)
+
+		domain: JSONType
+		for domain in domains:
+			self.assertTrue(len(domain['domain']) > 0)
+
+
+	def test_get_spam_settings(self) -> None:
+		settings: JSONType = json.loads(dispatch(self.host, ["get", "spam", "settings"]))
+		if len(settings) == 0: return
+
+		print(settings)
+
+		self.assertTrue('spam_enabled' in settings)
+		self.assertTrue(settings['spam_enabled'] >= 0)
+
+
+	def test_add_then_remove_from_spam_allowlist(self) -> None:
+		settings: JSONType = json.loads(dispatch(self.host, ["get", "spam", "settings"]))
+		if len(settings) == 0: return
+
+		r: str = dispatch(self.host, ["add", "spam", "allowlist", "scott@example.com"])
+		self.assertEqual(r, "OK")
+
+		settings = json.loads(dispatch(self.host, ["get", "spam", "settings"]))
+		print(settings)
+		self.assertTrue("scott@example.com" in settings['whitelist_from'])
+
+		r = dispatch(self.host, ["delete", "spam", "allowlist", "scott@example.com"])
+		self.assertEqual(r, "OK")
+
+		settings = json.loads(dispatch(self.host, ["get", "spam", "settings"]))
+		self.assertTrue(
+			'whitelist_from' not in settings or
+			"scott@example.com" not in settings['whitelist_from'])

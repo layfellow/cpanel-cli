@@ -1,0 +1,303 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2022-2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 01:35-0300\n"
+"PO-Revision-Date: 2024-11-01 01:39-0300\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language: en\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../reference/spam.rst:7
+msgid "Module: ``spam``"
+msgstr "Módulo: ``spam``"
+
+#: ../../reference/spam.rst:9
+msgid "`Leer en español </es/latest/reference/spam.html>`_"
+msgstr "`Read in English </en/latest/reference/mail.html>`_"
+
+#: ../../reference/spam.rst:11 ../../reference/spam.rst:30
+msgid "**get spam settings**"
+msgstr "**get spam settings**"
+
+#: ../../reference/spam.rst:12 ../../reference/spam.rst:45
+msgid "**enable spam assassin**"
+msgstr "**enable spam assassin**"
+
+#: ../../reference/spam.rst:13 ../../reference/spam.rst:56
+msgid "**disable spam assassin**"
+msgstr "**disable spam assassin**"
+
+#: ../../reference/spam.rst:14 ../../reference/spam.rst:67
+msgid "**enable spam box**"
+msgstr "**enable spam box**"
+
+#: ../../reference/spam.rst:15 ../../reference/spam.rst:79
+msgid "**clear spam box**"
+msgstr "**clear spam box**"
+
+#: ../../reference/spam.rst:16 ../../reference/spam.rst:89
+msgid "**disable spam box**"
+msgstr "**disable spam box**"
+
+#: ../../reference/spam.rst:17 ../../reference/spam.rst:102
+msgid "**set spam score SCORE**"
+msgstr "**set spam score SCORE**"
+
+#: ../../reference/spam.rst:18 ../../reference/spam.rst:119
+msgid "**add spam denylist EMAIL...**"
+msgstr "**add spam denylist EMAIL...**"
+
+#: ../../reference/spam.rst:19 ../../reference/spam.rst:133
+msgid "**delete spam denylist EMAIL...**"
+msgstr "**delete spam denylist EMAIL...**"
+
+#: ../../reference/spam.rst:20 ../../reference/spam.rst:146
+msgid "**add spam allowlist EMAIL...**"
+msgstr "**add spam allowlist EMAIL...**"
+
+#: ../../reference/spam.rst:21 ../../reference/spam.rst:160
+msgid "**delete spam allowlist EMAIL...**"
+msgstr "**delete spam allowlist EMAIL...**"
+
+#: ../../reference/spam.rst:22 ../../reference/spam.rst:173
+msgid "**set spam autodelete score SCORE**"
+msgstr "**set spam autodelete score SCORE**"
+
+#: ../../reference/spam.rst:23 ../../reference/spam.rst:192
+msgid "**disable spam autodelete**"
+msgstr "**disable spam autodelete**"
+
+#: ../../reference/spam.rst:24 ../../reference/spam.rst:206
+msgid "**list spam rules**"
+msgstr "**list spam rules**"
+
+#: ../../reference/spam.rst:25 ../../reference/spam.rst:223
+msgid "**set spam rule score RULE SCORE**"
+msgstr "**set spam rule score RULE SCORE**"
+
+#: ../../reference/spam.rst:27
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/spam.rst:32
+msgid ""
+"List the current SpamAssassin settings for all email accounts on the "
+"server."
+msgstr ""
+"Lista la configuración actual de SpamAssassin para todas las cuentas de "
+"correo electrónico del servidor."
+
+#: ../../reference/spam.rst:34 ../../reference/spam.rst:50
+#: ../../reference/spam.rst:61 ../../reference/spam.rst:73
+#: ../../reference/spam.rst:83 ../../reference/spam.rst:96
+#: ../../reference/spam.rst:113 ../../reference/spam.rst:186
+#: ../../reference/spam.rst:200 ../../reference/spam.rst:214
+#: ../../reference/spam.rst:233
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/spam.rst:40
+msgid ""
+"This command shows a combined output of the JSON result data from the "
+"following two API calls: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_spam_settings/ "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_user_preferences/"
+msgstr ""
+"Este comando combina los datos en formato JSON de las dos siguientes "
+"llamadas a la API: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_spam_settings/ "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_user_preferences/"
+
+#: ../../reference/spam.rst:47
+msgid ""
+"Enable the SpamAssassin spam filter. Use ‘cpanel get spam settings’ to "
+"see the current SpamAssassin settings."
+msgstr ""
+"Habilita el filtro de spam SpamAssassin. Use ‘cpanel get spam settings’ "
+"para ver la configuración actual de SpamAssassin."
+
+#: ../../reference/spam.rst:58
+msgid ""
+"Disable the SpamAssassin spam filter. Use ‘cpanel get spam settings’ to "
+"see the current SpamAssassin settings."
+msgstr ""
+"Deshabilita el filtro de spam SpamAssassin. Use ‘cpanel get spam "
+"settings’ para ver la configuración actual de SpamAssassin."
+
+#: ../../reference/spam.rst:69
+msgid ""
+"Enable the spam mail boxes for every email account on the server; "
+"messages marked by SpamAssassin will be sent to these boxes. Use ‘cpanel "
+"get spam settings’ to see the current SpamAssassin settings."
+msgstr ""
+"Habilita los buzones de correo no deseado para todas las cuentas de "
+"correo de este servidor; los mensajes marcados por SpamAssassin se "
+"enviarán a estos buzones. Use ‘cpanel get spam settings’ para ver la "
+"configuración actual de SpamAssassin."
+
+#: ../../reference/spam.rst:81
+msgid ""
+"Clear the contents of the spam boxes for every email account on the "
+"server."
+msgstr ""
+"Limpia la bandeja de correo no deseado de todo su contenido para todas "
+"las cuentas de correo de este servidor."
+
+#: ../../reference/spam.rst:91
+msgid ""
+"Disable the spam mail boxes for every email account on the server; "
+"messages marked by SpamAssassin will still be flagged as such but sent to"
+" the inboxes. Use ‘cpanel get spam settings’ to see the current "
+"SpamAssassin settings."
+msgstr ""
+"Desactiva los buzones de correo no deseado para todas las cuentas de "
+"correo de este servidor; los mensajes detectados por SpamAssassin "
+"seguirán siendo marcados como tales pero enviados a las bandejas de "
+"entrada. Use ‘cpanel get spam settings’ para ver la configuración actual "
+"de SpamAssassin."
+
+#: ../../reference/spam.rst:104
+msgid ""
+"Set the required SpamAssassin SCORE for a message to be marked as spam. "
+"SCORE is a number between 1.0 and 15.0; the higher the number, the less "
+"likely a message will be marked as spam. A SCORE higher than 10.0 is "
+"considered very lenient, and many spam messages might still get through, "
+"while a SCORE lower than 3.0 is considered aggressive and legitimate "
+"messages might be marked as spam. You may set it to 5.0 for a good "
+"starting point. Use ‘cpanel get spam settings’ to get the current "
+"required score."
+msgstr ""
+"Establece la puntuación SCORE de SpamAssassin para que un mensaje sea "
+"marcado como no deseado. SCORE es un número entre 1.0 y 15.0; cuanto "
+"mayor sea, menos probable es que un mensaje se marque como no deseado. Un"
+" SCORE superior a 10.0 se considera muy permisivo, por lo que muchos "
+"mensajes no deseados podrían no ser detectados, mientras que un SCORE "
+"inferior a 3.0 se considera agresivo y algunos mensajes legítimos podrían"
+" marcarse como no deseados. Se recomienda fijarlo en 5.0 como un buen "
+"punto de partida. Utilice ‘cpanel get spam settings’ para obtener el "
+"SCORE actual (required_score)."
+
+#: ../../reference/spam.rst:121
+msgid ""
+"Add one or more EMAIL addresses to the SpamAssassin deny list. Messages "
+"from these addresses will always be marked as spam, regardless of the "
+"content or calculated score. Use ‘cpanel get spam settings’ to see the "
+"deny list (blacklist_from)."
+msgstr ""
+"Añade una o más direcciones de correo EMAIL a la lista de rechazo de "
+"SpamAssassin. Los mensajes procedentes de estas direcciones siempre se "
+"marcan como no deseados, independientemente del contenido o de la "
+"puntuación calculada. Utilice ‘cpanel get spam settings’ para ver la "
+"lista de rechazo (blacklist_from)."
+
+#: ../../reference/spam.rst:126 ../../reference/spam.rst:139
+#: ../../reference/spam.rst:153 ../../reference/spam.rst:166
+msgid "*Examples*"
+msgstr "*Ejemplos*"
+
+#: ../../reference/spam.rst:135
+msgid ""
+"Delete one or more EMAIL addresses from the SpamAssassin deny list. Use "
+"‘cpanel get spam settings’ to see the deny list (blacklist_from). See "
+"also ‘cpanel add spam denylist’."
+msgstr ""
+"Elimina una o más direcciones de correo EMAIL de la lista de rechazo de "
+"SpamAssassin. Utilice ‘cpanel get spam settings’ para ver la lista de "
+"rechazo (blacklist_from). Vea también ‘cpanel add spam denylist’."
+
+#: ../../reference/spam.rst:148
+msgid ""
+"Add one or more EMAIL addresses to the SpamAssassin allow list. Messages "
+"from these addresses will always get through, regardless of the content "
+"or calculated score. Use ‘cpanel get spam settings’ to see the allow list"
+" (whitelist_from)."
+msgstr ""
+"Añade una o más direcciones de correo EMAIL a la lista de admitidos de "
+"SpamAssassin. Los mensajes de estas direcciones siempre son aceptados, "
+"independientemente del contenido o de la puntuación calculada. Utilice "
+"‘cpanel get spam settings’ para ver la lista de admitidos "
+"(whitelist_from)."
+
+#: ../../reference/spam.rst:162
+msgid ""
+"Delete one or more EMAIL addresses from the SpamAssassin allow list. Use "
+"‘cpanel get spam settings’ to see the allow list (whitelist_from). See "
+"also ‘cpanel add spam allowlist’."
+msgstr ""
+"Elimina una o más direcciones de correo EMAIL de la lista de admitidos de"
+" SpamAssassin. Utilice ‘cpanel get spam settings’ para ver la lista de "
+"admitidos (whitelist_from). Vea también ‘cpanel add spam allowlist’."
+
+#: ../../reference/spam.rst:175
+msgid ""
+"Set the threshold SCORE for SpamAssassin to automatically delete "
+"messages, bypassing the spam mail boxes. SCORE is a number between 1.0 "
+"and 15.0; the higher the number, the less likely a message will be "
+"deleted. You should use a rather high and lenient score to avoid "
+"accidentally deleting legitimate messages. You may set it to 10.0 for a "
+"good starting point; or, better yet, disable it completely. Use ‘cpanel "
+"get spam settings’ to check the current autodelete settings "
+"(spam_auto_delete and spam_auto_delete_score). Use ‘cpanel disable spam "
+"autodelete’ to disable autodelete. See also ‘cpanel enable spam box’."
+msgstr "Establece la puntuación SCORE como umbral para que SpamAssassin elimine automáticamente mensajes, evitando por completo los buzones de correo no deseado. SCORE es un número entre 1.0 y 15.0; cuanto más alto, menos probable será que se elimine automáticamente un mensaje. Se aconseja usar una puntuación más bien alta y permisiva para evitar borrar accidentalmente mensajes legítimos. Puede usar 10.0 como un buen punto de partida; o mejor aún desactive por completo la eliminación automática. Utilice ‘cpanel get spam settings’ para ver la configuración actual de eliminación automática (spam_auto_delete y spam_auto_delete_score). Utilice ‘cpanel disable spam autodelete’ para desactivar la eliminación automática. Véase también ‘cpanel enable spam box’."
+
+#: ../../reference/spam.rst:194
+msgid ""
+"Disable the autodelete feature of SpamAssassin. When disabled, spam "
+"messages marked by SpamAssassin will be sent to the spam mail boxes "
+"instead of being automatically deleted. Use ‘cpanel get spam settings’ to"
+" check the current autodelete settings (spam_auto_delete and "
+"spam_auto_delete_score)."
+msgstr "Desactiva la función de eliminación automática de SpamAssassin. Los mensajes de correo marcados por SpamAssassin serán enviados a las bandejas de correo no deseado en lugar de ser eliminados automáticamente. Utilice ‘cpanel get spam settings’ para comprobar la configuración actual de eliminación automática (spam_auto_delete y spam_auto_delete_score)."
+
+#: ../../reference/spam.rst:208
+msgid ""
+"List the rules (a.k.a. symbolic tests) and their partial scores used by "
+"SpamAssassin to evaluate messages and calculate the aggregated spam "
+"score. For a list of rules and their definitions, see the source code at:"
+" https://github.com/apache/spamassassin/tree/trunk/rules In general, you "
+"should not need to modify these rules."
+msgstr ""
+"Lista las reglas (también conocidas como pruebas simbólicas) y sus "
+"puntuaciones parciales utilizadas por SpamAssassin para evaluar los "
+"mensajes y calcular la puntuación agregada. La lista completa de reglas y"
+" sus definiciones se pueden ver en el código fuente de SpamAssassin en: "
+"https://github.com/apache/spamassassin/tree/trunk/rules En general, no "
+"debería ser necesario modificar estas reglas."
+
+#: ../../reference/spam.rst:220
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_symbolic_test_names/"
+msgstr ""
+"Vea una muestra del resultado en formato JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_symbolic_test_names/"
+
+#: ../../reference/spam.rst:225
+msgid ""
+"Set the partial SCORE assigned to a RULE (a.k.a. a symbolic test) used by"
+" SpamAssassin to calculate the aggregated spam score. For a list of rules"
+" and their definitions, see the souce code at: "
+"https://github.com/apache/spamassassin/tree/trunk/rules To get a list of "
+"the current rules and their scores, use: ‘cpanel list spam rules’. In "
+"general, you should not need to modify these rules."
+msgstr ""
+"Establece la puntuación parcial SCORE asignada a una regla RULE (también "
+"conocida como prueba simbólica) utilizada por SpamAssassin para calcular "
+"la puntuación agregada. La lista completa de reglas y sus definiciones se"
+" pueden ver en el código fuente de SpamAssassin en: "
+"https://github.com/apache/spamassassin/tree/trunk/rules Para obtener la "
+"lista actual de reglas en uso y sus puntuaciones, utilice: ‘cpanel list "
+"spam rules’. En general, no debería ser necesario modificar estas reglas."
+
