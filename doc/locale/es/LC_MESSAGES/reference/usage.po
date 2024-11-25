@@ -22,7 +22,7 @@ msgstr "Módulo: ``usage``"
 
 #: ../../reference/usage.rst:9
 msgid "`Leer en español </es/latest/reference/usage.html>`_"
-msgstr ""
+msgstr "`Read in English </en/latest/reference/usage.html>`_"
 
 #: ../../reference/usage.rst:11
 msgid "**get usage**"

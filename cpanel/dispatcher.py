@@ -34,7 +34,6 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		r = r or backup.call(host, cmd, args)
 		r = r or cache.call(host, cmd, args)
 		r = r or locale.call(host, cmd, args)
-		r = r or styles.call(host, cmd, args)
 		r = r or themes.call(host, cmd, args)
 		r = r or dir.call(host, cmd, args)
 		r = r or dns.call(host, cmd, args)

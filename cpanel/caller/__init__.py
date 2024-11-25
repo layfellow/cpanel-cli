@@ -10,7 +10,6 @@ __all__ = [
 	'backup',
 	'cache',
 	'locale',
-	'styles',
 	'themes',
 	'dir',
 	'dns',

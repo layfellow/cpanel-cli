@@ -22,7 +22,6 @@ Command Reference
    reference/backup
    reference/cache
    reference/locales
-   reference/styles
    reference/themes
    reference/dir
    reference/dns

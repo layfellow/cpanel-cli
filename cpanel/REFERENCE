@@ -58,21 +58,55 @@ https://api.docs.cpanel.net/openapi/cpanel/operation/get_usages/
 
 ---
 
-Usage: cpanel get stats STAT...
+Usage: cpanel list stats domains
+    cpanel get stats bandwidth
+    cpanel get stats DOMAIN [ENGINE] [PROTOCOL]
+    cpanel get stats STAT...
 
-Show detailed data and statistics, like hostname, file usage, database usage,
-dedicated IPs, etc.
+\033[1mCOMMANDS\033[0m
 
-STAT is the name of the statistic you want, you can provide a list of STATs to
-be displayed. For a complete list ot STAT names, see ‘display parameters’ at:
-https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
+\033[1mlist stats domains\033[0m
+    List all the valid domains to get stats from.
 
-EXAMPLES
-    \033[1;34mcpanel get stats hostname\033[00m
-    \033[1;34mcpanel get stats machinetype cpanelversion\033[00m
+    EXAMPLE
+        \033[1;34mcpanel list stats domains\033[00m
 
-See a sample of the JSON result data at:
-https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
+\033[1mget stats bandwidth\033[0m
+    Return monthly bandwidth usage for all domains.
+
+    EXAMPLE
+        \033[1;34mcpanel get stats bandwidth\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_bandwidth/
+
+\033[1mget stats DOMAIN [ENGINE] [PROTOCOL]\033[0m
+    Return a HTML page with traffic stats for DOMAIN.
+
+    ENGINE is the traffic analyzer, it's either ‘analog’ or ‘webalizer’ (default).
+    PROTOCOL is the traffic protocol, it's either ‘ftp’ or ‘http’ (default).
+
+    Use ‘cpanel list stats domains’ to get a list of valid DOMAINs.
+
+    EXAMPLES
+        \033[1;34mcpanel get stats example.com\033[00m
+        \033[1;34mcpanel get stats example.com analog\033[00m
+        \033[1;34mcpanel get stats example.com webalizer ftp\033[00m
+
+\033[1mget stats STAT...\033[0m
+    Show detailed data and statistics, like hostname, file usage, database usage,
+    dedicated IPs, etc.
+
+    STAT is the name of the statistic you want, you can provide a list of STATs to
+    be displayed. For a complete list ot STAT names, see ‘display parameters’ at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
+
+    EXAMPLES
+        \033[1;34mcpanel get stats hostname\033[00m
+        \033[1;34mcpanel get stats machinetype cpanelversion\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_stats/
 
 ---
 
@@ -287,50 +321,6 @@ Usage: cpanel list locales
 
     EXAMPLE
         \033[1;34mcpanel set locale bg\033[00m  # Set UI to Bulgarian
-
----
-
-Usage: cpanel list styles
-    cpanel get style
-    cpanel set style NAME
-    cpanel default style NAME
-
-\033[1mCOMMANDS\033[0m
-
-A style is a variation of a user interface theme for cPanel. For example, the
-‘paper lantern’ theme has four styles: ‘basic’, ‘dark’, ‘light’ and ‘glass’.
-
-\033[1mlist styles\033[0m
-    Return all the available user interface styles.
-
-    EXAMPLE
-        \033[1;34mcpanel list styles\033[00m
-
-    See a sample of the JSON result data at:
-    https://api.docs.cpanel.net/openapi/cpanel/operation/list/
-
-\033[1mget style\033[0m
-    Return the current user interface style.
-
-    EXAMPLE
-        \033[1;34mcpanel get style\033[00m
-
-    See a sample of the JSON result data at:
-    https://api.docs.cpanel.net/openapi/cpanel/operation/current/
-
-\033[1mset style NAME\033[0m
-    Set the current user interface style to NAME.
-    NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
-
-    EXAMPLE
-        \033[1;34mcpanel set style dark\033[00m
-
-\033[1mdefault style NAME\033[0m
-    Set the default user interface style to NAME.
-    NAME must be one of ‘basic’, ‘dark’, ‘light’ or ‘glass’
-
-    EXAMPLE
-        \033[1;34mcpanel default style basic\033[00m
 
 ---
 
@@ -677,6 +667,7 @@ Usage: cpanel get log settings
     cpanel set log settings SETTING...
     cpanel unset log settings SETTING...
     cpanel list log archives
+    cpanel get log TYPE DOMAIN
 
 cPanel log archival settings are:
 
@@ -726,6 +717,18 @@ at the end of every month.
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/
+
+\033[1mget log TYPE DOMAIN\033[0m
+    Get error log data for DOMAIN.
+    TYPE is ‘error’ or ‘suexec’ .
+    Use ‘cpanel list domains’ to get a list of valid DOMAINs.
+
+    EXAMPLES
+        \033[1;34mcpanel get log error example.com\033[00m
+        \033[1;34mcpanel get log suexec example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_site_errors/
 
 ---
 

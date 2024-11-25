@@ -395,3 +395,14 @@ class TestCore(unittest.TestCase):
 
 		r: str = dispatch(self.host, ["unsuspend", "mail", "login", emails[0]['email']])
 		self.assertEqual(r, "OK")
+		
+	def test_domain_stats(self) -> None:
+		domains: List[str] = json.loads(dispatch(self.host, ["list", "stats", "domains"]))	
+		if len(domains) == 0: return
+		
+		print(domains)
+		
+		html: str = dispatch(self.host, ["get", "stats", "domain", domains[0]])
+		self.assertTrue(len(html) > 800)
+		
+		print(html[:800])

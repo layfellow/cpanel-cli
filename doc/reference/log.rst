@@ -12,6 +12,7 @@ Module: ``log``
 - **set log settings SETTING...**
 - **unset log settings SETTING...**
 - **list log archives**
+- **get log TYPE DOMAIN**
 
 cPanel log archival settings are:
 
@@ -78,5 +79,21 @@ List the account’s archived log files.
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/list_archives/
+
+**get log TYPE DOMAIN**
+
+Get error log data for DOMAIN.
+TYPE is ‘error’ or ‘suexec’ .
+Use ‘cpanel list domains’ to get a list of valid DOMAINs.
+
+*Examples*
+
+.. code:: sh
+
+    $ cpanel get log error example.com
+    $ cpanel get log suexec example.com
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/get_site_errors/
 
 
