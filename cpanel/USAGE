@@ -108,6 +108,9 @@ The currently implemented submodules for ‘mail’ are:
 
 mail accounts
 mail settings
+mail incoming
+mail outgoing
+mail login
 mail boxes
 mail autoresponders
 mail forwarders

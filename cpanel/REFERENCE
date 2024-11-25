@@ -888,6 +888,85 @@ https://api.docs.cpanel.net/openapi/cpanel/operation/get_client_settings/
 
 ---
 
+Usage: cpanel suspend mail incoming ACCOUNT
+    cpanel unsuspend mail incoming ACCOUNT
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+\033[1mCOMMANDS\033[0m
+
+\033[1msuspend mail incoming ACCOUNT\033[0m
+    Suspend incoming mail for ACCOUNT, so that no new mail is accepted.
+    The user will still be able to log in to the ACCOUNT.
+    See also ‘cpanel unsuspend mail incoming’.
+
+    EXAMPLE
+        \033[1;34mcpanel suspend mail incoming scott@example.com\033[00m
+
+\033[1munsuspend mail incoming ACCOUNT\033[0m
+    Reenable incoming mail for ACCOUNT, so that new mails are accepted.
+
+    EXAMPLE
+        \033[1;34mcpanel unsuspend mail incoming scott@example.com\033[00m
+
+---
+
+Usage: cpanel suspend mail outgoing ACCOUNT
+    cpanel unsuspend mail outgoing ACCOUNT
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+\033[1mCOMMANDS\033[0m
+
+\033[1msuspend mail outgoing ACCOUNT\033[0m
+    Suspend outgoing (SMTP) mail for ACCOUNT, so that no mail can be sent.
+    The user will still be able to log in to the ACCOUNT.
+    See also ‘cpanel unsuspend mail outgoing’.
+
+    EXAMPLE
+        \033[1;34mcpanel suspend mail outgoing scott@example.com\033[00m
+
+\033[1munsuspend mail outgoing ACCOUNT\033[0m
+    Reenable outgoing (SMTP)  mail for ACCOUNT, so that mails can be sent.
+
+    EXAMPLE
+        \033[1;34mcpanel unsuspend mail outgoing scott@example.com\033[00m
+
+---
+
+Usage: cpanel suspend mail login ACCOUNT
+    cpanel unsuspend mail login ACCOUNT
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+\033[1mCOMMANDS\033[0m
+
+\033[1msuspend mail login ACCOUNT\033[0m
+    Suspend ACCOUNT, so that the user cannot log in.
+    Note that the account is not deleted, so that new mail will still
+    be received and stored in it.
+    See also ‘cpanel unsuspend mail login’.
+
+    EXAMPLE
+        \033[1;34mcpanel suspend mail login scott@example.com\033[00m
+
+\033[1munsuspend mail login ACCOUNT\033[0m
+    Reenable ACCOUNT, so that the user can log in again.
+
+    EXAMPLE
+        \033[1;34mcpanel unsuspend mail login scott@example.com\033[00m
+
+---
+
 Usage: cpanel list mail boxes [ACCOUNT] [DIR]
 
 List the mailboxes (directories and files) for ACCOUNT.

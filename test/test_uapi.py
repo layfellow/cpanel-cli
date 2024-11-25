@@ -372,3 +372,26 @@ class TestCore(unittest.TestCase):
 		self.assertTrue(
 			'whitelist_from' not in settings or
 			"scott@example.com" not in settings['whitelist_from'])
+
+
+	def test_suspend_then_unsuspend_mail(self) -> None:
+		emails: List[JSONType] = self.list_mail_accounts()
+		if len(emails) == 0: return
+
+		r: str = dispatch(self.host, ["suspend", "mail", "incoming", emails[0]['email']])
+		self.assertEqual(r, "OK")
+
+		r: str = dispatch(self.host, ["unsuspend", "mail", "incoming", emails[0]['email']])
+		self.assertEqual(r, "OK")
+		
+		r: str = dispatch(self.host, ["suspend", "mail", "outgoing", emails[0]['email']])
+		self.assertEqual(r, "OK")
+
+		r: str = dispatch(self.host, ["unsuspend", "mail", "outgoing", emails[0]['email']])
+		self.assertEqual(r, "OK")
+		
+		r: str = dispatch(self.host, ["suspend", "mail", "login", emails[0]['email']])
+		self.assertEqual(r, "OK")
+
+		r: str = dispatch(self.host, ["unsuspend", "mail", "login", emails[0]['email']])
+		self.assertEqual(r, "OK")

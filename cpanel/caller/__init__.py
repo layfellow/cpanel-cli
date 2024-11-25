@@ -21,6 +21,8 @@ __all__ = [
 	'mail_accounts',
 	'mail_settings',
 	'mail_incoming',
+	'mail_outgoing',
+	'mail_login',
 	'mail_boxes',
 	'mail_autoresponders',
 	'mail_forwarders',

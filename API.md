@@ -188,14 +188,14 @@
 - [x] Email::set_list_privacy_options
 - [ ] Email::stats_db_status
 - [x] Email::store_filter
-- [ ] Email::suspend_incoming
-- [ ] Email::suspend_login
-- [ ] Email::suspend_outgoing
+- [x] Email::suspend_incoming
+- [x] Email::suspend_login
+- [x] Email::suspend_outgoing
 - [ ] Email::trace_delivery
 - [x] Email::trace_filter
-- [ ] Email::unsuspend_incoming
-- [ ] Email::unsuspend_login
-- [ ] Email::unsuspend_outgoing
+- [x] Email::unsuspend_incoming
+- [x] Email::unsuspend_login
+- [x] Email::unsuspend_outgoing
 - [ ] Email::verify_password
 - [ ] EmailAuth::disable_dkim
 - [ ] EmailAuth::enable_dkim

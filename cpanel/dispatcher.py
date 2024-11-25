@@ -45,6 +45,8 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		r = r or mail_accounts.call(host, cmd, args)
 		r = r or mail_settings.call(host, cmd, args)
 		r = r or mail_incoming.call(host, cmd, args)
+		r = r or mail_outgoing.call(host, cmd, args)
+		r = r or mail_login.call(host, cmd, args)
 		r = r or mail_boxes.call(host, cmd, args)
 		r = r or mail_autoresponders.call(host, cmd, args)
 		r = r or mail_forwarders.call(host, cmd, args)

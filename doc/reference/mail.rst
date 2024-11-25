@@ -69,6 +69,121 @@ https://api.docs.cpanel.net/openapi/cpanel/operation/get_client_settings/
 
 
 
+``incoming``
+==================================================
+
+- **suspend mail incoming ACCOUNT**
+- **unsuspend mail incoming ACCOUNT**
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+**COMMANDS**
+
+
+**suspend mail incoming ACCOUNT**
+
+Suspend incoming mail for ACCOUNT, so that no new mail is accepted.
+The user will still be able to log in to the ACCOUNT.
+See also ‘cpanel unsuspend mail incoming’.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel suspend mail incoming scott@example.com
+
+**unsuspend mail incoming ACCOUNT**
+
+Reenable incoming mail for ACCOUNT, so that new mails are accepted.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel unsuspend mail incoming scott@example.com
+
+
+
+``outgoing``
+==================================================
+
+- **suspend mail outgoing ACCOUNT**
+- **unsuspend mail outgoing ACCOUNT**
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+**COMMANDS**
+
+
+**suspend mail outgoing ACCOUNT**
+
+Suspend outgoing (SMTP) mail for ACCOUNT, so that no mail can be sent.
+The user will still be able to log in to the ACCOUNT.
+See also ‘cpanel unsuspend mail outgoing’.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel suspend mail outgoing scott@example.com
+
+**unsuspend mail outgoing ACCOUNT**
+
+Reenable outgoing (SMTP)  mail for ACCOUNT, so that mails can be sent.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel unsuspend mail outgoing scott@example.com
+
+
+
+``login``
+==================================================
+
+- **suspend mail login ACCOUNT**
+- **unsuspend mail login ACCOUNT**
+
+ACCOUNT is the name of a cPanel email account, usually in the
+form user@domain.com
+
+Use ‘cpanel list mail accounts’ to get a list of valid ACCOUNTS.
+
+**COMMANDS**
+
+
+**suspend mail login ACCOUNT**
+
+Suspend ACCOUNT, so that the user cannot log in.
+Note that the account is not deleted, so that new mail will still
+be received and stored in it.
+See also ‘cpanel unsuspend mail login’.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel suspend mail login scott@example.com
+
+**unsuspend mail login ACCOUNT**
+
+Reenable ACCOUNT, so that the user can log in again.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel unsuspend mail login scott@example.com
+
+
+
 ``boxes``
 ==================================================
 
