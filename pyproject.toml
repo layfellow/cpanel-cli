@@ -36,13 +36,14 @@ cpanel = "cpanel.__main__:main"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-include = ["cpanel/*.py", "cpanel/USAGE", "cpanel/REFERENCE"]
+include = ["cpanel/*.py", "cpanel/caller/*.py", "cpanel/USAGE", "cpanel/REFERENCE"]
 
 [tool.hatch.build.targets.sdist]
 include = [
     "API.md",
     "CONTRIBUTING.rst",
     "cpanel/*.py",
+    "cpanel/caller/.*.py",
     "cpanel/REFERENCE",
     "cpanel/USAGE",
     "doc/conf.py",
