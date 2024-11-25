@@ -6,6 +6,7 @@ TYPECHECKER = pyright
 UNITTESTER = tox
 PUBLISHER = twine
 LOCALES = $(shell ls -1 doc/locale )
+TAG = $(shell git describe --tags --always --abbrev=0)
 
 install: venv dist
 	$(BIN)/pip3 install dist/cpanel*.whl
@@ -45,7 +46,10 @@ doc/reference.rst: cpanel/REFERENCE cpanel/USAGE
 locale: doc/build/gettext
 	$(BIN)/$(LOCALIZER) -c doc/conf.py update -p doc/build/gettext -l $(iso)
 
+releases:
+	gh release create $(TAG)
+
 clean:
 	rm -rf venv build doc/build $$( find doc/locale/ -name *.mo ) *.egg-info .tox dist */__pycache__ ./__pycache__
 
-.PHONY: install doc typecheck test package publish locale clean
+.PHONY: install doc typecheck test package publish locale releases clean
