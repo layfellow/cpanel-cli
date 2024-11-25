@@ -1,3 +1,8 @@
+`/usr/local/cpanel/bin/uapi`
+
+- [ ] AccountEnhancements::has_enhancement
+- [ ] AccountEnhancements::list
+- [ ] AuditLog::get_api_log
 - [x] Backup::fullbackup_to_ftp
 - [x] Backup::fullbackup_to_homedir
 - [-] Backup::fullbackup_to_scp_with_key
@@ -38,15 +43,11 @@
 - [ ] BoxTrapper::set_ignorelist
 - [ ] BoxTrapper::set_status
 - [ ] BoxTrapper::whitelist_messages
-- [ ] Brand::read
-- [ ] Branding::file
 - [ ] Branding::get_application_information
 - [ ] Branding::get_applications
 - [ ] Branding::get_available_applications
 - [ ] Branding::get_information_for_applications
-- [ ] Branding::image
 - [ ] Branding::include
-- [ ] Branding::spritelist
 - [ ] CSVImport::doimport
 - [x] CacheBuster::read
 - [x] CacheBuster::update
@@ -59,11 +60,14 @@
 - [ ] ClamScanner::get_scan_status
 - [ ] ClamScanner::list_infected_files
 - [ ] ClamScanner::start_scan
+- [ ] ContactInformation::set_email_addresses
+- [ ] ContactInformation::unset_email_addresses
 - [ ] Contactus::is_enabled
 - [ ] DAV::disable_shared_global_addressbook
 - [ ] DAV::enable_shared_global_addressbook
 - [ ] DAV::get_calendar_contacts_config
 - [ ] DAV::has_shared_global_addressbook
+- [ ] DAV::is_ccs_enabled
 - [ ] DAV::is_dav_service_enabled
 - [ ] DAV::is_horde_enabled
 - [ ] DCV::check_domains_via_dns
@@ -72,6 +76,9 @@
 - [x] DNS::ensure_domains_reside_only_locally
 - [x] DNS::has_local_authority
 - [x] DNS::lookup
+- [ ] DNS::mass_edit_zone
+- [ ] DNS::parse_zone
+- [ ] DNS::swap_ip_in_zones
 - [ ] DNSSEC::activate_zone_key
 - [ ] DNSSEC::add_zone_key
 - [ ] DNSSEC::deactivate_zone_key
@@ -186,13 +193,16 @@
 - [ ] Email::set_always_accept
 - [ ] Email::set_default_address
 - [x] Email::set_list_privacy_options
+- [ ] Email::set_manual_mx_redirects
 - [ ] Email::stats_db_status
 - [x] Email::store_filter
 - [x] Email::suspend_incoming
 - [x] Email::suspend_login
 - [x] Email::suspend_outgoing
+- [ ] Email::terminate_mailbox_sessions
 - [ ] Email::trace_delivery
 - [x] Email::trace_filter
+- [ ] Email::unset_manual_mx_redirects
 - [x] Email::unsuspend_incoming
 - [x] Email::unsuspend_login
 - [x] Email::unsuspend_outgoing
@@ -329,6 +339,23 @@
 - [ ] ModSecurity::enable_domains
 - [ ] ModSecurity::has_modsecurity_installed
 - [ ] ModSecurity::list_domains
+- [ ] Monitoring::create_contact
+- [ ] Monitoring::create_site_monitor
+- [ ] Monitoring::create_site_monitor_shopping_cart
+- [ ] Monitoring::get_all_site_monitors
+- [ ] Monitoring::get_build_cart_url
+- [ ] Monitoring::get_completion_url
+- [ ] Monitoring::get_contact
+- [ ] Monitoring::get_site_monitor
+- [ ] Monitoring::get_store_email_address
+- [ ] Monitoring::get_user_status_from_store
+- [ ] Monitoring::list_contacts
+- [ ] Monitoring::load_user
+- [ ] Monitoring::remove_contact
+- [ ] Monitoring::remove_site_monitor
+- [ ] Monitoring::remove_user
+- [ ] Monitoring::save_user
+- [ ] Monitoring::update_contact
 - [x] Mysql::add_host
 - [x] Mysql::add_host_note
 - [x] Mysql::check_database
@@ -355,6 +382,10 @@
 - [-] Mysql::update_privileges
 - [ ] NVData::get
 - [ ] NVData::set
+- [ ] NginxCaching::clear_cache
+- [ ] NginxCaching::disable_cache
+- [ ] NginxCaching::enable_cache
+- [ ] NginxCaching::reset_cache_config
 - [ ] Notifications::get_notifications_count
 - [ ] Parser::firstfile_relative_uri
 - [ ] PassengerApps::disable_application
@@ -367,6 +398,9 @@
 - [ ] PasswdStrength::get_required_strength
 - [ ] Personalization::get
 - [ ] Personalization::set
+- [ ] Plugins::can_show_promotions
+- [ ] Plugins::get_uuid
+- [ ] Plugins::reset_uuid
 - [x] Postgresql::create_database
 - [x] Postgresql::create_user
 - [x] Postgresql::delete_database
@@ -441,29 +475,72 @@
 - [ ] SSL::upload_cert
 - [ ] SSL::upload_key
 - [ ] ServerInformation::get_information
+- [ ] ServiceProxy::get_service_proxy_backends
+- [ ] ServiceProxy::set_service_proxy_backends
+- [ ] ServiceProxy::unset_all_service_proxy_backends
 - [ ] Session::create_temp_user
 - [ ] Session::create_webmail_session_for_mail_user
 - [ ] Session::create_webmail_session_for_mail_user_check_password
 - [ ] Session::create_webmail_session_for_self
+- [ ] SiteQuality::create_project
+- [ ] SiteQuality::create_site_quality_user
+- [ ] SiteQuality::delete_site_quality_user
+- [ ] SiteQuality::get_all_scores
+- [ ] SiteQuality::get_app_token
+- [ ] SiteQuality::get_environment
+- [ ] SiteQuality::has_site_quality_user
+- [ ] SiteQuality::is_site_quality_user_enabled
+- [ ] SiteQuality::reset_config
+- [ ] SiteQuality::send_activation_email
+- [ ] SiteQuality::verify_code
 - [ ] SiteTemplates::list_site_templates
 - [ ] SiteTemplates::list_user_settings
 - [ ] SiteTemplates::publish
+- [ ] Sitejet::add_api_token
+- [ ] Sitejet::create_account
+- [ ] Sitejet::create_restore_point
+- [ ] Sitejet::create_website
+- [ ] Sitejet::disk_quota_check
+- [ ] Sitejet::do_not_delete_list
+- [ ] Sitejet::get_all_sites_metadata
+- [ ] Sitejet::get_all_user_sitejet_info
+- [ ] Sitejet::get_api_token
+- [ ] Sitejet::get_preview_url
+- [ ] Sitejet::get_sitebuilder_domain_statuses
+- [ ] Sitejet::get_sso_link
+- [ ] Sitejet::get_templates
+- [ ] Sitejet::get_user_site_metadata
+- [ ] Sitejet::poll_publish
+- [ ] Sitejet::publish
+- [ ] Sitejet::restore_document_root
+- [ ] Sitejet::set_template
+- [ ] Sitejet::start_publish
 - [x] SpamAssassin::clear_spam_box
 - [x] SpamAssassin::get_symbolic_test_names
 - [x] SpamAssassin::get_user_preferences
 - [x] SpamAssassin::update_user_preference
-- [ ] Stats::get_bandwidth
-- [ ] Stats::get_site_errors
-- [ ] Stats::list_sites
-- [ ] Stats::list_stats_by_domain
+- [x] Stats::get_bandwidth
+- [x] Stats::get_site_errors
+- [x] Stats::list_sites
+- [-] Stats::list_stats_by_domain
 - [x] StatsBar::get_stats
 - [ ] StatsManager::get_configuration
 - [ ] StatsManager::save_configuration
-- [x] Styles::current
-- [x] Styles::list
-- [x] Styles::set_default
-- [x] Styles::update
 - [ ] SubDomain::addsubdomain
+- [ ] Team::add_roles
+- [ ] Team::add_team_user
+- [ ] Team::edit_team_user
+- [ ] Team::list_team
+- [ ] Team::list_team_ui
+- [ ] Team::remove_roles
+- [ ] Team::remove_team_user
+- [ ] Team::set_contact_email
+- [ ] Team::set_notes
+- [ ] Team::set_password
+- [ ] Team::set_roles
+- [ ] Team::suspend_team_user
+- [ ] Team::unsuspend_team_user
+- [ ] TeamRoles::list_feature_descriptions
 - [x] Themes::get_theme_base
 - [x] Themes::list
 - [x] Themes::update
@@ -472,6 +549,7 @@
 - [ ] Tokens::rename
 - [ ] Tokens::revoke
 - [ ] TwoFactorAuth::generate_user_configuration
+- [ ] TwoFactorAuth::get_team_user_configuration
 - [ ] TwoFactorAuth::get_user_configuration
 - [ ] TwoFactorAuth::remove_user_configuration
 - [ ] TwoFactorAuth::set_user_configuration
@@ -504,6 +582,8 @@
 - [ ] WebVhosts::list_domains
 - [ ] WebVhosts::list_ssl_capable_domains
 - [x] WebmailApps::list_webmail_apps
+- [ ] WordPressSite::create
+- [ ] WordPressSite::retrieve
 - [ ] cPAddons::get_available_addons
 - [ ] cPAddons::get_instance_settings
 - [ ] cPAddons::list_addon_instances
