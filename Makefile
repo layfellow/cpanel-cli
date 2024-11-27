@@ -12,7 +12,7 @@ install: venv dist
 	$(BIN)/pip3 install dist/cpanel*.whl
 
 typecheck: venv
-	. $(BIN)/activate && $(TYPECHECKER) cpanel/*.py test/*.py
+	. $(BIN)/activate && $(TYPECHECKER) cpanel/*.py cpanel/caller/*.py test/*.py
 
 test: venv dist
 	@test -f test/cpanelrc.test || ( echo "Missing test configuration file test/cpanelrc.test" && exit 1 )

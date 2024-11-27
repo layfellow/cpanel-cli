@@ -2,5 +2,6 @@
   "venvPath": ".",
   "venv": "venv",
   "reportCallIssue": "none",
+  "reportUnsupportedDunderAll": "none",
   "exclude": ["**/*.rst"]
 }
