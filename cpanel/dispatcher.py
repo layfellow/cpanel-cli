@@ -30,6 +30,7 @@ def dispatch(host: CPanelEndpoint, args: List[str]) -> str:
 		r = r or ssh.call(host, cmd, args)
 		r = r or ip.call(host, cmd, args)
 		r = r or accounts.call(host, cmd, args)
+		r = r or addons.call(host, cmd, args)
 		r = r or subaccounts.call(host, cmd, args)
 		r = r or backup.call(host, cmd, args)
 		r = r or cache.call(host, cmd, args)

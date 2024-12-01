@@ -23,7 +23,7 @@ msgstr "Módulo: ``accounts``"
 
 #: ../../reference/accounts.rst:9
 msgid "`Leer en español </es/latest/reference/accounts.html>`_"
-msgstr ""
+msgstr "`Read in English </en/latest/reference/accounts.html>`_"
 
 #: ../../reference/accounts.rst:11 ../../reference/accounts.rst:17
 msgid "**list accounts**"

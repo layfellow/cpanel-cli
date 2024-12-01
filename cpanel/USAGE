@@ -47,6 +47,7 @@ Usage: cpanel help MODULE
 The currently implemented modules are:
 
 accounts
+addons
 backup
 bandwidth
 cache

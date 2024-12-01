@@ -17,6 +17,7 @@ Command Reference
    reference/stats
    reference/ssh
    reference/ip
+   reference/addons
    reference/accounts
    reference/subaccounts
    reference/backup

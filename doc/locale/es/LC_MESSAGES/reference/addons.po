@@ -1,0 +1,113 @@
+# cPanel CLI
+# Copyright (C) Copyright 2022, Marco Bravo Mejías
+# This file is distributed under the same license as the cPanel CLI package.
+# Marco Bravo Mejías <marco@layfellow.net>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cPanel CLI \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Creation-Date: 2022-04-10 22:10-0400\n"
+"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language: en\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../reference/addons.rst:7
+msgid "Module: ``addons``"
+msgstr "Módulo: ``addons``"
+
+#: ../../reference/addons.rst:9
+msgid "`Leer en español </es/latest/reference/addons.html>`_"
+msgstr "`Read in English </en/latest/reference/accounts.html>`_"
+
+#: ../../reference/addons.rst:11 ../../reference/addons.rst:18
+msgid "**list addons**"
+msgstr "**list addons**"
+
+#: ../../reference/addons.rst:12 ../../reference/addons.rst:34
+msgid "**list addon instances ADDON**"
+msgstr "**list addon instances ADDON**"
+
+#: ../../reference/addons.rst:13 ../../reference/addons.rst:52
+msgid "**get addon instance UNIQUEID**"
+msgstr "**get addon instance UNIQUEID**"
+
+#: ../../reference/addons.rst:15
+msgid "**COMMANDS**"
+msgstr "**COMANDOS**"
+
+#: ../../reference/addons.rst:20
+msgid "List all the available addons for this cPanel server."
+msgstr "Lista todos los complementos disponibles para este servidor cPanel."
+
+#: ../../reference/addons.rst:22
+msgid ""
+"Addons are identified by their names listed on the “module” field in the "
+"returned JSON data."
+msgstr ""
+"Los complementos se identifican por sus nombres listados en el campo "
+"“module” en los datos JSON devueltos."
+
+#: ../../reference/addons.rst:25 ../../reference/addons.rst:43
+#: ../../reference/addons.rst:58
+msgid "*Example*"
+msgstr "*Ejemplo*"
+
+#: ../../reference/addons.rst:31
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_available_addons/"
+msgstr ""
+"Vea un ejemplo de los datos de resultado JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_available_addons/"
+
+#: ../../reference/addons.rst:36
+msgid "List all the deployed instances of an ADDON identified by its name."
+msgstr ""
+"Lista todas las instancias desplegadas de un complemento dentificado por su "
+"nombre ADDON."
+
+#: ../../reference/addons.rst:38
+msgid ""
+"Unique instances are identified by their “unique_id” fields in the "
+"returned JSON data."
+msgstr ""
+"Las instancias únicas se identifican por sus campos “unique_id” en los "
+"datos JSON devueltos."
+
+#: ../../reference/addons.rst:41
+msgid "Use ‘cpanel list addons’ to get a list of ADDON names."
+msgstr "Use ‘cpanel list addons’ para obtener una lista de nombres ADDON de los complementos."
+
+#: ../../reference/addons.rst:49
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_addon_instances/"
+msgstr ""
+"Vea un ejemplo de los datos de resultado JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/list_addon_instances/"
+
+#: ../../reference/addons.rst:54
+msgid ""
+"Get the settings of a deployed instance of an addon identified by its "
+"UNIQUEID."
+msgstr ""
+"Obtenga la configuración de una instancia desplegada de un complemento "
+"identificado por su UNIQUEID."
+
+#: ../../reference/addons.rst:56
+msgid "Use ‘cpanel list addon instances’ to get a list of UNIQUEIDs."
+msgstr "Use ‘cpanel list addon instances’ para obtener una lista de UNIQUEIDs."
+
+#: ../../reference/addons.rst:64
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_instance_settings/"
+msgstr ""
+"Vea un ejemplo de los datos de resultado JSON en: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/get_instance_settings/"

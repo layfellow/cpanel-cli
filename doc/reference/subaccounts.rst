@@ -10,6 +10,8 @@ Module: ``subaccounts``
 
 - **list subaccounts**
 - **get subaccount GUID**
+- **get service account USERNAME TYPE**
+- **check subaccount conflicts USERNAME**
 
 **COMMANDS**
 
@@ -42,5 +44,37 @@ sub_account_exists flag set to 1 can be queried.
 
 See a sample of the JSON result data at:
 https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/
+
+**get service subaccount USERNAME TYPE**
+
+Show detailed information of a service subaccount, identified by its USERNAME.
+TYPE is the type of service subaccount, it's either ‘ftp’, ‘email’ or ‘webdisk’.
+
+Use ‘cpanel list subaccounts’ to get a list of full subaccount usernames.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel get service subaccount ftp@example.com ftp
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_service_account/
+
+**check subaccount conflicts USERNAME**
+
+Check if a subaccount identified by USERNAME conflicts with any other subaccount.
+Look for a “conflict”:1 in the returned JSON data.
+
+Use ‘cpanel list subaccounts’ to get a list of full subaccount usernames.
+
+*Example*
+
+.. code:: sh
+
+    $ cpanel check subaccount conflicts ftp@example.com
+
+See a sample of the JSON result data at:
+https://api.docs.cpanel.net/openapi/cpanel/operation/check_account_conflicts/
 
 

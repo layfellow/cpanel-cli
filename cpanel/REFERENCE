@@ -150,6 +150,51 @@ For a list of currently blocked IP ranges, you can use:
 
 ---
 
+Usage: cpanel list addons
+    cpanel list addon instances ADDON
+    cpanel get addon instance UNIQUEID
+
+\033[1mCOMMANDS\033[0m
+
+\033[1mlist addons\033[0m
+    List all the available addons for this cPanel server.
+
+    Addons are identified by their names listed on the “module” field in the
+    returned JSON data.
+
+    EXAMPLE
+        \033[1;34mcpanel list addons\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_available_addons/
+
+\033[1mlist addon instances ADDON\033[0m
+    List all the deployed instances of an ADDON identified by its name.
+
+    Unique instances are identified by their “unique_id” fields in the
+    returned JSON data.
+
+    Use ‘cpanel list addons’ to get a list of ADDON names.
+
+    EXAMPLE
+        \033[1;34mcpanel list addon instances 'cPanel::Blogs::WordPressX'\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/list_addon_instances/
+
+\033[1mget addon instance UNIQUEID\033[0m
+    Get the settings of a deployed instance of an addon identified by its UNIQUEID.
+
+    Use ‘cpanel list addon instances’ to get a list of UNIQUEIDs.
+
+    EXAMPLE
+        \033[1;34mcpanel get addon instance 'cPanel::Blogs::WordPressX.0.1486754861'\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/get_instance_settings/
+
+---
+
 Usage: cpanel list accounts
     cpanel get account
 
@@ -177,6 +222,8 @@ Usage: cpanel list accounts
 
 Usage: cpanel list subaccounts
     cpanel get subaccount GUID
+    cpanel get service account USERNAME TYPE
+    cpanel check subaccount conflicts USERNAME
 
 \033[1mCOMMANDS\033[0m
 
@@ -200,6 +247,30 @@ Usage: cpanel list subaccounts
 
     See a sample of the JSON result data at:
     https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/
+
+\033[1mget service subaccount USERNAME TYPE\033[0m
+    Show detailed information of a service subaccount, identified by its USERNAME.
+    TYPE is the type of service subaccount, it's either ‘ftp’, ‘email’ or ‘webdisk’.
+
+    Use ‘cpanel list subaccounts’ to get a list of full subaccount usernames.
+
+    EXAMPLE
+        \033[1;34mcpanel get service subaccount ftp@example.com ftp\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_service_account/
+
+\033[1mcheck subaccount conflicts USERNAME\033[0m
+    Check if a subaccount identified by USERNAME conflicts with any other subaccount.
+    Look for a “conflict”:1 in the returned JSON data.
+
+    Use ‘cpanel list subaccounts’ to get a list of full subaccount usernames.
+
+    EXAMPLE
+        \033[1;34mcpanel check subaccount conflicts ftp@example.com\033[00m
+
+    See a sample of the JSON result data at:
+    https://api.docs.cpanel.net/openapi/cpanel/operation/check_account_conflicts/
 
 ---
 

@@ -7,14 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cPanel CLI \n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Creation-Date: 2022-04-10 22:10-0400\n"
-"POT-Revision-Date: 2022-04-24 17:15-0400\n"
+"POT-Creation-Date: 2024-11-26 03:03-0300\n"
+"PO-Revision-Date: 2024-11-26 03:05-0300\n"
 "Last-Translator: Marco Bravo Mejías <marco@layfellow.net>\n"
+"Language: en\n"
 "Language-Team: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../../reference/subaccounts.rst:7
 msgid "Module: ``subaccounts``"
@@ -24,33 +26,40 @@ msgstr "Módulo: ``subaccounts``"
 msgid "`Leer en español </es/latest/reference/subaccounts.html>`_"
 msgstr "`Read in English </en/latest/reference/subaccounts.html>`_"
 
-#: ../../reference/subaccounts.rst:11 ../../reference/subaccounts.rst:17
+#: ../../reference/subaccounts.rst:11 ../../reference/subaccounts.rst:19
 msgid "**list subaccounts**"
 msgstr "**list subaccounts**"
 
-#: ../../reference/subaccounts.rst:12 ../../reference/subaccounts.rst:31
+#: ../../reference/subaccounts.rst:12 ../../reference/subaccounts.rst:33
 msgid "**get subaccount GUID**"
 msgstr "**get subaccount GUID**"
 
-#: ../../reference/subaccounts.rst:14
+#: ../../reference/subaccounts.rst:13
+msgid "**get service account USERNAME TYPE**"
+msgstr "**get service account USUARIO TIPO**"
+
+#: ../../reference/subaccounts.rst:14 ../../reference/subaccounts.rst:64
+msgid "**check subaccount conflicts USERNAME**"
+msgstr "**check subaccount conflicts USUARIO**"
+
+#: ../../reference/subaccounts.rst:16
 msgid "**COMMANDS**"
 msgstr "**COMANDOS**"
 
-#: ../../reference/subaccounts.rst:19
+#: ../../reference/subaccounts.rst:21
 msgid ""
 "List the sub-accounts of the main cPanel account, along with detailed "
 "information of each sub-account."
 msgstr ""
-"Lista las sub-cuentas de la cuenta "
-"principal de cPanel, junto con "
-"información detallada de cada sub-"
-"cuenta."
+"Lista las sub-cuentas de la cuenta principal de cPanel, junto con "
+"información detallada de cada sub-cuenta."
 
-#: ../../reference/subaccounts.rst:22 ../../reference/subaccounts.rst:37
+#: ../../reference/subaccounts.rst:24 ../../reference/subaccounts.rst:39
+#: ../../reference/subaccounts.rst:55 ../../reference/subaccounts.rst:71
 msgid "*Example*"
 msgstr "*Ejemplo*"
 
-#: ../../reference/subaccounts.rst:28
+#: ../../reference/subaccounts.rst:30
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-"
@@ -60,25 +69,61 @@ msgstr ""
 "https://api.docs.cpanel.net/openapi/cpanel/operation/UserManager-"
 "list_users/"
 
-#: ../../reference/subaccounts.rst:33
+#: ../../reference/subaccounts.rst:35
 msgid ""
 "Show detailed information of a sub-account, identified by its GUID. To "
 "get this GUID, use ‘cpanel list subaccounts’. Note that only sub-accounts"
 " with a sub_account_exists flag set to 1 can be queried."
 msgstr ""
-"Muestra información detallada de una "
-"sub-cuenta, identificada por su GUID. "
-"Para obtener este GUID, use ‘cpanel "
-"list subaccounts’. Tenga en cuenta que"
-" sólo sub-cuentas con un flag "
-"sub_account_exists establecido a 1 "
-"devuelven información."
+"Muestra información detallada de una sub-cuenta, identificada por su "
+"GUID. Para obtener este GUID, use ‘cpanel list subaccounts’. Tenga en "
+"cuenta que sólo sub-cuentas con un flag sub_account_exists establecido a "
+"1 devuelven información."
 
-#: ../../reference/subaccounts.rst:43
+#: ../../reference/subaccounts.rst:45
 msgid ""
 "See a sample of the JSON result data at: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/"
 msgstr ""
 "Vea una muestra del resultado en formato JSON en: "
 "https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_user/"
+
+#: ../../reference/subaccounts.rst:48
+msgid "**get service subaccount USERNAME TYPE**"
+msgstr "**get service subaccount USUARIO TIPO**"
+
+#: ../../reference/subaccounts.rst:50
+msgid ""
+"Show detailed information of a service subaccount, identified by its "
+"USERNAME. TYPE is the type of service subaccount, it's either ‘ftp’, "
+"‘email’ or ‘webdisk’."
+msgstr ""
+"Muestra información detallada de una subcuenta de servicio, identificada "
+"por su USUARIO. TIPO es el tipo de subcuenta de servicio, puede ser "
+"‘ftp’, ‘email’ o ‘webdisk’."
+
+#: ../../reference/subaccounts.rst:53 ../../reference/subaccounts.rst:69
+msgid "Use ‘cpanel list subaccounts’ to get a list of full subaccount usernames."
+msgstr "Use ‘cpanel list subaccounts’ para obtener una lista de nombres completos de subcuentas."
+
+#: ../../reference/subaccounts.rst:61
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_service_account/"
+msgstr "Vea una muestra del resultado en formato JSON en: https://api.docs.cpanel.net/openapi/cpanel/operation/lookup_service_account/"
+
+#: ../../reference/subaccounts.rst:66
+msgid ""
+"Check if a subaccount identified by USERNAME conflicts with any other "
+"subaccount. Look for a “conflict”:1 in the returned JSON data."
+msgstr ""
+"Verifica si una subcuenta identificada por USUARIO entra en conflicto con"
+" alguna otra subcuenta. Busque un “conflict”:1 en los datos JSON "
+"devueltos."
+
+#: ../../reference/subaccounts.rst:77
+msgid ""
+"See a sample of the JSON result data at: "
+"https://api.docs.cpanel.net/openapi/cpanel/operation/check_account_conflicts/"
+msgstr "Vea una muestra del resultado en formato JSON en: https://api.docs.cpanel.net/openapi/cpanel/operation/check_account_conflicts/"
 

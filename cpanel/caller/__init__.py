@@ -6,6 +6,7 @@ __all__ = [
 	'ssh',
 	'ip',
 	'accounts',
+	'addons',
 	'subaccounts',
 	'backup',
 	'cache',

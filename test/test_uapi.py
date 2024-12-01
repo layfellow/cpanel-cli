@@ -3,13 +3,13 @@ import unittest
 from unittest import TestResult
 import json
 import random
-from typing import List, Union
+from typing import List
 from cpanel.cli import configuration
 from cpanel.core import JSONType, CPanelEndpoint, endpoint
 from cpanel.__main__ import dispatch
-from cpanel_api import Api
 import urllib3
 from urllib3.exceptions import InsecureRequestWarning
+
 
 class TestCore(unittest.TestCase):
 
@@ -96,7 +96,7 @@ class TestCore(unittest.TestCase):
 		self.assertTrue(len(account['user']) > 0)
 
 
-	def test_list_subaccounts(self) -> None:
+	def test_subaccounts(self) -> None:
 		subaccounts: List[JSONType] = json.loads(dispatch(self.host, ["list", "subaccounts"]))
 		print(subaccounts)
 
@@ -104,6 +104,18 @@ class TestCore(unittest.TestCase):
 		subaccount: JSONType
 		for subaccount in subaccounts:
 			self.assertTrue(len(subaccount['guid']) > 0)
+
+		user: str = ""
+		for subaccount in subaccounts:
+			if 'enabled' in subaccount['services']['email']:
+				if subaccount['services']['email']['enabled'] == 1:
+					user = subaccount['full_username']
+					break
+		if user:
+			service: JSONType = json.loads(dispatch(self.host, ["get", "service", "subaccount", user, "email"]))
+			print(service)
+			self.assertTrue('guid' in service)
+			self.assertEqual("service", service['type'])
 
 
 	def test_cache(self) -> None:

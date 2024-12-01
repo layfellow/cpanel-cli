@@ -14,4 +14,10 @@ def call(host: CPanelEndpoint, cmd: str, args: List[str]) -> str:
 	elif cmd_is(cmd, "get subaccount"):
 		r = host.dump(lambda: uapi.UserManager.lookup_user(guid = args[2]))
 
+	elif cmd_is(cmd, "get service subaccount"):
+		r = host.dump(lambda: uapi.UserManager.lookup_service_account(full_username = args[3], type = args[4]))
+		
+	elif cmd_is(cmd, "check subaccount conflicts"):
+		r = host.dump(lambda: uapi.UserManager.check_account_conflicts(full_username=args[3]))
+
 	return r

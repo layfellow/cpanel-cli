@@ -553,13 +553,13 @@
 - [ ] TwoFactorAuth::get_user_configuration
 - [ ] TwoFactorAuth::remove_user_configuration
 - [ ] TwoFactorAuth::set_user_configuration
-- [ ] UserManager::check_account_conflicts
+- [x] UserManager::check_account_conflicts
 - [ ] UserManager::create_user
 - [ ] UserManager::delete_user
 - [ ] UserManager::dismiss_merge
 - [ ] UserManager::edit_user
 - [x] UserManager::list_users
-- [ ] UserManager::lookup_service_account
+- [x] UserManager::lookup_service_account
 - [x] UserManager::lookup_user
 - [ ] UserManager::merge_service_account
 - [ ] UserManager::unlink_service_account
@@ -584,9 +584,9 @@
 - [x] WebmailApps::list_webmail_apps
 - [ ] WordPressSite::create
 - [ ] WordPressSite::retrieve
-- [ ] cPAddons::get_available_addons
-- [ ] cPAddons::get_instance_settings
-- [ ] cPAddons::list_addon_instances
+- [x] cPAddons::get_available_addons
+- [x] cPAddons::get_instance_settings
+- [x] cPAddons::list_addon_instances
 - [ ] cPGreyList::disable_all_domains
 - [ ] cPGreyList::disable_domains
 - [ ] cPGreyList::enable_all_domains
